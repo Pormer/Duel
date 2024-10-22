@@ -8,6 +8,6 @@ public class MapManager : MonoBehaviour
 
     private void Awake()
     {
-        mapInfo.Initialize(floorTile);
+        //mapInfo.Initialize(floorTile);
     }
 }
