@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-[CreateAssetMenu(menuName = "SO/PathFinding/MapInfo")]
-public class MapInfoSO : ScriptableObject
+
+public class MapInfo
 {
     private Tilemap _floor;
 
-    public void Initialize(Tilemap floorTile)
+    public MapInfo(Tilemap floorTile)
     {
         _floor = floorTile;
     }
