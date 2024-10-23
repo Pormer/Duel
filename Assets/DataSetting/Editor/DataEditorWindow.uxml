@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/DataSetting/Editor/DataEditorWindow.uss?fileID=7433441132597879392&amp;guid=bc7505caf25a7644b9f40d52bc1f61ac&amp;type=3#DataEditorWindow" />
+    <ui:VisualElement name="TopBar" style="flex-grow: 0; flex-direction: row; flex-basis: 35px; flex-shrink: 0; background-color: rgb(47, 47, 47);">
+        <ui:Button text="Character" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CharacterSelectBtn" class="data-btn" style="flex-grow: 1; flex-shrink: 0;" />
+        <ui:Button text="Gun" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GunSelectBtn" class="data-btn" />
+    </ui:VisualElement>
+</ui:UXML>
