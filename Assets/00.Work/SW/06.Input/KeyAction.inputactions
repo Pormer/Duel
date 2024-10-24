@@ -6,13 +6,76 @@
             "id": "ec5bb5b9-34d3-4cb2-8645-9ba5c190362b",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "LeftPlayerMove",
                     "type": "Value",
                     "id": "dfcaf0c9-ea96-45c3-9cd1-e5d52083a116",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "LeftPlayerShoot",
+                    "type": "Button",
+                    "id": "46a36b9b-af39-4014-a262-3bd86b208537",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LeftPlayerBarrier",
+                    "type": "Button",
+                    "id": "fecbf04d-6347-4fe6-8b7c-e0cbe7cc2f1b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LeftPlayerSkill",
+                    "type": "Button",
+                    "id": "080f32cb-2af0-41bf-babd-a80547ee06ca",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightPlayerMove",
+                    "type": "Value",
+                    "id": "d9ed5296-be15-4439-8cc6-de585edbabc3",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RightPlayerShoot",
+                    "type": "Button",
+                    "id": "41e3f44e-1906-4186-a987-447f2569916f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightPlayerBarrier",
+                    "type": "Button",
+                    "id": "872ec322-3e96-4045-ad8d-1ea0c2f78835",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightPlayerSkill",
+                    "type": "Button",
+                    "id": "72ab10de-b3a6-4d35-9e6c-70f77310e3d7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -23,7 +86,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "LeftPlayerMove",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -34,7 +97,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "LeftPlayerMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -45,7 +108,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "LeftPlayerMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -56,7 +119,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "LeftPlayerMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -67,64 +130,130 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "LeftPlayerMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "RightPlayer",
-                    "id": "d226df9f-ac67-414d-abec-f6d1b0732639",
+                    "id": "22c342c1-392d-426f-8bd4-c59c36cedf55",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "RightPlayerMove",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "up",
-                    "id": "507f46f7-6f2c-4beb-9cc2-de211e405b77",
+                    "id": "adb58069-8593-4cad-a94d-4686078d8f4c",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "RightPlayerMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "dcb24056-1f4b-403d-bc87-584e2ac3243e",
+                    "id": "b3edf59c-b1a3-45df-8be2-aee8b56434a5",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "RightPlayerMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "2450b9cd-f58f-47a5-b922-f6f269713af1",
+                    "id": "24064813-e58a-4017-ac9b-b5cec0ef1758",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "RightPlayerMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "65bba369-9304-425c-a298-ed6ca74316f2",
+                    "id": "98b66e69-cdeb-4141-9c1e-2c9ae8fc38ce",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "RightPlayerMove",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "a30c6117-eba8-4a98-b618-cabdbd49bcbc",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftPlayerShoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ec9223fc-6530-45df-af0c-7ba8df73de72",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftPlayerSkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f613e1d4-cf68-4c24-a54f-35d301e1e85a",
+                    "path": "<Keyboard>/n",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightPlayerShoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "99810949-ea06-431a-91e1-2be645391668",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightPlayerSkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b31805fa-234e-4886-b212-4f288abed9d2",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftPlayerBarrier",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b27f4335-3dd3-47fe-baa4-c4fda85ef334",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightPlayerBarrier",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
