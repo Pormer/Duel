@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/DataSetting/Editor/UI/DataItem.uss?fileID=7433441132597879392&amp;guid=b8ec7371179259f40bde9a5c8ec39659&amp;type=3#DataItem" />
+    <ui:VisualElement name="DataItem" class="data-item" style="margin-top: 2px; margin-bottom: 2px;">
+        <ui:Label tabindex="-1" text="무기의 이름" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ItemName" style="overflow: hidden; flex-basis: 180px; flex-shrink: 1; flex-grow: 1; max-width: 180px; margin-left: 6px; margin-right: 4px; margin-bottom: 2px; margin-top: 2px; -unity-text-align: middle-left; text-overflow: ellipsis;" />
+        <ui:Button text="X" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DeleteBtn" class="delet-btn" />
+    </ui:VisualElement>
+</ui:UXML>

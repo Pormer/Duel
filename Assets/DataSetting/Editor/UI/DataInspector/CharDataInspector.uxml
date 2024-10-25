@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="Inspector" style="flex-grow: 1;">
+        <ui:VisualElement name="SpriteView" style="flex-grow: 0; flex-shrink: 0; flex-direction: row;">
+            <ui:VisualElement name="CharacterPreview" style="width: 125px; height: 125px;">
+                <ui:VisualElement name="Image" style="flex-grow: 1; border-left-color: rgb(180, 180, 180); border-right-color: rgb(180, 180, 180); border-top-color: rgb(180, 180, 180); border-bottom-color: rgb(180, 180, 180); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;" />
+            </ui:VisualElement>
+            <uie:ObjectField type="UnityEngine.Sprite, UnityEngine.CoreModule" binding-path="itemSprite" style="max-height: 20px; align-self: flex-end; justify-content: flex-start; align-items: stretch; flex-shrink: 1; flex-grow: 1; margin-bottom: 4px;" />
+        </ui:VisualElement>
+        <ui:EnumField label="Character Type" type="DataType.CharacterType, Assembly-CSharp" binding-path="charType" name="TypeField" />
+        <ui:SliderInt label="HP" high-value="8" binding-path="hp" name="HPSlider" />
+        <ui:SliderInt label="Barrier Count" high-value="5" binding-path="barrierCount" name="BarrierSlider" />
+        <uie:ColorField label="Base Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" binding-path="baseColor" />
+        <ui:TextField picking-mode="Ignore" label="Explanation" binding-path="explanation" name="ExplanationTxt" style="flex-grow: 0; text-overflow: ellipsis; white-space: normal; -unity-text-align: upper-left; overflow: hidden; flex-basis: 100px; opacity: 1; width: auto; max-height: 300px; height: auto;" />
+    </ui:VisualElement>
+</ui:UXML>

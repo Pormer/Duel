@@ -27,3 +27,9 @@
     margin-right: 5px;
     margin-left: 5px;
 }
+
+.panel {
+    flex-grow: 0;
+    width: 280px;
+    flex-shrink: 0;
+}
