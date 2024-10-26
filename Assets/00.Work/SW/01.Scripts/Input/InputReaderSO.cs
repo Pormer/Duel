@@ -6,14 +6,16 @@ using UnityEngine.InputSystem;
 using static KeyAction;
 
 [CreateAssetMenu(menuName = "SO/InputReader")]
-public class InputReaderSO : ScriptableObject, IPlayerInputActions
+public class InputReaderSO : ScriptableObject, IPlayerInputActions, IPlayerComponents
 {
     KeyAction keyAction;
 
+    public event Action<Vector2> OnLeftMoveEvemt;
     public event Action OnLeftShootEvent;
     public event Action OnLeftSkillEvent;
     public event Action OnLeftBarrierPressEvent, OnLeftBarrierReleseEvent;
 
+    public event Action<Vector2> OnRightMoveEvemt;
     public event Action OnRightShootEvent;
     public event Action OnRightSkillEvent;
     public event Action OnRightBarrierPressEvent, OnRightBarrierReleseEvent;
@@ -32,8 +34,11 @@ public class InputReaderSO : ScriptableObject, IPlayerInputActions
 
     public void OnLeftPlayerMove(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.ReadValue<Vector2>().x == 0 || context.ReadValue<Vector2>().y == 0)
+        {
             LeftMoveVec = context.ReadValue<Vector2>();
+            OnLeftMoveEvemt?.Invoke(LeftMoveVec);
+        }
     }
 
 
@@ -55,8 +60,11 @@ public class InputReaderSO : ScriptableObject, IPlayerInputActions
 
     public void OnRightPlayerMove(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.ReadValue<Vector2>().x == 0 || context.ReadValue<Vector2>().y == 0)
+        {
             RightMoveVec = context.ReadValue<Vector2>();
+            OnRightMoveEvemt?.Invoke(RightMoveVec);
+        }
     }
 
     public void OnRightPlayerShoot(InputAction.CallbackContext context)
@@ -73,5 +81,10 @@ public class InputReaderSO : ScriptableObject, IPlayerInputActions
     public void OnRightPlayerSkill(InputAction.CallbackContext context)
     {
         OnRightSkillEvent?.Invoke();
+    }
+
+    public void Initialize(Player player)
+    {
+
     }
 }
