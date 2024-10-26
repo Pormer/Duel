@@ -1,13 +1,16 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <ui:Template name="DataItem" src="project://database/Assets/DataSetting/Editor/UI/DataItem.uxml?fileID=9197481963319205126&amp;guid=f0eaef7fa96bb6841a416beee760d447&amp;type=3#DataItem" />
+    <ui:Template name="DataItem" src="project://database/Assets/DataSetting/Editor/UI/DataItem/DataItem.uxml?fileID=9197481963319205126&amp;guid=f0eaef7fa96bb6841a416beee760d447&amp;type=3#DataItem" />
     <Style src="project://database/Assets/DataSetting/Editor/DataEditorWindow.uss?fileID=7433441132597879392&amp;guid=bc7505caf25a7644b9f40d52bc1f61ac&amp;type=3#DataEditorWindow" />
     <ui:VisualElement name="TopBar" style="flex-grow: 0; flex-direction: row; flex-basis: 35px; flex-shrink: 0; background-color: rgb(47, 47, 47);">
         <ui:Button text="Character" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CharacterSelectBtn" class="data-btn" style="flex-grow: 1; flex-shrink: 0;" />
         <ui:Button text="Gun" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GunSelectBtn" class="data-btn" />
     </ui:VisualElement>
-    <SplitView>
-        <ui:VisualElement name="LeftPanel" class="panel" style="width: 280px; flex-grow: 0;">
-            <ui:ScrollView>
+    <ui:VisualElement name="TopCreateBar" style="flex-grow: 0; flex-basis: 35px; flex-shrink: 0; background-color: rgb(47, 47, 47);">
+        <ui:Button text="Create" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CreateBtn" class="data-btn" style="max-width: none; align-items: auto; align-self: auto; width: auto; flex-grow: 0; flex-basis: auto;" />
+    </ui:VisualElement>
+    <SplitView name="SplitView">
+        <ui:VisualElement name="LeftPanel" class="panel" style="width: 280px; flex-grow: 0; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; flex-shrink: 0; flex-basis: auto; min-width: 180px;">
+            <ui:ScrollView name="ItemScrollView">
                 <ui:Instance template="DataItem" name="DataItem" />
                 <ui:Instance template="DataItem" name="DataItem" />
                 <ui:Instance template="DataItem" name="DataItem" />
@@ -23,11 +26,11 @@
                 <ui:Instance template="DataItem" name="DataItem" />
             </ui:ScrollView>
         </ui:VisualElement>
-        <ui:VisualElement name="RightPanel" class="panel">
+        <ui:VisualElement name="RightPanel" class="panel" style="width: auto;">
             <ui:VisualElement name="InspectorView" style="flex-grow: 1;">
                 <ui:VisualElement name="NameChangeSection" style="flex-grow: 0; flex-direction: row; justify-content: space-around; background-color: rgb(48, 48, 48); border-bottom-color: rgb(217, 217, 217); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;">
                     <ui:TextField picking-mode="Ignore" name="NameField" style="flex-shrink: 1; flex-grow: 1; flex-basis: 150px; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; margin-left: 5px;" />
-                    <ui:Button text="이름 저장" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ChangeBtn" style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;" />
+                    <ui:Button text="내용 저장" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ChangeBtn" style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="DataSetting" style="flex-grow: 1;" />
             </ui:VisualElement>
