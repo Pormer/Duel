@@ -7,8 +7,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] InputReaderSO inputReader;
+    [SerializeField] CharacterDataSO characterData;
     private Dictionary<Type, IPlayerComponents> _components;
     public bool IsRight {  get; private set; }
+    public bool IsOnLeftBarrier{ get; private set; }
+    public bool IsOnRightBarrier { get; private set; }
 
     private void Awake()
     {
@@ -20,10 +23,13 @@ public class Player : MonoBehaviour
         _components.Add(inputReader.GetType(), inputReader);
 
         _components.Values.ToList().ForEach(compo => compo.Initialize(this));
+
         if(IsRight)
             inputReader.OnRightMoveEvemt += GetCompo<PlayerMovement>().SetMovement;
         else
             inputReader.OnLeftMoveEvemt += GetCompo<PlayerMovement>().SetMovement;
+
+        GetCompo<Health>().Hp = characterData.hp;
     }
 
     public T GetCompo<T>() where T : class

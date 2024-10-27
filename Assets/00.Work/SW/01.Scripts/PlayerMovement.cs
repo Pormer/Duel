@@ -26,7 +26,5 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponents
         IsMove = true;
         transform.DOMove((Vector2)v + moveDir, 0.3f).SetEase(Ease.OutExpo).
             OnComplete(() => { IsMove = false; });
-
-        //이론상 가능
     }
 }

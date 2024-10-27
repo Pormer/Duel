@@ -20,9 +20,6 @@ public class InputReaderSO : ScriptableObject, IPlayerInputActions, IPlayerCompo
     public event Action OnRightSkillEvent;
     public event Action OnRightBarrierPressEvent, OnRightBarrierReleseEvent;
 
-    public bool IsLeftBarrierState {  get; private set; }
-    public bool IsRightBarrierState {  get; private set; }
-
     public Vector2 LeftMoveVec { get; private set; }
     public Vector2 RightMoveVec { get; private set; }
     private void OnEnable()
