@@ -3,11 +3,11 @@ using UnityEngine.Tilemaps;
 
 public class MapManager : MonoBehaviour
 {
-    [SerializeField] private MapInfoSO mapInfo;
+    [SerializeField] private MapInfo mapInfo;
     [SerializeField] Tilemap floorTile;
 
     private void Awake()
     {
-        mapInfo.Initialize(floorTile);
+        //mapInfo.Initialize(floorTile);
     }
 }
