@@ -7,7 +7,7 @@
             <uie:ObjectField type="UnityEngine.Sprite, UnityEngine.CoreModule" binding-path="itemSprite" style="max-height: 20px; align-self: flex-end; justify-content: flex-start; align-items: stretch; flex-shrink: 1; flex-grow: 1; margin-bottom: 4px;" />
         </ui:VisualElement>
         <ui:VisualElement name="--Line--" style="flex-grow: 0; flex-shrink: 0; border-left-color: rgba(173, 173, 173, 0); border-right-color: rgba(173, 173, 173, 0); border-top-color: rgba(172, 172, 172, 0); border-bottom-color: rgb(173, 173, 173); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; height: 9px; margin-bottom: 4px;" />
-        <ui:EnumField label="Gun Type" type="DataType.GunType, Assembly-CSharp" binding-path="gunType" name="TypeField" />
+        <ui:EnumField label="Gun Type" type="DataType.GunType, Data" binding-path="gunType" name="TypeField" />
         <ui:SliderInt label="Damage" high-value="8" binding-path="damage" name="HPSlider" />
         <ui:SliderInt label="Bullet Count" high-value="5" binding-path="bulletCount" name="BarrierSlider" />
         <ui:SliderInt label="Range" high-value="6" name="RangeSlider" binding-path="range" />

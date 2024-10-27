@@ -6,7 +6,9 @@ MonoImporter:
   defaultReferences:
   - m_ViewDataDictionary: {instanceID: 0}
   - m_VisualTreeAsset: {fileID: 9197481963319205126, guid: bf4f657d549343444b34c69f28432a98, type: 3}
-  - _dataItemUXMLAsset: {fileID: 9197481963319205126, guid: f0eaef7fa96bb6841a416beee760d447, type: 3}
+  - dataItemUxmlAsset: {fileID: 9197481963319205126, guid: f0eaef7fa96bb6841a416beee760d447, type: 3}
+  - <CharacterDataUxmlAsset>k__BackingField: {fileID: 9197481963319205126, guid: 280ec1e0cad567e44b45f022df274be2, type: 3}
+  - <GunDataUxmlAsset>k__BackingField: {fileID: 9197481963319205126, guid: 7751ada52102efe439400c69734b7ef7, type: 3}
   - _toolInfo: {fileID: 11400000, guid: 2be63b43fca34cd479e07f056c164389, type: 2}
   - dataManager: {fileID: 11400000, guid: ad1b1dde75b964c42bcad7bf49774d2d, type: 2}
   executionOrder: 0

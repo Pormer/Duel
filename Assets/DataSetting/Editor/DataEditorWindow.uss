@@ -26,10 +26,16 @@
     margin-bottom: 5px;
     margin-right: 5px;
     margin-left: 5px;
+    transition-duration: 0.3s;
 }
 
 .panel {
     flex-grow: 0;
     width: 280px;
     flex-shrink: 0;
+}
+
+.data-btn.active {
+    background-color: rgb(142, 142, 142);
+    color: rgb(43, 43, 43);
 }

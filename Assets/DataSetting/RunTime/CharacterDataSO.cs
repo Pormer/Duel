@@ -9,12 +9,3 @@ public class CharacterDataSO : ItemDataSO
     public int barrierCount; //베리어의 수
     public Color baseColor; //캐릭터를 대표하는 색
 }
-
-namespace DataType
-{
-    public enum CharacterType
-    {
-        Default,
-        Test
-    }
-}

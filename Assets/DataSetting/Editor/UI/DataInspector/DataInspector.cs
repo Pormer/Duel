@@ -1,32 +1,41 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class DataInspector : MonoBehaviour
+public class DataInspector : IDisposable
 {
     private TextField _assetNameField;
     private Button _nameChangeBtn;
 
-    private VisualElement _characterDataElem;
-    private VisualElement _gunDataElem;
+    private VisualTreeAsset _characterDataAsset;
+    private VisualTreeAsset _gunDataAsset;
+    private VisualElement _dataSettingRootElem;
     
     private DataEditorWindow _editorWnd;
 
     private CharacterDataSO _curCharData;
     private GunDataSO _curGunData;
     
+    #region DataNameChangeEvent
     public delegate void GunDataNameChangeDelegate(GunDataSO target, string newNameData);
     public event GunDataNameChangeDelegate GunNameChangeEvent;
     
     public delegate void CharacterDataNameChangeDelegate(CharacterDataSO target, string newNameData);
     public event CharacterDataNameChangeDelegate CharNameChangeEvent;
     
+    #endregion
+    
     public DataInspector(VisualElement content, DataEditorWindow editorWnd)
     {
         _editorWnd = editorWnd;
+
+        _gunDataAsset = editorWnd.GunDataUxmlAsset;
+        _characterDataAsset = editorWnd.CharacterDataUxmlAsset;
         
         _assetNameField = content.Q<TextField>("NameField");
         _nameChangeBtn = content.Q<Button>("ChangeBtn");
+        _dataSettingRootElem = editorWnd.DataSettingRootElem;
         
         //_itemView.onGUIHandler += HandleItemViewGUI;
 
@@ -64,10 +73,26 @@ public class DataInspector : MonoBehaviour
         }
     }
 
-    private void HandleItemViewGUI()
+    public void HandleItemViewGUI(DataItem item)
     {
-        VisualElement itemView;
-        if(_editorWnd.IsGunSelect) itemView = new VisualElement();
+        _dataSettingRootElem.Clear();
+        
+        if(_editorWnd.IsGunSelect)
+        {
+            if(_curGunData == null) return;
+            
+            var itemDataUI = _gunDataAsset.CloneTree();
+            _dataSettingRootElem.Add(itemDataUI);
+            //여기에서 세팅 값 받는 Q값 가져오고 글로벌 변수로 저장
+        }
+        else
+        {
+            if(_curCharData == null) return;
+            
+            var itemDataUI = _characterDataAsset.CloneTree();
+            _dataSettingRootElem.Add(itemDataUI);
+            //여기에서 세팅 값 받는 Q값 가져오고 글로벌 변수로 저장
+        }
     }
     
     public void UpdateInspector(GunDataSO item)

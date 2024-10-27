@@ -7,7 +7,7 @@
             <uie:ObjectField type="UnityEngine.Sprite, UnityEngine.CoreModule" binding-path="itemSprite" style="max-height: 20px; align-self: flex-end; justify-content: flex-start; align-items: stretch; flex-shrink: 1; flex-grow: 1; margin-bottom: 4px;" />
         </ui:VisualElement>
         <ui:VisualElement name="--Line--" style="flex-grow: 0; flex-shrink: 0; border-left-color: rgba(173, 173, 173, 0); border-right-color: rgba(173, 173, 173, 0); border-top-color: rgba(172, 172, 172, 0); border-bottom-color: rgb(173, 173, 173); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; height: 9px; margin-bottom: 4px;" />
-        <ui:EnumField label="Character Type" type="DataType.CharacterType, Assembly-CSharp" binding-path="charType" name="TypeField" />
+        <ui:EnumField label="Character Type" type="DataType.CharacterType, Data" binding-path="charType" name="TypeField" focusable="true" />
         <ui:SliderInt label="HP" high-value="8" binding-path="hp" name="HPSlider" />
         <ui:SliderInt label="Barrier Count" high-value="5" binding-path="barrierCount" name="BarrierSlider" />
         <uie:ColorField label="Base Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" binding-path="baseColor" />

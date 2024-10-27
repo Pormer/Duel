@@ -16,7 +16,11 @@ public class DataEditorWindow : EditorWindow
 
     private ScrollView _itemView;
 
-    [SerializeField] private VisualTreeAsset _dataItemUXMLAsset;
+    [SerializeField] private VisualTreeAsset dataItemUxmlAsset;
+    [field: SerializeField] public VisualTreeAsset CharacterDataUxmlAsset { get; private set; }
+    [field: SerializeField] public VisualTreeAsset GunDataUxmlAsset { get; private set; }
+    [field: SerializeField] public VisualElement DataSettingRootElem { get; private set; }
+    
     [SerializeField] private ToolInfoSO _toolInfo;
 
     [FormerlySerializedAs("datManager")] [SerializeField]
@@ -54,18 +58,20 @@ public class DataEditorWindow : EditorWindow
         _itemView.Clear();
         _dataItems.Clear();
         _inspector.ClearInspector();
+        DataSettingRootElem.Clear();
 
         if (IsGunSelect)
         {
             foreach (var item in dataManager.gunDatas)
             {
-                var itemUIAsset = _dataItemUXMLAsset.CloneTree();
+                var itemUIAsset = dataItemUxmlAsset.CloneTree();
                 DataItem dataItem = new DataItem(itemUIAsset, item);
                 _itemView.Add(itemUIAsset);
                 _dataItems.Add(dataItem);
 
                 dataItem.Name = item.name;
                 dataItem.OnSelectEvent += HandleSelectItem;
+                dataItem.OnSelectEvent += _inspector.HandleItemViewGUI;
                 dataItem.OnDeleteEvent += HandleDeleteItem;
             }
         }
@@ -73,7 +79,7 @@ public class DataEditorWindow : EditorWindow
         {
             foreach (var item in dataManager.characterDatas)
             {
-                var itemUIAsset = _dataItemUXMLAsset.CloneTree();
+                var itemUIAsset = dataItemUxmlAsset.CloneTree();
                 DataItem dataItem = new DataItem(itemUIAsset, item);
                 _itemView.Add(itemUIAsset);
                 _dataItems.Add(dataItem);
@@ -81,6 +87,7 @@ public class DataEditorWindow : EditorWindow
                 
                 dataItem.Name = item.name.Replace("Data", "");
                 dataItem.OnSelectEvent += HandleSelectItem;
+                dataItem.OnSelectEvent += _inspector.HandleItemViewGUI;
                 dataItem.OnDeleteEvent += HandleDeleteItem;
             }
         }
@@ -130,6 +137,7 @@ public class DataEditorWindow : EditorWindow
         _createBtn = content.Q<Button>("CreateBtn");
         _charSelectBtn = content.Q<Button>("CharacterSelectBtn");
         _gunSelectBtn = content.Q<Button>("GunSelectBtn");
+        DataSettingRootElem = content.Q<VisualElement>("DataSetting");
         
         _itemView = content.Q<ScrollView>("ItemScrollView");
         
@@ -147,11 +155,15 @@ public class DataEditorWindow : EditorWindow
         {
             IsGunSelect = false;
             GenerateDataItemUI();
+            _charSelectBtn.AddToClassList("active");
+            _gunSelectBtn.RemoveFromClassList("active");
         };
         _gunSelectBtn.clicked += () =>
         {
             IsGunSelect = true;
             GenerateDataItemUI();
+            _gunSelectBtn.AddToClassList("active");
+            _charSelectBtn.RemoveFromClassList("active");
         };
         
         _createBtn.clicked += HandleGunCreateItem;

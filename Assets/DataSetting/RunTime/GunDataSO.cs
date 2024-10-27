@@ -11,12 +11,3 @@ public class GunDataSO : ItemDataSO
     public int wantLoadCount; //장전을 위한 움직임 수
     public float range; //총의 사거리
 }
-
-namespace DataType
-{
-    public enum GunType
-    {
-        Default,
-        Test
-    }
-}
