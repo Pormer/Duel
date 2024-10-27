@@ -9,5 +9,5 @@ public class GunDataSO : ItemDataSO
     public float coolTime; //다음 발사가능 시간
     public int bulletCount; //총알의 수
     public int wantLoadCount; //장전을 위한 움직임 수
-    public float range; //총의 사거리
+    public int range; //총의 사거리
 }

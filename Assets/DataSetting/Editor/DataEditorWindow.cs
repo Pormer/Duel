@@ -227,6 +227,8 @@ public class DataEditorWindow : EditorWindow
         AssetDatabase.RenameAsset(itemPath, $"{newName}Data");
         
         data.itemName = newName;
+        _inspector.CharDataSave(data);
+        
         EditorUtility.SetDirty(data);
         AssetDatabase.SaveAssets();
         
@@ -242,6 +244,8 @@ public class DataEditorWindow : EditorWindow
         AssetDatabase.RenameAsset(itemPath, $"{newName}Data");
         
         data.itemName = newName;
+        _inspector.GunDataSave(data);
+        
         EditorUtility.SetDirty(data);
         AssetDatabase.SaveAssets();
         

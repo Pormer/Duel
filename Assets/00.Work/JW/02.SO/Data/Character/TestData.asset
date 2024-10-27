@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: TestData
   m_EditorClassIdentifier: 
   itemName: Test
-  explanation: 
-  itemSprite: {fileID: 0}
-  charType: 0
-  hp: 0
-  barrierCount: 0
-  baseColor: {r: 0, g: 0, b: 0, a: 0}
+  explanation: "\uC57C\uD638"
+  itemSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  charType: 2
+  hp: 4
+  barrierCount: 2
+  baseColor: {r: 0.6150943, g: 0.26344603, b: 0.26344603, a: 1}
