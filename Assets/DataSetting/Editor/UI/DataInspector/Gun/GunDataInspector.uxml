@@ -10,7 +10,7 @@
         <ui:EnumField label="Gun Type" type="DataType.GunType, Data" binding-path="gunType" name="TypeField" />
         <ui:SliderInt label="Damage" high-value="8" binding-path="damage" name="DamageSlider" show-input-field="true" />
         <ui:SliderInt label="Bullet Count" high-value="5" binding-path="bulletCount" name="BulletCountSlider" show-input-field="true" />
-        <ui:SliderInt label="Range" high-value="6" name="RangeSlider" binding-path="range" show-input-field="true" />
+        <ui:SliderInt label="Range" high-value="3" name="RangeSlider" binding-path="range" show-input-field="true" />
         <ui:SliderInt label="Want Load Count" high-value="5" binding-path="wantLoadCount" name="LoadCountSlider" show-input-field="true" />
         <ui:FloatField label="Cool TIme" value="0" name="CoolTimeField" binding-path="coolTime" />
         <ui:TextField picking-mode="Ignore" label="Explanation" binding-path="explanation" name="ExplanationTxt" style="flex-grow: 0; text-overflow: ellipsis; white-space: normal; -unity-text-align: upper-left; overflow: hidden; flex-basis: 100px; opacity: 1; width: auto; max-height: 300px; height: auto;" />

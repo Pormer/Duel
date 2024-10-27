@@ -20,4 +20,4 @@ MonoBehaviour:
   coolTime: 4
   bulletCount: 2
   wantLoadCount: 1
-  range: 2
+  range: 1
