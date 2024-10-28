@@ -14,7 +14,7 @@ public abstract class GunSkill : MonoBehaviour
 
     public virtual void EnterSkill()
     {
-        _gun.DamageCastCompo.CastDamage(_gun.gunData.damage);
+        _gun.DamageCastCompo.CastDamage(_gun.GunData.damage);
     }
 
     protected virtual void UpdateGunState()
