@@ -7,30 +7,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] InputReaderSO inputReader;
-    [SerializeField] CharacterDataSO characterData;
+    public CharacterDataSO CharacterData { get; private set; }
+    public GunDataSO GunData { get; private set; }
+
+    public Gun GunCompo;
     private Dictionary<Type, IPlayerComponents> _components;
     public bool IsRight {  get; private set; }
-    public bool IsOnLeftBarrier{ get; private set; }
-    public bool IsOnRightBarrier { get; private set; }
+    public bool IsOnBarrier { get; private set; }
 
-    private void Awake()
-    {
-        _components = new Dictionary<Type, IPlayerComponents>();
-
-        GetComponentsInChildren<IPlayerComponents>().ToList()
-            .ForEach(x => _components.Add(x.GetType(), x));
-
-        _components.Add(inputReader.GetType(), inputReader);
-
-        _components.Values.ToList().ForEach(compo => compo.Initialize(this));
-
-        if(IsRight)
-            inputReader.OnRightMoveEvemt += GetCompo<PlayerMovement>().SetMovement;
-        else
-            inputReader.OnLeftMoveEvemt += GetCompo<PlayerMovement>().SetMovement;
-
-        GetCompo<Health>().Hp = characterData.hp;
-    }
 
     public T GetCompo<T>() where T : class
     {
@@ -41,6 +25,27 @@ public class Player : MonoBehaviour
         }
 
         return default;
+    }
+
+    private void Initialize(CharacterDataSO cdata, GunDataSO gData)
+    {
+        CharacterData = cdata;
+        GunData = gData;
+
+        _components = new Dictionary<Type, IPlayerComponents>();
+
+        GetComponentsInChildren<IPlayerComponents>().ToList()
+            .ForEach(x => _components.Add(x.GetType(), x));
+
+        _components.Add(inputReader.GetType(), inputReader);
+        _components.Add(inputReader.GetType(), GunCompo);
+
+        _components.Values.ToList().ForEach(compo => compo.Initialize(this));
+
+        if (IsRight)
+            inputReader.OnRightMoveEvemt += GetCompo<PlayerMovement>().SetMovement;
+        else
+            inputReader.OnLeftMoveEvemt += GetCompo<PlayerMovement>().SetMovement;
     }
 }
 

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Health : MonoBehaviour, IPlayerComponents
 {
     private Player _player;
+    private StatSO stat;
     public int Hp {  get; set; }
 
     public event Action OnDeadEvent;
@@ -13,13 +14,22 @@ public class Health : MonoBehaviour, IPlayerComponents
     public void Initialize(Player player)
     {
         _player = player;
+
     }
 
     public void TakeDamage(int damage)
     {
-        Hp -= damage;
+        if (_player.IsOnBarrier)
+        {
+            if(stat.barrierCount > 0)
+            {
+                stat.barrierCount--;
+                return;
+            }
+        }
+        stat.hp -= damage;
 
-        if (Hp <= 0) OnDeadEvent?.Invoke();
+        if (stat.hp <= 0) OnDeadEvent?.Invoke();
         else OnHitEvent?.Invoke();
     }
 
