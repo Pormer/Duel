@@ -10,9 +10,9 @@ public class Player : MonoBehaviour
     public CharacterDataSO CharacterData { get; private set; }
     public GunDataSO GunData { get; private set; }
 
-    public Gun GunCompo;
+    private Gun GunCompo;
     private Dictionary<Type, IPlayerComponents> _components;
-    public bool IsRight {  get; private set; }
+    [field: SerializeField] public bool IsRight {  get; private set; }
     public bool IsOnBarrier { get; private set; }
 
 
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
         return default;
     }
 
-    private void Initialize(CharacterDataSO cdata, GunDataSO gData)
+    public void Initialize(CharacterDataSO cdata, GunDataSO gData)
     {
         CharacterData = cdata;
         GunData = gData;
@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
             .ForEach(x => _components.Add(x.GetType(), x));
 
         _components.Add(inputReader.GetType(), inputReader);
-        _components.Add(inputReader.GetType(), GunCompo);
 
         _components.Values.ToList().ForEach(compo => compo.Initialize(this));
 
