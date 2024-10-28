@@ -6,82 +6,68 @@ using UnityEngine.InputSystem;
 using static KeyAction;
 
 [CreateAssetMenu(menuName = "SO/InputReader")]
-public class InputReaderSO : ScriptableObject, IPlayerInputActions, IPlayerComponents
+public class InputReaderSO : ScriptableObject, IPlayerInputsActions, IPlayerComponents
 {
     KeyAction keyAction;
 
-    public event Action<Vector2> OnLeftMoveEvemt;
+    public Action<Vector2Int> OnMoveLeftEvent;
+    public Action<Vector2Int> OnMoveRightEvent;
     public event Action OnLeftShootEvent;
     public event Action OnLeftSkillEvent;
     public event Action OnLeftBarrierPressEvent, OnLeftBarrierReleseEvent;
-
-    public event Action<Vector2> OnRightMoveEvemt;
+    
     public event Action OnRightShootEvent;
     public event Action OnRightSkillEvent;
     public event Action OnRightBarrierPressEvent, OnRightBarrierReleseEvent;
 
-    public Vector2 LeftMoveVec { get; private set; }
-    public Vector2 RightMoveVec { get; private set; }
+    public Vector2Int LeftMoveVec { get; private set; }
+    public Vector2Int RightMoveVec { get; private set; }
     private void OnEnable()
     {
         keyAction = new KeyAction();
-        keyAction.PlayerInput.SetCallbacks(this);
-        keyAction.PlayerInput.Enable();
+        keyAction.PlayerInputs.SetCallbacks(this);
+        keyAction.PlayerInputs.Enable();
     }
-
-    public void OnLeftPlayerMove(InputAction.CallbackContext context)
-    {
-        if (context.ReadValue<Vector2>().x == 0 || context.ReadValue<Vector2>().y == 0)
-        {
-            LeftMoveVec = context.ReadValue<Vector2>();
-            OnLeftMoveEvemt?.Invoke(LeftMoveVec);
-        }
-    }
-
-
-    public void OnLeftPlayerShoot(InputAction.CallbackContext context)
-    {
-        OnLeftShootEvent?.Invoke();
-    }
-
-    public void OnLeftPlayerBarrier(InputAction.CallbackContext context)
-    {
-        if (context.performed) OnLeftBarrierPressEvent?.Invoke();
-        if (context.canceled) OnLeftBarrierReleseEvent?.Invoke();
-    }
-
-    public void OnLeftPlayerSkill(InputAction.CallbackContext context)
-    {
-        OnLeftSkillEvent?.Invoke();
-    }
-
-    public void OnRightPlayerMove(InputAction.CallbackContext context)
-    {
-        if (context.ReadValue<Vector2>().x == 0 || context.ReadValue<Vector2>().y == 0)
-        {
-            RightMoveVec = context.ReadValue<Vector2>();
-            OnRightMoveEvemt?.Invoke(RightMoveVec);
-        }
-    }
-
-    public void OnRightPlayerShoot(InputAction.CallbackContext context)
-    {
-        OnRightShootEvent?.Invoke();
-    }
-
-    public void OnRightPlayerBarrier(InputAction.CallbackContext context)
-    {
-        if (context.performed) OnRightBarrierPressEvent?.Invoke();
-        if (context.canceled) OnRightBarrierReleseEvent?.Invoke();
-    }
-
-    public void OnRightPlayerSkill(InputAction.CallbackContext context)
-    {
-        OnRightSkillEvent?.Invoke();
-    }
+    
+    //바인딩 1번 : 발사, 2번 : 배리어, 3번 : 스킬 생각해서 짜기
+    //바인딩 상: 1, 하 : 2, 좌 : 3, 우 : 4
 
     public void Initialize(Player player)
     {
 
+    }
+
+    public void OnLeftMovement(InputAction.CallbackContext context)
+    {
+        if (context.duration == 1) LeftMoveVec = Vector2Int.up;
+        if (context.duration == 2) LeftMoveVec = Vector2Int.down;
+        if (context.duration == 3) LeftMoveVec = Vector2Int.left;
+        if (context.duration == 4) LeftMoveVec = Vector2Int.right;
+        
+        OnMoveLeftEvent?.Invoke(LeftMoveVec);
+    }
+
+    public void OnRIghtMovement(InputAction.CallbackContext context)
+    {
+        if (context.duration == 1) RightMoveVec = Vector2Int.up;
+        if (context.duration == 2) RightMoveVec = Vector2Int.down;
+        if (context.duration == 3) RightMoveVec = Vector2Int.left;
+        if (context.duration == 4) RightMoveVec = Vector2Int.right;
+        
+        OnMoveRightEvent?.Invoke(RightMoveVec);
+    }
+
+    public void OnLeftPlayerEvent(InputAction.CallbackContext context)
+    {
+        if (context.duration == 1) OnLeftShootEvent?.Invoke();
+        if (context.duration == 2) OnLeftBarrierPressEvent?.Invoke();
+        if (context.duration == 3) OnLeftSkillEvent?.Invoke();
+    }
+
+    public void OnRIghtPlayerEvent(InputAction.CallbackContext context)
+    {
+        if (context.duration == 1) OnRightShootEvent?.Invoke();
+        if (context.duration == 2) OnRightBarrierPressEvent?.Invoke();
+        if (context.duration == 3) OnRightSkillEvent?.Invoke();
     }
 }

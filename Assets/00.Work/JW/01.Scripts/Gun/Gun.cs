@@ -8,23 +8,20 @@ public class Gun : MonoBehaviour, IPlayerComponents
 {
     public GunSkill SkillCompo { get; private set; }
     public DamageCaster DamageCastCompo {get; private set;}
-    public GunDataSO gunData {get; private set;}
+    public GunDataSO GunData {get; private set;}
     protected Player agent;
 
 
     public void Initialize(Player player)
     {
         agent = player;
-        gunData = player.GunData;
+        GunData = player.GunData;
 
         DamageCastCompo = transform.Find("DamageCaster").GetComponent<DamageCaster>();
-        DamageCastCompo.Initialize(gunData.range);
-
-        if (player.IsRight) DamageCastCompo.transform.position = Vector2.right * -6;
-        else DamageCastCompo.transform.position = Vector2.right * 6;
+        DamageCastCompo.Initialize(GunData.range);
         
         //리플렉션
-        string skillStr = $"{gunData.gunType.ToString()}Skill";
+        string skillStr = $"{GunData.gunType.ToString()}Skill";
 
         var type = Type.GetType(skillStr);
 

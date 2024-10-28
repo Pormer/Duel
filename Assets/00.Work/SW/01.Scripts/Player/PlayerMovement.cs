@@ -16,15 +16,14 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponents
         _mapInfo = new MapInfo(moveTile);
     }
 
-    public void SetMovement(Vector2 moveDir)
+    public void SetMovement(Vector2Int moveDir)
     {
         if (IsMove) return;
 
         Vector2Int v = new Vector2Int((int)transform.position.x, (int)transform.position.y);
-        Vector2Int moveDirInt = new Vector2Int((int)moveDir.x, (int)moveDir.y);
-        if (!_mapInfo.CanMove((Vector3Int)v + (Vector3Int)moveDirInt)) return;
+        if (!_mapInfo.CanMove((Vector3Int)v + (Vector3Int)moveDir)) return;
         IsMove = true;
-        transform.DOMove(v + moveDir, 0.1f).SetEase(Ease.OutExpo).
+        transform.DOMove((Vector3Int)(v + moveDir), 0.2f).SetEase(Ease.OutExpo).
             OnComplete(() => { IsMove = false; });
     }
 }

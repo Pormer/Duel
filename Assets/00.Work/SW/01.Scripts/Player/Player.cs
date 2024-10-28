@@ -44,9 +44,9 @@ public class Player : MonoBehaviour
         _components.Values.ToList().ForEach(compo => compo.Initialize(this));
 
         if (IsRight)
-            inputReader.OnRightMoveEvemt += GetCompo<PlayerMovement>().SetMovement;
+            inputReader.OnMoveRightEvent += GetCompo<PlayerMovement>().SetMovement;
         else
-            inputReader.OnLeftMoveEvemt += GetCompo<PlayerMovement>().SetMovement;
+            inputReader.OnMoveLeftEvent += GetCompo<PlayerMovement>().SetMovement;
     }
 }
 

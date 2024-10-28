@@ -24,77 +24,41 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
     ""name"": ""KeyAction"",
     ""maps"": [
         {
-            ""name"": ""PlayerInput"",
-            ""id"": ""ec5bb5b9-34d3-4cb2-8645-9ba5c190362b"",
+            ""name"": ""PlayerInputs"",
+            ""id"": ""829c998b-dbb6-4b34-a656-6b6d29e886f0"",
             ""actions"": [
                 {
-                    ""name"": ""LeftPlayerMove"",
-                    ""type"": ""Value"",
-                    ""id"": ""dfcaf0c9-ea96-45c3-9cd1-e5d52083a116"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""LeftPlayerShoot"",
+                    ""name"": ""LeftMovement"",
                     ""type"": ""Button"",
-                    ""id"": ""46a36b9b-af39-4014-a262-3bd86b208537"",
-                    ""expectedControlType"": ""Button"",
+                    ""id"": ""eb238773-9cad-4bee-a22d-85064bb901aa"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""LeftPlayerBarrier"",
+                    ""name"": ""RIghtMovement"",
                     ""type"": ""Button"",
-                    ""id"": ""fecbf04d-6347-4fe6-8b7c-e0cbe7cc2f1b"",
-                    ""expectedControlType"": ""Button"",
+                    ""id"": ""9070637d-f6a8-4427-9bad-25cbf8f4c693"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""LeftPlayerSkill"",
+                    ""name"": ""LeftPlayerEvent"",
                     ""type"": ""Button"",
-                    ""id"": ""080f32cb-2af0-41bf-babd-a80547ee06ca"",
-                    ""expectedControlType"": ""Button"",
+                    ""id"": ""3435f9bb-615e-48d1-b518-fc1108046cbb"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""RightPlayerMove"",
-                    ""type"": ""Value"",
-                    ""id"": ""d9ed5296-be15-4439-8cc6-de585edbabc3"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""RightPlayerShoot"",
+                    ""name"": ""RIghtPlayerEvent"",
                     ""type"": ""Button"",
-                    ""id"": ""41e3f44e-1906-4186-a987-447f2569916f"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""RightPlayerBarrier"",
-                    ""type"": ""Button"",
-                    ""id"": ""872ec322-3e96-4045-ad8d-1ea0c2f78835"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""RightPlayerSkill"",
-                    ""type"": ""Button"",
-                    ""id"": ""72ab10de-b3a6-4d35-9e6c-70f77310e3d7"",
-                    ""expectedControlType"": ""Button"",
+                    ""id"": ""e0189627-7e86-4153-8ce7-cdbd468ebf94"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -102,178 +66,156 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""LeftPlayer"",
-                    ""id"": ""b604cced-f82d-4962-9c1d-5e2e3d6502bb"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LeftPlayerMove"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""1d9654c0-3661-469b-b510-862932b81760"",
+                    ""name"": """",
+                    ""id"": ""320d05a2-cf7a-40f6-8e70-712d84802e57"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftPlayerMove"",
+                    ""action"": ""LeftMovement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""down"",
-                    ""id"": ""e19c75d7-230d-4419-a4b3-ef02674bd05d"",
+                    ""name"": """",
+                    ""id"": ""0c5dadd9-d1a3-45ff-a344-befa11d2cdc8"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftPlayerMove"",
+                    ""action"": ""LeftMovement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""441ed7f3-f9fa-4cf4-9f55-5d016de0acf0"",
+                    ""name"": """",
+                    ""id"": ""1e7ddcc1-5c6e-4244-8849-ffb76e73007c"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftPlayerMove"",
+                    ""action"": ""LeftMovement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""e3c8b1db-97a0-4f1a-9982-d0d23145f8b3"",
+                    ""name"": """",
+                    ""id"": ""4b40cccb-ef1f-4e27-8e5e-60e568b88b88"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftPlayerMove"",
+                    ""action"": ""LeftMovement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""RightPlayer"",
-                    ""id"": ""22c342c1-392d-426f-8bd4-c59c36cedf55"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RightPlayerMove"",
-                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""adb58069-8593-4cad-a94d-4686078d8f4c"",
+                    ""name"": """",
+                    ""id"": ""52fac95a-276d-4567-8e8b-9af92965aa91"",
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RightPlayerMove"",
+                    ""action"": ""RIghtMovement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""down"",
-                    ""id"": ""b3edf59c-b1a3-45df-8be2-aee8b56434a5"",
+                    ""name"": """",
+                    ""id"": ""fd40cb64-6e8d-41d1-acb2-e51ca7ada8d5"",
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RightPlayerMove"",
+                    ""action"": ""RIghtMovement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""24064813-e58a-4017-ac9b-b5cec0ef1758"",
+                    ""name"": """",
+                    ""id"": ""647f1e50-909e-4880-90a7-cfbc764cf6a7"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RightPlayerMove"",
+                    ""action"": ""RIghtMovement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""98b66e69-cdeb-4141-9c1e-2c9ae8fc38ce"",
+                    ""name"": """",
+                    ""id"": ""42c35518-20c4-4183-a4da-53f99e489f1e"",
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RightPlayerMove"",
+                    ""action"": ""RIghtMovement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a30c6117-eba8-4a98-b618-cabdbd49bcbc"",
+                    ""id"": ""246b90c6-f42f-4dca-a837-4b591e949e8f"",
                     ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftPlayerShoot"",
+                    ""action"": ""LeftPlayerEvent"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ec9223fc-6530-45df-af0c-7ba8df73de72"",
-                    ""path"": ""<Keyboard>/f"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LeftPlayerSkill"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f613e1d4-cf68-4c24-a54f-35d301e1e85a"",
-                    ""path"": ""<Keyboard>/n"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RightPlayerShoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""99810949-ea06-431a-91e1-2be645391668"",
-                    ""path"": ""<Keyboard>/b"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RightPlayerSkill"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b31805fa-234e-4886-b212-4f288abed9d2"",
+                    ""id"": ""ce01fadd-076c-4b65-95cc-d3af94163562"",
                     ""path"": ""<Keyboard>/c"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftPlayerBarrier"",
+                    ""action"": ""LeftPlayerEvent"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b27f4335-3dd3-47fe-baa4-c4fda85ef334"",
+                    ""id"": ""d0d33706-52e9-4a63-8d99-5f3352bdd290"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftPlayerEvent"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1d54ccdc-88ef-44f8-a267-418c61d8a0d9"",
+                    ""path"": ""<Keyboard>/n"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RIghtPlayerEvent"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f698e359-3fee-4bee-a88d-038bf322a420"",
                     ""path"": ""<Keyboard>/m"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RightPlayerBarrier"",
+                    ""action"": ""RIghtPlayerEvent"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ad591b04-7045-4430-92f3-d8c99a32e2f7"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RIghtPlayerEvent"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -282,21 +224,17 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // PlayerInput
-        m_PlayerInput = asset.FindActionMap("PlayerInput", throwIfNotFound: true);
-        m_PlayerInput_LeftPlayerMove = m_PlayerInput.FindAction("LeftPlayerMove", throwIfNotFound: true);
-        m_PlayerInput_LeftPlayerShoot = m_PlayerInput.FindAction("LeftPlayerShoot", throwIfNotFound: true);
-        m_PlayerInput_LeftPlayerBarrier = m_PlayerInput.FindAction("LeftPlayerBarrier", throwIfNotFound: true);
-        m_PlayerInput_LeftPlayerSkill = m_PlayerInput.FindAction("LeftPlayerSkill", throwIfNotFound: true);
-        m_PlayerInput_RightPlayerMove = m_PlayerInput.FindAction("RightPlayerMove", throwIfNotFound: true);
-        m_PlayerInput_RightPlayerShoot = m_PlayerInput.FindAction("RightPlayerShoot", throwIfNotFound: true);
-        m_PlayerInput_RightPlayerBarrier = m_PlayerInput.FindAction("RightPlayerBarrier", throwIfNotFound: true);
-        m_PlayerInput_RightPlayerSkill = m_PlayerInput.FindAction("RightPlayerSkill", throwIfNotFound: true);
+        // PlayerInputs
+        m_PlayerInputs = asset.FindActionMap("PlayerInputs", throwIfNotFound: true);
+        m_PlayerInputs_LeftMovement = m_PlayerInputs.FindAction("LeftMovement", throwIfNotFound: true);
+        m_PlayerInputs_RIghtMovement = m_PlayerInputs.FindAction("RIghtMovement", throwIfNotFound: true);
+        m_PlayerInputs_LeftPlayerEvent = m_PlayerInputs.FindAction("LeftPlayerEvent", throwIfNotFound: true);
+        m_PlayerInputs_RIghtPlayerEvent = m_PlayerInputs.FindAction("RIghtPlayerEvent", throwIfNotFound: true);
     }
 
     ~@KeyAction()
     {
-        UnityEngine.Debug.Assert(!m_PlayerInput.enabled, "This will cause a leak and performance issues, KeyAction.PlayerInput.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_PlayerInputs.enabled, "This will cause a leak and performance issues, KeyAction.PlayerInputs.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -355,116 +293,80 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // PlayerInput
-    private readonly InputActionMap m_PlayerInput;
-    private List<IPlayerInputActions> m_PlayerInputActionsCallbackInterfaces = new List<IPlayerInputActions>();
-    private readonly InputAction m_PlayerInput_LeftPlayerMove;
-    private readonly InputAction m_PlayerInput_LeftPlayerShoot;
-    private readonly InputAction m_PlayerInput_LeftPlayerBarrier;
-    private readonly InputAction m_PlayerInput_LeftPlayerSkill;
-    private readonly InputAction m_PlayerInput_RightPlayerMove;
-    private readonly InputAction m_PlayerInput_RightPlayerShoot;
-    private readonly InputAction m_PlayerInput_RightPlayerBarrier;
-    private readonly InputAction m_PlayerInput_RightPlayerSkill;
-    public struct PlayerInputActions
+    // PlayerInputs
+    private readonly InputActionMap m_PlayerInputs;
+    private List<IPlayerInputsActions> m_PlayerInputsActionsCallbackInterfaces = new List<IPlayerInputsActions>();
+    private readonly InputAction m_PlayerInputs_LeftMovement;
+    private readonly InputAction m_PlayerInputs_RIghtMovement;
+    private readonly InputAction m_PlayerInputs_LeftPlayerEvent;
+    private readonly InputAction m_PlayerInputs_RIghtPlayerEvent;
+    public struct PlayerInputsActions
     {
         private @KeyAction m_Wrapper;
-        public PlayerInputActions(@KeyAction wrapper) { m_Wrapper = wrapper; }
-        public InputAction @LeftPlayerMove => m_Wrapper.m_PlayerInput_LeftPlayerMove;
-        public InputAction @LeftPlayerShoot => m_Wrapper.m_PlayerInput_LeftPlayerShoot;
-        public InputAction @LeftPlayerBarrier => m_Wrapper.m_PlayerInput_LeftPlayerBarrier;
-        public InputAction @LeftPlayerSkill => m_Wrapper.m_PlayerInput_LeftPlayerSkill;
-        public InputAction @RightPlayerMove => m_Wrapper.m_PlayerInput_RightPlayerMove;
-        public InputAction @RightPlayerShoot => m_Wrapper.m_PlayerInput_RightPlayerShoot;
-        public InputAction @RightPlayerBarrier => m_Wrapper.m_PlayerInput_RightPlayerBarrier;
-        public InputAction @RightPlayerSkill => m_Wrapper.m_PlayerInput_RightPlayerSkill;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerInput; }
+        public PlayerInputsActions(@KeyAction wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LeftMovement => m_Wrapper.m_PlayerInputs_LeftMovement;
+        public InputAction @RIghtMovement => m_Wrapper.m_PlayerInputs_RIghtMovement;
+        public InputAction @LeftPlayerEvent => m_Wrapper.m_PlayerInputs_LeftPlayerEvent;
+        public InputAction @RIghtPlayerEvent => m_Wrapper.m_PlayerInputs_RIghtPlayerEvent;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerInputs; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerInputActions set) { return set.Get(); }
-        public void AddCallbacks(IPlayerInputActions instance)
+        public static implicit operator InputActionMap(PlayerInputsActions set) { return set.Get(); }
+        public void AddCallbacks(IPlayerInputsActions instance)
         {
-            if (instance == null || m_Wrapper.m_PlayerInputActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_PlayerInputActionsCallbackInterfaces.Add(instance);
-            @LeftPlayerMove.started += instance.OnLeftPlayerMove;
-            @LeftPlayerMove.performed += instance.OnLeftPlayerMove;
-            @LeftPlayerMove.canceled += instance.OnLeftPlayerMove;
-            @LeftPlayerShoot.started += instance.OnLeftPlayerShoot;
-            @LeftPlayerShoot.performed += instance.OnLeftPlayerShoot;
-            @LeftPlayerShoot.canceled += instance.OnLeftPlayerShoot;
-            @LeftPlayerBarrier.started += instance.OnLeftPlayerBarrier;
-            @LeftPlayerBarrier.performed += instance.OnLeftPlayerBarrier;
-            @LeftPlayerBarrier.canceled += instance.OnLeftPlayerBarrier;
-            @LeftPlayerSkill.started += instance.OnLeftPlayerSkill;
-            @LeftPlayerSkill.performed += instance.OnLeftPlayerSkill;
-            @LeftPlayerSkill.canceled += instance.OnLeftPlayerSkill;
-            @RightPlayerMove.started += instance.OnRightPlayerMove;
-            @RightPlayerMove.performed += instance.OnRightPlayerMove;
-            @RightPlayerMove.canceled += instance.OnRightPlayerMove;
-            @RightPlayerShoot.started += instance.OnRightPlayerShoot;
-            @RightPlayerShoot.performed += instance.OnRightPlayerShoot;
-            @RightPlayerShoot.canceled += instance.OnRightPlayerShoot;
-            @RightPlayerBarrier.started += instance.OnRightPlayerBarrier;
-            @RightPlayerBarrier.performed += instance.OnRightPlayerBarrier;
-            @RightPlayerBarrier.canceled += instance.OnRightPlayerBarrier;
-            @RightPlayerSkill.started += instance.OnRightPlayerSkill;
-            @RightPlayerSkill.performed += instance.OnRightPlayerSkill;
-            @RightPlayerSkill.canceled += instance.OnRightPlayerSkill;
+            if (instance == null || m_Wrapper.m_PlayerInputsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PlayerInputsActionsCallbackInterfaces.Add(instance);
+            @LeftMovement.started += instance.OnLeftMovement;
+            @LeftMovement.performed += instance.OnLeftMovement;
+            @LeftMovement.canceled += instance.OnLeftMovement;
+            @RIghtMovement.started += instance.OnRIghtMovement;
+            @RIghtMovement.performed += instance.OnRIghtMovement;
+            @RIghtMovement.canceled += instance.OnRIghtMovement;
+            @LeftPlayerEvent.started += instance.OnLeftPlayerEvent;
+            @LeftPlayerEvent.performed += instance.OnLeftPlayerEvent;
+            @LeftPlayerEvent.canceled += instance.OnLeftPlayerEvent;
+            @RIghtPlayerEvent.started += instance.OnRIghtPlayerEvent;
+            @RIghtPlayerEvent.performed += instance.OnRIghtPlayerEvent;
+            @RIghtPlayerEvent.canceled += instance.OnRIghtPlayerEvent;
         }
 
-        private void UnregisterCallbacks(IPlayerInputActions instance)
+        private void UnregisterCallbacks(IPlayerInputsActions instance)
         {
-            @LeftPlayerMove.started -= instance.OnLeftPlayerMove;
-            @LeftPlayerMove.performed -= instance.OnLeftPlayerMove;
-            @LeftPlayerMove.canceled -= instance.OnLeftPlayerMove;
-            @LeftPlayerShoot.started -= instance.OnLeftPlayerShoot;
-            @LeftPlayerShoot.performed -= instance.OnLeftPlayerShoot;
-            @LeftPlayerShoot.canceled -= instance.OnLeftPlayerShoot;
-            @LeftPlayerBarrier.started -= instance.OnLeftPlayerBarrier;
-            @LeftPlayerBarrier.performed -= instance.OnLeftPlayerBarrier;
-            @LeftPlayerBarrier.canceled -= instance.OnLeftPlayerBarrier;
-            @LeftPlayerSkill.started -= instance.OnLeftPlayerSkill;
-            @LeftPlayerSkill.performed -= instance.OnLeftPlayerSkill;
-            @LeftPlayerSkill.canceled -= instance.OnLeftPlayerSkill;
-            @RightPlayerMove.started -= instance.OnRightPlayerMove;
-            @RightPlayerMove.performed -= instance.OnRightPlayerMove;
-            @RightPlayerMove.canceled -= instance.OnRightPlayerMove;
-            @RightPlayerShoot.started -= instance.OnRightPlayerShoot;
-            @RightPlayerShoot.performed -= instance.OnRightPlayerShoot;
-            @RightPlayerShoot.canceled -= instance.OnRightPlayerShoot;
-            @RightPlayerBarrier.started -= instance.OnRightPlayerBarrier;
-            @RightPlayerBarrier.performed -= instance.OnRightPlayerBarrier;
-            @RightPlayerBarrier.canceled -= instance.OnRightPlayerBarrier;
-            @RightPlayerSkill.started -= instance.OnRightPlayerSkill;
-            @RightPlayerSkill.performed -= instance.OnRightPlayerSkill;
-            @RightPlayerSkill.canceled -= instance.OnRightPlayerSkill;
+            @LeftMovement.started -= instance.OnLeftMovement;
+            @LeftMovement.performed -= instance.OnLeftMovement;
+            @LeftMovement.canceled -= instance.OnLeftMovement;
+            @RIghtMovement.started -= instance.OnRIghtMovement;
+            @RIghtMovement.performed -= instance.OnRIghtMovement;
+            @RIghtMovement.canceled -= instance.OnRIghtMovement;
+            @LeftPlayerEvent.started -= instance.OnLeftPlayerEvent;
+            @LeftPlayerEvent.performed -= instance.OnLeftPlayerEvent;
+            @LeftPlayerEvent.canceled -= instance.OnLeftPlayerEvent;
+            @RIghtPlayerEvent.started -= instance.OnRIghtPlayerEvent;
+            @RIghtPlayerEvent.performed -= instance.OnRIghtPlayerEvent;
+            @RIghtPlayerEvent.canceled -= instance.OnRIghtPlayerEvent;
         }
 
-        public void RemoveCallbacks(IPlayerInputActions instance)
+        public void RemoveCallbacks(IPlayerInputsActions instance)
         {
-            if (m_Wrapper.m_PlayerInputActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_PlayerInputsActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IPlayerInputActions instance)
+        public void SetCallbacks(IPlayerInputsActions instance)
         {
-            foreach (var item in m_Wrapper.m_PlayerInputActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_PlayerInputsActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_PlayerInputActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_PlayerInputsActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public PlayerInputActions @PlayerInput => new PlayerInputActions(this);
-    public interface IPlayerInputActions
+    public PlayerInputsActions @PlayerInputs => new PlayerInputsActions(this);
+    public interface IPlayerInputsActions
     {
-        void OnLeftPlayerMove(InputAction.CallbackContext context);
-        void OnLeftPlayerShoot(InputAction.CallbackContext context);
-        void OnLeftPlayerBarrier(InputAction.CallbackContext context);
-        void OnLeftPlayerSkill(InputAction.CallbackContext context);
-        void OnRightPlayerMove(InputAction.CallbackContext context);
-        void OnRightPlayerShoot(InputAction.CallbackContext context);
-        void OnRightPlayerBarrier(InputAction.CallbackContext context);
-        void OnRightPlayerSkill(InputAction.CallbackContext context);
+        void OnLeftMovement(InputAction.CallbackContext context);
+        void OnRIghtMovement(InputAction.CallbackContext context);
+        void OnLeftPlayerEvent(InputAction.CallbackContext context);
+        void OnRIghtPlayerEvent(InputAction.CallbackContext context);
     }
 }
