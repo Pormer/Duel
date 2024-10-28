@@ -7,7 +7,6 @@ public class Health : MonoBehaviour, IPlayerComponents
 {
     private Player _player;
     private StatSO stat;
-    public int Hp {  get; set; }
 
     public event Action OnDeadEvent;
     public event Action OnHitEvent;
@@ -24,6 +23,7 @@ public class Health : MonoBehaviour, IPlayerComponents
             if(stat.barrierCount > 0)
             {
                 stat.barrierCount--;
+                _player.OnHitBarrier?.Invoke();
                 return;
             }
         }

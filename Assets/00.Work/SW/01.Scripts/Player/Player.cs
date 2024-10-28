@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public bool IsRight {  get; private set; }
     public bool IsOnBarrier { get; private set; }
 
+    public Action OnHitBarrier;
+
 
     public T GetCompo<T>() where T : class
     {
