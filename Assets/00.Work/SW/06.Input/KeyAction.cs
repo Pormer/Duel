@@ -29,7 +29,7 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""LeftMovement"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""eb238773-9cad-4bee-a22d-85064bb901aa"",
                     ""expectedControlType"": """",
                     ""processors"": """",

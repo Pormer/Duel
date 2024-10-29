@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponents
         Vector2Int v = new Vector2Int((int)transform.position.x, (int)transform.position.y);
         if (!_mapInfo.CanMove((Vector3Int)v + (Vector3Int)moveDir)) return;
         IsMove = true;
-        transform.DOMove((Vector3Int)(v + moveDir), 0.2f).SetEase(Ease.OutExpo).
+        transform.DOMove((Vector3Int)(v + moveDir), 0.23f).SetEase(Ease.OutExpo).
             OnComplete(() => { IsMove = false; });
     }
 }
