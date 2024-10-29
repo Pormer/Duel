@@ -2,34 +2,37 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour, IPlayerComponents
 {
+    public UnityEvent OnDeadEvent;
+    public UnityEvent OnHitEvent;
+    
     private Player _player;
-
-    public event Action OnDeadEvent;
-    public event Action OnHitEvent;
+    private StatSO _stat;
+    
+    
     public void Initialize(Player player)
     {
         _player = player;
+        _stat = _player.GetCompo<StatSO>();
     }
 
     public void TakeDamage(int damage)
     {
         if (_player.IsOnBarrier)
         {
-            if(_player.GetCompo<StatSO>().barrierCount > 0)
+            if(_stat.barrierCount > 0)
             {
-                _player.GetCompo<StatSO>().barrierCount--;
+                _stat.barrierCount--;
                 _player.OnHitBarrier?.Invoke();
                 return;
             }
         }
-        _player.GetCompo<StatSO>().hp -= damage;
+        _stat.hp -= damage;
 
-        if (_player.GetCompo<StatSO>().hp <= 0) OnDeadEvent?.Invoke();
+        if (_stat.hp <= 0) OnDeadEvent?.Invoke();
         else OnHitEvent?.Invoke();
     }
-
-
 }
