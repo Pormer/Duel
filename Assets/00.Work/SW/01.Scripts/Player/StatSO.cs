@@ -9,5 +9,5 @@ public class StatSO : ScriptableObject
     public int barrierCount;
     public int damage;
     public int curBlletCount;
-    public int cooltime;
+    public float cooltime;
 }

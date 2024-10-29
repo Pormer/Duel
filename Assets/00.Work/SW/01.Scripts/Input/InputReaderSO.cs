@@ -65,16 +65,31 @@ public class InputReaderSO : ScriptableObject, IPlayerInputsActions, IPlayerComp
 
     public void OnLeftPlayerEvent(InputAction.CallbackContext context)
     {
-        Debug.Log(context.duration);
-        if (context.control.displayName == "X") OnLeftShootEvent?.Invoke();
-        if (context.control.displayName == "C") OnLeftBarrierPressEvent?.Invoke();
-        if (context.control.displayName == "F") OnLeftSkillEvent?.Invoke();
+        if (context.performed)
+        {
+            if (context.control.displayName == "X") OnLeftShootEvent?.Invoke();
+            if (context.control.displayName == "C") OnLeftBarrierPressEvent?.Invoke();
+            if (context.control.displayName == "F") OnLeftSkillEvent?.Invoke();
+        }
+
+        if(context.canceled)
+        {
+            if (context.control.displayName == "C") OnLeftBarrierReleseEvent?.Invoke();
+        }
     }
 
     public void OnRIghtPlayerEvent(InputAction.CallbackContext context)
     {
-        if (context.control.displayName == "N") OnRightShootEvent?.Invoke();
-        if (context.control.displayName == "M") OnRightBarrierPressEvent?.Invoke();
-        if (context.control.displayName == "B") OnRightSkillEvent?.Invoke();
+        if(context.performed)
+        {
+            if (context.control.displayName == "N") OnRightShootEvent?.Invoke();
+            if (context.control.displayName == "M") OnRightBarrierPressEvent?.Invoke();
+            if (context.control.displayName == "B") OnRightSkillEvent?.Invoke();
+        }
+
+        if(context.canceled)
+        {
+            if (context.control.displayName == "M") OnRightBarrierReleseEvent?.Invoke();
+        }
     }
 }

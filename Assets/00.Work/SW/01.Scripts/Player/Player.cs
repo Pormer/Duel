@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] InputReaderSO inputReader;
     public CharacterDataSO CharacterData { get; private set; }
     public GunDataSO GunData { get; private set; }
+    public StatSO Stat { get; private set; }
 
     private Gun GunCompo;
     private Dictionary<Type, IPlayerComponents> _components;
@@ -34,6 +35,15 @@ public class Player : MonoBehaviour
         CharacterData = cdata;
         GunData = gData;
 
+        Stat = new StatSO();
+
+        Stat.curBlletCount = GunData.bulletCount;
+        Stat.cooltime = GunData.coolTime;
+        Stat.damage = GunData.damage;
+
+        Stat.barrierCount = CharacterData.barrierCount;
+        Stat.hp = CharacterData.hp;
+
         _components = new Dictionary<Type, IPlayerComponents>();
 
         GetComponentsInChildren<IPlayerComponents>().ToList()
@@ -44,9 +54,31 @@ public class Player : MonoBehaviour
         _components.Values.ToList().ForEach(compo => compo.Initialize(this));
 
         if (IsRight)
+        {
             inputReader.OnMoveRightEvent += GetCompo<PlayerMovement>().SetMovement;
+            inputReader.OnRightBarrierPressEvent += () => 
+            { 
+                IsOnBarrier = true; 
+            };
+            inputReader.OnRightBarrierReleseEvent += () => 
+            { 
+                IsOnBarrier = false; 
+            };
+
+        }
         else
+        {
             inputReader.OnMoveLeftEvent += GetCompo<PlayerMovement>().SetMovement;
+            inputReader.OnLeftBarrierPressEvent += () => 
+            { 
+                IsOnBarrier = true; 
+            };
+            inputReader.OnLeftBarrierReleseEvent += () => 
+            { 
+                IsOnBarrier = false; 
+            };
+
+        }
     }
 }
 
