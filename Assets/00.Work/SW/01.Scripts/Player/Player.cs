@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] InputReaderSO inputReader;
     public CharacterDataSO CharacterData { get; private set; }
     public GunDataSO GunData { get; private set; }
-    public StatSO Stat { get; private set; }
+    [SerializeField] private StatSO StatData;
 
     private Gun GunCompo;
     private Dictionary<Type, IPlayerComponents> _components;
@@ -35,14 +35,12 @@ public class Player : MonoBehaviour
         CharacterData = cdata;
         GunData = gData;
 
-        Stat = new StatSO();
+        StatData.curBulletCount = GunData.bulletCount;
+        StatData.cooltime = GunData.coolTime;
+        StatData.damage = GunData.damage;
 
-        Stat.curBlletCount = GunData.bulletCount;
-        Stat.cooltime = GunData.coolTime;
-        Stat.damage = GunData.damage;
-
-        Stat.barrierCount = CharacterData.barrierCount;
-        Stat.hp = CharacterData.hp;
+        StatData.barrierCount = CharacterData.barrierCount;
+        StatData.hp = CharacterData.hp;
 
         _components = new Dictionary<Type, IPlayerComponents>();
 
@@ -50,6 +48,7 @@ public class Player : MonoBehaviour
             .ForEach(x => _components.Add(x.GetType(), x));
 
         _components.Add(inputReader.GetType(), inputReader);
+        _components.Add(StatData.GetType(), StatData);
 
         _components.Values.ToList().ForEach(compo => compo.Initialize(this));
 

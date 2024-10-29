@@ -18,16 +18,16 @@ public class Health : MonoBehaviour, IPlayerComponents
     {
         if (_player.IsOnBarrier)
         {
-            if(_player.Stat.barrierCount > 0)
+            if(_player.GetCompo<StatSO>().barrierCount > 0)
             {
-                _player.Stat.barrierCount--;
+                _player.GetCompo<StatSO>().barrierCount--;
                 _player.OnHitBarrier?.Invoke();
                 return;
             }
         }
-        _player.Stat.hp -= damage;
+        _player.GetCompo<StatSO>().hp -= damage;
 
-        if (_player.Stat.hp <= 0) OnDeadEvent?.Invoke();
+        if (_player.GetCompo<StatSO>().hp <= 0) OnDeadEvent?.Invoke();
         else OnHitEvent?.Invoke();
     }
 
