@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class Gun : MonoBehaviour, IPlayerComponents
@@ -29,7 +26,7 @@ public class Gun : MonoBehaviour, IPlayerComponents
         SkillCompo = gameObject.AddComponent(type) as GunSkill;
         SkillCompo.Initialize(agent);
         
-        if (player.IsRight) player.GetCompo<InputReaderSO>().OnRightSkillEvent += SkillCompo.EnterSkill;
-        else player.GetCompo<InputReaderSO>().OnLeftSkillEvent += SkillCompo.EnterSkill;
+        if (player.IsRight) player.GetCompo<InputReaderSO>().OnRightShootEvent += SkillCompo.EnterSkill;
+        else player.GetCompo<InputReaderSO>().OnLeftShootEvent += SkillCompo.EnterSkill;
     }
 }
