@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -12,8 +12,8 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
+  - Player
+  - Gun
   - 
   - 
   - 
@@ -41,3 +41,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tile
+    uniqueID: 489440867
+    locked: 0
+  - name: Player
+    uniqueID: 805139137
+    locked: 0
+  - name: Gun
+    uniqueID: 2468857581
+    locked: 0
+  - name: Effect
+    uniqueID: 2349725785
+    locked: 0
+  - name: UI
+    uniqueID: 1873072375
+    locked: 0
+  m_RenderingLayers:
+  - Default

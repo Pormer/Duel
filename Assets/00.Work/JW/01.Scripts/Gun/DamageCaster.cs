@@ -26,7 +26,7 @@ public class DamageCaster : MonoBehaviour
 
         if (col > 0)
         {
-            if (TryGetComponent(out Player player))
+            if (cols[0].TryGetComponent(out Player player))
             {
                 print("Hit");
                 player.GetCompo<Health>().TakeDamage(damage);

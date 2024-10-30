@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class GunSkill : MonoBehaviour
 {
+    private static readonly int DoShoot = Animator.StringToHash("doShoot");
     protected Gun _gun;
     protected StatSO _stat;
 
@@ -17,6 +18,7 @@ public abstract class GunSkill : MonoBehaviour
 
     protected virtual void Shoot()
     {
+        _gun.AnimCompo.SetTrigger(DoShoot);
         _gun.DamageCastCompo.CastDamage(_stat.damage);
         
         isActiveShoot = false;
