@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ public class Player : MonoBehaviour
 
     public Action OnHitBarrier;
 
+    public SpriteRenderer SpriteRenderer {  get; set; }
+
 
     public T GetCompo<T>() where T : class
     {
@@ -35,12 +38,15 @@ public class Player : MonoBehaviour
         CharacterData = cdata;
         GunData = gData;
 
+
         StatData.curBulletCount = GunData.bulletCount;
         StatData.cooltime = GunData.coolTime;
         StatData.damage = GunData.damage;
 
         StatData.barrierCount = CharacterData.barrierCount;
         StatData.hp = CharacterData.hp;
+
+        SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         _components = new Dictionary<Type, IPlayerComponents>();
 
