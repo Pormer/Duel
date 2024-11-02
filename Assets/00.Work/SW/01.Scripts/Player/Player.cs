@@ -6,14 +6,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] InputReaderSO inputReader;
+    [SerializeField] private InputReaderSO inputReader;
     public CharacterDataSO CharacterData { get; private set; }
     public GunDataSO GunData { get; private set; }
     [SerializeField] private StatSO StatData;
 
     private Gun GunCompo;
     private Dictionary<Type, IPlayerComponents> _components;
-    [field: SerializeField] public bool IsRight {  get; private set; }
     public bool IsOnBarrier { get; private set; }
 
     public Action OnHitBarrier;
@@ -52,32 +51,15 @@ public class Player : MonoBehaviour
 
         _components.Values.ToList().ForEach(compo => compo.Initialize(this));
 
-        if (IsRight)
-        {
-            inputReader.OnMoveRightEvent += GetCompo<PlayerMovement>().SetMovement;
-            inputReader.OnRightBarrierPressEvent += () => 
-            { 
-                IsOnBarrier = true; 
-            };
-            inputReader.OnRightBarrierReleseEvent += () => 
-            { 
-                IsOnBarrier = false; 
-            };
-
-        }
-        else
-        {
-            inputReader.OnMoveLeftEvent += GetCompo<PlayerMovement>().SetMovement;
-            inputReader.OnLeftBarrierPressEvent += () => 
-            { 
-                IsOnBarrier = true; 
-            };
-            inputReader.OnLeftBarrierReleseEvent += () => 
-            { 
-                IsOnBarrier = false; 
-            };
-
-        }
+        inputReader.OnMoveEvent += GetCompo<PlayerMovement>().SetMovement;
+        inputReader.OnBarrierPressEvent += () => 
+        { 
+            IsOnBarrier = true; 
+        };
+        inputReader.OnBarrierReleseEvent += () => 
+        { 
+            IsOnBarrier = false; 
+        };
     }
 }
 

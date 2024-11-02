@@ -1,37 +1,76 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static KeyAction;
 
-[CreateAssetMenu(menuName = "SO/InputReader")]
-public class InputReaderSO : ScriptableObject, IPlayerInputsActions, IPlayerComponents
+[CreateAssetMenu(menuName = "SO/Input")]
+public class InputReaderSO : ScriptableObject, IRightInputActions, ILeftInputActions, IPlayerComponents
 {
-    KeyAction keyAction;
-
-    public event Action<Vector2Int> OnMoveLeftEvent;
-    public event Action<Vector2Int> OnMoveRightEvent;
-    public event Action OnLeftShootEvent;
-    public event Action OnLeftSkillEvent;
-    public event Action OnLeftBarrierPressEvent, OnLeftBarrierReleseEvent;
+    protected KeyAction keyAction;
     
-    public event Action OnRightShootEvent;
-    public event Action OnRightSkillEvent;
-    public event Action OnRightBarrierPressEvent, OnRightBarrierReleseEvent;
+    [field: SerializeField] public bool IsRight { get; private set; }
+    
+    public event Action<Vector2Int> OnMoveEvent;
+    public event Action OnSkillEvent;
+    public event Action OnShootEvent;
+    public event Action OnBarrierPressEvent;
+    public event Action OnBarrierReleseEvent;
+    public Vector2Int MoveVec { get; protected set; }
 
-    public Vector2Int LeftMoveVec { get; private set; }
-    public Vector2Int RightMoveVec { get; private set; }
+    private string[] rightMoveKeys;
+    private string[] leftMoveKeys;
+    private string[] rightEventKeys;
+    private string[] leftEventKeys;
+    
+    
     private void OnEnable()
     {
         keyAction = new KeyAction();
-        keyAction.PlayerInputs.SetCallbacks(this);
-        keyAction.PlayerInputs.Enable();
+
+        if (IsRight)
+        {
+            keyAction.RightInput.SetCallbacks(this);
+            keyAction.RightInput.Enable();
+            
+            rightMoveKeys = new string[keyAction.RightInput.Movement.bindings.Count];
+            rightEventKeys = new string[keyAction.RightInput.PlayerEvent.bindings.Count];
+            
+            for (int i = 0; i < rightMoveKeys.Length; i++)
+            {
+                rightMoveKeys[i] = keyAction.RightInput.Movement.bindings[i].path.Replace("<Keyboard>/", "");
+            }
+            
+            for (int i = 0; i < rightEventKeys.Length; i++)
+            {
+                rightEventKeys[i] = keyAction.RightInput.PlayerEvent.bindings[i].path.Replace("<Keyboard>/", "");
+            }
+        }
+        else
+        {
+            keyAction.LeftInput.SetCallbacks(this);
+            keyAction.LeftInput.Enable();
+            
+            leftMoveKeys = new string[keyAction.LeftInput.Movement.bindings.Count];
+            leftEventKeys = new string[keyAction.LeftInput.PlayerEvent.bindings.Count];
+            
+            for (int i = 0; i < leftMoveKeys.Length; i++)
+            {
+                leftMoveKeys[i] = keyAction.LeftInput.Movement.bindings[i].path.Replace("<Keyboard>/", "");
+            }
+            
+            for (int i = 0; i < leftEventKeys.Length; i++)
+            {
+                leftEventKeys[i] = keyAction.LeftInput.PlayerEvent.bindings[i].path.Replace("<Keyboard>/", "");
+            }
+        }
     }
 
     private void OnDisable()
     {
-        keyAction.PlayerInputs.Disable();
+        keyAction.RightInput.Disable();
+        keyAction.LeftInput.Disable();
     }
 
     //나중에 키바인딩 시 값에 따라 달라지게 적용하기 현재는 임시
@@ -40,56 +79,63 @@ public class InputReaderSO : ScriptableObject, IPlayerInputsActions, IPlayerComp
 
     public void Initialize(Player player)
     {
-
-    }
-
-    public void OnLeftMovement(InputAction.CallbackContext context)
-    {
-        if (context.control.displayName == "W") LeftMoveVec = Vector2Int.up;
-        if (context.control.displayName == "S") LeftMoveVec = Vector2Int.down;
-        if (context.control.displayName == "A") LeftMoveVec = Vector2Int.left;
-        if (context.control.displayName == "D") LeftMoveVec = Vector2Int.right;
         
-        OnMoveLeftEvent?.Invoke(LeftMoveVec);
     }
 
-    public void OnRIghtMovement(InputAction.CallbackContext context)
+    public void OnMovement(InputAction.CallbackContext context)
     {
-        if (context.control.displayName == "Up") RightMoveVec = Vector2Int.up;
-        if (context.control.displayName == "Down") RightMoveVec = Vector2Int.down;
-        if (context.control.displayName == "Left") RightMoveVec = Vector2Int.left;
-        if (context.control.displayName == "Right") RightMoveVec = Vector2Int.right;
+        if(!context.performed) return;
         
-        OnMoveRightEvent?.Invoke(RightMoveVec);
+        if (IsRight)
+        {
+            if (rightMoveKeys[0] == context.control.name) MoveVec = Vector2Int.up;
+            else if (rightMoveKeys[1] == context.control.name) MoveVec = Vector2Int.down;
+            else if (rightMoveKeys[2] == context.control.name) MoveVec = Vector2Int.left;
+            else if (rightMoveKeys[3] == context.control.name) MoveVec = Vector2Int.right;
+            else MoveVec = Vector2Int.zero;
+            
+            OnMoveEvent?.Invoke(MoveVec);
+        }
+        else
+        {
+            if (leftMoveKeys[0] == context.control.name) MoveVec = Vector2Int.up;
+            else if (leftMoveKeys[1] == context.control.name) MoveVec = Vector2Int.down;
+            else if (leftMoveKeys[2] == context.control.name) MoveVec = Vector2Int.left;
+            else if (leftMoveKeys[3] == context.control.name) MoveVec = Vector2Int.right;
+            else MoveVec = Vector2Int.zero;
+            
+            OnMoveEvent?.Invoke(MoveVec);
+        }
     }
 
-    public void OnLeftPlayerEvent(InputAction.CallbackContext context)
+    public void OnPlayerEvent(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            if (context.control.displayName == "X") OnLeftShootEvent?.Invoke();
-            if (context.control.displayName == "C") OnLeftBarrierPressEvent?.Invoke();
-            if (context.control.displayName == "F") OnLeftSkillEvent?.Invoke();
+            if (IsRight)
+            {
+                if (rightEventKeys[0] == context.control.name) OnShootEvent?.Invoke();
+                if (rightEventKeys[1] == context.control.name) OnBarrierPressEvent?.Invoke();
+                if (rightEventKeys[2] == context.control.name) OnSkillEvent?.Invoke();
+            }
+            else
+            {
+                if (leftEventKeys[0] == context.control.name) OnShootEvent?.Invoke();
+                if (leftEventKeys[1] == context.control.name) OnBarrierPressEvent?.Invoke();
+                if (leftEventKeys[2] == context.control.name) OnSkillEvent?.Invoke();
+            }
         }
 
         if(context.canceled)
         {
-            if (context.control.displayName == "C") OnLeftBarrierReleseEvent?.Invoke();
-        }
-    }
-
-    public void OnRIghtPlayerEvent(InputAction.CallbackContext context)
-    {
-        if(context.performed)
-        {
-            if (context.control.displayName == "N") OnRightShootEvent?.Invoke();
-            if (context.control.displayName == "M") OnRightBarrierPressEvent?.Invoke();
-            if (context.control.displayName == "B") OnRightSkillEvent?.Invoke();
-        }
-
-        if(context.canceled)
-        {
-            if (context.control.displayName == "M") OnRightBarrierReleseEvent?.Invoke();
+            if (IsRight)
+            {
+                if (context.control.displayName == "C") OnBarrierReleseEvent?.Invoke();
+            }
+            else
+            {
+                if (context.control.displayName == "M") OnBarrierReleseEvent?.Invoke();
+            }
         }
     }
 }

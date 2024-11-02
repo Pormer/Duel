@@ -38,7 +38,6 @@ public class Gun : MonoBehaviour, IPlayerComponents
         SkillCompo = gameObject.AddComponent(type) as GunSkill;
         SkillCompo.Initialize(agent);
         
-        if (player.IsRight) player.GetCompo<InputReaderSO>().OnRightShootEvent += SkillCompo.EnterSkill;
-        else player.GetCompo<InputReaderSO>().OnLeftShootEvent += SkillCompo.EnterSkill;
+        player.GetCompo<InputReaderSO>().OnShootEvent += SkillCompo.EnterSkill;
     }
 }

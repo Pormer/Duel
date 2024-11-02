@@ -9,7 +9,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponents
     private Player _player;
     private MapInfo _mapInfo;
     [SerializeField] private Tilemap moveTile;
-    bool IsMove { get; set; }
+    public bool IsMove { get; set; }
+    
     public void Initialize(Player player)
     {
         _player = player;
@@ -21,9 +22,12 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponents
         if (IsMove) return;
 
         Vector2Int v = new Vector2Int((int)transform.position.x, (int)transform.position.y);
-        if (!_mapInfo.CanMove((Vector3Int)v + (Vector3Int)moveDir)) return;
+        Vector2Int wantTilePos = v + moveDir;
+        if (!_mapInfo.CanMove(wantTilePos)) return;
         IsMove = true;
-        transform.DOMove((Vector3Int)(v + moveDir), 0.23f).SetEase(Ease.OutExpo).
+        
+        transform.DOMove(_mapInfo.GetCellCenterToWorld(wantTilePos), 0.2f)
+            .SetEase(Ease.OutExpo).
             OnComplete(() => { IsMove = false; });
     }
 }

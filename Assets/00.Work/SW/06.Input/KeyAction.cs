@@ -24,12 +24,12 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
     ""name"": ""KeyAction"",
     ""maps"": [
         {
-            ""name"": ""PlayerInputs"",
+            ""name"": ""LeftInput"",
             ""id"": ""829c998b-dbb6-4b34-a656-6b6d29e886f0"",
             ""actions"": [
                 {
-                    ""name"": ""LeftMovement"",
-                    ""type"": ""PassThrough"",
+                    ""name"": ""Movement"",
+                    ""type"": ""Button"",
                     ""id"": ""eb238773-9cad-4bee-a22d-85064bb901aa"",
                     ""expectedControlType"": """",
                     ""processors"": """",
@@ -37,27 +37,9 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""RIghtMovement"",
-                    ""type"": ""Button"",
-                    ""id"": ""9070637d-f6a8-4427-9bad-25cbf8f4c693"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""LeftPlayerEvent"",
+                    ""name"": ""PlayerEvent"",
                     ""type"": ""Button"",
                     ""id"": ""3435f9bb-615e-48d1-b518-fc1108046cbb"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""RIghtPlayerEvent"",
-                    ""type"": ""Button"",
-                    ""id"": ""e0189627-7e86-4153-8ce7-cdbd468ebf94"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -72,7 +54,7 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftMovement"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -83,7 +65,7 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftMovement"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -94,7 +76,7 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftMovement"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -105,51 +87,7 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""52fac95a-276d-4567-8e8b-9af92965aa91"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RIghtMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fd40cb64-6e8d-41d1-acb2-e51ca7ada8d5"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RIghtMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""647f1e50-909e-4880-90a7-cfbc764cf6a7"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RIghtMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""42c35518-20c4-4183-a4da-53f99e489f1e"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RIghtMovement"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -160,7 +98,7 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftPlayerEvent"",
+                    ""action"": ""PlayerEvent"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -171,7 +109,7 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftPlayerEvent"",
+                    ""action"": ""PlayerEvent"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -182,40 +120,110 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftPlayerEvent"",
+                    ""action"": ""PlayerEvent"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""RightInput"",
+            ""id"": ""f638eb7a-4cee-460c-a8f3-a857c8b8fdcf"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Button"",
+                    ""id"": ""f82df36d-fd87-4dd3-96ec-971915346dc5"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlayerEvent"",
+                    ""type"": ""Button"",
+                    ""id"": ""d2391cda-9c3b-4dca-bdf8-0f65a8612fb8"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e2f9cb82-e611-48b0-85ad-06892207c15d"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1d54ccdc-88ef-44f8-a267-418c61d8a0d9"",
+                    ""id"": ""0079f521-8576-4b58-b521-b7ee0629a294"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ddfd51a3-1395-46fd-8054-659fd7460297"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""97f815fd-e204-417d-866b-fee351be0cc8"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8368f9d5-76e5-4977-ae2f-fd53435fabf3"",
                     ""path"": ""<Keyboard>/n"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RIghtPlayerEvent"",
+                    ""action"": ""PlayerEvent"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f698e359-3fee-4bee-a88d-038bf322a420"",
+                    ""id"": ""59bbfa40-7c11-4ec5-947e-97af8fa599a8"",
                     ""path"": ""<Keyboard>/m"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RIghtPlayerEvent"",
+                    ""action"": ""PlayerEvent"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ad591b04-7045-4430-92f3-d8c99a32e2f7"",
+                    ""id"": ""5ef8bbe1-f96a-4e9d-ac93-20c721a66206"",
                     ""path"": ""<Keyboard>/b"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RIghtPlayerEvent"",
+                    ""action"": ""PlayerEvent"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -224,17 +232,20 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // PlayerInputs
-        m_PlayerInputs = asset.FindActionMap("PlayerInputs", throwIfNotFound: true);
-        m_PlayerInputs_LeftMovement = m_PlayerInputs.FindAction("LeftMovement", throwIfNotFound: true);
-        m_PlayerInputs_RIghtMovement = m_PlayerInputs.FindAction("RIghtMovement", throwIfNotFound: true);
-        m_PlayerInputs_LeftPlayerEvent = m_PlayerInputs.FindAction("LeftPlayerEvent", throwIfNotFound: true);
-        m_PlayerInputs_RIghtPlayerEvent = m_PlayerInputs.FindAction("RIghtPlayerEvent", throwIfNotFound: true);
+        // LeftInput
+        m_LeftInput = asset.FindActionMap("LeftInput", throwIfNotFound: true);
+        m_LeftInput_Movement = m_LeftInput.FindAction("Movement", throwIfNotFound: true);
+        m_LeftInput_PlayerEvent = m_LeftInput.FindAction("PlayerEvent", throwIfNotFound: true);
+        // RightInput
+        m_RightInput = asset.FindActionMap("RightInput", throwIfNotFound: true);
+        m_RightInput_Movement = m_RightInput.FindAction("Movement", throwIfNotFound: true);
+        m_RightInput_PlayerEvent = m_RightInput.FindAction("PlayerEvent", throwIfNotFound: true);
     }
 
     ~@KeyAction()
     {
-        UnityEngine.Debug.Assert(!m_PlayerInputs.enabled, "This will cause a leak and performance issues, KeyAction.PlayerInputs.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_LeftInput.enabled, "This will cause a leak and performance issues, KeyAction.LeftInput.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_RightInput.enabled, "This will cause a leak and performance issues, KeyAction.RightInput.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -293,80 +304,121 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // PlayerInputs
-    private readonly InputActionMap m_PlayerInputs;
-    private List<IPlayerInputsActions> m_PlayerInputsActionsCallbackInterfaces = new List<IPlayerInputsActions>();
-    private readonly InputAction m_PlayerInputs_LeftMovement;
-    private readonly InputAction m_PlayerInputs_RIghtMovement;
-    private readonly InputAction m_PlayerInputs_LeftPlayerEvent;
-    private readonly InputAction m_PlayerInputs_RIghtPlayerEvent;
-    public struct PlayerInputsActions
+    // LeftInput
+    private readonly InputActionMap m_LeftInput;
+    private List<ILeftInputActions> m_LeftInputActionsCallbackInterfaces = new List<ILeftInputActions>();
+    private readonly InputAction m_LeftInput_Movement;
+    private readonly InputAction m_LeftInput_PlayerEvent;
+    public struct LeftInputActions
     {
         private @KeyAction m_Wrapper;
-        public PlayerInputsActions(@KeyAction wrapper) { m_Wrapper = wrapper; }
-        public InputAction @LeftMovement => m_Wrapper.m_PlayerInputs_LeftMovement;
-        public InputAction @RIghtMovement => m_Wrapper.m_PlayerInputs_RIghtMovement;
-        public InputAction @LeftPlayerEvent => m_Wrapper.m_PlayerInputs_LeftPlayerEvent;
-        public InputAction @RIghtPlayerEvent => m_Wrapper.m_PlayerInputs_RIghtPlayerEvent;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerInputs; }
+        public LeftInputActions(@KeyAction wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_LeftInput_Movement;
+        public InputAction @PlayerEvent => m_Wrapper.m_LeftInput_PlayerEvent;
+        public InputActionMap Get() { return m_Wrapper.m_LeftInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerInputsActions set) { return set.Get(); }
-        public void AddCallbacks(IPlayerInputsActions instance)
+        public static implicit operator InputActionMap(LeftInputActions set) { return set.Get(); }
+        public void AddCallbacks(ILeftInputActions instance)
         {
-            if (instance == null || m_Wrapper.m_PlayerInputsActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_PlayerInputsActionsCallbackInterfaces.Add(instance);
-            @LeftMovement.started += instance.OnLeftMovement;
-            @LeftMovement.performed += instance.OnLeftMovement;
-            @LeftMovement.canceled += instance.OnLeftMovement;
-            @RIghtMovement.started += instance.OnRIghtMovement;
-            @RIghtMovement.performed += instance.OnRIghtMovement;
-            @RIghtMovement.canceled += instance.OnRIghtMovement;
-            @LeftPlayerEvent.started += instance.OnLeftPlayerEvent;
-            @LeftPlayerEvent.performed += instance.OnLeftPlayerEvent;
-            @LeftPlayerEvent.canceled += instance.OnLeftPlayerEvent;
-            @RIghtPlayerEvent.started += instance.OnRIghtPlayerEvent;
-            @RIghtPlayerEvent.performed += instance.OnRIghtPlayerEvent;
-            @RIghtPlayerEvent.canceled += instance.OnRIghtPlayerEvent;
+            if (instance == null || m_Wrapper.m_LeftInputActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_LeftInputActionsCallbackInterfaces.Add(instance);
+            @Movement.started += instance.OnMovement;
+            @Movement.performed += instance.OnMovement;
+            @Movement.canceled += instance.OnMovement;
+            @PlayerEvent.started += instance.OnPlayerEvent;
+            @PlayerEvent.performed += instance.OnPlayerEvent;
+            @PlayerEvent.canceled += instance.OnPlayerEvent;
         }
 
-        private void UnregisterCallbacks(IPlayerInputsActions instance)
+        private void UnregisterCallbacks(ILeftInputActions instance)
         {
-            @LeftMovement.started -= instance.OnLeftMovement;
-            @LeftMovement.performed -= instance.OnLeftMovement;
-            @LeftMovement.canceled -= instance.OnLeftMovement;
-            @RIghtMovement.started -= instance.OnRIghtMovement;
-            @RIghtMovement.performed -= instance.OnRIghtMovement;
-            @RIghtMovement.canceled -= instance.OnRIghtMovement;
-            @LeftPlayerEvent.started -= instance.OnLeftPlayerEvent;
-            @LeftPlayerEvent.performed -= instance.OnLeftPlayerEvent;
-            @LeftPlayerEvent.canceled -= instance.OnLeftPlayerEvent;
-            @RIghtPlayerEvent.started -= instance.OnRIghtPlayerEvent;
-            @RIghtPlayerEvent.performed -= instance.OnRIghtPlayerEvent;
-            @RIghtPlayerEvent.canceled -= instance.OnRIghtPlayerEvent;
+            @Movement.started -= instance.OnMovement;
+            @Movement.performed -= instance.OnMovement;
+            @Movement.canceled -= instance.OnMovement;
+            @PlayerEvent.started -= instance.OnPlayerEvent;
+            @PlayerEvent.performed -= instance.OnPlayerEvent;
+            @PlayerEvent.canceled -= instance.OnPlayerEvent;
         }
 
-        public void RemoveCallbacks(IPlayerInputsActions instance)
+        public void RemoveCallbacks(ILeftInputActions instance)
         {
-            if (m_Wrapper.m_PlayerInputsActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_LeftInputActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IPlayerInputsActions instance)
+        public void SetCallbacks(ILeftInputActions instance)
         {
-            foreach (var item in m_Wrapper.m_PlayerInputsActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_LeftInputActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_PlayerInputsActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_LeftInputActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public PlayerInputsActions @PlayerInputs => new PlayerInputsActions(this);
-    public interface IPlayerInputsActions
+    public LeftInputActions @LeftInput => new LeftInputActions(this);
+
+    // RightInput
+    private readonly InputActionMap m_RightInput;
+    private List<IRightInputActions> m_RightInputActionsCallbackInterfaces = new List<IRightInputActions>();
+    private readonly InputAction m_RightInput_Movement;
+    private readonly InputAction m_RightInput_PlayerEvent;
+    public struct RightInputActions
     {
-        void OnLeftMovement(InputAction.CallbackContext context);
-        void OnRIghtMovement(InputAction.CallbackContext context);
-        void OnLeftPlayerEvent(InputAction.CallbackContext context);
-        void OnRIghtPlayerEvent(InputAction.CallbackContext context);
+        private @KeyAction m_Wrapper;
+        public RightInputActions(@KeyAction wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_RightInput_Movement;
+        public InputAction @PlayerEvent => m_Wrapper.m_RightInput_PlayerEvent;
+        public InputActionMap Get() { return m_Wrapper.m_RightInput; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(RightInputActions set) { return set.Get(); }
+        public void AddCallbacks(IRightInputActions instance)
+        {
+            if (instance == null || m_Wrapper.m_RightInputActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_RightInputActionsCallbackInterfaces.Add(instance);
+            @Movement.started += instance.OnMovement;
+            @Movement.performed += instance.OnMovement;
+            @Movement.canceled += instance.OnMovement;
+            @PlayerEvent.started += instance.OnPlayerEvent;
+            @PlayerEvent.performed += instance.OnPlayerEvent;
+            @PlayerEvent.canceled += instance.OnPlayerEvent;
+        }
+
+        private void UnregisterCallbacks(IRightInputActions instance)
+        {
+            @Movement.started -= instance.OnMovement;
+            @Movement.performed -= instance.OnMovement;
+            @Movement.canceled -= instance.OnMovement;
+            @PlayerEvent.started -= instance.OnPlayerEvent;
+            @PlayerEvent.performed -= instance.OnPlayerEvent;
+            @PlayerEvent.canceled -= instance.OnPlayerEvent;
+        }
+
+        public void RemoveCallbacks(IRightInputActions instance)
+        {
+            if (m_Wrapper.m_RightInputActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IRightInputActions instance)
+        {
+            foreach (var item in m_Wrapper.m_RightInputActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_RightInputActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public RightInputActions @RightInput => new RightInputActions(this);
+    public interface ILeftInputActions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+        void OnPlayerEvent(InputAction.CallbackContext context);
+    }
+    public interface IRightInputActions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+        void OnPlayerEvent(InputAction.CallbackContext context);
     }
 }
