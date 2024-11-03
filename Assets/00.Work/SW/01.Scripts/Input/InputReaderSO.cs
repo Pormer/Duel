@@ -85,6 +85,17 @@ public class InputReaderSO : ScriptableObject, IRightInputActions, ILeftInputAct
     public void OnMovement(InputAction.CallbackContext context)
     {
         if(!context.performed) return;
+
+        if (GameManager.Instance.IsOnlinePlay)
+        {
+            if (rightMoveKeys[0] == context.control.name) MoveVec = Vector2Int.up;
+            else if (rightMoveKeys[1] == context.control.name) MoveVec = Vector2Int.down;
+            else if (rightMoveKeys[2] == context.control.name) MoveVec = Vector2Int.left;
+            else if (rightMoveKeys[3] == context.control.name) MoveVec = Vector2Int.right;
+            else MoveVec = Vector2Int.zero;
+            
+            OnMoveEvent?.Invoke(MoveVec);
+        }
         
         if (IsRight)
         {
@@ -110,6 +121,21 @@ public class InputReaderSO : ScriptableObject, IRightInputActions, ILeftInputAct
 
     public void OnPlayerEvent(InputAction.CallbackContext context)
     {
+        if (GameManager.Instance.IsOnlinePlay)
+        {
+            if (context.performed)
+            {
+                    if (rightEventKeys[0] == context.control.name) OnShootEvent?.Invoke();
+                    if (rightEventKeys[1] == context.control.name) OnBarrierPressEvent?.Invoke();
+                    if (rightEventKeys[2] == context.control.name) OnSkillEvent?.Invoke();
+            }
+
+            if(context.canceled)
+            {
+                if (context.control.displayName == "C") OnBarrierReleseEvent?.Invoke();
+            }
+        }
+        
         if (context.performed)
         {
             if (IsRight)
