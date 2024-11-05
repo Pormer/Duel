@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/01.Scenes/Muilti.unity
+    path: Assets/01.Scenes/Online.unity
     guid: 97132d275bf283043b2e44273d66d817
   - enabled: 1
     path: Assets/01.Scenes/JW.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/NGO_Minimal_Setup/NGO_Setup.unity
+    guid: d38cc35c268a7e541a0017c8b331152e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 986a4393943b6ab40a51f57e11accb09, type: 3}
   m_UseUCBPForAssetBundles: 0

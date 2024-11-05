@@ -88,27 +88,6 @@ public class InputReaderSO : ScriptableObject, IRightInputActions, ILeftInputAct
 
         if (GameManager.Instance.IsOnlinePlay)
         {
-            if (rightMoveKeys[0] == context.control.name) MoveVec = Vector2Int.up;
-            else if (rightMoveKeys[1] == context.control.name) MoveVec = Vector2Int.down;
-            else if (rightMoveKeys[2] == context.control.name) MoveVec = Vector2Int.left;
-            else if (rightMoveKeys[3] == context.control.name) MoveVec = Vector2Int.right;
-            else MoveVec = Vector2Int.zero;
-            
-            OnMoveEvent?.Invoke(MoveVec);
-        }
-        
-        if (IsRight)
-        {
-            if (rightMoveKeys[0] == context.control.name) MoveVec = Vector2Int.up;
-            else if (rightMoveKeys[1] == context.control.name) MoveVec = Vector2Int.down;
-            else if (rightMoveKeys[2] == context.control.name) MoveVec = Vector2Int.left;
-            else if (rightMoveKeys[3] == context.control.name) MoveVec = Vector2Int.right;
-            else MoveVec = Vector2Int.zero;
-            
-            OnMoveEvent?.Invoke(MoveVec);
-        }
-        else
-        {
             if (leftMoveKeys[0] == context.control.name) MoveVec = Vector2Int.up;
             else if (leftMoveKeys[1] == context.control.name) MoveVec = Vector2Int.down;
             else if (leftMoveKeys[2] == context.control.name) MoveVec = Vector2Int.left;
@@ -116,6 +95,29 @@ public class InputReaderSO : ScriptableObject, IRightInputActions, ILeftInputAct
             else MoveVec = Vector2Int.zero;
             
             OnMoveEvent?.Invoke(MoveVec);
+        }
+        else
+        {
+            if (IsRight)
+            {
+                if (rightMoveKeys[0] == context.control.name) MoveVec = Vector2Int.up;
+                else if (rightMoveKeys[1] == context.control.name) MoveVec = Vector2Int.down;
+                else if (rightMoveKeys[2] == context.control.name) MoveVec = Vector2Int.left;
+                else if (rightMoveKeys[3] == context.control.name) MoveVec = Vector2Int.right;
+                else MoveVec = Vector2Int.zero;
+            
+                OnMoveEvent?.Invoke(MoveVec);
+            }
+            else
+            {
+                if (leftMoveKeys[0] == context.control.name) MoveVec = Vector2Int.up;
+                else if (leftMoveKeys[1] == context.control.name) MoveVec = Vector2Int.down;
+                else if (leftMoveKeys[2] == context.control.name) MoveVec = Vector2Int.left;
+                else if (leftMoveKeys[3] == context.control.name) MoveVec = Vector2Int.right;
+                else MoveVec = Vector2Int.zero;
+            
+                OnMoveEvent?.Invoke(MoveVec);
+            }
         }
     }
 
@@ -125,43 +127,47 @@ public class InputReaderSO : ScriptableObject, IRightInputActions, ILeftInputAct
         {
             if (context.performed)
             {
-                    if (rightEventKeys[0] == context.control.name) OnShootEvent?.Invoke();
-                    if (rightEventKeys[1] == context.control.name) OnBarrierPressEvent?.Invoke();
-                    if (rightEventKeys[2] == context.control.name) OnSkillEvent?.Invoke();
-            }
-
-            if(context.canceled)
-            {
-                if (context.control.displayName == "C") OnBarrierReleseEvent?.Invoke();
-            }
-        }
-        
-        if (context.performed)
-        {
-            if (IsRight)
-            {
                 if (rightEventKeys[0] == context.control.name) OnShootEvent?.Invoke();
                 if (rightEventKeys[1] == context.control.name) OnBarrierPressEvent?.Invoke();
                 if (rightEventKeys[2] == context.control.name) OnSkillEvent?.Invoke();
             }
-            else
-            {
-                if (leftEventKeys[0] == context.control.name) OnShootEvent?.Invoke();
-                if (leftEventKeys[1] == context.control.name) OnBarrierPressEvent?.Invoke();
-                if (leftEventKeys[2] == context.control.name) OnSkillEvent?.Invoke();
-            }
-        }
 
-        if(context.canceled)
-        {
-            if (IsRight)
+            if(context.canceled)
             {
-                if (context.control.displayName == "C") OnBarrierReleseEvent?.Invoke();
-            }
-            else
-            {
-                if (context.control.displayName == "M") OnBarrierReleseEvent?.Invoke();
+                if (context.control.displayName == "N") OnBarrierReleseEvent?.Invoke();
             }
         }
+        else
+        {
+            if (context.performed)
+            {
+                if (IsRight)
+                {
+                    if (rightEventKeys[0] == context.control.name) OnShootEvent?.Invoke();
+                    if (rightEventKeys[1] == context.control.name) OnBarrierPressEvent?.Invoke();
+                    if (rightEventKeys[2] == context.control.name) OnSkillEvent?.Invoke();
+                }
+                else
+                {
+                    if (leftEventKeys[0] == context.control.name) OnShootEvent?.Invoke();
+                    if (leftEventKeys[1] == context.control.name) OnBarrierPressEvent?.Invoke();
+                    if (leftEventKeys[2] == context.control.name) OnSkillEvent?.Invoke();
+                }
+            }
+
+            if(context.canceled)
+            {
+                if (IsRight)
+                {
+                    if (context.control.displayName == "C") OnBarrierReleseEvent?.Invoke();
+                }
+                else
+                {
+                    if (context.control.displayName == "M") OnBarrierReleseEvent?.Invoke();
+                }
+            }
+        }
+        
+        
     }
 }

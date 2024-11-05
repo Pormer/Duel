@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponents
     public void Initialize(Player player)
     {
         _player = player;
-        _mapInfo = new MapInfo(moveTile);
+        _mapInfo = new MapInfo(FindFirstObjectByType<Tilemap>());
     }
 
     public void SetMovement(Vector2Int moveDir)
