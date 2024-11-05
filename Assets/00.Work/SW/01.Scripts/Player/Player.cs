@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public Action OnHitBarrier;
 
     public SpriteRenderer SpriteRenderer {  get; set; }
+    [SerializeField] private SpriteRenderer maskSpriteRenderer;
 
 
     public T GetCompo<T>() where T : class
@@ -46,12 +47,21 @@ public class Player : MonoBehaviour
         StatData.hp = CharacterData.hp;
 
         SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
-
+        maskSpriteRenderer.sprite = cdata.itemSprite;
         _components = new Dictionary<Type, IPlayerComponents>();
 
         GetComponentsInChildren<IPlayerComponents>().ToList()
             .ForEach(x => _components.Add(x.GetType(), x));
 
+        //리플렉션
+        string skillStr = $"{CharacterData.charType.ToString()}Skill";
+
+        var type = Type.GetType(skillStr);
+
+        print(type);
+        var skillCompo = gameObject.AddComponent(type) as CharacterSkill;
+
+        _components.Add(skillCompo.GetType(), skillCompo);
         _components.Add(inputReader.GetType(), inputReader);
         _components.Add(StatData.GetType(), StatData);
 
