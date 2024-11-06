@@ -48,16 +48,22 @@ public class Health : MonoBehaviour, IPlayerComponents
         {
             OnHitEvent?.Invoke();
             IsInvincibility = true;
-            _player.SpriteRenderer.DOFade(0.6f, 0.2f);
-            StartCoroutine(PlayerInvincibilityStart(invincibilityTime));
+            InvincibilityStart(_player.PlayerSpriteRenderer);
+            InvincibilityStart(_player.MaskSpriteRenderer);
         }
     }
 
+    public void InvincibilityStart(SpriteRenderer _spriteRenderer)
+    {
+        _spriteRenderer.DOFade(0.6f, 0.2f);
+        StartCoroutine(PlayerInvincibilityStart(invincibilityTime,_spriteRenderer));
+    }
 
-    private IEnumerator PlayerInvincibilityStart(float Time)
+
+    private IEnumerator PlayerInvincibilityStart(float Time,SpriteRenderer _spriteRenderer)
     {
         yield return new WaitForSeconds(Time);
         IsInvincibility = false;
-        _player.SpriteRenderer.DOFade(1f, 0.2f);
+        _spriteRenderer.DOFade(1f, 0.2f);
     }
 }

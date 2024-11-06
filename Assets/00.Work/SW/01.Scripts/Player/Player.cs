@@ -18,8 +18,8 @@ public class Player : MonoBehaviour
 
     public Action OnHitBarrier;
 
-    public SpriteRenderer SpriteRenderer {  get; set; }
-    [SerializeField] private SpriteRenderer maskSpriteRenderer;
+    public SpriteRenderer PlayerSpriteRenderer {  get; set; }
+    public SpriteRenderer MaskSpriteRenderer { get; set; }
 
 
     public T GetCompo<T>() where T : class
@@ -46,8 +46,9 @@ public class Player : MonoBehaviour
         StatData.barrierCount = CharacterData.barrierCount;
         StatData.hp = CharacterData.hp;
 
-        SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        maskSpriteRenderer.sprite = cdata.itemSprite;
+        PlayerSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        MaskSpriteRenderer = PlayerSpriteRenderer.GetComponentInChildren<SpriteRenderer>();
+        MaskSpriteRenderer.sprite = cdata.itemSprite;
         _components = new Dictionary<Type, IPlayerComponents>();
 
         GetComponentsInChildren<IPlayerComponents>().ToList()
