@@ -13,6 +13,7 @@ public class Health : MonoBehaviour, IPlayerComponents
     
     private Player _player;
     private StatSO _stat;
+    public int IsInvincibilityHit { get; private set; }
     public bool IsInvincibility {  get; set; }
     private float invincibilityTime = 1f;
 
@@ -28,7 +29,7 @@ public class Health : MonoBehaviour, IPlayerComponents
     {
         if (IsInvincibility)
         {
-            print("¹«Àû¤»");
+            IsInvincibilityHit++;
             return;
         }
 
@@ -46,6 +47,7 @@ public class Health : MonoBehaviour, IPlayerComponents
         if (_stat.hp <= 0 && !isResurrection) OnDeadEvent?.Invoke();
         else
         {
+            print(damage);
             OnHitEvent?.Invoke();
             IsInvincibility = true;
             InvincibilityStart(_player.PlayerSpriteRenderer);

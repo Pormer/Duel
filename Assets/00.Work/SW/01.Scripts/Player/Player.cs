@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     public Action OnHitBarrier;
 
     public SpriteRenderer PlayerSpriteRenderer {  get; set; }
-    public SpriteRenderer MaskSpriteRenderer { get; set; }
+    [field:SerializeField] public SpriteRenderer MaskSpriteRenderer { get; set; }
 
 
     public T GetCompo<T>() where T : class
@@ -47,7 +47,6 @@ public class Player : MonoBehaviour
         StatData.hp = CharacterData.hp;
 
         PlayerSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        MaskSpriteRenderer = PlayerSpriteRenderer.GetComponentInChildren<SpriteRenderer>();
         MaskSpriteRenderer.sprite = cdata.itemSprite;
         _components = new Dictionary<Type, IPlayerComponents>();
 

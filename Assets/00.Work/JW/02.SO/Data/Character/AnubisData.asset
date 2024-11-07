@@ -16,6 +16,6 @@ MonoBehaviour:
   explanation: 
   itemSprite: {fileID: 0}
   charType: 11
-  hp: 4
+  hp: 6
   barrierCount: 3
   baseColor: {r: 0.56909424, g: 0.04223035, b: 0.6886792, a: 0.5882353}
