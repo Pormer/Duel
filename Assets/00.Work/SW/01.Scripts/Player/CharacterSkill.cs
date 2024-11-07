@@ -4,12 +4,12 @@ public abstract class CharacterSkill : MonoBehaviour, IPlayerComponents
 {
     protected bool isSkillStart;
     protected Player _player;
-    protected StatSO _stat;
+    protected StatData _stat;
     protected Health _health;
     public void Initialize(Player player)
     {
         _player = player;
-        _stat = _player.GetCompo<StatSO>();
+        _stat = _player.GetCompo<StatData>();
         _health = _player.GetCompo<Health>();
         AwakePlayer();
     }

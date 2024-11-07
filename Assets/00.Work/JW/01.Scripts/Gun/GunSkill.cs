@@ -6,14 +6,14 @@ public abstract class GunSkill : MonoBehaviour
 {
     private static readonly int DoShoot = Animator.StringToHash("doShoot");
     protected Gun _gun;
-    protected StatSO _stat;
+    protected StatData _stat;
 
     protected bool isActiveShoot;
     
     public void Initialize(Player player)
     {
         _gun = player.GetCompo<Gun>();
-        _stat = player.GetCompo<StatSO>();
+        _stat = player.GetCompo<StatData>();
     }
 
     protected virtual void Shoot()

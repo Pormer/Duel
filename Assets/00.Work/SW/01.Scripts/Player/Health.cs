@@ -12,7 +12,7 @@ public class Health : MonoBehaviour, IPlayerComponents
     public UnityEvent OnHitEvent;
     
     private Player _player;
-    private StatSO _stat;
+    private StatData _stat;
     public int IsInvincibilityHit { get; private set; }
     public bool IsInvincibility {  get; set; }
     private float invincibilityTime = 1f;
@@ -22,7 +22,7 @@ public class Health : MonoBehaviour, IPlayerComponents
     public void Initialize(Player player)
     {
         _player = player;
-        _stat = _player.GetCompo<StatSO>();
+        _stat = _player.GetCompo<StatData>();
     }
 
     public void TakeDamage(int damage)

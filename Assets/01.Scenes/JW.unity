@@ -680,8 +680,8 @@ MonoBehaviour:
   - {fileID: 103316126}
   - {fileID: 1985109944}
   selectPlayerData:
-  - {fileID: 11400000, guid: e5421fc5b6fd3ae4d901dc9649efde51, type: 2}
-  - {fileID: 11400000, guid: 7ef7585b995ce634992e3ddbdf3fbc88, type: 2}
+  - {fileID: 11400000, guid: 706cd3142a38e92459072dd56bf8bada, type: 2}
+  - {fileID: 11400000, guid: 706cd3142a38e92459072dd56bf8bada, type: 2}
   selectGunData:
   - {fileID: 11400000, guid: 3eca8766b18667c4f932624a3ab055b0, type: 2}
   - {fileID: 11400000, guid: 3eca8766b18667c4f932624a3ab055b0, type: 2}
