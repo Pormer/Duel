@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class MiraSkill : CharacterSkill
 {
+    protected override void AwakePlayer()
+    {
+        _health.isResurrection = true;
+    }
     protected override void UpdateCharacterSkill()
     {
-        if (!isSkillStart && !_health.isResurrection) _health.isResurrection = true;
-
         if (_stat.hp <= 0&&!isSkillStart)
         {
             isSkillStart = true;
@@ -28,4 +30,5 @@ public class MiraSkill : CharacterSkill
         print("³¡");
         _health.OnDeadEvent?.Invoke();
     }
+
 }

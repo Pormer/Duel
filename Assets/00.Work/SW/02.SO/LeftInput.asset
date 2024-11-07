@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a95fe1cc5d14dd4788cb60ac1e32658, type: 3}
   m_Name: LeftInput
   m_EditorClassIdentifier: 
+  <IsRight>k__BackingField: 0

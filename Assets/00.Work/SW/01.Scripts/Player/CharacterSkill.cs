@@ -11,11 +11,13 @@ public abstract class CharacterSkill : MonoBehaviour, IPlayerComponents
         _player = player;
         _stat = _player.GetCompo<StatSO>();
         _health = _player.GetCompo<Health>();
+        AwakePlayer();
     }
 
     public virtual void ActiveSkill()
     {
-
+        if (isSkillStart) return;
+        isSkillStart = true;
     }
 
     protected virtual void UpdateCharacterSkill()
@@ -23,6 +25,10 @@ public abstract class CharacterSkill : MonoBehaviour, IPlayerComponents
 
     }
 
+    protected virtual void AwakePlayer()
+    {
+        
+    }
     private void Update()
     {
         UpdateCharacterSkill();
