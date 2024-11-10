@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class SelectManager : MonoBehaviour
 {
+    [SerializeField] private DataManagerSO dataM;
+    [SerializeField] SelectDataManagerSO selectDataM;
     [field: SerializeField] public List<Player> PlayerGroup { get; private set; }
     [SerializeField] private List<CharacterDataSO> selectPlayerData;
     [SerializeField] private List<GunDataSO> selectGunData;
@@ -27,8 +29,7 @@ public class SelectManager : MonoBehaviour
         }
         
     }
-
-    [ClientRpc]
+    
     public void StartOnlineGameClientRpc()
     {
         if (NetworkManager.Singleton.IsHost && PlayerGroup[1].GetComponent<NetworkObject>().IsOwner) PlayerGroup.Reverse();
@@ -43,6 +44,12 @@ public class SelectManager : MonoBehaviour
 
     private void PlayerInitialize()
     {
+        selectPlayerData[0] = dataM.characterDatas[(int)selectDataM.LeftCharType - 1];
+        selectGunData[0] = dataM.gunDatas[(int)selectDataM.LeftGunType - 1];
+        
+        selectPlayerData[1] = dataM.characterDatas[(int)selectDataM.RightCharType - 1];
+        selectGunData[1] = dataM.gunDatas[(int)selectDataM.RightGunType - 1];
+        
         for (int i = 0; i < PlayerGroup.Count; i++)
         {
             PlayerGroup[i].Initialize(selectPlayerData[i], selectGunData[i]);
