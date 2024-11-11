@@ -159,12 +159,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cead5677091bc3340ac1ea1d19176203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataM: {fileID: 11400000, guid: ad1b1dde75b964c42bcad7bf49774d2d, type: 2}
+  selectDataM: {fileID: 11400000, guid: 7f609e85bb4868e4c8849739c1248450, type: 2}
   <PlayerGroup>k__BackingField:
   - {fileID: 8}
   - {fileID: 1695164038}
   selectPlayerData:
-  - {fileID: 11400000, guid: ddd405f229e37fd47950ccf95797b725, type: 2}
-  - {fileID: 11400000, guid: f656ac2cf796da744bbcea08a796ee55, type: 2}
+  - {fileID: 11400000, guid: e5421fc5b6fd3ae4d901dc9649efde51, type: 2}
+  - {fileID: 11400000, guid: 5dd0ff06a66d0594d897054529cecfab, type: 2}
   selectGunData:
   - {fileID: 11400000, guid: 3eca8766b18667c4f932624a3ab055b0, type: 2}
   - {fileID: 11400000, guid: 3eca8766b18667c4f932624a3ab055b0, type: 2}
@@ -924,6 +926,18 @@ PrefabInstance:
     - target: {fileID: 6104812605493204326, guid: b89a22b1cc62e1443967ce3e429851da, type: 3}
       propertyPath: m_Name
       value: RightPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775167786972860927, guid: b89a22b1cc62e1443967ce3e429851da, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775167786972860927, guid: b89a22b1cc62e1443967ce3e429851da, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775167786972860927, guid: b89a22b1cc62e1443967ce3e429851da, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

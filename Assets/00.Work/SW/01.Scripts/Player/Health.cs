@@ -18,6 +18,7 @@ public class Health : MonoBehaviour, IPlayerComponents
     private float invincibilityTime = 1f;
 
     public bool isResurrection { get; set; }
+    public bool isHpRecovery { get; set; }
 
     public void Initialize(Player player)
     {
@@ -30,6 +31,13 @@ public class Health : MonoBehaviour, IPlayerComponents
         if (IsInvincibility)
         {
             IsInvincibilityHit++;
+            if (isHpRecovery)
+            {
+                _stat.hp++;
+                isHpRecovery = false;
+                IsInvincibility = false;
+            }
+            print(_stat.hp);
             return;
         }
 
@@ -43,7 +51,7 @@ public class Health : MonoBehaviour, IPlayerComponents
             }
         }
         _stat.hp -= damage;
-
+        print(_stat.hp);
         if (_stat.hp <= 0 && !isResurrection) OnDeadEvent?.Invoke();
         else
         {
@@ -55,7 +63,7 @@ public class Health : MonoBehaviour, IPlayerComponents
         }
     }
 
-    public void InvincibilityStart(SpriteRenderer _spriteRenderer)
+    private void InvincibilityStart(SpriteRenderer _spriteRenderer)
     {
         _spriteRenderer.DOFade(0.6f, 0.2f);
         StartCoroutine(PlayerInvincibilityStart(invincibilityTime,_spriteRenderer));
@@ -65,7 +73,7 @@ public class Health : MonoBehaviour, IPlayerComponents
     private IEnumerator PlayerInvincibilityStart(float Time,SpriteRenderer _spriteRenderer)
     {
         yield return new WaitForSeconds(Time);
-        IsInvincibility = false;
         _spriteRenderer.DOFade(1f, 0.2f);
+        IsInvincibility = false;
     }
 }
