@@ -9,4 +9,9 @@ public class SelectSetting : MonoBehaviour
     {
         selectDataM.SpawnSelectCharItem(transform);
     }
+
+    private void HandleSpawnGun()
+    {
+        
+    }
 }

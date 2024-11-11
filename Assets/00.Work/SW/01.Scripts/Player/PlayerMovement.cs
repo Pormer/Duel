@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponents
         if (!_mapInfo.CanMove(wantTilePos)) return;
         IsMove = true;
         
-        transform.DOMove(_mapInfo.GetCellCenterToWorld(wantTilePos), 0.2f)
+        transform.DOMove(_mapInfo.GetCellCenterToWorld(wantTilePos), 0.14f)
             .SetEase(Ease.OutExpo).
             OnComplete(() => { IsMove = false; });
     }
