@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Anubis
   explanation: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 2162651683685385302, guid: af50fa72020246e449e4546ac624efc8, type: 3}
   charType: 11
   hp: 6
   barrierCount: 3

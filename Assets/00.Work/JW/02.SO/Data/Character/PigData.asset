@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Pig
   explanation: 
-  itemSprite: {fileID: 21300000, guid: 5790f9b4253ffd7449a0e8215ec38beb, type: 3}
+  itemSprite: {fileID: -2336810411351705519, guid: c8b6fbf7633b9604aa4d6b8289611bd2, type: 3}
   charType: 2
   hp: 6
   barrierCount: 2

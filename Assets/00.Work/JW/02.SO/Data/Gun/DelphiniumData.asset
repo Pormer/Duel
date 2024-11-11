@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Delphinium
   explanation: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: -3031895476679913634, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
   gunType: 12
   damage: 1
   coolTime: 2

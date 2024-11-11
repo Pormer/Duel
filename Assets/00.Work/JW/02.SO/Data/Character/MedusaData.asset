@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Medusa
   explanation: 
-  itemSprite: {fileID: 21300000, guid: b9b68be24ffba5241bebbc3c6fe01122, type: 3}
+  itemSprite: {fileID: 1128032447004918086, guid: 075cb4e21ef3cf84797f3cc86eceb707, type: 3}
   charType: 3
   hp: 4
   barrierCount: 2

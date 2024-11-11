@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Callicarpa
   explanation: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 8488858846261942757, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
   gunType: 3
   damage: 1
   coolTime: 1

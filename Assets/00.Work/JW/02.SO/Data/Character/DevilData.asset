@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Devil
   explanation: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 6343625420349253815, guid: 4f18868ef54b0154680d1ada4ebedb73, type: 3}
   charType: 10
   hp: 4
   barrierCount: 3

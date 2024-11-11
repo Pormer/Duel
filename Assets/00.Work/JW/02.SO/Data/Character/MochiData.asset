@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Mochi
   explanation: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 252253774563517420, guid: a0d6addaa1b815b4ca4952c5f5560b25, type: 3}
   charType: 6
   hp: 8
   barrierCount: 0
