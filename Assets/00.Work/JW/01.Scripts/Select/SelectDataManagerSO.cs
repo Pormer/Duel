@@ -1,6 +1,8 @@
+using System;
 using DataType;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 [CreateAssetMenu(menuName = "SO/Manager/Select")]
 public class SelectDataManagerSO : ScriptableObject
@@ -13,6 +15,15 @@ public class SelectDataManagerSO : ScriptableObject
     [SerializeField] private SelectItem selectItemObj;
     [SerializeField] private int spawnCount = 5;
     [SerializeField] private Vector2 startSpawnPos;
+
+    private void Awake()
+    {
+        LeftCharType = CharacterType.Default;
+        LeftGunType = GunType.Default;
+
+        RightCharType = CharacterType.Default;
+        RightGunType = GunType.Default;
+    }
 
     public void SelectCharacter(bool isRight, CharacterType type)
     {
@@ -48,9 +59,8 @@ public class SelectDataManagerSO : ScriptableObject
     {
         for (int i = 0; i < spawnCount; i++)
         {
-            SelectItem item = Instantiate(selectItemObj, startSpawnPos, Quaternion.identity, parent);
+            SelectItem item = Instantiate(selectItemObj, startSpawnPos * Vector2.up * i, Quaternion.identity, parent);
             item.Initialize((CharacterType)Random.Range(0, 12));
-            startSpawnPos += Vector2.up;
         }
     }
 

@@ -5,14 +5,12 @@ public class ItemCaster : MonoBehaviour, IPlayerComponents
 {
     [SerializeField] ContactFilter2D targetFilter;
     [SerializeField] private Vector2 castSize;
-    [SerializeField] private int range;
     private Collider2D[] cols;
     private Player _player;
     
     private void Awake()
     {
         cols = new Collider2D[1];
-        castSize = new Vector2(2 * range + 1, 0.6f);
     }
 
     public void CastItem()

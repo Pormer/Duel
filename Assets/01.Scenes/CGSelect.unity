@@ -204,7 +204,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 215146134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c69daaa21a092547b4d7c5ca3d90f06, type: 3}
+  m_Script: {fileID: 11500000, guid: fa6d334bc7e3ad347a78bb6adc0446ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetFilter:
@@ -216,12 +216,12 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 128
+      m_Bits: 1024
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  castSize: {x: 3, y: 0.55}
+  castSize: {x: 1, y: 0.5}
 --- !u!1 &265599773
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +342,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 270222960}
-  - component: {fileID: 270222961}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -367,18 +366,6 @@ Transform:
   - {fileID: 215146135}
   m_Father: {fileID: 1252654060}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &270222961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 270222959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8a8a5e2a2174040aeffcfb2fea7b96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &317049558
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +404,7 @@ Transform:
   m_GameObject: {fileID: 317049558}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.5, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -541,7 +528,7 @@ Transform:
   m_GameObject: {fileID: 563846697}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1093,7 +1080,7 @@ Transform:
   m_GameObject: {fileID: 972732220}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1354,7 +1341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454e2047f12539e4c8bdbcb2612e9f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTile: {fileID: 718936922}
+  moveTile: {fileID: 0}
 --- !u!114 &1252654059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1377,7 +1364,7 @@ Transform:
   m_GameObject: {fileID: 1252654055}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 2.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1464,18 +1451,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectDataM: {fileID: 11400000, guid: 7f609e85bb4868e4c8849739c1248450, type: 2}
---- !u!114 &64528164798094235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5849286034107766465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8a8a5e2a2174040aeffcfb2fea7b96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1952641237986700134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1782,7 +1757,7 @@ Transform:
   m_GameObject: {fileID: 4394990519077590057}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1830,7 +1805,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9132523053483160061}
-  - component: {fileID: 64528164798094235}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -1869,7 +1843,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4849152450986023721}
-  - component: {fileID: 8317319985135577077}
+  - component: {fileID: 7694438007858188061}
   m_Layer: 0
   m_Name: DamageCaster
   m_TagString: Untagged
@@ -1877,6 +1851,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7694438007858188061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7694438007858188060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6d334bc7e3ad347a78bb6adc0446ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFilter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 1024
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  castSize: {x: 1, y: 0.5}
 --- !u!212 &7719235947404103810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1944,34 +1945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454e2047f12539e4c8bdbcb2612e9f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTile: {fileID: 718936922}
---- !u!114 &8317319985135577077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7694438007858188060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c69daaa21a092547b4d7c5ca3d90f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetFilter:
-    useTriggers: 0
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 128
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  castSize: {x: 3, y: 0.55}
+  moveTile: {fileID: 0}
 --- !u!4 &8889527132487809913
 Transform:
   m_ObjectHideFlags: 0
