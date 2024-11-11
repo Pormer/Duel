@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Demeter
   explanation: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: -7330255532422175504, guid: 30bd846b2cb0c8641964ad253161d12d, type: 3}
   charType: 9
   hp: 6
   barrierCount: 2

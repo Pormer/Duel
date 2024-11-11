@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Phoenix
   explanation: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: -4367425960450656953, guid: dfccdeac6c4ab6c42b8a85b8348b9747, type: 3}
   charType: 4
   hp: 3
   barrierCount: 2

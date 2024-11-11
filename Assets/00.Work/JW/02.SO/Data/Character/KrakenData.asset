@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Kraken
   explanation: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: -1099656596642309703, guid: 00a1879479d0976438e71765a492a8d9, type: 3}
   charType: 12
   hp: 5
   barrierCount: 2

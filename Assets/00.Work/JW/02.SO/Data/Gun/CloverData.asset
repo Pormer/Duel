@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Clover
   explanation: 
-  itemSprite: {fileID: 1247133025271027419, guid: 410492e5d474e1149862d0906ee58319, type: 3}
+  itemSprite: {fileID: 5324847242343557950, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
   gunType: 1
   damage: 1
   coolTime: 1

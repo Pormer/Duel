@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Ninja
   explanation: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 2388433666841335064, guid: b8957042017a8d140bef1653fec504cb, type: 3}
   charType: 7
   hp: 4
   barrierCount: 3

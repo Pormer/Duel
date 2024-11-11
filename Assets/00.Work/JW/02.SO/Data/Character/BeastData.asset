@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Beast
   explanation: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: -7519215208410403894, guid: ec60087df6d0259418018beeb3db9737, type: 3}
   charType: 5
   hp: 5
   barrierCount: 2
