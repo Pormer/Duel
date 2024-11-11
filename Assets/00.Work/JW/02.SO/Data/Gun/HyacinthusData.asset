@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Hyacinthus
   explanation: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: -1821237356109048306, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
   gunType: 13
   damage: 1
   coolTime: 1

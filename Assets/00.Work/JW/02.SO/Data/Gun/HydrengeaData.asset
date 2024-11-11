@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Hydrengea
   explanation: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 2874076002870727109, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
   gunType: 4
   damage: 1
   coolTime: 1
