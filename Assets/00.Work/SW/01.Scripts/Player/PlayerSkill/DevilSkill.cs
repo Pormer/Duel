@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BeastSkill : CharacterSkill
+public class DevilSkill : CharacterSkill
 {
     private int? _curBulletCount = null;
     protected override void AwakePlayer()
@@ -9,20 +9,20 @@ public class BeastSkill : CharacterSkill
     }
     public override void ActiveSkill()
     {
-        if (isSkillStart) return;
-        isSkillStart = true;
-        print("Æ÷È¿!!");
-        _stat.damage += 2;
-        _curBulletCount = _stat.curBulletCount - 2;
+        if (_stat.barrierCount == 0) return;
+        _stat.barrierCount--;
+        _stat.damage++;
+        _curBulletCount = _stat.curBulletCount - 1;
     }
 
     protected override void UpdateCharacterSkill()
     {
         if (_curBulletCount == null) return;
 
-        if (_curBulletCount == _stat.curBulletCount)
+        if  (_curBulletCount == _stat.curBulletCount)
         {
-            _stat.damage -= 2;
+            _curBulletCount = null;
+            _stat.damage--;
         }
     }
 }
