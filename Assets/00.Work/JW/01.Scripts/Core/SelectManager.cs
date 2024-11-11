@@ -27,7 +27,6 @@ public class SelectManager : MonoBehaviour
         {
             PlayerInitialize();
         }
-        
     }
     
     public void StartOnlineGameClientRpc()

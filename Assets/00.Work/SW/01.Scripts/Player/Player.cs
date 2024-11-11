@@ -65,8 +65,7 @@ public class Player : MonoBehaviour
         _components.Add(_statData.GetType(), _statData);
 
         _components.Values.ToList().ForEach(compo => compo.Initialize(this));
-
-        inputReader.OnMoveEvent += GetCompo<PlayerMovement>().SetMovement;
+        
         inputReader.OnBarrierPressEvent += () => 
         { 
             IsOnBarrier = true; 
