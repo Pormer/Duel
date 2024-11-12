@@ -16,7 +16,7 @@ public class SelectDataManagerSO : ScriptableObject
     [field: SerializeField] public CharacterType RightCharType { get; private set; }
     [field: SerializeField] public GunType RightGunType { get; private set; }
 
-    private List<SelectItem> curItemList = new List<SelectItem>();
+    private SelectItem[] curItems;
     private Transform _parent;
 
     [SerializeField] private SelectItem selectItemObj;
@@ -25,6 +25,8 @@ public class SelectDataManagerSO : ScriptableObject
 
     private void OnEnable()
     {
+        curItems = new SelectItem[spawnCount];
+        
         LeftCharType = CharacterType.Default;
         LeftGunType = GunType.Default;
 
@@ -70,18 +72,18 @@ public class SelectDataManagerSO : ScriptableObject
         {
             SelectItem item;
 
-            if (curItemList[i] == null)
+            if (curItems[i] == null)
             {
                 Debug.Log("In");
                 item = Instantiate(selectItemObj, startSpawnPos + Vector2.up * i, Quaternion.identity, parent);
-                curItemList.Add(item);
+                curItems[i] = item;
             }
             else
             {
-                item = curItemList[i];
+                item = curItems[i];
             }
 
-            item.Initialize((CharacterType)Random.Range(0, 12));
+            item.Initialize((CharacterType)CheckDataValue<CharacterType>(Random.Range(0, 12)));
         }
     }
 
@@ -93,24 +95,40 @@ public class SelectDataManagerSO : ScriptableObject
         {
             SelectItem item;
 
-            Debug.Log(curItemList[i] == null);
-            if (curItemList[i] == null)
+            Debug.Log(curItems[i] == null);
+            if (curItems[i] == null)
             {
                 item = Instantiate(selectItemObj, startSpawnPos + Vector2.up * i, Quaternion.identity, parent);
-                curItemList.Add(item);
+                curItems[i] = item;
             }
             else
             {
-                item = curItemList[i];
+                item = curItems[i];
             }
 
-            item.Initialize((GunType)Random.Range(0, 15));
+            item.Initialize((GunType)CheckDataValue<GunType>(Random.Range(0, 15)));
+
         }
+    }
+
+    private int CheckDataValue<T>(int typeNum) where T : Enum
+    {
+        //if (curItems[0].CharType == CharacterType.Default && curItems[0].GunType == GunType.Default) return typeNum;
+        
+        foreach (var item in curItems)
+        {
+            if ((int)item.CharType == typeNum)
+            {
+                CheckDataValue<T>(Random.Range(0, 15));
+            }
+        }
+
+        return typeNum;
     }
 
     public void NextStep()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 
     private bool IsNotCharDefault()
