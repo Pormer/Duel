@@ -18,7 +18,7 @@ public class Health : MonoBehaviour, IPlayerComponents
     private float invincibilityTime = 1f;
 
     public bool isResurrection { get; set; }
-    public bool isHpRecovery { get; set; }
+    public int SkillNumder { get; set; }
 
     public void Initialize(Player player)
     {
@@ -31,10 +31,10 @@ public class Health : MonoBehaviour, IPlayerComponents
         if (IsInvincibility)
         {
             IsInvincibilityHit++;
-            if (isHpRecovery)
+            if (SkillNumder == 1)
             {
                 _stat.hp++;
-                isHpRecovery = false;
+                SkillNumder = 0;
                 IsInvincibility = false;
             }
             print(_stat.hp);
@@ -45,7 +45,7 @@ public class Health : MonoBehaviour, IPlayerComponents
         {
             if(_stat.barrierCount > 0)
             {
-                _stat.barrierCount--;
+                if (!(SkillNumder == 2)) _stat.barrierCount--;
                 _player.OnHitBarrier?.Invoke();
                 return;
             }

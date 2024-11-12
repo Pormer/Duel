@@ -9,12 +9,12 @@ public class MedusaSkill : CharacterSkill
     }
     public override void ActiveSkill()
     {
-
+        _health.SkillNumder = 2;
     }
 
     private IEnumerator SkillTime()
     {
         yield return new WaitForSeconds(2f);
-
+        _health.SkillNumder = 0;
     }
 }
