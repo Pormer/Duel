@@ -1,5 +1,6 @@
 using DataType;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SelectItem : MonoBehaviour
 {
@@ -9,14 +10,14 @@ public class SelectItem : MonoBehaviour
     public GunType GunType { get; private set; }
 
     private SpriteRenderer _spriter;
-    private bool isChar;
+    public bool IsChar { get; private set; }
 
     public void Initialize(CharacterType cType)
     {
         _spriter = transform.Find("Visual").GetComponent<SpriteRenderer>();
         
         CharType = cType;
-        isChar = true;
+        IsChar = true;
         _spriter.sprite = dataM.characterDatas[(int)CharType].itemSprite;
     }
     public void Initialize(GunType gType)
@@ -24,7 +25,7 @@ public class SelectItem : MonoBehaviour
         _spriter = transform.Find("Visual").GetComponent<SpriteRenderer>();
         
         GunType = gType;
-        isChar = false;
+        IsChar = false;
         
         _spriter.sprite = dataM.gunDatas[(int)GunType].itemSprite;
     }
@@ -33,7 +34,7 @@ public class SelectItem : MonoBehaviour
     {
         if (isRight)
         {
-            if (isChar)
+            if (IsChar)
                 selectDataM.SelectCharacter(true, CharType);
             else
             {
@@ -42,7 +43,7 @@ public class SelectItem : MonoBehaviour
         }
         else
         {
-            if (isChar)
+            if (IsChar)
                 selectDataM.SelectCharacter(false, CharType);
             else
             {

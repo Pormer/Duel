@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using DataType;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
@@ -83,7 +84,7 @@ public class SelectDataManagerSO : ScriptableObject
                 item = curItems[i];
             }
 
-            item.Initialize((CharacterType)CheckDataValue<CharacterType>(Random.Range(0, 12)));
+            item.Initialize((CharacterType)Random.Range(0, 12));
         }
     }
 
@@ -113,13 +114,27 @@ public class SelectDataManagerSO : ScriptableObject
 
     private int CheckDataValue<T>(int typeNum) where T : Enum
     {
-        //if (curItems[0].CharType == CharacterType.Default && curItems[0].GunType == GunType.Default) return typeNum;
+        Debug.Log(curItems[0] == null);
+        
+        if (curItems[0].CharType == CharacterType.Default && curItems[0].GunType == GunType.Default) return typeNum;
         
         foreach (var item in curItems)
         {
-            if ((int)item.CharType == typeNum)
+            Debug.Log(item == null);
+
+            if(item != null && item.IsChar)
             {
-                CheckDataValue<T>(Random.Range(0, 15));
+                if ((int)item.CharType == typeNum)
+                {
+                    return CheckDataValue<T>(Random.Range(0, 12));
+                }
+            }
+            else
+            {
+                if ((int)item.GunType == typeNum)
+                {
+                    return CheckDataValue<T>(Random.Range(0, 15));
+                }
             }
         }
 
