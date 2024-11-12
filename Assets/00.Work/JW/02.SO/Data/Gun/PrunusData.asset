@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Prunus
   explanation: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 1109123678765518620, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
   gunType: 7
   damage: 0
   coolTime: 1

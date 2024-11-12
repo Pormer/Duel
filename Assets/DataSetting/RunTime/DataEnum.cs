@@ -11,7 +11,6 @@ namespace DataType
 {
     public enum GunType
     {
-        Default,
         Clover,
         Laurus,
         Callicarpa,
@@ -26,12 +25,12 @@ namespace DataType
         Delphinium,
         Hyacinthus,
         Gerbera,
-        Physalis
+        Physalis,
+        Default
     }
     
     public enum CharacterType
     {
-        Default,
         Mira,
         Pig,
         Medusa,
@@ -43,7 +42,8 @@ namespace DataType
         Demeter,
         Devil,
         Anubis,
-        Kraken 
+        Kraken,
+        Default
     }
 }
 

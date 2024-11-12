@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Penelopes
   explanation: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: -7742437342758627581, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
   gunType: 5
   damage: 1
   coolTime: 2

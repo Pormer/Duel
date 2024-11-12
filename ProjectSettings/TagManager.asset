@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - BackGround
   - Player
   - Gun
   - 
@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 3388288243
+    locked: 0
   - name: Tile
     uniqueID: 489440867
     locked: 0
@@ -55,6 +58,9 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 1873072375
+    locked: 0
+  - name: Panel
+    uniqueID: 3307826847
     locked: 0
   m_RenderingLayers:
   - Default
