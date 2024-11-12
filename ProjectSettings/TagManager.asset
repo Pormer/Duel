@@ -59,5 +59,8 @@ TagManager:
   - name: UI
     uniqueID: 1873072375
     locked: 0
+  - name: Panel
+    uniqueID: 3307826847
+    locked: 0
   m_RenderingLayers:
   - Default
