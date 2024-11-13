@@ -17,7 +17,7 @@ public class SelectDataManagerSO : ScriptableObject
     [field: SerializeField] public CharacterType RightCharType { get; private set; }
     [field: SerializeField] public GunType RightGunType { get; private set; }
 
-    private SelectItem[] curItems;
+    private List<SelectItem> curItemList;
     private Transform _parent;
 
     [SerializeField] private SelectItem selectItemObj;
@@ -26,7 +26,7 @@ public class SelectDataManagerSO : ScriptableObject
 
     private void OnEnable()
     {
-        curItems = new SelectItem[spawnCount];
+        curItemList = new List<SelectItem>();
         
         LeftCharType = CharacterType.Default;
         LeftGunType = GunType.Default;
@@ -72,19 +72,13 @@ public class SelectDataManagerSO : ScriptableObject
         for (int i = 0; i < spawnCount; i++)
         {
             SelectItem item;
+            
+            Debug.Log("In");
+            item = Instantiate(selectItemObj, startSpawnPos + Vector2.up * i, Quaternion.identity, parent);
+            curItemList.Add(item);
 
-            if (curItems[i] == null)
-            {
-                Debug.Log("In");
-                item = Instantiate(selectItemObj, startSpawnPos + Vector2.up * i, Quaternion.identity, parent);
-                curItems[i] = item;
-            }
-            else
-            {
-                item = curItems[i];
-            }
+            item.Initialize((CharacterType)CheckDataValue<GunType>(Random.Range(0, 12)));
 
-            item.Initialize((CharacterType)Random.Range(0, 12));
         }
     }
 
@@ -95,16 +89,15 @@ public class SelectDataManagerSO : ScriptableObject
         for (int i = 0; i < spawnCount; i++)
         {
             SelectItem item;
-
-            Debug.Log(curItems[i] == null);
-            if (curItems[i] == null)
+            
+            if (curItemList[i] == null)
             {
                 item = Instantiate(selectItemObj, startSpawnPos + Vector2.up * i, Quaternion.identity, parent);
-                curItems[i] = item;
+                curItemList.Add(item);
             }
             else
             {
-                item = curItems[i];
+                item = curItemList[i];
             }
 
             item.Initialize((GunType)CheckDataValue<GunType>(Random.Range(0, 15)));
@@ -114,15 +107,11 @@ public class SelectDataManagerSO : ScriptableObject
 
     private int CheckDataValue<T>(int typeNum) where T : Enum
     {
-        Debug.Log(curItems[0] == null);
-        
-        if (curItems[0].CharType == CharacterType.Default && curItems[0].GunType == GunType.Default) return typeNum;
-        
-        foreach (var item in curItems)
+        foreach (var item in curItemList)
         {
             Debug.Log(item == null);
 
-            if(item != null && item.IsChar)
+            if(item.IsChar)
             {
                 if ((int)item.CharType == typeNum)
                 {

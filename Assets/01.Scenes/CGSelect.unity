@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6d334bc7e3ad347a78bb6adc0446ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataM: {fileID: 11400000, guid: ad1b1dde75b964c42bcad7bf49774d2d, type: 2}
   targetFilter:
     useTriggers: 0
     useLayerMask: 1
@@ -222,6 +223,12 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   castSize: {x: 1, y: 0.5}
+  OnTargetCharExp:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTargetGunExp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &265599773
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,6 +1870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6d334bc7e3ad347a78bb6adc0446ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataM: {fileID: 11400000, guid: ad1b1dde75b964c42bcad7bf49774d2d, type: 2}
   targetFilter:
     useTriggers: 0
     useLayerMask: 1
@@ -1878,6 +1886,12 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   castSize: {x: 1, y: 0.5}
+  OnTargetCharExp:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTargetGunExp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &7719235947404103810
 SpriteRenderer:
   m_ObjectHideFlags: 0
