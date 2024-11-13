@@ -10,7 +10,8 @@ public class PigSkill : CharacterSkill
 
     public override void ActiveSkill()
     {
+
         _health.IsInvincibility = true;
-        _health.isHpRecovery = true;
+        _health.SkillNumder = 1;
     }
 }
