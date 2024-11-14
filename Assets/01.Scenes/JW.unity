@@ -676,6 +676,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cead5677091bc3340ac1ea1d19176203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataM: {fileID: 11400000, guid: ad1b1dde75b964c42bcad7bf49774d2d, type: 2}
+  selectDataM: {fileID: 11400000, guid: 7f609e85bb4868e4c8849739c1248450, type: 2}
   <PlayerGroup>k__BackingField:
   - {fileID: 103316126}
   - {fileID: 1985109944}
@@ -884,7 +886,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 489440867
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}

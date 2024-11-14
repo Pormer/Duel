@@ -33,6 +33,14 @@ public class SelectDataManagerSO : ScriptableObject
 
         RightCharType = CharacterType.Default;
         RightGunType = GunType.Default;
+
+#if UNITY_EDITOR
+        LeftCharType = testCharType;
+        LeftGunType = testGunType;
+
+        RightCharType = testCharType;
+        RightGunType = testGunType;
+#endif
     }
 
     public void SelectCharacter(bool isRight, CharacterType type)
@@ -132,7 +140,7 @@ public class SelectDataManagerSO : ScriptableObject
 
     public void NextStep()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     private bool IsNotCharDefault()
@@ -150,4 +158,10 @@ public class SelectDataManagerSO : ScriptableObject
 
         return isRightGun && isLeftGun;
     }
+    
+    
+#if UNITY_EDITOR
+    [SerializeField] private CharacterType testCharType;
+    [SerializeField] private GunType testGunType;
+#endif
 }

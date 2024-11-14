@@ -44,7 +44,6 @@ public class StatData : IPlayerComponents
         wantLoadCount = gData.wantLoadCount;
         curLoadCount = 0;
         
-        
         barrierCount = cdata.barrierCount;
         hp = cdata.hp;
     }
