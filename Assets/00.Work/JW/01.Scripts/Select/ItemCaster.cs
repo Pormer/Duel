@@ -27,7 +27,6 @@ public class ItemCaster : MonoBehaviour, IPlayerComponents
         {
             if (cols[0].TryGetComponent(out SelectItem item))
             {
-                print("Select");
                 item.Select(_player.GetCompo<InputReaderSO>().IsRight);
             }
         }
@@ -60,6 +59,7 @@ public class ItemCaster : MonoBehaviour, IPlayerComponents
     private void OnDestroy()
     {
         _player.GetCompo<InputReaderSO>().OnShootEvent -= CastItem;
+        _player.GetCompo<InputReaderSO>().OnMoveEvent -= CastItmeData;
     }
 
     private void OnDrawGizmos()

@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     #region Compo
 
     [SerializeField] private InputReaderSO inputReader;
-    private StatData _statData;
+    public StatData StatDataCompo {get; private set;}
 
     public SpriteRenderer PlayerSpriteRenderer { get; private set; }
     public SpriteRenderer MaskSpriteRenderer { get; private set; }
@@ -37,12 +37,15 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         PlayerSpriteRenderer = transform.Find("Visual")?.GetComponent<SpriteRenderer>();
-        MaskSpriteRenderer = transform.Find("Visual")?.transform.Find("Mask")?.GetComponent<SpriteRenderer>();
+        MaskSpriteRenderer = transform.Find("Visual").transform.Find("Mask").GetComponent<SpriteRenderer>();
         
         _components = new Dictionary<Type, IPlayerComponents>();
 
         GetComponentsInChildren<IPlayerComponents>().ToList()
             .ForEach(x => _components.Add(x.GetType(), x));
+        
+        _components.Add(inputReader.GetType(), inputReader);
+        _components.Values.ToList().ForEach(compo => compo.Initialize(this));
 
         inputReader.OnMoveEvent += GetCompo<PlayerMovement>().SetMovement;
 
@@ -54,21 +57,27 @@ public class Player : MonoBehaviour
     {
         GunData = gData;
         
-        _components.Add(inputReader.GetType(), inputReader);
-
-        _components.Values.ToList().ForEach(compo => compo.Initialize(this));
-        
         if(cdata == null || gData ==null) return;
 
-        _statData = new StatData(cdata, gData);
-        _components.Add(_statData.GetType(), _statData);
-
+        StatDataCompo = new StatData(cdata, gData);
+        //_components.Add(StatDataCompo.GetType(), StatDataCompo);
+        
+        GetComponentInChildren<Gun>().Initialize(this);
+        
+        print(MaskSpriteRenderer == null);
         MaskSpriteRenderer.sprite = cdata.itemSprite;
 
         //리플렉션
         string skillStr = $"{cdata.charType.ToString()}Skill";
         var type = Type.GetType(skillStr);
-        print(type);
+        print($"Character: {skillStr}");
         var skillCompo = gameObject.AddComponent(type) as CharacterSkill;
+        skillCompo?.Initialize(this);
+        if (skillCompo != null) inputReader.OnSkillEvent += skillCompo.ActiveSkill;
+    }
+
+    private void OnDestroy()
+    {
+        inputReader.OnMoveEvent -= GetCompo<PlayerMovement>().SetMovement;
     }
 }

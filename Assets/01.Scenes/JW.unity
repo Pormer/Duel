@@ -213,10 +213,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5842864773476056364, guid: b89a22b1cc62e1443967ce3e429851da, type: 3}
-      propertyPath: StatData
-      value: 
-      objectReference: {fileID: 11400000, guid: 4f1484145276b6146b339c70313543a1, type: 2}
-    - target: {fileID: 5842864773476056364, guid: b89a22b1cc62e1443967ce3e429851da, type: 3}
       propertyPath: inputReader
       value: 
       objectReference: {fileID: 11400000, guid: 6facaebc14601c4459f3cb7721c56848, type: 2}
@@ -681,9 +677,7 @@ MonoBehaviour:
   <PlayerGroup>k__BackingField:
   - {fileID: 103316126}
   - {fileID: 1985109944}
-  selectPlayerData:
-  - {fileID: 11400000, guid: 706cd3142a38e92459072dd56bf8bada, type: 2}
-  - {fileID: 11400000, guid: 706cd3142a38e92459072dd56bf8bada, type: 2}
+  selectCharData: []
   selectGunData:
   - {fileID: 11400000, guid: 3eca8766b18667c4f932624a3ab055b0, type: 2}
   - {fileID: 11400000, guid: 3eca8766b18667c4f932624a3ab055b0, type: 2}

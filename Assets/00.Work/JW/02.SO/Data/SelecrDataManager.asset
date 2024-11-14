@@ -19,3 +19,6 @@ MonoBehaviour:
   selectItemObj: {fileID: 344598461090529265, guid: 5492e63c1d7ec3146b04559b461f55f4, type: 3}
   spawnCount: 5
   startSpawnPos: {x: 0, y: -2}
+  testCharType: 0
+  testGunType: 0
+  isDebug: 0

@@ -15,7 +15,7 @@ public class SelectManager : MonoBehaviour
     [SerializeField] private CharacterDataSO[] selectCharData;
     [SerializeField] private GunDataSO[] selectGunData;
 
-    private void Awake()
+    private void Start()
     {
         PlayerGroup = new Player[2];
         selectCharData = new CharacterDataSO[2];

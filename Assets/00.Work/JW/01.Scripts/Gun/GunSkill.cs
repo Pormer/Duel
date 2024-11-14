@@ -10,9 +10,9 @@ public abstract class GunSkill : MonoBehaviour
 
     protected bool isActiveShoot;
     
-    public void Initialize(Player player)
+    public void Initialize(Gun gun, Player player)
     {
-        _gun = player.GetCompo<Gun>();
+        _gun = gun;
         _stat = player.GetCompo<StatData>();
     }
 

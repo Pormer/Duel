@@ -16,6 +16,7 @@ public abstract class CharacterSkill : MonoBehaviour, IPlayerComponents
 
     public virtual void ActiveSkill()
     {
+        //인풋에 구독을 하고 실행했을때 -= 하기
         if (isSkillStart) return;
         isSkillStart = true;
     }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LaurusSkill
+public class LaurusSkill : GunSkill
 {
     
 }

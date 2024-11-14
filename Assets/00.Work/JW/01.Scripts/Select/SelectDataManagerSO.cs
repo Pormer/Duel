@@ -35,6 +35,7 @@ public class SelectDataManagerSO : ScriptableObject
         RightGunType = GunType.Default;
 
 #if UNITY_EDITOR
+        if (!isDebug) return;
         LeftCharType = testCharType;
         LeftGunType = testGunType;
 
@@ -80,13 +81,10 @@ public class SelectDataManagerSO : ScriptableObject
         for (int i = 0; i < spawnCount; i++)
         {
             SelectItem item;
-            
-            Debug.Log("In");
             item = Instantiate(selectItemObj, startSpawnPos + Vector2.up * i, Quaternion.identity, parent);
             curItemList.Add(item);
 
             item.Initialize((CharacterType)CheckDataValue<GunType>(Random.Range(0, 12)));
-
         }
     }
 
@@ -117,8 +115,6 @@ public class SelectDataManagerSO : ScriptableObject
     {
         foreach (var item in curItemList)
         {
-            Debug.Log(item == null);
-
             if(item.IsChar)
             {
                 if ((int)item.CharType == typeNum)
@@ -163,5 +159,6 @@ public class SelectDataManagerSO : ScriptableObject
 #if UNITY_EDITOR
     [SerializeField] private CharacterType testCharType;
     [SerializeField] private GunType testGunType;
+    [SerializeField] private bool isDebug;
 #endif
 }

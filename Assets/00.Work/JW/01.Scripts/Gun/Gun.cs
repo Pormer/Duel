@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Gun : MonoBehaviour, IPlayerComponents
+public class Gun : MonoBehaviour
 {
     #region Compo
     
@@ -26,18 +26,16 @@ public class Gun : MonoBehaviour, IPlayerComponents
         DamageCastCompo.Initialize(_gunData.range);
         
         AnimCompo = transform.Find("Visual").GetComponent<Animator>();
-        SpriterCompo = transform.Find("Visual").GetComponent<SpriteRenderer>();
-        SpriterCompo.sprite = _gunData.itemSprite;
         
         //리플렉션
         string skillStr = $"{_gunData.gunType.ToString()}Skill";
 
         var type = Type.GetType(skillStr);
 
-        print(type);
+        print($"Gun: {skillStr}");
         SkillCompo = gameObject.AddComponent(type) as GunSkill;
-        SkillCompo.Initialize(agent);
-        
-        player.GetCompo<InputReaderSO>().OnShootEvent += SkillCompo.EnterSkill;
+        SkillCompo?.Initialize(this, agent);
+
+        if (SkillCompo != null) player.GetCompo<InputReaderSO>().OnShootEvent += SkillCompo.EnterSkill;
     }
 }

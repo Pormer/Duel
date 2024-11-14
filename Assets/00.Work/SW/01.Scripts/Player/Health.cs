@@ -23,7 +23,7 @@ public class Health : MonoBehaviour, IPlayerComponents
     public void Initialize(Player player)
     {
         _player = player;
-        _stat = _player.GetCompo<StatData>();
+        _stat = _player.StatDataCompo;
     }
 
     public void TakeDamage(int damage)
