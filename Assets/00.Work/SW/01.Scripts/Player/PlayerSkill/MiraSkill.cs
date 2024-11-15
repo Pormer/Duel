@@ -7,6 +7,7 @@ public class MiraSkill : CharacterSkill
     {
         _health.isResurrection = true;
     }
+
     protected override void UpdateCharacterSkill()
     {
         if (_stat.hp <= 0 &&!isSkillStart)

@@ -1,0 +1,48 @@
+.PlayerData {
+    position: absolute;
+    height: 1087px;
+    width: 447px;
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+}
+
+.CharacterImage {
+    width: 439px;
+    height: 427px;
+    background-image: url("project://database/Assets/00.Work/JW/04.Sprites/Character/Pig.aseprite?fileID=-2336810411351705519&guid=c8b6fbf7633b9604aa4d6b8289611bd2&type=3#Pig");
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.Hp {
+    position: absolute;
+    top: 543px;
+    left: 0;
+    width: 440px;
+    font-size: 66px;
+}
+
+.Barrier {
+    position: absolute;
+    top: 655px;
+    left: -1px;
+    font-size: 65px;
+}
+
+.Description {
+    height: 323px;
+    position: absolute;
+    top: 746px;
+    left: 1px;
+    width: 440px;
+    font-size: 40px;
+}
+
+.Name {
+    height: 80px;
+    position: absolute;
+    top: 435px;
+    left: -1px;
+    -unity-font-definition: url("project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&guid=afd429833c5b2104c9ef3ea3738a6bf9&type=3#Galmuri7");
+    width: 436px;
+    font-size: 67px;
+}
