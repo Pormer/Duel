@@ -7,6 +7,7 @@ public class BeastSkill : CharacterSkill
     {
         _player.GetCompo<InputReaderSO>().OnSkillEvent += ActiveSkill;
     }
+
     public override void ActiveSkill()
     {
         if (isSkillStart) return;

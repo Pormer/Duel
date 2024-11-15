@@ -9,7 +9,7 @@ public abstract class CharacterSkill : MonoBehaviour, IPlayerComponents
     public void Initialize(Player player)
     {
         _player = player;
-        _stat = _player.GetCompo<StatData>();
+        _stat = _player.StatDataCompo;
         _health = _player.GetCompo<Health>();
         AwakePlayer();
     }
