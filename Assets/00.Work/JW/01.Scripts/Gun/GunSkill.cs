@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,30 +6,39 @@ using UnityEngine;
 public abstract class GunSkill : MonoBehaviour
 {
     private static readonly int DoShoot = Animator.StringToHash("doShoot");
+    protected Player _player;
     protected Gun _gun;
     protected StatData _stat;
 
-    protected bool isActiveShoot;
+    protected bool isCoolTimeOut;
     
     public void Initialize(Gun gun, Player player)
     {
         _gun = gun;
         _stat = player.GetCompo<StatData>();
+        _player = player;
+
+        AwakeSkill();
     }
 
-    protected virtual void Shoot()
+    protected virtual void AwakeSkill()
+    {
+        
+    }
+
+    protected void Shoot()
     {
         _gun.AnimCompo.SetTrigger(DoShoot);
         _gun.DamageCastCompo.CastDamage(_stat.damage);
-        
-        isActiveShoot = false;
+        _stat.CurBulletCount--;
+        isCoolTimeOut = false;
         StartCoroutine(CoolDown());
     }
 
     public virtual void EnterSkill()
     {
         //여기에 변경사항 모두 한 후 Shoot()실행
-        if(!isActiveShoot) return;
+        if(!isCoolTimeOut || !_stat.IsCanShoot || _player.GetCompo<PlayerMovement>().IsMove) return;
         
     }
 
@@ -40,6 +50,6 @@ public abstract class GunSkill : MonoBehaviour
     private IEnumerator CoolDown()
     {
         yield return new WaitForSeconds(_stat.cooltime);
-        isActiveShoot = true;
+        isCoolTimeOut = true;
     }
 }

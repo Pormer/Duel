@@ -11,16 +11,16 @@ public class BeastSkill : CharacterSkill
     {
         if (isSkillStart) return;
         isSkillStart = true;
-        print("Æ÷È¿!!");
+        print("ï¿½ï¿½È¿!!");
         _stat.damage += 2;
-        _curBulletCount = _stat.curBulletCount - 2;
+        _curBulletCount = _stat.CurBulletCount - 2;
     }
 
     protected override void UpdateCharacterSkill()
     {
         if (_curBulletCount == null) return;
 
-        if (_curBulletCount == _stat.curBulletCount)
+        if (_curBulletCount == _stat.CurBulletCount)
         {
             _stat.damage -= 2;
         }

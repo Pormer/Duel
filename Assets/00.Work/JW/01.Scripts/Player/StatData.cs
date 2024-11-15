@@ -7,8 +7,19 @@ public class StatData : IPlayerComponents
     public int damage; // 총알데미지
 
     public int maxBulletCount; //최대 총알 수
-    public int curBulletCount; //현재 총알 수
+    private int curBulletCount;
+    public int CurBulletCount //현재 총알 수 
+    {
+        get => curBulletCount;
+        set
+        {
+            if(maxBulletCount < value) return;
+            curBulletCount = value;
+        }
+    }
+    
     public float cooltime; // 다음 총알 발사 가능 시간
+    
     public int wantLoadCount; //장전되는데 필요한 움직임 수
     private int curLoadCount;
     public int CurLoadCount //현재 움직인 수
@@ -19,9 +30,7 @@ public class StatData : IPlayerComponents
             if (wantLoadCount <= value)
             {
                 curLoadCount = 0;
-                
-                if(maxBulletCount > curBulletCount)
-                    curBulletCount++;
+                CurBulletCount++;
             }
             else
             {
@@ -29,7 +38,8 @@ public class StatData : IPlayerComponents
             }
         }
     } 
-    public bool IsCanShoot => curLoadCount > 0; //발사 가능 여부
+    
+    public bool IsCanShoot => curBulletCount > 0; //발사 가능 여부
 
     public void Initialize(Player player)
     {

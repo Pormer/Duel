@@ -13,13 +13,13 @@ public class DemeterSkill : CharacterSkill
     public override void ActiveSkill()
     {
         _stat.damage = 0;
-        _curBulletCount = _stat.curBulletCount - 1;
+        _curBulletCount = _stat.CurBulletCount - 1;
         _damageCaster.OnHitTarget += HpRecovery;
     }
 
     protected override void UpdateCharacterSkill()
     {
-        if (_stat.curBulletCount == _curBulletCount)
+        if (_stat.CurBulletCount == _curBulletCount)
             _damageCaster.OnHitTarget -= HpRecovery;
     }
 

@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +7,8 @@ using UnityEngine.Tilemaps;
 
 public class PlayerMovement : MonoBehaviour, IPlayerComponents
 {
+    public event Action OnMove;
+    
     private Player _player;
     private MapInfo _mapInfo;
     [SerializeField] private Tilemap moveTile;
@@ -26,8 +29,13 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponents
         if (!_mapInfo.CanMove(wantTilePos)) return;
         IsMove = true;
         
-        transform.DOMove(_mapInfo.GetCellCenterToWorld(wantTilePos), 0.14f)
-            .SetEase(Ease.OutExpo).
-            OnComplete(() => { IsMove = false; });
+        transform.DOMove(_mapInfo.GetCellCenterToWorld(wantTilePos), 0.14f).
+            SetEase(Ease.OutExpo).
+            OnStart(() => OnMove?.Invoke()).
+            OnComplete(() =>
+            {
+                _player.StatDataCompo.CurLoadCount++;
+                IsMove = false;
+            });
     }
 }

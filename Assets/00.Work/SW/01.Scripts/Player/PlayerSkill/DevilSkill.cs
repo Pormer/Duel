@@ -12,14 +12,14 @@ public class DevilSkill : CharacterSkill
         if (_stat.barrierCount == 0) return;
         _stat.barrierCount--;
         _stat.damage++;
-        _curBulletCount = _stat.curBulletCount - 1;
+        _curBulletCount = _stat.CurBulletCount - 1;
     }
 
     protected override void UpdateCharacterSkill()
     {
         if (_curBulletCount == null) return;
 
-        if  (_curBulletCount == _stat.curBulletCount)
+        if  (_curBulletCount == _stat.CurBulletCount)
         {
             _curBulletCount = null;
             _stat.damage--;
