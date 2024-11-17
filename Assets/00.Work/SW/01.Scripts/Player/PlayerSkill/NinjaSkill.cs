@@ -12,6 +12,10 @@ public class NinjaSkill : CharacterSkill
     }
     protected override void UpdateCharacterSkill()
     {
-        _damageCaster.CastDamage(1);
+        if(deductedBarrierCount == _stat.barrierCount)
+        {
+            _damageCaster.CastDamage(1);
+            deductedBarrierCount = _stat.barrierCount - 1;
+        }
     }
 }

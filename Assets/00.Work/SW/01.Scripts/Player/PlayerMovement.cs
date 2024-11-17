@@ -34,7 +34,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponents
             OnStart(() => OnMove?.Invoke()).
             OnComplete(() =>
             {
-                _player.StatDataCompo.CurLoadCount++;
+                if(_player.StatDataCompo != null)
+                    _player.StatDataCompo.CurLoadCount++;
                 IsMove = false;
             });
     }

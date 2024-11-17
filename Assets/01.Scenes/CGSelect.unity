@@ -1982,7 +1982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454e2047f12539e4c8bdbcb2612e9f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTile: {fileID: 0}
+  moveTile: {fileID: 718936922}
 --- !u!114 &7607211919592193611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1995,7 +1995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454e2047f12539e4c8bdbcb2612e9f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTile: {fileID: 0}
+  moveTile: {fileID: 718936922}
 --- !u!95 &7828209608191193027
 Animator:
   serializedVersion: 7
