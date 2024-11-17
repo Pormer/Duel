@@ -25,7 +25,7 @@ public class DemeterSkill : CharacterSkill
 
     private void HpRecovery()
     {
-        _stat.hp++;
+        _stat.Health++;
         _damageCaster.OnHitTarget -= HpRecovery;
     }
 }

@@ -33,26 +33,26 @@ public class Health : MonoBehaviour, IPlayerComponents
             IsInvincibilityHit++;
             if (SkillNumder == 1)
             {
-                _stat.hp++;
+                _stat.Health++;
                 SkillNumder = 0;
                 IsInvincibility = false;
             }
-            print(_stat.hp);
+            print(_stat.Health);
             return;
         }
 
         if (_player.IsOnBarrier)
         {
-            if(_stat.barrierCount > 0)
+            if(_stat.BarrierCount > 0)
             {
-                if (!(SkillNumder == 2)) _stat.barrierCount--;
+                if (!(SkillNumder == 2)) _stat.BarrierCount--;
                 _player.OnHitBarrier?.Invoke();
                 return;
             }
         }
-        _stat.hp -= damage;
-        print(_stat.hp);
-        if (_stat.hp <= 0 && !isResurrection) OnDeadEvent?.Invoke();
+        _stat.Health -= damage;
+        print(_stat.Health);
+        if (_stat.Health <= 0 && !isResurrection) OnDeadEvent?.Invoke();
         else
         {
             print(damage);

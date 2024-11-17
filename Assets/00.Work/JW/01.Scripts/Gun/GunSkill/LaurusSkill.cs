@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LaurusSkill : GunSkill
 {
+    public UnityEvent OnFormChanged;
+    
     [SerializeField] private int curStep;
     [SerializeField] private int wantStep = 7;
     [SerializeField] private int wantDamage = 3;
@@ -16,6 +19,7 @@ public class LaurusSkill : GunSkill
         base.EnterSkill();
         if (curStep > wantStep)
         {
+            OnFormChanged?.Invoke();
             _player.StatDataCompo.damage = wantDamage;
             curStep = 0;
         }

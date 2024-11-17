@@ -9,8 +9,8 @@ public class DevilSkill : CharacterSkill
     }
     public override void ActiveSkill()
     {
-        if (_stat.barrierCount == 0) return;
-        _stat.barrierCount--;
+        if (_stat.BarrierCount == 0) return;
+        _stat.BarrierCount--;
         _stat.damage++;
         _curBulletCount = _stat.CurBulletCount - 1;
     }

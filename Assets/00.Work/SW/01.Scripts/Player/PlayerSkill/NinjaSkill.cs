@@ -7,7 +7,7 @@ public class NinjaSkill : CharacterSkill
 
     protected override void AwakePlayer()
     {
-        deductedBarrierCount = _stat.barrierCount - 1;
+        deductedBarrierCount = _stat.BarrierCount - 1;
         _damageCaster = _player.GetComponentInChildren<DamageCaster>();
     }
     protected override void UpdateCharacterSkill()

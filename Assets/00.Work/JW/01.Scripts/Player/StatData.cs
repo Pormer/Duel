@@ -1,9 +1,33 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StatData : IPlayerComponents
 {
-    public int hp; // 체력
-    public int barrierCount; // 베리어 수
+    public UnityEvent<int> OnHealthChanged;
+    public UnityEvent<int> OnBarrierChanged;
+    
+    private int health;
+    public int Health // 체력
+    {
+        get => health;
+        set
+        {
+            OnHealthChanged?.Invoke(value);
+            health = value;
+        }
+    }
+    
+    private int barrierCount;
+    public int BarrierCount // 베리어 수
+    {
+        get => barrierCount;
+        set
+        {
+            OnBarrierChanged?.Invoke(value);
+            barrierCount = value;
+        }
+    }
     public int damage; // 총알데미지
 
     public int maxBulletCount; //최대 총알 수
@@ -55,6 +79,6 @@ public class StatData : IPlayerComponents
         curLoadCount = 0;
         
         barrierCount = cdata.barrierCount;
-        hp = cdata.hp;
+        health = cdata.hp;
     }
 }

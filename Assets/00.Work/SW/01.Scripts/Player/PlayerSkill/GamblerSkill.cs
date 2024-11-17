@@ -14,28 +14,28 @@ public class GamblerSkill : CharacterSkill
     {
         if (number <= 0 && number >= 100)
         {
-            if (ishp) _stat.hp = Random.Range(1, 2);
-            else _stat.barrierCount = 1;
+            if (ishp) _stat.Health = Random.Range(1, 2);
+            else _stat.BarrierCount = 1;
         }
         else if (number <= 101 && number >= 600)
         {
-            if (ishp) _stat.hp = Random.Range(3, 4);
-            else _stat.barrierCount = 2;
+            if (ishp) _stat.Health = Random.Range(3, 4);
+            else _stat.BarrierCount = 2;
         }
         else if (number <= 601 && number >= 800)
         {
-            if (ishp) _stat.hp = Random.Range(5, 6);
-            else _stat.barrierCount = 3;
+            if (ishp) _stat.Health = Random.Range(5, 6);
+            else _stat.BarrierCount = 3;
         }
         else if(number <= 801 && number >= 999)
         {
-            if (ishp) _stat.hp = 7;
-            else _stat.barrierCount = 4;
+            if (ishp) _stat.Health = 7;
+            else _stat.BarrierCount = 4;
         }
         else
         {
-            if (ishp) _stat.hp = 8;
-            else _stat.barrierCount = 5;
+            if (ishp) _stat.Health = 8;
+            else _stat.BarrierCount = 5;
         }
     }
 

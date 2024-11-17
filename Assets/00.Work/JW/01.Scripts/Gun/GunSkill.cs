@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class GunSkill : MonoBehaviour
@@ -9,6 +10,7 @@ public abstract class GunSkill : MonoBehaviour
     protected Player _player;
     protected Gun _gun;
     protected StatData _stat;
+    protected bool _isFormChange;
 
     protected bool isCoolTimeOut;
     

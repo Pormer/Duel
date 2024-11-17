@@ -10,7 +10,7 @@ public class MiraSkill : CharacterSkill
 
     protected override void UpdateCharacterSkill()
     {
-        if (_stat.hp <= 0 &&!isSkillStart)
+        if (_stat.Health <= 0 &&!isSkillStart)
         {
             isSkillStart = true;
             MireSkillStart();

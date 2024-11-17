@@ -8,10 +8,10 @@ public class PhoenixSkill : CharacterSkill
     }
     protected override void UpdateCharacterSkill()
     {
-        if (_stat.hp <= 0)
+        if (_stat.Health <= 0)
         {
             _health.isResurrection = false;
-            _stat.hp = 1;
+            _stat.Health = 1;
         }
     }
 }
