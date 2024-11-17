@@ -7,7 +7,6 @@ public class DamageCaster : MonoBehaviour
     [SerializeField] private Vector2 castSize;
 
     public event Action OnHitTarget;
-    
 
     private Collider2D[] cols;
     private void Awake()
