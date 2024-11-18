@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class DataEnum : MonoBehaviour
 {
-    
 }
 
 namespace DataType
 {
     public enum GunType
     {
+        Default,
         Clover,
         Laurus,
         Callicarpa,
@@ -25,12 +25,12 @@ namespace DataType
         Delphinium,
         Hyacinthus,
         Gerbera,
-        Physalis,
-        Default
+        Physalis
     }
-    
+
     public enum CharacterType
     {
+        Default,
         Mira,
         Pig,
         Medusa,
@@ -42,8 +42,6 @@ namespace DataType
         Demeter,
         Devil,
         Anubis,
-        Kraken,
-        Default
+        Kraken
     }
 }
-

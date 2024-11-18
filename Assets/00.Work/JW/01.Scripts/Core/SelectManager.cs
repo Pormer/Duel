@@ -1,11 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using DataType;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class SelectManager : MonoBehaviour
 {
@@ -53,11 +49,11 @@ public class SelectManager : MonoBehaviour
     {
         try
         {
-            selectCharData[0] = dataM.characterDatas[(int)selectDataM.LeftCharType];
-            selectGunData[0] = dataM.gunDatas[(int)selectDataM.LeftGunType];
+            selectCharData[0] = dataM.characterDatas[(int)selectDataM.LeftCharType -1];
+            selectGunData[0] = dataM.gunDatas[(int)selectDataM.LeftGunType-1];
 
-            selectCharData[1] = dataM.characterDatas[(int)selectDataM.RightCharType];
-            selectGunData[1] = dataM.gunDatas[(int)selectDataM.RightGunType];
+            selectCharData[1] = dataM.characterDatas[(int)selectDataM.RightCharType-1];
+            selectGunData[1] = dataM.gunDatas[(int)selectDataM.RightGunType-1];
         }
         catch (ArgumentOutOfRangeException e)
         {

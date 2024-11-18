@@ -84,7 +84,8 @@ public class SelectDataManagerSO : ScriptableObject
             item = Instantiate(selectItemObj, startSpawnPos + Vector2.up * i, Quaternion.identity, parent);
             curItemList.Add(item);
 
-            item.Initialize((CharacterType)CheckDataValue<GunType>(Random.Range(0, 12)));
+            item.Initialize((CharacterType)CheckDataValue<GunType>(Random.Range(1, 13)));
+            Debug.Log(item.CharType);
         }
     }
 
@@ -105,9 +106,8 @@ public class SelectDataManagerSO : ScriptableObject
             {
                 item = curItemList[i];
             }
-
-            item.Initialize((GunType)CheckDataValue<GunType>(Random.Range(0, 15)));
-
+            
+            item.Initialize((GunType)CheckDataValue<GunType>(Random.Range(1, 16)));
         }
     }
 
@@ -119,18 +119,18 @@ public class SelectDataManagerSO : ScriptableObject
             {
                 if ((int)item.CharType == typeNum)
                 {
-                    return CheckDataValue<T>(Random.Range(0, 12));
+                    return CheckDataValue<T>(Random.Range(1, 13));
                 }
             }
             else
             {
                 if ((int)item.GunType == typeNum)
                 {
-                    return CheckDataValue<T>(Random.Range(0, 15));
+                    return CheckDataValue<T>(Random.Range(1, 16));
                 }
             }
         }
-
+        
         return typeNum;
     }
 

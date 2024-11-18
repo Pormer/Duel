@@ -18,7 +18,7 @@ public class SelectItem : MonoBehaviour
         
         CharType = cType;
         IsChar = true;
-        _spriter.sprite = dataM.characterDatas[(int)CharType].itemSprite;
+        _spriter.sprite = dataM.characterDatas[(int)CharType-1].itemSprite;
     }
     public void Initialize(GunType gType)
     {
@@ -27,7 +27,7 @@ public class SelectItem : MonoBehaviour
         GunType = gType;
         IsChar = false;
         
-        _spriter.sprite = dataM.gunDatas[(int)GunType].itemSprite;
+        _spriter.sprite = dataM.gunDatas[(int)GunType-1].itemSprite;
     }
 
     public void Select(bool isRight)
