@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: GamblerData
   m_EditorClassIdentifier: 
   itemName: Gambler
-  explanation: 
+  explanation: "\uC77C\uC815 \uD655\uB960\uB85C \uC2A4\uD0EF\uC774 \uACB0\uC815\uB428
+    1 ~ 8 / 1 ~ 5"
   itemSprite: {fileID: -3454398966162381891, guid: e4e7e6a25d28b6645a1ce629b833e5ab, type: 3}
   charType: 8
   hp: 5

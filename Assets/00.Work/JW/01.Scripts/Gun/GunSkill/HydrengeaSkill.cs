@@ -8,7 +8,7 @@ public class HydrengeaSkill : GunSkill
     protected override void AwakeSkill()
     {
         base.AwakeSkill();
-        _gun.DamageCastCompo.OnHitTarget += HandleHitTarget;
+        _gun.DamageCastCompo.OnShoot += HandleOnShoot;
     }
     
     public override void EnterSkill()
@@ -17,7 +17,7 @@ public class HydrengeaSkill : GunSkill
         Shoot();
     }
 
-    private void HandleHitTarget()
+    private void HandleOnShoot(bool isTrigger)
     {
         _stat.BarrierCount++;
         OnBarrierChanged?.Invoke();
@@ -25,6 +25,6 @@ public class HydrengeaSkill : GunSkill
 
     private void OnDestroy()
     {
-        _gun.DamageCastCompo.OnHitTarget -= HandleHitTarget;
+        _gun.DamageCastCompo.OnShoot -= HandleOnShoot;
     }
 }

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: GerberaData
   m_EditorClassIdentifier: 
   itemName: Gerbera
-  explanation: 
+  explanation: "2\uBC88 \uC801\uC911 \uC2DC, \uCCB4\uB825\uC774 1\uAC1C \uCDA9\uC804\uB41C\uB2E4
+    (\uB204\uC801)"
   itemSprite: {fileID: 3999380477002119726, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
   gunType: 14
   damage: 1

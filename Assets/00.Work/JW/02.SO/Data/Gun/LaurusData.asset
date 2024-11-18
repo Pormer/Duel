@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: LaurusData
   m_EditorClassIdentifier: 
   itemName: Laurus
-  explanation: 
+  explanation: "7\uBC88 \uC6C0\uC9C1\uC774\uBA74 \uB2E4\uC74C \uCD1D\uC54C\uC758
+    \uB370\uBBF8\uC9C0\uB97C 3\uC73C\uB85C \uC870\uC815"
   itemSprite: {fileID: 5138231164732271624, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
   gunType: 2
   damage: 1

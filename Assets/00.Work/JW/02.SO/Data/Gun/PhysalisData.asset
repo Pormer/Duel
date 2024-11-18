@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: PhysalisData
   m_EditorClassIdentifier: 
   itemName: Physalis
-  explanation: 
+  explanation: "3\uBC88 \uC801\uC911 \uC2DC, \uD0C4\uCC3D\uC758 \uCD5C\uB300 \uD06C\uAE30\uAC00
+    6\uC73C\uB85C \uBCC0\uD558\uACE0, \uC774\uB3D9\uC218\uAC00 1\uB85C \uC870\uC815\uB41C\uB2E4"
   itemSprite: {fileID: -8575772653295014768, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
   gunType: 15
   damage: 2

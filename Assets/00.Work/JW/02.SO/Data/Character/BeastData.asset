@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: BeastData
   m_EditorClassIdentifier: 
   itemName: Beast
-  explanation: 
+  explanation: "\uC57C\uC218\uAC00 \uD3EC\uD6A8 \uD558\uBA70 2\uAC1C\uC758 \uCD1D\uC54C\uC758
+    \uB370\uBBF8\uC9C0\uB97C 1\uC99D\uAC00 \uC2DC\uD0A8\uB2E4."
   itemSprite: {fileID: -7519215208410403894, guid: ec60087df6d0259418018beeb3db9737, type: 3}
   charType: 5
   hp: 5

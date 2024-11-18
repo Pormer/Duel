@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: MiraData
   m_EditorClassIdentifier: 
   itemName: Mira
-  explanation: 
+  explanation: "\uC0AC\uB9DD\uC2DC \uCD1D\uC54C\uC758 \uB370\uBBF8\uC9C0\uB97C 1\uC99D\uAC00\uBC0F
+    \uC7A5\uC804 \uC18D\uB3C4 \uAC10\uC18C\uB97C \uC2DC\uD0A4\uACE0 5\uCD08\uB3D9\uC548
+    \uBD80\uD65C\uD55C\uB2E4."
   itemSprite: {fileID: -2708864828778826459, guid: 6482f5b6742fc2546b545cf2ec10d6da, type: 3}
   charType: 1
   hp: 5

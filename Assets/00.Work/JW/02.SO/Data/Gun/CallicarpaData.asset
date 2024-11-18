@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: CallicarpaData
   m_EditorClassIdentifier: 
   itemName: Callicarpa
-  explanation: 
+  explanation: "4\uBC88 \uBC1C\uC0AC \uD6C4, \uD3FC \uC804\uD658\uC744 \uD1B5\uD574
+    \uD0C4\uCC3D\uC218\uB97C 4\uB85C \uBCC0\uACBD, \uCD1D\uC54C\uC744 \uBAA8\uB450
+    \uCC44\uC6B4\uB2E4"
   itemSprite: {fileID: 8488858846261942757, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
   gunType: 3
   damage: 1
