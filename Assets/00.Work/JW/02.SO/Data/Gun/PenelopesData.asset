@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: PenelopesData
   m_EditorClassIdentifier: 
   itemName: Penelopes
-  explanation: 
+  explanation: "5\uBC88\uC9F8 \uCD1D\uC54C\uC774 \u2018\uC99D\uC624\uC758 \uD0C4\uD658\u2019\uC73C\uB85C
+    \uBCC0\uACBD, \uD574\uB2F9 \uCD1D\uC54C\uC740 2\uBC30\uC758 \uB370\uBBF8\uC9C0\uB97C
+    \uC785\uD78C\uB2E4 "
   itemSprite: {fileID: -7742437342758627581, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
   gunType: 5
   damage: 1

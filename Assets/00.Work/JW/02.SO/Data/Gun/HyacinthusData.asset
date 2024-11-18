@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: HyacinthusData
   m_EditorClassIdentifier: 
   itemName: Hyacinthus
-  explanation: 
+  explanation: "5\uBC88 \uBC1C\uC0AC \uC2DC, \uCCB4\uB825\uC774 1\uC99D\uAC00\uD55C\uB2E4
+    (\uAC8C\uC784\uB2F9 1\uBC88)"
   itemSprite: {fileID: -1821237356109048306, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
   gunType: 13
   damage: 1
