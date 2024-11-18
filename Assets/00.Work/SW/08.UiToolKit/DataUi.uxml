@@ -2,14 +2,14 @@
     <Style src="project://database/Assets/00.Work/SW/08.UiToolKit/ChoiceUi.uss?fileID=7433441132597879392&amp;guid=b2cbed2197fa6ac4b8d2a02696404741&amp;type=3#ChoiceUi" />
     <engine:VisualElement style="flex-grow: 1; height: auto; background-color: rgba(0, 0, 0, 0); width: auto; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;);">
         <engine:VisualElement name="LeftPlayerData" class="PlayerData" style="border-top-width: 4px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-left-radius: 70px; border-top-right-radius: 70px; border-bottom-right-radius: 70px; border-bottom-left-radius: 70px; width: 458px;">
-            <engine:VisualElement name="CharacterImage" class="CharacterImage" />
+            <engine:VisualElement name="VisualImage" class="CharacterImage" />
             <engine:Label text="Hp : 6" name="Hp" class="Hp" style="top: 545px; left: 6px;" />
             <engine:Label text="barrier : 2" name="Barrier" class="Barrier" style="width: 388px; top: 655px; left: 4px;" />
             <engine:Label text="&lt;식탐&gt;&#10;다음의 맞는 총알을 먹고&#10; 1의 체력을 회복한다.&#10;(단 본인의 총알의 &#10;데미지는 1로 고정)" name="Description" class="Description" />
             <engine:Label text="이름 : 돼지" name="Name" class="Name" style="top: 435px; left: 6px;" />
         </engine:VisualElement>
         <engine:VisualElement name="RightPlayerData" class="PlayerData" style="flex-grow: 1; top: -4px; left: 1452px; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 4px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-top-left-radius: 70px; border-top-right-radius: 70px; border-bottom-right-radius: 70px; border-bottom-left-radius: 70px; width: 458px;">
-            <engine:VisualElement name="CharacterImage" class="CharacterImage" style="flex-grow: 1; position: absolute; flex-wrap: nowrap; flex-direction: column; scale: -1 1;" />
+            <engine:VisualElement name="VisualImage" class="CharacterImage" style="flex-grow: 1; position: absolute; flex-wrap: nowrap; flex-direction: column; scale: -1 1;" />
             <engine:Label text="barrier : 2" name="Barrier" class="Barrier" style="top: 654px; left: 8px; width: 432px;" />
             <engine:Label text="Hp : 6" name="Hp" class="Hp" style="top: 542px; left: 4px;" />
             <engine:Label text="&lt;식탐&gt;&#10;다음의 맞는 총알을 먹고&#10; 1의 체력을 회복한다.&#10;(단 본인의 총알의 &#10;데미지는 1로 고정)" name="Description" class="Barrier" style="font-size: 40px; top: 758px; left: 5px;" />
