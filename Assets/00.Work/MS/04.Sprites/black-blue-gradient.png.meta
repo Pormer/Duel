@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c87d93deb06e4ff408dbb57db95e09bc
+guid: 734ad4cf8209e244e9af681c5464d4e3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8217619873114518322
-    second: IMG_20241009_223040_762_0
+      213: 1687787075693758747
+    second: black-blue-gradient_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_20241009_223040_762_0
+      name: black-blue-gradient_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 828
-        height: 1472
+        x: 3
+        y: 1
+        width: 1914
+        height: 1079
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2337e2c5cb9da0270800000000000000
-      internalID: 8217619873114518322
+      spriteID: b19c83f27693c6710800000000000000
+      internalID: 1687787075693758747
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      IMG_20241009_223040_762_0: 8217619873114518322
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
