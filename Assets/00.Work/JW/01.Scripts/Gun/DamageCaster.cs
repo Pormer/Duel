@@ -6,7 +6,7 @@ public class DamageCaster : MonoBehaviour
     [SerializeField] ContactFilter2D targetFilter;
     [SerializeField] private Vector2 castSize;
 
-    public event Action OnHitTarget;
+    public event Action<bool> OnShoot;
 
     private Collider2D[] cols;
     private void Awake()
@@ -30,9 +30,12 @@ public class DamageCaster : MonoBehaviour
                 print("Hit");
                 player.GetCompo<Health>().TakeDamage(damage);
                 
-                OnHitTarget?.Invoke();
+                OnShoot?.Invoke(true);
+                return;
             }
         }
+        
+        OnShoot?.Invoke(false);
     }
 
     private void OnDrawGizmos()

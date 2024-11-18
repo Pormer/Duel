@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      black-blue-gradient_0: 1687787075693758747
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

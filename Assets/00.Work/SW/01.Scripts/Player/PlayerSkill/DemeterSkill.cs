@@ -14,18 +14,18 @@ public class DemeterSkill : CharacterSkill
     {
         _stat.damage = 0;
         _curBulletCount = _stat.CurBulletCount - 1;
-        _damageCaster.OnHitTarget += HpRecovery;
+        _damageCaster.OnShoot += HpRecovery;
     }
 
     protected override void UpdateCharacterSkill()
     {
         if (_stat.CurBulletCount == _curBulletCount)
-            _damageCaster.OnHitTarget -= HpRecovery;
+            _damageCaster.OnShoot -= HpRecovery;
     }
 
-    private void HpRecovery()
+    private void HpRecovery(bool isTrigger)
     {
         _stat.Health++;
-        _damageCaster.OnHitTarget -= HpRecovery;
+        _damageCaster.OnShoot -= HpRecovery;
     }
 }
