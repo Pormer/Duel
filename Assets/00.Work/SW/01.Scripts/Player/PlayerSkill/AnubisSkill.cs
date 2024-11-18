@@ -7,7 +7,7 @@ public class AnubisSkill : CharacterSkill
         if (_stat.Health == 1 && !isSkillStart)
         {
             isSkillStart = true;
-            _stat.damage++;
+            _stat.Damage++;
         }
     }
 }

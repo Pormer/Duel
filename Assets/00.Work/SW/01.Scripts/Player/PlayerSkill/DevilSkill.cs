@@ -11,7 +11,7 @@ public class DevilSkill : CharacterSkill
     {
         if (_stat.BarrierCount == 0) return;
         _stat.BarrierCount--;
-        _stat.damage++;
+        _stat.Damage++;
         _curBulletCount = _stat.CurBulletCount - 1;
     }
 
@@ -22,7 +22,7 @@ public class DevilSkill : CharacterSkill
         if  (_curBulletCount == _stat.CurBulletCount)
         {
             _curBulletCount = null;
-            _stat.damage--;
+            _stat.Damage--;
         }
     }
 }

@@ -23,10 +23,10 @@ public class PenelopesSkill : GunSkill
         if (_curBulletShootCount >= wantBulletCount)
         {
             OnBulletDamageChanged.Invoke();
-            _stat.damage *= 2;
+            _stat.Damage *= 2;
             _curBulletShootCount = 0;
         }
         Shoot();
-        _stat.damage = 1;
+        _stat.Damage = 1;
     }
 }

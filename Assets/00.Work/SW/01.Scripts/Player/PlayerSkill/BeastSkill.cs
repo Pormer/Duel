@@ -13,7 +13,7 @@ public class BeastSkill : CharacterSkill
         if (isSkillStart) return;
         isSkillStart = true;
         print("��ȿ!!");
-        _stat.damage += 2;
+        _stat.Damage += 2;
         _curBulletCount = _stat.CurBulletCount - 2;
     }
 
@@ -23,7 +23,7 @@ public class BeastSkill : CharacterSkill
 
         if (_curBulletCount == _stat.CurBulletCount)
         {
-            _stat.damage -= 2;
+            _stat.Damage -= 2;
         }
     }
 }

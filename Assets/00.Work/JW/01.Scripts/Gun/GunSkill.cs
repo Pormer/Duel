@@ -31,7 +31,7 @@ public abstract class GunSkill : MonoBehaviour
     protected void Shoot()
     {
         _gun.AnimCompo.SetTrigger(DoShoot);
-        _gun.DamageCastCompo.CastDamage(_stat.damage);
+        _gun.DamageCastCompo.CastDamage(_stat.Damage);
         _stat.CurBulletCount--;
         isCoolTimeOut = false;
         StartCoroutine(CoolDown());
