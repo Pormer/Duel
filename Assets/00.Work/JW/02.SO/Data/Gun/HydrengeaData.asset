@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HydrengeaData
   m_EditorClassIdentifier: 
   itemName: Hydrengea
-  explanation: 
+  explanation: "\uC801\uC911 \uC2DC, \uBCF4\uD638\uB9C9 1\uAC1C \uD68C\uBCF5"
   itemSprite: {fileID: 2874076002870727109, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
   gunType: 4
   damage: 1

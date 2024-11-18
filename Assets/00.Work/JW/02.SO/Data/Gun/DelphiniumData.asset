@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: DelphiniumData
   m_EditorClassIdentifier: 
   itemName: Delphinium
-  explanation: 
+  explanation: "\uC801\uACFC \uCCB4\uB825\uC774 \uAC19\uC744 \uB54C, \uC801\uC911
+    \uC2DC +1\uC758 \uB370\uBBF8\uC9C0\uB97C \uC785\uD78C\uB2E4"
   itemSprite: {fileID: -3031895476679913634, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
   gunType: 12
   damage: 1
