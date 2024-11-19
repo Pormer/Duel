@@ -1,0 +1,85 @@
+.GunData {
+    flex-grow: 1;
+    width: 455px;
+    height: 1077px;
+    position: relative;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+}
+
+.VisualImage {
+    flex-grow: 1;
+    width: 450px;
+    background-image: url("project://database/Assets/00.Work/JW/04.Sprites/GunIcon/Bullet%20Group.aseprite?fileID=-8575772653295014768&guid=4503ab6cc557b004d8edafab748c5ba1&type=3#Frame_14");
+    position: absolute;
+    height: 450px;
+    top: 0;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.Name {
+    position: absolute;
+    top: 455px;
+    left: 5px;
+    height: 92px;
+    width: 441px;
+    font-size: 49px;
+    -unity-font-definition: url("project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&guid=afd429833c5b2104c9ef3ea3738a6bf9&type=3#Galmuri7");
+    color: rgb(255, 255, 255);
+    -unity-text-align: upper-left;
+}
+
+.Damage {
+    position: absolute;
+    top: 522px;
+    left: -2px;
+    height: 83px;
+    width: 444px;
+    font-size: 67px;
+}
+
+.MaxBullet {
+    position: absolute;
+    top: 607px;
+    left: -1px;
+    font-size: 64px;
+    width: 450px;
+}
+
+.WantLoad {
+    position: absolute;
+    top: 692px;
+    left: 2px;
+    width: 444px;
+}
+
+
+.Range {
+    position: absolute;
+    top: 780px;
+    left: 5px;
+    width: 444px;
+    white-space: pre-wrap;
+}
+
+.Description {
+    position: absolute;
+    top: 857px;
+    left: 5px;
+    width: 436px;
+    height: 203px;
+    font-size: 40px;
+}

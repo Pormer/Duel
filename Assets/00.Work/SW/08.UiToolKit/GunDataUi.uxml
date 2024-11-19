@@ -1,0 +1,23 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/00.Work/SW/08.UiToolKit/GunData.uss?fileID=7433441132597879392&amp;guid=4d7f5e2727ac30946ba6ae138899b0e5&amp;type=3#GunData" />
+    <engine:VisualElement style="flex-grow: 1; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(255, 255, 255); font-size: 67px;">
+        <engine:VisualElement name="LeftGunData" class="GunData">
+            <engine:VisualElement name="VisualImage" class="VisualImage" />
+            <engine:Label text="이름 : 콘솔리다" name="Name" class="Name" />
+            <engine:Label text="damage : 1" name="Damage" parse-escape-sequences="false" class="Damage" />
+            <engine:Label text="MaxBullet : 4" name="MaxBullet" class="MaxBullet" />
+            <engine:Label text="wantLoad : 2" name="WantLoad" class="WantLoad" />
+            <engine:Label text="Range : 4" name="Range" class="Range" />
+            <engine:Label text="3번 적중 시, &#10;탄창의 최대 크기가 &#10;6으로 변하고, &#10;이동수가 1로 조정된다" name="Description" class="Description" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+    <engine:VisualElement name="RightGunData" class="GunData" style="flex-grow: 1; position: absolute; top: auto; left: 1469px; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(255, 255, 255); font-size: 67px;">
+        <engine:VisualElement name="VisualImage" class="VisualImage" style="flex-grow: 1;" />
+        <engine:Label text="이름 : 콘솔리다" name="Name" class="Name" />
+        <engine:Label text="damage : 1" name="Damage" class="Damage" />
+        <engine:Label text="MaxBullet : 4" name="MaxBullet" class="MaxBullet" />
+        <engine:Label text="wantLoad : 2" name="WantLoad" class="WantLoad" style="font-size: 67px;" />
+        <engine:Label text="Range : 4" name="Range" class="Range" />
+        <engine:Label text="3번 적중 시, &#10;탄창의 최대 크기가 &#10;6으로 변하고, &#10;이동수가 1로 조정된다" name="Description" class="Description" />
+    </engine:VisualElement>
+</engine:UXML>
