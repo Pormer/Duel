@@ -4,7 +4,7 @@ public class PigSkill : CharacterSkill
 {
     protected override void AwakePlayer()
     {
-        _stat.damage = 1;
+        _stat.Damage = 1;
         _player.GetCompo<InputReaderSO>().OnSkillEvent += ActiveSkill;
     }
 

@@ -9,7 +9,7 @@ public class CloverSkill : GunSkill
     {
         base.EnterSkill();
         //여기 스킬 기능 다 적기
-        _stat.damage = RandomDamage();
+        _stat.Damage = RandomDamage();
         Shoot();
     }
 

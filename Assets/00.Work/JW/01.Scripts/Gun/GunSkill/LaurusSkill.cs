@@ -20,10 +20,10 @@ public class LaurusSkill : GunSkill
         if (curStep > wantStep)
         {
             OnFormChanged?.Invoke();
-            _player.StatDataCompo.damage = wantDamage;
+            _player.StatDataCompo.Damage = wantDamage;
             curStep = 0;
         }
         Shoot();
-        _player.StatDataCompo.damage = 1;
+        _player.StatDataCompo.Damage = 1;
     }
 }

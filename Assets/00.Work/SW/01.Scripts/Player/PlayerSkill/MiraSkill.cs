@@ -20,7 +20,7 @@ public class MiraSkill : CharacterSkill
     private void MireSkillStart()
     {
         print("미라의 저주시작");
-        _stat.damage++;
+        _stat.Damage++;
         _stat.cooltime--;
         StartCoroutine(DieTime());
     }

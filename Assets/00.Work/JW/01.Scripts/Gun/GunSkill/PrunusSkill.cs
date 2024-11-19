@@ -1,46 +1,63 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PrunusSkill : GunSkill
 {
+    public UnityEvent OnOneCombo;
     [SerializeField] private int wantHitCount = 3;
-    private int targetHitCount;
-    
+
     private bool[] hitCombos;
     private int currentComboNum;
+    private int CurrentComboNum
+    {
+        get => currentComboNum;
+        set
+        {
+            if (value >= wantHitCount)
+            {
+                currentComboNum = 0;
+                return;
+            }
+            
+            currentComboNum = value;
+        }
+    }
 
     protected override void AwakeSkill()
     {
         base.AwakeSkill();
-        targetHitCount = 0;
         hitCombos = new bool[wantHitCount];
         _gun.DamageCastCompo.OnShoot += HandleHitEvent;
     }
 
     private void HandleHitEvent(bool isTrigger)
     {
-        hitCombos[currentComboNum] = isTrigger;
-        
-        if(!isTrigger)
+        hitCombos[CurrentComboNum] = isTrigger;
+
+        if (!isTrigger)
         {
             hitCombos.ToList().ForEach(i => i = false);
-            currentComboNum = 0;
+            CurrentComboNum = 0;
         }
-
-        currentComboNum++;
+        else
+        {
+            CurrentComboNum++;
+            OnOneCombo?.Invoke();
+        }
     }
 
     public override void EnterSkill()
     {
         base.EnterSkill();
-        
+
         if (hitCombos.All(item => true))
         {
-            _stat.damage = 1000000000;
+            _stat.Damage = 1000000000;
         }
-        
+
         Shoot();
-        _stat.damage = 0;
+        _stat.Damage = 0;
     }
 }
