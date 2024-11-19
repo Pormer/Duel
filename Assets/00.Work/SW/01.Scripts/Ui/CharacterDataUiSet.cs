@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class DataUiSet : MonoBehaviour
+public class CharacterDataUiSet : MonoBehaviour
 {
     [SerializeField] private UIDocument DataUiPanel;
     private VisualElement _root;
@@ -22,10 +22,10 @@ public class DataUiSet : MonoBehaviour
 
     private void LabelSet(ref Label[] labels, int number)
     {
-        labels[0] = _playerData[number].Q<Label>("Hp");
-        labels[1] = _playerData[number].Q<Label>("Barrier");
-        labels[2] = _playerData[number].Q<Label>("Description");
-        labels[3] = _playerData[number].Q<Label>("Name");
+        labels[0] = _playerData[number].Q<Label>("Name");
+        labels[1] = _playerData[number].Q<Label>("Hp");
+        labels[2] = _playerData[number].Q<Label>("Barrier");
+        labels[3] = _playerData[number].Q<Label>("Description");
     }
 
     public void UiSet(CharacterDataSO characterData, bool isLeft)
