@@ -18,7 +18,7 @@ public abstract class GunSkill : MonoBehaviour
     public void Initialize(Gun gun, Player player)
     {
         _gun = gun;
-        _stat = player.GetCompo<StatData>();
+        _stat = player.StatDataCompo;
         _player = player;
 
         AwakeSkill();

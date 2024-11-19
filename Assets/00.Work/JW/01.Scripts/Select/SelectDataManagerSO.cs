@@ -85,7 +85,6 @@ public class SelectDataManagerSO : ScriptableObject
             curItemList.Add(item);
 
             item.Initialize((CharacterType)CheckDataValue<GunType>(Random.Range(1, 13)));
-            Debug.Log(item.CharType);
         }
     }
 
