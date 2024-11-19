@@ -49,6 +49,8 @@ public class Health : MonoBehaviour, IPlayerComponents
                 return;
             }
         }
+
+        Debug.Log(_stat == null);
         _stat.Health -= damage;
         print(_stat.Health);
         if (_stat.Health <= 0 && !isResurrection) OnDeadEvent?.Invoke();

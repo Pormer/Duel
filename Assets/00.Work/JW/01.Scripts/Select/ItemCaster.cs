@@ -3,7 +3,7 @@ using DataType;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ItemCaster : MonoBehaviour, IPlayerComponents
+public class ItemCaster : MonoBehaviour
 {
     [SerializeField] DataManagerSO dataM;
     [SerializeField] ContactFilter2D targetFilter;
