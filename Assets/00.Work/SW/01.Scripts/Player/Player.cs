@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private InputReaderSO inputReader;
     public StatData StatDataCompo {get; private set;}
+    private PlayerMovement _movementCompo;
 
     public SpriteRenderer PlayerSpriteRenderer { get; private set; }
     public SpriteRenderer MaskSpriteRenderer { get; private set; }
@@ -44,33 +45,43 @@ public class Player : MonoBehaviour
         GetComponentsInChildren<IPlayerComponents>().ToList()
             .ForEach(x => _components.Add(x.GetType(), x));
         
-        _components.Add(inputReader.GetType(), inputReader);
-        _components.Values.ToList().ForEach(compo => compo.Initialize(this));
-
-        inputReader.OnMoveEvent += GetCompo<PlayerMovement>().SetMovement;
-
-        inputReader.OnBarrierPressEvent += () => { IsOnBarrier = true; };
-        inputReader.OnBarrierReleseEvent += () => { IsOnBarrier = false; };
     }
 
     public void Initialize(CharacterDataSO cdata, GunDataSO gData)
     {
-        GunData = gData;
+        _movementCompo = GetComponent<PlayerMovement>();
+        _movementCompo.Initialize(this);
+        _components.Add(inputReader.GetType(), inputReader);
+
+        var itemCaster = GetComponentInChildren<ItemCaster>();
+        if(itemCaster != null) itemCaster.Initialize(this);
+        
+        //구독
+        inputReader.OnMoveEvent += _movementCompo.SetMovement;
+
+        inputReader.OnBarrierPressEvent += () => { IsOnBarrier = true; };
+        inputReader.OnBarrierReleseEvent += () => { IsOnBarrier = false; };
         
         if(cdata == null || gData ==null) return;
-
+        
+        //초기화
+        GunData = gData;
         StatDataCompo = new StatData(cdata, gData);
-        //_components.Add(StatDataCompo.GetType(), StatDataCompo);
+        _components.Add(StatDataCompo.GetType(), StatDataCompo);
         
-        GetComponentInChildren<Gun>().Initialize(this);
+        _components.Values.ToList().ForEach(compo => compo.Initialize(this));
         
-        print(MaskSpriteRenderer == null);
+        GetComponentInChildren<Gun>()?.Initialize(this);
+        
         MaskSpriteRenderer.sprite = cdata.itemSprite;
+        
 
         //리플렉션
         string skillStr = $"{cdata.charType.ToString()}Skill";
         var type = Type.GetType(skillStr);
+        
         print($"Character: {skillStr}");
+        
         var skillCompo = gameObject.AddComponent(type) as CharacterSkill;
         skillCompo?.Initialize(this);
         if (skillCompo != null) inputReader.OnSkillEvent += skillCompo.ActiveSkill;
@@ -78,6 +89,6 @@ public class Player : MonoBehaviour
 
     private void OnDestroy()
     {
-        inputReader.OnMoveEvent -= GetCompo<PlayerMovement>().SetMovement;
+        inputReader.OnMoveEvent -= _movementCompo.SetMovement;
     }
 }
