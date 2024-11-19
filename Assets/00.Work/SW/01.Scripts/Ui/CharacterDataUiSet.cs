@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class DataUiSet : MonoBehaviour
+public class CharacterDataUiSet : MonoBehaviour
 {
     [SerializeField] private UIDocument DataUiPanel;
     private VisualElement _root;
