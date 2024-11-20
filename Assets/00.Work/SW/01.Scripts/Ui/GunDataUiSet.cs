@@ -10,7 +10,7 @@ public class GunDataUiSet : MonoBehaviour
     private Label[] leftGunLabel = new Label[6];
     private Label[] rightGunLabel = new Label[6];
 
-    private void Start()
+    private void Awake()
     {
         _root = DataUiPanel.rootVisualElement;
         _gunData[0] = _root.Q<VisualElement>("LeftGunData");
@@ -35,20 +35,20 @@ public class GunDataUiSet : MonoBehaviour
     {
         if (isLeft)
         {
-            leftGunLabel[0].text = gunDataSO.itemName;
-            leftGunLabel[1].text = gunDataSO.damage.ToString();
-            leftGunLabel[2].text = gunDataSO.bulletCount.ToString();
-            leftGunLabel[3].text = gunDataSO.wantLoadCount.ToString();
-            leftGunLabel[4].text = gunDataSO.range.ToString();
+            leftGunLabel[0].text = $"Name : {gunDataSO.itemName}";
+            leftGunLabel[1].text = $"Damage {gunDataSO.damage.ToString()}";
+            leftGunLabel[2].text = $"MaxBullet : {gunDataSO.bulletCount.ToString()}";
+            leftGunLabel[3].text = $"WantLoad : {gunDataSO.wantLoadCount.ToString()}";
+            leftGunLabel[4].text = $"Range : {gunDataSO.range.ToString()}";
             leftGunLabel[5].text = gunDataSO.explanation;
         }
         else
         {
-            rightGunLabel[0].text = gunDataSO.itemName;
-            rightGunLabel[1].text = gunDataSO.damage.ToString();
-            rightGunLabel[2].text = gunDataSO.bulletCount.ToString();
-            rightGunLabel[3].text = gunDataSO.wantLoadCount.ToString();
-            rightGunLabel[4].text = gunDataSO.range.ToString();
+            rightGunLabel[0].text = $"Name : {gunDataSO.itemName}";
+            rightGunLabel[1].text = $"Damage {gunDataSO.damage.ToString()}";
+            rightGunLabel[2].text = $"MaxBullet : {gunDataSO.bulletCount.ToString()}";
+            rightGunLabel[3].text = $"WantLoad : {gunDataSO.wantLoadCount.ToString()}";
+            rightGunLabel[4].text = $"Range : {gunDataSO.range.ToString()}";
             rightGunLabel[5].text = gunDataSO.explanation;
         }
     }

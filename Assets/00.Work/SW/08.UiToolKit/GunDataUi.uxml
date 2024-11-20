@@ -8,7 +8,7 @@
             <engine:Label text="MaxBullet : 4" name="MaxBullet" class="MaxBullet" />
             <engine:Label text="wantLoad : 2" name="WantLoad" class="WantLoad" />
             <engine:Label text="Range : 4" name="Range" class="Range" />
-            <engine:Label text="3번 적중 시, &#10;탄창의 최대 크기가 &#10;6으로 변하고, &#10;이동수가 1로 조정된다" name="Description" class="Description" />
+            <engine:Label text="3번 적중 시, 탄창의 최대 크기가 6으로 변하고, 이동수가 1로 조정된다" name="Description" emoji-fallback-support="true" selectable="false" parse-escape-sequences="false" language-direction="Inherit" focusable="false" enable-rich-text="true" double-click-selects-word="true" triple-click-selects-line="true" usage-hints="None" enabled="true" class="Description" style="-unity-text-align: upper-left; text-overflow: ellipsis; white-space: normal;" />
         </engine:VisualElement>
         <engine:VisualElement name="RightGunData" class="GunData" style="flex-grow: 1; position: absolute; top: auto; left: 1460px; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(255, 255, 255); font-size: 67px;">
             <engine:VisualElement name="VisualImage" class="VisualImage" style="flex-grow: 1;" />
@@ -17,7 +17,7 @@
             <engine:Label text="MaxBullet : 4" name="MaxBullet" class="MaxBullet" />
             <engine:Label text="wantLoad : 2" name="WantLoad" class="WantLoad" style="font-size: 67px;" />
             <engine:Label text="Range : 4" name="Range" class="Range" />
-            <engine:Label text="3번 적중 시, &#10;탄창의 최대 크기가 &#10;6으로 변하고, &#10;이동수가 1로 조정된다" name="Description" class="Description" />
+            <engine:Label text="3번 적중 시, &#10;탄창의 최대 크기가 &#10;6으로 변하고, &#10;이동수가 1로 조정된다" name="Description" class="Description" style="white-space: normal;" />
         </engine:VisualElement>
     </engine:VisualElement>
 </engine:UXML>
