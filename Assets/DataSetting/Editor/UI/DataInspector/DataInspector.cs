@@ -25,12 +25,12 @@ public class DataInspector : IDisposable
 
     private VisualElement _spritePreviewElem;
     private ObjectField _spriteField;
-    private EnumField _typeField;
+    private UnityEngine.UIElements.EnumField _typeField;
     private SliderInt _dataPropSlider1;
     private SliderInt _dataPropSlider2;
     private SliderInt _dataPropSlider3;
     private SliderInt _dataPropSlider4;
-    private FloatField _dataPropField;
+    private UnityEngine.UIElements.FloatField _dataPropField;
     private ColorField _baseColorField;
     private TextField _explanationField;
 
@@ -109,12 +109,12 @@ public class DataInspector : IDisposable
 
             _spritePreviewElem = itemDataUI.Q<VisualElement>("Image");
             _spriteField = itemDataUI.Q<ObjectField>("SpriteField");
-            _typeField = itemDataUI.Q<EnumField>("TypeField");
+            _typeField = itemDataUI.Q<UnityEngine.UIElements.EnumField>("TypeField");
             _dataPropSlider1 = itemDataUI.Q<SliderInt>("DamageSlider");
             _dataPropSlider2 = itemDataUI.Q<SliderInt>("BulletCountSlider");
             _dataPropSlider3 = itemDataUI.Q<SliderInt>("RangeSlider");
             _dataPropSlider4 = itemDataUI.Q<SliderInt>("LoadCountSlider");
-            _dataPropField = itemDataUI.Q<FloatField>("CoolTimeField");
+            _dataPropField = itemDataUI.Q<UnityEngine.UIElements.FloatField>("CoolTimeField");
             _explanationField = itemDataUI.Q<TextField>("ExplanationTxt");
             
             //데이터 불러오기
@@ -137,7 +137,7 @@ public class DataInspector : IDisposable
 
             _spritePreviewElem = itemDataUI.Q<VisualElement>("Image");
             _spriteField = itemDataUI.Q<ObjectField>("SpriteField");
-            _typeField = itemDataUI.Q<EnumField>("TypeField");
+            _typeField = itemDataUI.Q<UnityEngine.UIElements.EnumField>("TypeField");
             _dataPropSlider1 = itemDataUI.Q<SliderInt>("HPSlider");
             _dataPropSlider2 = itemDataUI.Q<SliderInt>("BarrierSlider");
             _baseColorField = itemDataUI.Q<ColorField>("BaseColorField");

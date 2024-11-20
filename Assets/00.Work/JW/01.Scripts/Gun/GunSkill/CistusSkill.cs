@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 public class CistusSkill : GunSkill
 {
     public bool IsFire { get; set; }
-    [SerializeField] private CistusSkillChild childPrefab = default;
+    [SerializeField] private EventFeedbackSO childPrefabData = default;
     private int _hitStack = 0;
     
     
@@ -18,7 +18,7 @@ public class CistusSkill : GunSkill
             if (_hitStack >= 2)
             {
                 CistusSkillChild item;
-                item = Instantiate(childPrefab);
+                item = Instantiate(childPrefabData.feedbackPrefab.GetComponent<CistusSkillChild>());
                 
                 if (_player.GetCompo<InputReaderSO>().IsRight)
                 {

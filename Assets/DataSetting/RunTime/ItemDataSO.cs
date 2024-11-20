@@ -6,4 +6,5 @@ public abstract class ItemDataSO : ScriptableObject
     public string explanation; //설명
 
     public Sprite itemSprite; //외형
+    public FeedbackPlayer eventFeedback;
 }

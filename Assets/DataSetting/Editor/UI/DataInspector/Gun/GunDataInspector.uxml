@@ -13,6 +13,7 @@
         <ui:SliderInt label="Range" high-value="3" name="RangeSlider" binding-path="range" show-input-field="true" />
         <ui:SliderInt label="Want Load Count" high-value="5" binding-path="wantLoadCount" name="LoadCountSlider" show-input-field="true" />
         <ui:FloatField label="Cool TIme" value="0" name="CoolTimeField" binding-path="coolTime" />
+        <uie:ObjectField label="Event Player Field" name="EventPlayer" type="FeedbackPlayer, Assembly-CSharp" />
         <ui:TextField picking-mode="Ignore" label="Explanation" binding-path="explanation" name="ExplanationTxt" style="flex-grow: 0; text-overflow: ellipsis; white-space: normal; -unity-text-align: upper-left; overflow: hidden; flex-basis: 100px; opacity: 1; width: auto; max-height: 300px; height: auto;" />
     </ui:VisualElement>
 </ui:UXML>
