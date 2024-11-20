@@ -53,14 +53,14 @@ TagManager:
   - name: Gun
     uniqueID: 2468857581
     locked: 0
-  - name: Effect
-    uniqueID: 2349725785
-    locked: 0
   - name: UI
     uniqueID: 1873072375
     locked: 0
   - name: Panel
     uniqueID: 3307826847
+    locked: 0
+  - name: Effect
+    uniqueID: 2349725785
     locked: 0
   m_RenderingLayers:
   - Default
