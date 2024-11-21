@@ -6,7 +6,7 @@ public class AnubisSkill : CharacterSkill
     public UnityEvent OnDamageUp;
     protected override void AwakePlayer()
     {
-        OnDamageUp.AddListener(feedbacks.PlayFeedbacks);
+        OnDamageUp.AddListener(eventFeedbacks.PlayFeedbacks);
     }
     protected override void UpdateCharacterSkill()
     {
@@ -20,6 +20,6 @@ public class AnubisSkill : CharacterSkill
 
     private void OnDisable()
     {
-        OnDamageUp.RemoveListener(feedbacks.PlayFeedbacks);
+        OnDamageUp.RemoveListener(eventFeedbacks.PlayFeedbacks);
     }
 }

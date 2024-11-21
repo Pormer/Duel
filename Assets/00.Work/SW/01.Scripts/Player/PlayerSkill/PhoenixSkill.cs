@@ -7,7 +7,7 @@ public class PhoenixSkill : CharacterSkill
     protected override void AwakePlayer()
     {
         _health.isResurrection = true;
-        OnResurrection.AddListener(feedbacks.PlayFeedbacks);
+        OnResurrection.AddListener(eventFeedbacks.PlayFeedbacks);
     }
     protected override void UpdateCharacterSkill()
     {
@@ -21,6 +21,6 @@ public class PhoenixSkill : CharacterSkill
 
     private void OnDisable()
     {
-        OnResurrection.RemoveListener(feedbacks.PlayFeedbacks);
+        OnResurrection.RemoveListener(eventFeedbacks.PlayFeedbacks);
     }
 }

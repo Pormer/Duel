@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class CharacterSkill : MonoBehaviour, IPlayerComponents
 {
-    [SerializeField] protected EventFeedbackSO feedbacksData;
+    [SerializeField] protected FeedbackPlayer eventFeedbacks;
     protected bool isSkillStart;
     protected Player _player;
     protected StatData _stat;

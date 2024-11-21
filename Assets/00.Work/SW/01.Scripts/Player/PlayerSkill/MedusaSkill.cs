@@ -8,7 +8,7 @@ public class MedusaSkill : CharacterSkill
     protected override void AwakePlayer()
     {
         _player.GetCompo<InputReaderSO>().OnSkillEvent += ActiveSkill;
-        OnPetrification.AddListener(feedbacks.PlayFeedbacks);
+        OnPetrification.AddListener(eventFeedbacks.PlayFeedbacks);
     }
     public override void ActiveSkill()
     {
@@ -24,6 +24,6 @@ public class MedusaSkill : CharacterSkill
     private void OnDisable()
     {
         _player.GetCompo<InputReaderSO>().OnSkillEvent -= ActiveSkill;
-        OnPetrification.RemoveListener(feedbacks.PlayFeedbacks);
+        OnPetrification.RemoveListener(eventFeedbacks.PlayFeedbacks);
     }
 }
