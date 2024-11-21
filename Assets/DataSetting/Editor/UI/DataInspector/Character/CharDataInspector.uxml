@@ -11,6 +11,7 @@
         <ui:SliderInt label="HP" high-value="8" binding-path="hp" name="HPSlider" show-input-field="true" />
         <ui:SliderInt label="Barrier Count" high-value="5" binding-path="barrierCount" name="BarrierSlider" show-input-field="true" />
         <uie:ColorField label="Base Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" binding-path="baseColor" name="BaseColorField" />
+        <uie:ObjectField label="Evene Player" name="EvenePlayer" type="FeedbackPlayer, Assembly-CSharp" />
         <ui:TextField picking-mode="Ignore" label="Explanation" binding-path="explanation" name="ExplanationTxt" style="flex-grow: 0; text-overflow: ellipsis; white-space: normal; -unity-text-align: upper-left; overflow: hidden; flex-basis: 100px; opacity: 1; width: auto; max-height: 300px; height: auto;" />
     </ui:VisualElement>
 </ui:UXML>

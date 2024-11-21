@@ -14,6 +14,7 @@ public class StatData : IPlayerComponents
         get => health;
         set
         {
+            if(value < 0) return;
             OnHealthChanged?.Invoke(value);
             health = value;
         }

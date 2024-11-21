@@ -8,7 +8,7 @@ public class MiraSkill : CharacterSkill
     protected override void AwakePlayer()
     {
         _health.isResurrection = true;
-        OnCurse.AddListener(feedbacks.PlayFeedbacks);
+        OnCurse.AddListener(eventFeedbacks.PlayFeedbacks);
     }
 
     protected override void UpdateCharacterSkill()
@@ -37,7 +37,7 @@ public class MiraSkill : CharacterSkill
 
     private void OnDisable()
     {
-        OnCurse.RemoveListener(feedbacks.PlayFeedbacks);
+        OnCurse.RemoveListener(eventFeedbacks.PlayFeedbacks);
     }
 
 }

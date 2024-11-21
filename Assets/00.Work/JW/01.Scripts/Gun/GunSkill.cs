@@ -6,7 +6,7 @@ using UnityEngine;
 
 public abstract class GunSkill : MonoBehaviour
 {
-    [SerializeField] protected FeedbackPlayer feedbacks;
+    [SerializeField] protected FeedbackPlayer eventFeedbacks;
     private static readonly int DoShoot = Animator.StringToHash("doShoot");
     protected Player _player;
     protected Gun _gun;
@@ -20,6 +20,9 @@ public abstract class GunSkill : MonoBehaviour
         _gun = gun;
         _stat = player.StatDataCompo;
         _player = player;
+        
+        if (_player.GunData.eventFeedback != null) eventFeedbacks = Instantiate(_player.GunData.eventFeedback, transform);
+
 
         AwakeSkill();
     }

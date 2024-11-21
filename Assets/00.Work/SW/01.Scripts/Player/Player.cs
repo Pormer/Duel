@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private InputReaderSO inputReader;
     public StatData StatDataCompo {get; private set;}
+    public FeedbackPlayer EventFeedbacksCompo { get; private set; }
     private PlayerMovement _movementCompo;
 
     public SpriteRenderer PlayerSpriteRenderer { get; private set; }
@@ -74,7 +76,8 @@ public class Player : MonoBehaviour
         GetComponentInChildren<Gun>()?.Initialize(this);
         
         MaskSpriteRenderer.sprite = cdata.itemSprite;
-        
+
+        if (cdata.eventFeedback != null) EventFeedbacksCompo = Instantiate(cdata.eventFeedback, transform);
 
         //리플렉션
         string skillStr = $"{cdata.charType.ToString()}Skill";

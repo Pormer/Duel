@@ -52,11 +52,11 @@ public class Health : MonoBehaviour, IPlayerComponents
 
         Debug.Log(_stat == null);
         _stat.Health -= damage;
-        print(_stat.Health);
+        print("Health: " + _stat.Health);
         if (_stat.Health <= 0 && !isResurrection) OnDeadEvent?.Invoke();
         else
         {
-            print(damage);
+            print("Damage: " + damage);
             OnHitEvent?.Invoke();
             IsInvincibility = true;
             InvincibilityStart(_player.PlayerSpriteRenderer);
