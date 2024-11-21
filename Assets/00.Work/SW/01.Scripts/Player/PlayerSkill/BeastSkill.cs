@@ -8,7 +8,7 @@ public class BeastSkill : CharacterSkill
     protected override void AwakePlayer()
     {
         _player.GetCompo<InputReaderSO>().OnSkillEvent += ActiveSkill;
-        OnRoaring.AddListener(feedbacks.PlayFeedbacks);
+        OnRoaring.AddListener(eventFeedbacks.PlayFeedbacks);
     }
 
     public override void ActiveSkill()
@@ -33,6 +33,6 @@ public class BeastSkill : CharacterSkill
     private void OnDisable()
     {
         _player.GetCompo<InputReaderSO>().OnSkillEvent -= ActiveSkill;
-        OnRoaring.RemoveListener(feedbacks.PlayFeedbacks);
+        OnRoaring.RemoveListener(eventFeedbacks.PlayFeedbacks);
     }
 }

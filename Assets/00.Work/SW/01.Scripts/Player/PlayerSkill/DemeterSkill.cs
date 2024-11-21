@@ -10,7 +10,7 @@ public class DemeterSkill : CharacterSkill
     {
         _player.GetCompo<InputReaderSO>().OnSkillEvent += ActiveSkill;
         _damageCaster = _player.GetComponentInChildren<DamageCaster>();
-        OnHpRecovery.AddListener(feedbacks.PlayFeedbacks);
+        OnHpRecovery.AddListener(eventFeedbacks.PlayFeedbacks);
     }
 
     public override void ActiveSkill()
@@ -36,6 +36,6 @@ public class DemeterSkill : CharacterSkill
     private void OnDisable()
     {
         _player.GetCompo<InputReaderSO>().OnSkillEvent -= ActiveSkill;
-        OnHpRecovery.RemoveListener(feedbacks.PlayFeedbacks);
+        OnHpRecovery.RemoveListener(eventFeedbacks.PlayFeedbacks);
     }
 }
