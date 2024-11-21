@@ -8,4 +8,5 @@ public class CharacterDataSO : ItemDataSO
     public int hp; //체력
     public int barrierCount; //베리어의 수
     public Color baseColor; //캐릭터를 대표하는 색
+    public string skillName; //캐릭터 능력 이름
 }

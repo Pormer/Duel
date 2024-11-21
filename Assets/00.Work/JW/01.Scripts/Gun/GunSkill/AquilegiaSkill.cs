@@ -54,7 +54,7 @@ public class AquilegiaSkill : GunSkill
         
         if (_isFormChanged)
         {
-            _stat.Damage = 3;
+            _stat.Damage = 4;
             if (_stat.BarrierCount <= 0) _stat.Damage = 1;
             _stat.BarrierCount--;
         }

@@ -17,7 +17,9 @@ MonoBehaviour:
     \uC7A5\uC804 \uC18D\uB3C4 \uAC10\uC18C\uB97C \uC2DC\uD0A4\uACE0 5\uCD08\uB3D9\uC548
     \uBD80\uD65C\uD55C\uB2E4."
   itemSprite: {fileID: -2708864828778826459, guid: 6482f5b6742fc2546b545cf2ec10d6da, type: 3}
+  eventFeedback: {fileID: 0}
   charType: 1
   hp: 5
   barrierCount: 3
   baseColor: {r: 0.509434, g: 0.03123889, b: 0.03123889, a: 0.5882353}
+  skillName: 

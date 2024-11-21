@@ -8,7 +8,7 @@
     <ui:VisualElement name="TopCreateBar" style="flex-grow: 0; flex-basis: 35px; flex-shrink: 0; background-color: rgb(47, 47, 47);">
         <ui:Button text="Create" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CreateBtn" class="data-btn" style="max-width: none; align-items: auto; align-self: auto; width: auto; flex-grow: 0; flex-basis: auto;" />
     </ui:VisualElement>
-    <SplitView name="SplitView">
+    <SplitView name="SplitView" fixed-pane-initial-dimension="180">
         <ui:VisualElement name="LeftPanel" class="panel" style="width: 280px; flex-grow: 0; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; flex-shrink: 0; flex-basis: auto; min-width: 180px;">
             <ui:ScrollView name="ItemScrollView">
                 <ui:Instance template="DataItem" name="DataItem" />

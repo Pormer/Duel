@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         var itemCaster = GetComponentInChildren<ItemCaster>();
         if(itemCaster != null) itemCaster.Initialize(this);
         
-        //구독
+        //????
         inputReader.OnMoveEvent += _movementCompo.SetMovement;
 
         inputReader.OnBarrierPressEvent += () => { IsOnBarrier = true; };
@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
         
         if(cdata == null || gData ==null) return;
         
-        //초기화
+        //????
         GunData = gData;
         StatDataCompo = new StatData(cdata, gData);
         _components.Add(StatDataCompo.GetType(), StatDataCompo);
@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
 
         if (cdata.eventFeedback != null) EventFeedbacksCompo = Instantiate(cdata.eventFeedback, transform);
 
-        //리플렉션
+        //???÷???
         string skillStr = $"{cdata.charType.ToString()}Skill";
         var type = Type.GetType(skillStr);
         

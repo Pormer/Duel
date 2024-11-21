@@ -13,7 +13,7 @@ public abstract class GunSkill : MonoBehaviour
     protected StatData _stat;
     protected bool _isFormChange;
 
-    protected bool isCoolTimeOut;
+    protected bool isCoolTime = false;
     
     public void Initialize(Gun gun, Player player)
     {
@@ -37,14 +37,20 @@ public abstract class GunSkill : MonoBehaviour
         _gun.AnimCompo.SetTrigger(DoShoot);
         _gun.DamageCastCompo.CastDamage(_stat.Damage);
         _stat.CurBulletCount--;
-        isCoolTimeOut = false;
+        
+        isCoolTime = true;
         StartCoroutine(CoolDown());
+    }
+
+    public void EnterShoot()
+    {
+        if(isCoolTime || !_stat.IsCanShoot || _player.GetCompo<PlayerMovement>().IsMove) return;
+        EnterSkill();
     }
 
     public virtual void EnterSkill()
     {
         //여기에 변경사항 모두 한 후 Shoot()실행
-        if(!isCoolTimeOut || !_stat.IsCanShoot || _player.GetCompo<PlayerMovement>().IsMove) return;
         
     }
 
@@ -55,7 +61,7 @@ public abstract class GunSkill : MonoBehaviour
 
     private IEnumerator CoolDown()
     {
-        yield return new WaitForSeconds(_stat.cooltime);
-        isCoolTimeOut = true;
+        yield return new WaitForSeconds(_stat.CoolTime);
+        isCoolTime = false;
     }
 }

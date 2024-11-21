@@ -22,16 +22,16 @@ public class MiraSkill : CharacterSkill
 
     private void MireSkillStart()
     {
-        print("미라의 저주시작");
+        print("????? ???????");
         _stat.Damage++;
-        _stat.cooltime--;
+        _stat.CoolTime--;
         StartCoroutine(DieTime());
     }
 
     private IEnumerator DieTime()
     {
         yield return new WaitForSeconds(5f);
-        print("끝");
+        print("??");
         _health.OnDeadEvent?.Invoke();
     }
 
