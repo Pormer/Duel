@@ -32,17 +32,17 @@ public class CharacterDataUiSet : MonoBehaviour
     {
         if (isLeft)
         {
-            leftPlayerLabel[0].text = characterData.hp.ToString();
-            leftPlayerLabel[1].text = characterData.barrierCount.ToString();
-            leftPlayerLabel[2].text = characterData.explanation;
-            leftPlayerLabel[3].text = characterData.name;
+            leftPlayerLabel[0].text = $"Name : {characterData.name}";
+            leftPlayerLabel[1].text = $"Hp : {characterData.hp.ToString()}";
+            leftPlayerLabel[2].text = $"Barrier : {characterData.barrierCount.ToString()}";
+            leftPlayerLabel[3].text = characterData.explanation;
         }
         else
         {
-            rightPlayerLabel[0].text = characterData.hp.ToString();
-            rightPlayerLabel[1].text = characterData.barrierCount.ToString();
-            rightPlayerLabel[2].text = characterData.explanation;
-            rightPlayerLabel[3].text = characterData.name;
+            rightPlayerLabel[0].text = $"Name : {characterData.name}";
+            rightPlayerLabel[1].text = $"Hp : {characterData.hp.ToString()}";
+            rightPlayerLabel[2].text = $"Barrier : {characterData.barrierCount.ToString()}";
+            rightPlayerLabel[3].text = characterData.explanation;
         }
     }
 }

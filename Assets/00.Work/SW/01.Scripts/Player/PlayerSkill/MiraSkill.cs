@@ -1,11 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MiraSkill : CharacterSkill
 {
+    public UnityEvent OnCurse;
     protected override void AwakePlayer()
     {
         _health.isResurrection = true;
+        OnCurse.AddListener(feedbacks.PlayFeedbacks);
     }
 
     protected override void UpdateCharacterSkill()
@@ -30,6 +33,11 @@ public class MiraSkill : CharacterSkill
         yield return new WaitForSeconds(5f);
         print("³¡");
         _health.OnDeadEvent?.Invoke();
+    }
+
+    private void OnDisable()
+    {
+        OnCurse.RemoveListener(feedbacks.PlayFeedbacks);
     }
 
 }

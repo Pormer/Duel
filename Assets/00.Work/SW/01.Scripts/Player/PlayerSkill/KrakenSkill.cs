@@ -26,4 +26,9 @@ public class KrakenSkill : CharacterSkill
         _player.MaskSpriteRenderer.DOColor(Color.HSVToRGB(0f, 0f, 1f), 0.2f);
         _health.IsInvincibility = false;
     }
+
+    private void OnDisable()
+    {
+        _player.GetComponentInChildren<DamageCaster>().OnShoot -= ColorChange;
+    }
 }

@@ -1,11 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MedusaSkill : CharacterSkill
 {
+    public UnityEvent OnPetrification;
     protected override void AwakePlayer()
     {
         _player.GetCompo<InputReaderSO>().OnSkillEvent += ActiveSkill;
+        OnPetrification.AddListener(feedbacks.PlayFeedbacks);
     }
     public override void ActiveSkill()
     {
@@ -16,5 +19,11 @@ public class MedusaSkill : CharacterSkill
     {
         yield return new WaitForSeconds(2f);
         _health.SkillNumder = 0;
+    }
+
+    private void OnDisable()
+    {
+        _player.GetCompo<InputReaderSO>().OnSkillEvent -= ActiveSkill;
+        OnPetrification.RemoveListener(feedbacks.PlayFeedbacks);
     }
 }

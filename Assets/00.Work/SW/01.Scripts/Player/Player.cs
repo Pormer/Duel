@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     public bool IsOnBarrier { get; private set; }
     public Action OnHitBarrier;
 
-
+    List<GameObject> sdsds;
     public T GetCompo<T>() where T : class
     {
         Type type = typeof(T);
