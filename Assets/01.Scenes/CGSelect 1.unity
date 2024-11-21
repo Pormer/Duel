@@ -713,8 +713,8 @@ GameObject:
   m_Component:
   - component: {fileID: 585694457}
   - component: {fileID: 585694458}
-  - component: {fileID: 585694459}
   - component: {fileID: 585694460}
+  - component: {fileID: 585694461}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -756,19 +756,6 @@ MonoBehaviour:
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
   m_WorldSpaceHeight: 1080
---- !u!114 &585694459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 585694456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d90b97948b02cf4b8db8e71b8af3093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DataUiPanel: {fileID: 585694458}
 --- !u!114 &585694460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -781,8 +768,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509b828e77615094daa1bd83be5eac8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sO: {fileID: 11400000, guid: 853e46e36085a2b4092b23acdef4c3fe, type: 2}
-  gun: {fileID: 11400000, guid: bdbb34e2149c9394196ed5c79c2bda88, type: 2}
+  sO: {fileID: 11400000, guid: bc2117689843267499811ab30e55ad2f, type: 2}
+  gun: {fileID: 11400000, guid: 9099253e23aecb045a3b989504e97151, type: 2}
+--- !u!114 &585694461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585694456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d90b97948b02cf4b8db8e71b8af3093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DataUiPanel: {fileID: 585694458}
 --- !u!1 &718936919
 GameObject:
   m_ObjectHideFlags: 0

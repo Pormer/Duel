@@ -15,7 +15,7 @@ public class CharacterDataUiSet : MonoBehaviour
         _playerData[0] = _root.Q<VisualElement>("LeftPlayerData");
         _playerData[1] = _root.Q<VisualElement>("RightPlayerData");
         _visualImages[0] = _playerData[0].Q<VisualElement>("VisualImage");
-        _visualImages[0] = _playerData[1].Q<VisualElement>("VisualImage");
+        _visualImages[1] = _playerData[1].Q<VisualElement>("VisualImage");
         LabelSet(ref leftPlayerLabel,0);
         LabelSet(ref rightPlayerLabel,1);
     }
@@ -32,14 +32,16 @@ public class CharacterDataUiSet : MonoBehaviour
     {
         if (isLeft)
         {
-            leftPlayerLabel[0].text = $"Name : {characterData.name}";
+            _visualImages[0].style.backgroundImage = new StyleBackground(characterData.itemSprite);
+            leftPlayerLabel[0].text = $"Name : {characterData.itemName}";
             leftPlayerLabel[1].text = $"Hp : {characterData.hp.ToString()}";
             leftPlayerLabel[2].text = $"Barrier : {characterData.barrierCount.ToString()}";
             leftPlayerLabel[3].text = characterData.explanation;
         }
         else
         {
-            rightPlayerLabel[0].text = $"Name : {characterData.name}";
+            _visualImages[1].style.backgroundImage = new StyleBackground(characterData.itemSprite);
+            rightPlayerLabel[0].text = $"Name : {characterData.itemName}";
             rightPlayerLabel[1].text = $"Hp : {characterData.hp.ToString()}";
             rightPlayerLabel[2].text = $"Barrier : {characterData.barrierCount.ToString()}";
             rightPlayerLabel[3].text = characterData.explanation;

@@ -1,3 +1,4 @@
+using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -16,7 +17,7 @@ public class GunDataUiSet : MonoBehaviour
         _gunData[0] = _root.Q<VisualElement>("LeftGunData");
         _gunData[1] = _root.Q<VisualElement>("RightGunData");
         _visualImages[0] = _gunData[0].Q<VisualElement>("VisualImage");
-        _visualImages[0] = _gunData[1].Q<VisualElement>("VisualImage");
+        _visualImages[1] = _gunData[1].Q<VisualElement>("VisualImage");
         LabelSet(ref leftGunLabel, 0);
         LabelSet(ref rightGunLabel, 1);
     }
@@ -35,6 +36,7 @@ public class GunDataUiSet : MonoBehaviour
     {
         if (isLeft)
         {
+            _visualImages[0].style.backgroundImage = new StyleBackground(gunDataSO.itemSprite);
             leftGunLabel[0].text = $"Name : {gunDataSO.itemName}";
             leftGunLabel[1].text = $"Damage {gunDataSO.damage.ToString()}";
             leftGunLabel[2].text = $"MaxBullet : {gunDataSO.bulletCount.ToString()}";
@@ -44,6 +46,7 @@ public class GunDataUiSet : MonoBehaviour
         }
         else
         {
+            _visualImages[1].style.backgroundImage = new StyleBackground(gunDataSO.itemSprite);
             rightGunLabel[0].text = $"Name : {gunDataSO.itemName}";
             rightGunLabel[1].text = $"Damage {gunDataSO.damage.ToString()}";
             rightGunLabel[2].text = $"MaxBullet : {gunDataSO.bulletCount.ToString()}";
