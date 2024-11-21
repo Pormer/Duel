@@ -3,6 +3,6 @@ namespace ObjectPooling
 {
     public enum PoolingType
     {
-        CistusChildItem,        
+        CistusChildItem,HyacinthusChildItem,        
     }
 }

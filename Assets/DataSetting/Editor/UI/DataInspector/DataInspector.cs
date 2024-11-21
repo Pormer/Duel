@@ -9,12 +9,14 @@ using Object = System.Object;
 
 public class DataInspector : IDisposable
 {
+    private TextField _skillNameField;
     private TextField _assetNameField;
     private Button _nameChangeBtn;
 
     private VisualTreeAsset _characterDataAsset;
     private VisualTreeAsset _gunDataAsset;
     private VisualElement _dataSettingRootElem;
+    private ObjectField _feedbackPlayerField;
 
     private DataEditorWindow _editorWnd;
 
@@ -115,6 +117,7 @@ public class DataInspector : IDisposable
             _dataPropSlider3 = itemDataUI.Q<SliderInt>("RangeSlider");
             _dataPropSlider4 = itemDataUI.Q<SliderInt>("LoadCountSlider");
             _dataPropField = itemDataUI.Q<UnityEngine.UIElements.FloatField>("CoolTimeField");
+            _feedbackPlayerField = itemDataUI.Q<ObjectField>("EventPlayer");
             _explanationField = itemDataUI.Q<TextField>("ExplanationTxt");
             
             //데이터 불러오기
@@ -125,6 +128,7 @@ public class DataInspector : IDisposable
             _dataPropSlider3.value = item.gunItemData.range;
             _dataPropSlider4.value = item.gunItemData.wantLoadCount;
             _dataPropField.value = item.gunItemData.coolTime;
+            _feedbackPlayerField.value = item.gunItemData.eventFeedback;
             _explanationField.value = item.gunItemData.explanation;
         }
         else
@@ -137,18 +141,22 @@ public class DataInspector : IDisposable
 
             _spritePreviewElem = itemDataUI.Q<VisualElement>("Image");
             _spriteField = itemDataUI.Q<ObjectField>("SpriteField");
+            _skillNameField = itemDataUI.Q<TextField>("SkillName");
             _typeField = itemDataUI.Q<UnityEngine.UIElements.EnumField>("TypeField");
             _dataPropSlider1 = itemDataUI.Q<SliderInt>("HPSlider");
             _dataPropSlider2 = itemDataUI.Q<SliderInt>("BarrierSlider");
             _baseColorField = itemDataUI.Q<ColorField>("BaseColorField");
+            _feedbackPlayerField = itemDataUI.Q<ObjectField>("EventPlayer");
             _explanationField = itemDataUI.Q<TextField>("ExplanationTxt");
             
             //데이터 불러오기
             _spriteField.value = item.charItemData.itemSprite;
+            _skillNameField.value = item.charItemData.skillName;
             _typeField.value = item.charItemData.charType;
             _dataPropSlider1.value = item.charItemData.hp;
             _dataPropSlider2.value = item.charItemData.barrierCount;
             _baseColorField.value = item.charItemData.baseColor;
+            _feedbackPlayerField.value = item.charItemData.eventFeedback;
             _explanationField.value = item.charItemData.explanation;
         }
         

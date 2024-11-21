@@ -7,95 +7,107 @@ public class StatData : IPlayerComponents
     public UnityEvent<int> OnHealthChanged;
     public UnityEvent<int> OnBarrierChanged;
 
-    private int health;
-
-    public int Health // 체력
+    //체력
+    public int maxHealth;
+    private int _health;
+    public int Health
     {
-        get => health;
+        get => _health;
         set
         {
-            if(value < 0) return;
+            if(value < 0 || maxHealth < value) return;
             OnHealthChanged?.Invoke(value);
-            health = value;
+            _health = value;
         }
     }
 
-    private int barrierCount;
-
-    public int BarrierCount // 베리어 수
+    //배리어 수
+    public int maxBarrierCount;
+    private int _barrierCount;
+    public int BarrierCount
     {
-        get => barrierCount;
+        get => _barrierCount;
         set
         {
-            OnBarrierChanged?.Invoke(value);
+            if (value < 0 || maxBarrierCount < value) return;
             
-            if (value < 0) return;
-            barrierCount = value;
+            OnBarrierChanged?.Invoke(value);
+            _barrierCount = value;
         }
     }
 
-    private int damage; 
-    
-    public int Damage // 총알데미지
+    //데미지
+    private int _damage; 
+    public int Damage
     {
-        get => damage;
+        get => _damage;
         set
         {
             if(value < 0) return;
-            damage = value;
+            _damage = value;
         }
     }
 
-    public int maxBulletCount; //최대 총알 수
-    private int curBulletCount;
-
-    public int CurBulletCount //현재 총알 수 
+    //총알 수
+    public int maxBulletCount;
+    private int _curBulletCount;
+    public int CurBulletCount
     {
-        get => curBulletCount;
+        get => _curBulletCount;
         set
         {
             if (maxBulletCount < value) return;
-            curBulletCount = value;
+            _curBulletCount = value;
         }
     }
 
-    public float cooltime; // 다음 총알 발사 가능 시간
+    //쿨타임
+    public float CoolTime { get; set; }
 
-    public int wantLoadCount; //장전되는데 필요한 움직임 수
-    private int curLoadCount;
-
-    public int CurLoadCount //현재 움직인 수
+    //장전에 필요한 움직임 수 
+    public int wantLoadCount;
+    private int _curLoadCount;
+    public int CurLoadCount
     {
-        get => curLoadCount;
+        get => _curLoadCount;
         set
         {
             if (wantLoadCount <= value)
             {
-                curLoadCount = 0;
+                _curLoadCount = 0;
                 CurBulletCount++;
             }
             else
             {
-                curLoadCount = value;
+                _curLoadCount = value;
             }
         }
     }
 
-    public bool IsCanShoot => curBulletCount > 0; //발사 가능 여부
+    //발사 가능 여부
+    public bool IsCanShoot => _curBulletCount > 0;
 
     public void Initialize(Player player)
     {
     }
 
-    public StatData(CharacterDataSO cdata, GunDataSO gData)
+    //초기화
+    public StatData(CharacterDataSO cData, GunDataSO gData)
     {
-        curBulletCount = gData.bulletCount;
-        cooltime = gData.coolTime;
-        Damage = gData.damage;
-        wantLoadCount = gData.wantLoadCount;
-        curLoadCount = 0;
+        maxHealth = cData.hp;
+        Health = cData.hp;
+        
+        maxBarrierCount = cData.barrierCount;
+        BarrierCount = cData.barrierCount;
+        
+        _damage = gData.damage;
+        
+        maxBulletCount = gData.bulletCount;
+        _curBulletCount = gData.bulletCount;
 
-        barrierCount = cdata.barrierCount;
-        health = cdata.hp;
+        CoolTime = gData.coolTime;
+        
+        wantLoadCount = gData.wantLoadCount;
+        _curLoadCount = 0;
     }
 }
