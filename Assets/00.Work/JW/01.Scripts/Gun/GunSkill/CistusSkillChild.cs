@@ -1,8 +1,9 @@
 using System;
+using ObjectPooling;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class CistusSkillChild : MonoBehaviour
+public class CistusSkillChild : PoolableMono
 {
     [SerializeField] ContactFilter2D filter;
     private CistusSkill skill;
@@ -34,5 +35,10 @@ public class CistusSkillChild : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(transform.position, new Vector3(0.5f, 0.5f, 1));
+    }
+
+    public override void ResetItem()
+    {
+        
     }
 }

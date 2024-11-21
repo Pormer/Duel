@@ -1,3 +1,4 @@
+using ObjectPooling;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -7,6 +8,7 @@ public class CistusSkill : GunSkill
     public bool IsFire { get; set; }
     [SerializeField] private EventFeedbackSO childPrefabData = default;
     private int _hitStack = 0;
+    private CistusSkillChild _childItem;
     
     
     protected override void AwakeSkill()
@@ -17,19 +19,20 @@ public class CistusSkill : GunSkill
             _hitStack++;
             if (_hitStack >= 2)
             {
-                CistusSkillChild item;
-                item = Instantiate(childPrefabData.feedbackPrefab.GetComponent<CistusSkillChild>());
+                if(_childItem != null) PoolManager.Instance.Push(_childItem);
+                _childItem = PoolManager.Instance.Pop(PoolingType.CistusChildItem) as CistusSkillChild;
                 
                 if (_player.GetCompo<InputReaderSO>().IsRight)
                 {
-                    item.transform.position = new Vector3(4, 0);
+                    _childItem.transform.position = new Vector3(4, 0);
                 }
                 else
                 {
-                    item.transform.position = new Vector3(-3, 0);
+                    _childItem.transform.position = new Vector3(-3, 0);
                 }
                 
-                item.Initialize(this);
+                _childItem.Initialize(this);
+                _hitStack = 0;
             }
         });
     }

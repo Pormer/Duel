@@ -226,7 +226,7 @@ public class UtilityWindow : EditorWindow
         }
 
         string code = string.Format(CodeFormat.PoolTypeFormat, codeBuilder.ToString());
-        string path = $"{Application.dataPath}/01_Works/HS/01_Script/Core/ObjectPool/PoolingType.cs";
+        string path = $"{Application.dataPath}/00.Work/JW/01.Scripts/Core/ObjectPool/PoolingType.cs";
         Debug.Log(path);
         File.WriteAllText(path, code);
 
