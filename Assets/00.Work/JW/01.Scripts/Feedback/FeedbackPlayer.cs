@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class FeedbackPlayer : MonoBehaviour
 {
-    private List<IFeedback> feedbackList;
+    private List<Feedback> feedbackList;
     private void Awake()
     {
-        feedbackList = GetComponentsInChildren<IFeedback>().ToList();
+        feedbackList = GetComponentsInChildren<Feedback>().ToList();
     }
 
     public void PlayFeedbacks()
