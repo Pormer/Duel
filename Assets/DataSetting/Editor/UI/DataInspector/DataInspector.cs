@@ -197,16 +197,19 @@ public class DataInspector : IDisposable
         data.range = _dataPropSlider3.value;
         data.wantLoadCount = _dataPropSlider4.value;
         data.coolTime = _dataPropField.value;
+        data.eventFeedback = _feedbackPlayerField.value as FeedbackPlayer;
         data.explanation = _explanationField.value;
     }
 
     public void CharDataSave(CharacterDataSO data)
     {
         data.itemSprite = _spriteField.value as Sprite;
+        data.skillName = _skillNameField.value;
         data.charType = (CharacterType)_typeField.value;
         data.hp = _dataPropSlider1.value;
         data.barrierCount = _dataPropSlider2.value;
         data.baseColor = _baseColorField.value;
+        data.eventFeedback = _feedbackPlayerField.value as FeedbackPlayer;
         data.explanation = _explanationField.value;
     }
     
