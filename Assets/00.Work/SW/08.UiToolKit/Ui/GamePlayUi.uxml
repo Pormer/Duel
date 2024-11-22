@@ -1,0 +1,5 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement style="flex-grow: 1;">
+        <engine:VisualElement name="LeftPlayUi" style="flex-grow: 1; position: absolute; width: 800px; height: 400px; top: 0; left: 0; right: 0; bottom: 0;" />
+    </engine:VisualElement>
+</engine:UXML>
