@@ -1,0 +1,6 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/00.Work/JW/UI/Stat/HealthStatItem.uss?fileID=7433441132597879392&amp;guid=d9c19cf088cd0df40a9763901ee8b687&amp;type=3#HealthStatItem" />
+    <engine:VisualElement name="BackgroundIcon" style="flex-grow: 0; flex-basis: 100px; flex-shrink: 0; width: 100px; height: 100px; -unity-background-image-tint-color: rgb(174, 174, 174); background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;); background-size: 90% 70%; margin-top: 2px; margin-right: 2px; margin-bottom: 2px; margin-left: 2px;">
+        <engine:VisualElement name="ActiveItem" class="item" style="transition-duration: 0.3s; -unity-background-image-tint-color: rgb(255, 255, 255); background-size: 100% 80%; flex-basis: 100px; width: 100px; height: 100px; flex-grow: 0; flex-shrink: 0; translate: 0 0;" />
+    </engine:VisualElement>
+</engine:UXML>

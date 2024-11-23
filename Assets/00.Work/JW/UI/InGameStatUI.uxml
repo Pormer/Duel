@@ -1,59 +1,39 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:Template name="StatItem" src="project://database/Assets/00.Work/JW/UI/Stat/HealthStatItem.uxml?fileID=9197481963319205126&amp;guid=2921fd4c7e58c5d4f8e22a7c1b38a49f&amp;type=3#HealthStatItem" />
+    <engine:Template name="ETCStatItem" src="project://database/Assets/00.Work/JW/UI/Stat/ETCStatItem.uxml?fileID=9197481963319205126&amp;guid=96385d71218f7b44790b742190a23ccb&amp;type=3#ETCStatItem" />
     <Style src="project://database/Assets/00.Work/SW/08.UiToolKit/Ui/InGameUi.uss?fileID=7433441132597879392&amp;guid=584ad24ad8dcc7b41b4107526277fe61&amp;type=3#InGameUi" />
-    <engine:VisualElement name="LeftPlayUi" class="List" style="width: 900px; height: auto;">
-        <engine:VisualElement name="Hearts" style="flex-grow: 1; flex-direction: row-reverse; justify-content: space-between; align-items: stretch; align-content: flex-start; position: absolute; height: 96px; width: 900px; top: auto;">
-            <engine:VisualElement class="Heart" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;);" />
-            <engine:VisualElement class="Heart" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;);" />
-            <engine:VisualElement class="Heart" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;);" />
-            <engine:VisualElement class="Heart" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;);" />
-            <engine:VisualElement class="Heart" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;);" />
-            <engine:VisualElement class="Heart" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;);" />
-            <engine:VisualElement class="Heart" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;);" />
-            <engine:VisualElement class="Heart" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;);" />
+    <engine:VisualElement name="ItemGroup" style="flex-grow: 1; flex-direction: row;">
+        <engine:VisualElement name="LeftStatElem" class="direction" style="flex-grow: 1; flex-direction: column;">
+            <engine:VisualElement name="HeartGroup" class="group left health">
+                <engine:Instance template="StatItem" />
+                <engine:Instance template="StatItem" />
+                <engine:Instance template="StatItem" />
+            </engine:VisualElement>
+            <engine:VisualElement name="BarrierGroup" class="group left" style="padding-top: 0; padding-bottom: 0; margin-right: 130px;">
+                <engine:Instance template="ETCStatItem" />
+                <engine:Instance template="ETCStatItem" />
+            </engine:VisualElement>
+            <engine:VisualElement name="BulletGroup" class="group left" style="padding-top: 0; padding-bottom: 0; flex-shrink: 0;">
+                <engine:Instance template="ETCStatItem" />
+                <engine:Instance template="ETCStatItem" />
+                <engine:Instance template="ETCStatItem" />
+            </engine:VisualElement>
         </engine:VisualElement>
-        <engine:VisualElement name="Barriers" class="List" style="top: 120px; flex-wrap: nowrap; flex-direction: row-reverse; right: auto; width: 500px; position: absolute; height: 120px;">
-            <engine:VisualElement name="Barrier" class="Barrier" />
-            <engine:VisualElement name="Barrier" class="Barrier" style="border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px;" />
-            <engine:VisualElement name="Barrier" class="Barrier" />
-            <engine:VisualElement name="Barrier" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Bookmark.png?fileID=2390188782030265373&amp;guid=5588531f0e96d604f8d3f33cdd05b5df&amp;type=3#Bookmark_0&quot;); border-left-color: rgb(21, 21, 21); border-right-color: rgb(21, 21, 21); border-top-color: rgb(21, 21, 21); border-bottom-color: rgb(21, 21, 21); border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px;" />
-            <engine:VisualElement name="Barrier" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Bookmark.png?fileID=2390188782030265373&amp;guid=5588531f0e96d604f8d3f33cdd05b5df&amp;type=3#Bookmark_0&quot;); border-left-color: rgb(21, 21, 21); border-right-color: rgb(21, 21, 21); border-top-color: rgb(21, 21, 21); border-bottom-color: rgb(21, 21, 21);" />
-        </engine:VisualElement>
-        <engine:VisualElement name="Bulllets" class="List" style="position: absolute; top: 240px; width: 717px; height: 158px; right: auto; flex-direction: row-reverse; left: 22px;">
-            <engine:VisualElement name="Bulllet" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Butten.png?fileID=2800000&amp;guid=910b86320a2f6514d8afe2a3740fd942&amp;type=3#Butten&quot;); rotate: -147deg; width: auto; height: auto;" />
-            <engine:VisualElement name="Bulllet" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Butten.png?fileID=2800000&amp;guid=910b86320a2f6514d8afe2a3740fd942&amp;type=3#Butten&quot;); rotate: -147deg; width: auto; height: auto;" />
-            <engine:VisualElement name="Bulllet" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Butten.png?fileID=2800000&amp;guid=910b86320a2f6514d8afe2a3740fd942&amp;type=3#Butten&quot;); rotate: -147deg; width: auto; height: auto;" />
-            <engine:VisualElement name="Bulllet" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Butten.png?fileID=2800000&amp;guid=910b86320a2f6514d8afe2a3740fd942&amp;type=3#Butten&quot;); rotate: -147deg; width: auto; height: auto;" />
-            <engine:VisualElement name="Bulllet" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Butten.png?fileID=2800000&amp;guid=910b86320a2f6514d8afe2a3740fd942&amp;type=3#Butten&quot;); rotate: -147deg; width: auto; height: auto;" />
-            <engine:VisualElement name="Bulllet" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Butten.png?fileID=2800000&amp;guid=910b86320a2f6514d8afe2a3740fd942&amp;type=3#Butten&quot;); rotate: -147deg; width: auto; height: auto;" />
-            <engine:VisualElement name="Bulllet" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Butten.png?fileID=2800000&amp;guid=910b86320a2f6514d8afe2a3740fd942&amp;type=3#Butten&quot;); rotate: -147deg; width: auto; height: auto;" />
-        </engine:VisualElement>
-    </engine:VisualElement>
-    <engine:VisualElement name="RightPlayUi" style="flex-grow: 1; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; position: absolute; right: 0; width: 900px; height: 450px; background-position-x: center 100px; flex-wrap: wrap-reverse;">
-        <engine:VisualElement name="Hearts" style="flex-grow: 1; flex-direction: row; justify-content: space-between; align-items: stretch; align-content: flex-start; position: absolute; height: 96px; width: 900px; top: auto;">
-            <engine:VisualElement class="Heart" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;);" />
-            <engine:VisualElement class="Heart" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;);" />
-            <engine:VisualElement class="Heart" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;);" />
-            <engine:VisualElement class="Heart" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;);" />
-            <engine:VisualElement class="Heart" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;);" />
-            <engine:VisualElement class="Heart" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;);" />
-            <engine:VisualElement class="Heart" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;);" />
-            <engine:VisualElement class="Heart" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&amp;guid=c80fb2e8a007bfe43adeb79912f88328&amp;type=3#Heart_0&quot;);" />
-        </engine:VisualElement>
-        <engine:VisualElement name="Barriers" class="List" style="top: 120px; flex-wrap: nowrap; flex-direction: row; right: auto; width: 500px; position: absolute; height: 120px;">
-            <engine:VisualElement name="Barrier" class="Barrier" />
-            <engine:VisualElement name="Barrier" class="Barrier" style="border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px;" />
-            <engine:VisualElement name="Barrier" class="Barrier" />
-            <engine:VisualElement name="Barrier" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Bookmark.png?fileID=2390188782030265373&amp;guid=5588531f0e96d604f8d3f33cdd05b5df&amp;type=3#Bookmark_0&quot;); border-left-color: rgb(21, 21, 21); border-right-color: rgb(21, 21, 21); border-top-color: rgb(21, 21, 21); border-bottom-color: rgb(21, 21, 21); border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px;" />
-            <engine:VisualElement name="Barrier" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Bookmark.png?fileID=2390188782030265373&amp;guid=5588531f0e96d604f8d3f33cdd05b5df&amp;type=3#Bookmark_0&quot;); border-left-color: rgb(21, 21, 21); border-right-color: rgb(21, 21, 21); border-top-color: rgb(21, 21, 21); border-bottom-color: rgb(21, 21, 21);" />
-        </engine:VisualElement>
-        <engine:VisualElement name="Bulllets" class="List" style="position: absolute; top: 240px; width: 717px; height: 158px; right: 24px; flex-direction: row; left: auto; align-items: stretch; justify-content: space-between; align-self: flex-end;">
-            <engine:VisualElement name="Bulllet" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Butten.png?fileID=2800000&amp;guid=910b86320a2f6514d8afe2a3740fd942&amp;type=3#Butten&quot;); rotate: 147deg; width: auto; height: auto;" />
-            <engine:VisualElement name="Bulllet" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Butten.png?fileID=2800000&amp;guid=910b86320a2f6514d8afe2a3740fd942&amp;type=3#Butten&quot;); rotate: 147deg; width: auto; height: auto;" />
-            <engine:VisualElement name="Bulllet" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Butten.png?fileID=2800000&amp;guid=910b86320a2f6514d8afe2a3740fd942&amp;type=3#Butten&quot;); rotate: 147deg; width: auto; height: auto;" />
-            <engine:VisualElement name="Bulllet" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Butten.png?fileID=2800000&amp;guid=910b86320a2f6514d8afe2a3740fd942&amp;type=3#Butten&quot;); rotate: 147deg; width: auto; height: auto;" />
-            <engine:VisualElement name="Bulllet" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Butten.png?fileID=2800000&amp;guid=910b86320a2f6514d8afe2a3740fd942&amp;type=3#Butten&quot;); rotate: 147deg; width: auto; height: auto;" />
-            <engine:VisualElement name="Bulllet" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Butten.png?fileID=2800000&amp;guid=910b86320a2f6514d8afe2a3740fd942&amp;type=3#Butten&quot;); rotate: 147deg; width: auto; height: auto;" />
-            <engine:VisualElement name="Bulllet" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Butten.png?fileID=2800000&amp;guid=910b86320a2f6514d8afe2a3740fd942&amp;type=3#Butten&quot;); rotate: 147deg; width: auto; height: auto;" />
+        <engine:VisualElement name="RightStatElem" class="direction" style="flex-grow: 1; flex-direction: column;">
+            <engine:VisualElement name="HeartGroup" class="group health right">
+                <engine:Instance template="StatItem" />
+                <engine:Instance template="StatItem" />
+                <engine:Instance template="StatItem" />
+            </engine:VisualElement>
+            <engine:VisualElement name="BarrierGroup" class="group right" style="padding-top: 0; padding-bottom: 0; margin-right: 80px; margin-left: 130px;">
+                <engine:Instance template="ETCStatItem" />
+                <engine:Instance template="ETCStatItem" />
+            </engine:VisualElement>
+            <engine:VisualElement name="BulletGroup" class="group right" style="padding-top: 0; padding-bottom: 0; flex-shrink: 0;">
+                <engine:Instance template="ETCStatItem" />
+                <engine:Instance template="ETCStatItem" />
+                <engine:Instance template="ETCStatItem" />
+            </engine:VisualElement>
         </engine:VisualElement>
     </engine:VisualElement>
 </engine:UXML>
