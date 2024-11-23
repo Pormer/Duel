@@ -8,8 +8,15 @@ public class SelectManager : MonoBehaviour
     [SerializeField] private DataManagerSO dataM;
     [SerializeField] SelectDataManagerSO selectDataM;
     [field: SerializeField] public Player[] PlayerGroup { get; private set; }
-    [SerializeField] private CharacterDataSO[] selectCharData;
-    [SerializeField] private GunDataSO[] selectGunData;
+    [field: SerializeField] public CharacterDataSO[] selectCharData { get; private set; }
+    [field: SerializeField] public GunDataSO[] selectGunData { get; private set; }
+
+    private InGameUI _gameUI;
+
+    private void Awake()
+    {
+        _gameUI = FindFirstObjectByType<InGameUI>();
+    }
 
     private void Start()
     {
@@ -28,6 +35,8 @@ public class SelectManager : MonoBehaviour
         else
         {
             PlayerGroup = FindObjectsByType<Player>(FindObjectsSortMode.None);
+            if(PlayerGroup[0].GetCompo<InputReaderSO>().IsRight) PlayerGroup = PlayerGroup.Reverse().ToArray();
+            
             PlayerInitialize();
         }
     }
@@ -35,7 +44,7 @@ public class SelectManager : MonoBehaviour
     public void StartOnlineGameClientRpc()
     {
         if (NetworkManager.Singleton.IsHost && PlayerGroup[1].GetComponent<NetworkObject>().IsOwner)
-            PlayerGroup.Reverse();
+            PlayerGroup = PlayerGroup.Reverse().ToArray();
         if (NetworkManager.Singleton.IsClient)
         {
             PlayerGroup[1].transform.position = new Vector3(4, 0);
@@ -64,5 +73,7 @@ public class SelectManager : MonoBehaviour
         {
             PlayerGroup[i].Initialize(selectCharData[i], selectGunData[i]);
         }
+        
+        _gameUI.SetDataUI(selectCharData.ToList(), selectGunData.ToList(), PlayerGroup);
     }
 }

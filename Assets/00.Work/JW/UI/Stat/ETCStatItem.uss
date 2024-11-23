@@ -1,0 +1,14 @@
+.item {
+    flex-grow: 1;
+    background-image: url("project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&guid=c80fb2e8a007bfe43adeb79912f88328&type=3#Heart_0");
+    background-size: 100% 85%;
+    scale: 1 1;
+    flex-basis: 50px;
+    transition-duration: 0.5s;
+}
+
+.item.active {
+    transition-timing-function: ease-in-back;
+    transition-duration: 0.2s;
+    scale: 0 0;
+}
