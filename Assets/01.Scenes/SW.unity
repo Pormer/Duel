@@ -1063,7 +1063,6 @@ GameObject:
   - component: {fileID: 1411144231}
   - component: {fileID: 1411144230}
   - component: {fileID: 1411144229}
-  - component: {fileID: 1411144232}
   m_Layer: 5
   m_Name: InGameStatUI
   m_TagString: Untagged
@@ -1125,22 +1124,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1411144232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411144228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b40fa636494e9774486a04afecabe242, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameMinPanel: {fileID: 0}
-  crownSprites:
-  - {fileID: 169474419829603625, guid: d41c1eac901da9f40ac4d8c75a4f0597, type: 3}
-  - {fileID: 2350524640894035138, guid: f92459087972dd84ab18c199bdf65fae, type: 3}
 --- !u!1 &1581615274
 GameObject:
   m_ObjectHideFlags: 0
