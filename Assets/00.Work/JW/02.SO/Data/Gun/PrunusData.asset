@@ -15,9 +15,10 @@ MonoBehaviour:
   itemName: Prunus
   explanation: "3\uBC88 \uC5F0\uC18D \uC801\uC911 \uC2DC, \uC989\uC2DC \uCC98\uD615"
   itemSprite: {fileID: 1109123678765518620, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
+  eventFeedback: {fileID: 0}
   gunType: 7
   damage: 0
-  coolTime: 1
+  coolTime: 0.5
   bulletCount: 1
   wantLoadCount: 1
   range: 2

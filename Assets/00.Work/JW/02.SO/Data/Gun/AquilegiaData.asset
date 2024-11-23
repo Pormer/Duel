@@ -21,7 +21,7 @@ MonoBehaviour:
   eventFeedback: {fileID: 0}
   gunType: 8
   damage: 0
-  coolTime: 2
+  coolTime: 1
   bulletCount: 3
   wantLoadCount: 3
   range: 2

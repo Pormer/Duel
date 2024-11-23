@@ -16,9 +16,10 @@ MonoBehaviour:
   explanation: "\uD53C\uACA9 \uC2DC, \uB370\uBBF8\uC9C0\uAC00 -1\uB41C\uB2E4. \uCD5C\uC18C
     0"
   itemSprite: {fileID: -8981296285653128395, guid: 4503ab6cc557b004d8edafab748c5ba1, type: 3}
+  eventFeedback: {fileID: 0}
   gunType: 11
   damage: 4
-  coolTime: 2
+  coolTime: 1
   bulletCount: 4
   wantLoadCount: 2
   range: 3
