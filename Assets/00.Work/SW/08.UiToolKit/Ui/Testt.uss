@@ -1,0 +1,104 @@
+.UpPanel {
+    flex-grow: 1;
+    background-color: rgb(0, 0, 0);
+    rotate: -29deg;
+    translate: 2060px -1870px;
+    width: 2401px;
+    position: relative;
+}
+
+.UpPanel.UpMove {
+    translate: -434px -499px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+}
+
+.DownPanel {
+    flex-grow: 1;
+    position: absolute;
+    bottom: 0;
+    width: 2382px;
+    height: 1192px;
+    background-color: rgb(255, 255, 255);
+    rotate: -29deg;
+    translate: -2489px 2033px;
+}
+
+.DownPanel.DownMove {
+    translate: 115px 556px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+}
+
+.character {
+    flex-grow: 1;
+    background-image: url("project://database/Assets/00.Work/JW/04.Sprites/Character.png?fileID=21300000&guid=b9b68be24ffba5241bebbc3c6fe01122&type=3#Character");
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: auto;
+    translate: 750px 1400px;
+}
+
+.crown {
+    flex-grow: 1;
+    background-image: url("project://database/Assets/00.Work/SW/04.Sprites/CrownRed.png?fileID=169474419829603625&guid=d41c1eac901da9f40ac4d8c75a4f0597&type=3#CrownRed_0");
+    position: absolute;
+    width: 340px;
+    height: 250px;
+    translate: 782px -500px;
+    left: -9px;
+}
+
+.character.IsMove {
+    translate: 750px 350px;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out-back;
+}
+
+.crown.IsMove {
+    translate: 782px 220px;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+}
+
+.playerName {
+    position: absolute;
+    width: auto;
+    height: auto;
+    -unity-font-definition: url("project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&guid=afd429833c5b2104c9ef3ea3738a6bf9&type=3#Galmuri7");
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    background-color: rgb(0, 0, 0);
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-top-width: 10px;
+    border-right-width: 10px;
+    border-bottom-width: 10px;
+    border-left-width: 10px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    translate: -1000px 800px;
+}
+
+.playerName.IsMove {
+    translate: 550px 800px;
+    transition-timing-function: ease-in;
+    transition-duration: 0.5s;
+}
+
+.character.IsMove {
+    translate: 750px 350px;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out-back;
+}
+
+.playerName.IsMove {
+    translate: 550px 800px;
+    transition-timing-function: ease-in-out-back;
+    transition-duration: 0.5s;
+}

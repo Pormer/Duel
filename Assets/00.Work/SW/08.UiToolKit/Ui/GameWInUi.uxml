@@ -1,3 +1,10 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <engine:VisualElement name="Slide" style="flex-grow: 1; background-color: rgba(255, 255, 255, 0.51);" />
+    <Style src="project://database/Assets/00.Work/SW/08.UiToolKit/Ui/Testt.uss?fileID=7433441132597879392&amp;guid=995b7ff5a5dcce24c98ec2749539397c&amp;type=3#Testt" />
+    <engine:VisualElement style="flex-grow: 1;">
+        <engine:VisualElement name="UpPanel" class="UpPanel" />
+        <engine:VisualElement name="DownPanel" class="DownPanel" />
+        <engine:VisualElement name="Character" class="character" />
+        <engine:VisualElement name="Crown" class="crown" />
+        <engine:Label text="RightPlayerWin" name="PlayerName" class="playerName" />
+    </engine:VisualElement>
 </engine:UXML>
