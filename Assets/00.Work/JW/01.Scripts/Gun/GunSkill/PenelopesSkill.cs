@@ -12,7 +12,7 @@ public class PenelopesSkill : GunSkill
     {
         base.AwakeSkill();
         
-        OnBulletDamageChanged.AddListener(eventFeedbacks.PlayFeedbacks);
+        if(eventFeedbacks != null) OnBulletDamageChanged.AddListener(eventFeedbacks.PlayFeedbacks);
         _curBulletShootCount = 0;
     }
 
@@ -24,7 +24,7 @@ public class PenelopesSkill : GunSkill
         
         if (_curBulletShootCount >= wantBulletCount)
         {
-            OnBulletDamageChanged.Invoke();
+            OnBulletDamageChanged?.Invoke();
             _stat.Damage *= 2;
             _curBulletShootCount = 0;
         }

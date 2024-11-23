@@ -1,0 +1,14 @@
+.move {
+    flex-grow: 1;
+    background-color: rgb(255, 90, 90);
+    translate: 0 1169px;
+    transition-property: translate;
+    transition-duration: 3s;
+    transition-timing-function: ease-in;
+}
+
+.move.isMove {
+    transition-duration: 3s;
+    transition-timing-function: ease-out-bounce;
+    translate: 0 0;
+}

@@ -1,0 +1,4 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/00.Work/JW/UI/Title.uss?fileID=7433441132597879392&amp;guid=73367f6f61840384c8dfe63089039dc7&amp;type=3#Title" />
+    <engine:VisualElement class="move" style="flex-grow: 1;" />
+</engine:UXML>

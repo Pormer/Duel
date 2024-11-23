@@ -46,13 +46,13 @@ public class Player : MonoBehaviour
         GetComponentsInChildren<IPlayerComponents>().ToList()
             .ForEach(x => _components.Add(x.GetType(), x));
         
+        _components.Add(inputReader.GetType(), inputReader);
     }
 
     public void Initialize(CharacterDataSO cdata, GunDataSO gData)
     {
         _movementCompo = GetComponent<PlayerMovement>();
         _movementCompo.Initialize(this);
-        _components.Add(inputReader.GetType(), inputReader);
 
         var itemCaster = GetComponentInChildren<ItemCaster>();
         if(itemCaster != null) itemCaster.Initialize(this);

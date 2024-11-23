@@ -1,3 +1,39 @@
-<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <engine:VisualElement name="VisualElement" style="flex-grow: 0; flex-shrink: 0; width: 150px; height: 150px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; background-color: rgb(255, 255, 255); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; flex-direction: row;" />
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:Template name="StatItem" src="project://database/Assets/00.Work/JW/UI/Stat/HealthStatItem.uxml?fileID=9197481963319205126&amp;guid=2921fd4c7e58c5d4f8e22a7c1b38a49f&amp;type=3#HealthStatItem" />
+    <engine:Template name="ETCStatItem" src="project://database/Assets/00.Work/JW/UI/Stat/ETCStatItem.uxml?fileID=9197481963319205126&amp;guid=96385d71218f7b44790b742190a23ccb&amp;type=3#ETCStatItem" />
+    <Style src="project://database/Assets/00.Work/SW/08.UiToolKit/Ui/InGameUi.uss?fileID=7433441132597879392&amp;guid=584ad24ad8dcc7b41b4107526277fe61&amp;type=3#InGameUi" />
+    <engine:VisualElement name="ItemGroup" style="flex-grow: 1; flex-direction: row;">
+        <engine:VisualElement name="LeftStatElem" class="direction" style="flex-grow: 1; flex-direction: column;">
+            <engine:VisualElement name="HeartGroup" class="group left health">
+                <engine:Instance template="StatItem" />
+                <engine:Instance template="StatItem" />
+                <engine:Instance template="StatItem" />
+            </engine:VisualElement>
+            <engine:VisualElement name="BarrierGroup" class="group left" style="padding-top: 0; padding-bottom: 0; margin-right: 130px;">
+                <engine:Instance template="ETCStatItem" />
+                <engine:Instance template="ETCStatItem" />
+            </engine:VisualElement>
+            <engine:VisualElement name="BulletGroup" class="group left" style="padding-top: 0; padding-bottom: 0; flex-shrink: 0;">
+                <engine:Instance template="ETCStatItem" />
+                <engine:Instance template="ETCStatItem" />
+                <engine:Instance template="ETCStatItem" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:VisualElement name="RightStatElem" class="direction" style="flex-grow: 1; flex-direction: column;">
+            <engine:VisualElement name="HeartGroup" class="group health right">
+                <engine:Instance template="StatItem" />
+                <engine:Instance template="StatItem" />
+                <engine:Instance template="StatItem" />
+            </engine:VisualElement>
+            <engine:VisualElement name="BarrierGroup" class="group right" style="padding-top: 0; padding-bottom: 0; margin-right: 80px; margin-left: 130px;">
+                <engine:Instance template="ETCStatItem" />
+                <engine:Instance template="ETCStatItem" />
+            </engine:VisualElement>
+            <engine:VisualElement name="BulletGroup" class="group right" style="padding-top: 0; padding-bottom: 0; flex-shrink: 0;">
+                <engine:Instance template="ETCStatItem" />
+                <engine:Instance template="ETCStatItem" />
+                <engine:Instance template="ETCStatItem" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
 </engine:UXML>

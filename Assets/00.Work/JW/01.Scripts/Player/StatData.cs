@@ -1,11 +1,13 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using Action = Unity.Android.Gradle.Manifest.Action;
 
 public class StatData : IPlayerComponents
 {
-    public UnityEvent<int> OnHealthChanged;
-    public UnityEvent<int> OnBarrierChanged;
+    public event Action<int> OnHealthChanged;
+    public event Action<int> OnBarrierChanged;
+    public event Action<int> OnBulletChanged;
 
     //체력
     public int maxHealth;
@@ -15,9 +17,10 @@ public class StatData : IPlayerComponents
         get => _health;
         set
         {
-            if(value < 0 || maxHealth < value) return;
-            OnHealthChanged?.Invoke(value);
-            _health = value;
+            if(maxHealth < value) return;
+            
+            _health = value < 0 ? 0 : value;
+            OnHealthChanged?.Invoke(_health);
         }
     }
 
@@ -57,6 +60,7 @@ public class StatData : IPlayerComponents
         set
         {
             if (maxBulletCount < value) return;
+            OnBulletChanged?.Invoke(value);
             _curBulletCount = value;
         }
     }
