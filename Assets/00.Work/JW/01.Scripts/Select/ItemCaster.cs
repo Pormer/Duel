@@ -27,7 +27,7 @@ public class ItemCaster : MonoBehaviour
         {
             if (cols[0].TryGetComponent(out SelectItem item))
             {
-                item.Select(_player.GetCompo<InputReaderSO>().IsRight);
+                item.Select(_player.InputReaderCompo.IsRight);
             }
         }
     }
@@ -52,14 +52,14 @@ public class ItemCaster : MonoBehaviour
     {
         _player = player;
 
-        _player.GetCompo<InputReaderSO>().OnShootEvent += CastItem;
-        _player.GetCompo<InputReaderSO>().OnMoveEvent += CastItmeData;
+        _player.InputReaderCompo.OnShootEvent += CastItem;
+        _player.InputReaderCompo.OnMovementEvent += CastItmeData;
     }
 
     private void OnDestroy()
     {
-        _player.GetCompo<InputReaderSO>().OnShootEvent -= CastItem;
-        _player.GetCompo<InputReaderSO>().OnMoveEvent -= CastItmeData;
+        _player.InputReaderCompo.OnShootEvent -= CastItem;
+        _player.InputReaderCompo.OnMovementEvent -= CastItmeData;
     }
 
     private void OnDrawGizmos()

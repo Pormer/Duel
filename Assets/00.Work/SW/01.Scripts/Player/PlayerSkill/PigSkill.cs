@@ -7,7 +7,7 @@ public class PigSkill : CharacterSkill
     protected override void AwakePlayer()
     {
         _stat.Damage = 1;
-        _player.GetCompo<InputReaderSO>().OnSkillEvent += ActiveSkill;
+        _player.InputReaderCompo.OnSkillEvent += ActiveSkill;
         OnEat.AddListener(eventFeedbacks.PlayFeedbacks);
     }
 
@@ -20,7 +20,7 @@ public class PigSkill : CharacterSkill
 
     private void OnDisable()
     {
-        _player.GetCompo<InputReaderSO>().OnSkillEvent -= ActiveSkill;
+        _player.InputReaderCompo.OnSkillEvent -= ActiveSkill;
         OnEat.RemoveListener(eventFeedbacks.PlayFeedbacks);
     }
 }

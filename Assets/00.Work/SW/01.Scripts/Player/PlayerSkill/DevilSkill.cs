@@ -7,7 +7,7 @@ public class DevilSkill : CharacterSkill
     public UnityEvent OnTransaction;
     protected override void AwakePlayer()
     {
-        _player.GetCompo<InputReaderSO>().OnSkillEvent += ActiveSkill;
+        _player.InputReaderCompo.OnSkillEvent += ActiveSkill;
         OnTransaction.AddListener(eventFeedbacks.PlayFeedbacks);
     }
     public override void ActiveSkill()
@@ -32,7 +32,7 @@ public class DevilSkill : CharacterSkill
 
     private void OnDisable()
     {
-        _player.GetCompo<InputReaderSO>().OnSkillEvent -= ActiveSkill;
+        _player.InputReaderCompo.OnSkillEvent -= ActiveSkill;
         OnTransaction.RemoveListener(eventFeedbacks.PlayFeedbacks);
     }
 }

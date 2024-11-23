@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ed6baf62016a145889061d7096e2fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputReader: {fileID: 11400000, guid: 5c5a90959cbe79b4f96c81d887ac1872, type: 2}
+  <InputReaderCompo>k__BackingField: {fileID: 11400000, guid: 06711f12c4208c444a2fef5c24139bc0, type: 2}
 --- !u!114 &408479294564393027
 MonoBehaviour:
   m_ObjectHideFlags: 0

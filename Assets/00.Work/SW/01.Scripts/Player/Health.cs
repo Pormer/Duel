@@ -36,7 +36,6 @@ public class Health : MonoBehaviour, IPlayerComponents
                 SkillNumder = 0;
                 IsInvincibility = false;
             }
-            print(_stat.Health);
             return;
         }
 
@@ -44,20 +43,17 @@ public class Health : MonoBehaviour, IPlayerComponents
         {
             if(_stat.BarrierCount > 0)
             {
-                if (!(SkillNumder == 2)) _stat.BarrierCount--;
+                if (SkillNumder != 2) _stat.BarrierCount--;
                 _player.OnHitBarrier?.Invoke();
                 return;
             }
         }
-
-        Debug.Log(_stat == null);
+        
         _player.GetCompo<PlayerAni>().PlayAni(PlayerAniName.Hit);
         _stat.Health -= damage;
-        print("Health: " + _stat.Health);
         if (_stat.Health <= 0 && !isResurrection) OnDeadEvent?.Invoke();
         else
         {
-            print("Damage: " + damage);
             OnHitEvent?.Invoke();
             IsInvincibility = true;
             InvincibilityStart(_player.PlayerSpriteRenderer);

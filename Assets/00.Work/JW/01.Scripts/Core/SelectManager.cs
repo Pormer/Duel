@@ -35,7 +35,7 @@ public class SelectManager : MonoBehaviour
         else
         {
             PlayerGroup = FindObjectsByType<Player>(FindObjectsSortMode.None);
-            if(PlayerGroup[0].GetCompo<InputReaderSO>().IsRight) PlayerGroup = PlayerGroup.Reverse().ToArray();
+            if(PlayerGroup[0].InputReaderCompo.IsRight) PlayerGroup = PlayerGroup.Reverse().ToArray();
             
             PlayerInitialize();
         }
