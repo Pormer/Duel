@@ -286,6 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 562284829}
   - component: {fileID: 562284828}
+  - component: {fileID: 562284830}
   m_Layer: 0
   m_Name: Ui
   m_TagString: Untagged
@@ -307,7 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: bf6986ef8e78fa245a70c3ae6a52e49a, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: 15a67ead4a34eb846aac6ed7bd356dcf, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: 4d7f40c1f312be74cb7293e57e674ddd, type: 3}
   m_SortingOrder: 0
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
@@ -327,6 +328,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &562284830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562284827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40fa636494e9774486a04afecabe242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameMinPanel: {fileID: 562284828}
 --- !u!1 &654077652
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     public SpriteRenderer PlayerSpriteRenderer { get; private set; }
     public SpriteRenderer MaskSpriteRenderer { get; private set; }
+    private GameObject barrier;
 
     #endregion
 
@@ -40,7 +41,9 @@ public class Player : MonoBehaviour
     {
         PlayerSpriteRenderer = transform.Find("Visual")?.GetComponent<SpriteRenderer>();
         MaskSpriteRenderer = transform.Find("Visual").transform.Find("Mask").GetComponent<SpriteRenderer>();
-        
+        barrier = transform.Find("Visual").transform.Find("Barrier").gameObject;
+
+
         _components = new Dictionary<Type, IPlayerComponents>();
 
         GetComponentsInChildren<IPlayerComponents>().ToList()
@@ -60,8 +63,18 @@ public class Player : MonoBehaviour
         //????
         inputReader.OnMoveEvent += _movementCompo.SetMovement;
 
-        inputReader.OnBarrierPressEvent += () => { IsOnBarrier = true; };
-        inputReader.OnBarrierReleseEvent += () => { IsOnBarrier = false; };
+        inputReader.OnBarrierPressEvent += () => 
+        { 
+            IsOnBarrier = true; 
+            barrier.SetActive(true);
+            print("海府绢矫累");
+        };
+        inputReader.OnBarrierReleseEvent += () => 
+        { 
+            IsOnBarrier = false;
+            barrier.SetActive(false);
+            print("海府绢场");
+        };
         
         if(cdata == null || gData ==null) return;
         
