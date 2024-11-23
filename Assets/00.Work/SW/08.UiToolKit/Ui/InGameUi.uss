@@ -1,0 +1,29 @@
+.Heart {
+    flex-grow: 1;
+    background-image: url("project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/PNG/Shadow/160/Heart.png?fileID=4606908045521496030&guid=c80fb2e8a007bfe43adeb79912f88328&type=3#Heart_0");
+    border-left-color: rgb(21, 21, 21);
+    border-right-color: rgb(21, 21, 21);
+    border-top-color: rgb(21, 21, 21);
+    border-bottom-color: rgb(21, 21, 21);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+}
+
+.List {
+    flex-grow: 1;
+}
+
+.Barrier {
+    flex-grow: 1;
+    background-image: url("project://database/Assets/00.Work/SW/04.Sprites/Bookmark.png?fileID=2390188782030265373&guid=5588531f0e96d604f8d3f33cdd05b5df&type=3#Bookmark_0");
+    border-left-color: rgb(21, 21, 21);
+    border-right-color: rgb(21, 21, 21);
+    border-top-color: rgb(21, 21, 21);
+    border-bottom-color: rgb(21, 21, 21);
+}
