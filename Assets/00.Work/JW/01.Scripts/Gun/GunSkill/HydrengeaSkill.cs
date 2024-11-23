@@ -8,6 +8,8 @@ public class HydrengeaSkill : GunSkill
     protected override void AwakeSkill()
     {
         base.AwakeSkill();
+        
+        OnBarrierChanged.AddListener(eventFeedbacks.PlayFeedbacks);
         _gun.DamageCastCompo.OnShoot += HandleOnShoot;
     }
     

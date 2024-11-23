@@ -6,7 +6,6 @@ using UnityEngine.Serialization;
 public class CistusSkill : GunSkill
 {
     public bool IsFire { get; set; }
-    [SerializeField] private EventFeedbackSO childPrefabData = default;
     private int _hitStack = 0;
     private CistusSkillChild _childItem;
     

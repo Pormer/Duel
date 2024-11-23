@@ -13,6 +13,9 @@ public class PhysalisSkill : GunSkill
     protected override void AwakeSkill()
     {
         base.AwakeSkill();
+        
+        OnFormChange.AddListener(eventFeedbacks.PlayFeedbacks);
+
         _gun.DamageCastCompo.OnShoot += HandleCheckShoot;
     }
 

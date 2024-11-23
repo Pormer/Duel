@@ -27,6 +27,7 @@ public class AquilegiaSkill : GunSkill
     {
         base.AwakeSkill();
         hitCombos = new bool[wantHitCount];
+        OnOneCombo.AddListener(eventFeedbacks.PlayFeedbacks);
         _gun.DamageCastCompo.OnShoot += HandleHitEvent;
     }
 

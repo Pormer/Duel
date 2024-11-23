@@ -11,6 +11,8 @@ public class PenelopesSkill : GunSkill
     protected override void AwakeSkill()
     {
         base.AwakeSkill();
+        
+        OnBulletDamageChanged.AddListener(eventFeedbacks.PlayFeedbacks);
         _curBulletShootCount = 0;
     }
 

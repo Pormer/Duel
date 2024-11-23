@@ -15,6 +15,8 @@ public class DianthusSkill : GunSkill
         base.AwakeSkill();
         _stackCount = 0;
 
+        OnDamageUp.AddListener(eventFeedbacks.PlayFeedbacks);
+
         _gun.DamageCastCompo.OnShoot += HandleShootTrigger;
         _player.GetCompo<Health>().OnHitEvent.AddListener(() => _isHit = true);
     }

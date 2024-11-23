@@ -12,6 +12,8 @@ public class CallicarpaSkill : GunSkill
     {
         base.AwakeSkill();
         curShootBulletCount = 0;
+        
+        OnFormChange.AddListener(eventFeedbacks.PlayFeedbacks);
     }
 
     public override void EnterSkill()

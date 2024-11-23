@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CloverSkill : GunSkill
 {
-    [SerializeField] 
     public override void EnterSkill()
     {
         base.EnterSkill();

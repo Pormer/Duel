@@ -14,6 +14,7 @@ public class DelphiniumSkill : GunSkill
     {
         base.AwakeSkill();
         _tempDamage = _stat.Damage;
+        OnFormChanged.AddListener(eventFeedbacks.PlayFeedbacks);
         _player.GetCompo<Health>().OnHitEvent.AddListener(() => currentTimer = 0);
     }
 

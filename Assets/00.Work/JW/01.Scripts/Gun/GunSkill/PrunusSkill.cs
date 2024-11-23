@@ -29,6 +29,8 @@ public class PrunusSkill : GunSkill
     {
         base.AwakeSkill();
         hitCombos = new bool[wantHitCount];
+        
+        OnOneCombo.AddListener(eventFeedbacks.PlayFeedbacks);
         _gun.DamageCastCompo.OnShoot += HandleHitEvent;
     }
 
@@ -38,8 +40,14 @@ public class PrunusSkill : GunSkill
 
         if (!isTrigger)
         {
-            hitCombos.ToList().ForEach(i => i = false);
+            for (int i = 0; i < hitCombos.Length; i++) hitCombos[i] = false;
+            
             CurrentComboNum = 0;
+
+            foreach (var i in hitCombos)
+            {
+                print(i);
+            }
         }
         else
         {
@@ -52,7 +60,7 @@ public class PrunusSkill : GunSkill
     {
         base.EnterSkill();
 
-        if (hitCombos.All(item => true))
+        if (hitCombos.All(item => item))
         {
             _stat.Damage = 1000000000;
         }

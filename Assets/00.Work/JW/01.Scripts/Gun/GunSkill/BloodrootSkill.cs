@@ -9,6 +9,7 @@ public class BloodrootSkill : GunSkill
     {
         base.AwakeSkill();
         _stat.wantLoadCount = 0;
+        OnMinusHealth.AddListener(eventFeedbacks.PlayFeedbacks);
 
     }
 

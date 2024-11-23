@@ -1,8 +1,11 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Gun : MonoBehaviour
 {
+    public UnityEvent OnShoot;
+    
     #region Compo
     
     public GunSkill SkillCompo { get; private set; }

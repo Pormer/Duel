@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 114836bf8670b124b85326bfbd4b5e22, type: 3}
-  m_Name: Pool_54e8e2c0-3419-4e0e-b38a-aea5bb27505f
+  m_Name: Pool_ShootEffectPlayer
   m_EditorClassIdentifier: 
-  enumName: 54e8e2c0-3419-4e0e-b38a-aea5bb27505f
-  poolingName: 
+  enumName: ShootEffectPlayer
+  poolingName: ShootEffectPlayer
   description: 
-  poolCount: 0
-  prefab: {fileID: 0}
+  poolCount: 5
+  prefab: {fileID: 1930167957378853667, guid: cdbf198b61cf9a4458222b0bed06358e, type: 3}

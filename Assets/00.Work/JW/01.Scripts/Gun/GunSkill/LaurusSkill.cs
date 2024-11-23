@@ -11,6 +11,8 @@ public class LaurusSkill : GunSkill
     protected override void AwakeSkill()
     {
         base.AwakeSkill();
+        
+        OnFormChanged.AddListener(eventFeedbacks.PlayFeedbacks);
         _player.GetCompo<PlayerMovement>().OnMove += () => curStep++;
     }
 

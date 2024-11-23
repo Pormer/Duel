@@ -12,6 +12,8 @@ public class HyacinthusSkill : GunSkill
     protected override void AwakeSkill()
     {
         base.AwakeSkill();
+        
+        OnHealth.AddListener(eventFeedbacks.PlayFeedbacks);
         _gun.DamageCastCompo.OnShoot += HandleCheckShoot;
     }
 
