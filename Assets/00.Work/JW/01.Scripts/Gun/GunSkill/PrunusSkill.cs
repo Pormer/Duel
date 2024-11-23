@@ -30,7 +30,7 @@ public class PrunusSkill : GunSkill
         base.AwakeSkill();
         hitCombos = new bool[wantHitCount];
         
-        OnOneCombo.AddListener(eventFeedbacks.PlayFeedbacks);
+        if (eventFeedbacks != null) OnOneCombo.AddListener(eventFeedbacks.PlayFeedbacks);
         _gun.DamageCastCompo.OnShoot += HandleHitEvent;
     }
 
