@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
     #region Compo
 
-    [SerializeField] private InputReaderSO inputReader;
+    [field: SerializeField] public InputReaderSO InputReaderCompo { get; private set; }
     public StatData StatDataCompo {get; private set;}
     public FeedbackPlayer EventFeedbacksCompo { get; private set; }
     private PlayerMovement _movementCompo;
@@ -48,8 +49,6 @@ public class Player : MonoBehaviour
 
         GetComponentsInChildren<IPlayerComponents>().ToList()
             .ForEach(x => _components.Add(x.GetType(), x));
-        
-        _components.Add(inputReader.GetType(), inputReader);
     }
 
     public void Initialize(CharacterDataSO cdata, GunDataSO gData)
@@ -61,21 +60,28 @@ public class Player : MonoBehaviour
         if(itemCaster != null) itemCaster.Initialize(this);
         
         //????
-        inputReader.OnMoveEvent += _movementCompo.SetMovement;
+        InputReaderCompo.OnMovementEvent += _movementCompo.SetMovement;
         barrier.GetComponent<SpriteRenderer>().color = cdata.baseColor;
-        inputReader.OnBarrierPressEvent += () => 
+
+        OnHitBarrier += () =>
+        {
+            if (StatDataCompo.BarrierCount <= 0)
+            {
+                IsOnBarrier = false;
+                barrier.SetActive(false);
+            }
+        };
+        
+        InputReaderCompo.OnBarrierPressed += () => 
         {
             if (StatDataCompo.BarrierCount <= 0) return;
             IsOnBarrier = true; 
             barrier.SetActive(true);
-            print("海府绢矫累");
         };
-        inputReader.OnBarrierReleseEvent += () => 
+        InputReaderCompo.OnBarrierReleased += () => 
         {
-            if (StatDataCompo.BarrierCount <= 0) return;
             IsOnBarrier = false;
             barrier.SetActive(false);
-            print("海府绢场");
         };
         
         if(cdata == null || gData ==null) return;
@@ -101,11 +107,11 @@ public class Player : MonoBehaviour
         
         var skillCompo = gameObject.AddComponent(type) as CharacterSkill;
         skillCompo?.Initialize(this);
-        if (skillCompo != null) inputReader.OnSkillEvent += skillCompo.ActiveSkill;
+        if (skillCompo != null) InputReaderCompo.OnSkillEvent += skillCompo.ActiveSkill;
     }
 
     private void OnDestroy()
     {
-        inputReader.OnMoveEvent -= _movementCompo.SetMovement;
+        InputReaderCompo.OnMovementEvent -= _movementCompo.SetMovement;
     }
 }

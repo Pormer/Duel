@@ -24,7 +24,7 @@ public class HyacinthusSkill : GunSkill
         {
             HyacinthusSkillChild item = PoolManager.Instance.Pop(PoolingType.HyacinthusChildItem) as HyacinthusSkillChild;
             
-            if (_player.GetCompo<InputReaderSO>().IsRight)
+            if (_player.InputReaderCompo.IsRight)
             {
                 item.transform.position = new Vector3(4, 0);
             }

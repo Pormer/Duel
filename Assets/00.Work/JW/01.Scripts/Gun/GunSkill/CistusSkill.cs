@@ -21,7 +21,7 @@ public class CistusSkill : GunSkill
                 if(_childItem != null) PoolManager.Instance.Push(_childItem);
                 _childItem = PoolManager.Instance.Pop(PoolingType.CistusChildItem) as CistusSkillChild;
                 
-                if (_player.GetCompo<InputReaderSO>().IsRight)
+                if (_player.InputReaderCompo.IsRight)
                 {
                     _childItem.transform.position = new Vector3(4, 0);
                 }
