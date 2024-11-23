@@ -1,0 +1,31 @@
+.Panel {
+    flex-grow: 1;
+    height: 966px;
+    width: 1000px;
+    position: absolute;
+    -unity-text-align: lower-left;
+    top: 114px;
+}
+
+.ModeButton {
+    height: 750px;
+    width: 750px;
+    -unity-text-align: upper-center;
+    font-size: 50px;
+    left: 150px;
+    top: 150px;
+    background-image: url("project://database/Assets/00.Work/SW/04.Sprites/Lucid-V1.2/Lucid%20V1.2/ase/Shadow/IconsShadow-32.ase?fileID=-5257798883848447392&guid=8aac292477252fe43bc22df003a8ed80&type=3#Frame_62");
+    background-color: rgba(255, 255, 255, 0);
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-top-width: 5px;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 5px;
+    border-top-left-radius: 128px;
+    border-top-right-radius: 128px;
+    border-bottom-right-radius: 128px;
+    border-bottom-left-radius: 128px;
+}
