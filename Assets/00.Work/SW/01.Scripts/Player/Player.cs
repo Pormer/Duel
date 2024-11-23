@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
         
         //????
         inputReader.OnMoveEvent += _movementCompo.SetMovement;
-
+        barrier.GetComponent<SpriteRenderer>().color = cdata.baseColor;
         inputReader.OnBarrierPressEvent += () => 
         { 
             IsOnBarrier = true; 
