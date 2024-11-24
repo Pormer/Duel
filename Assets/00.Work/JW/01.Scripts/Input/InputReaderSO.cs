@@ -18,7 +18,6 @@ public abstract class InputReaderSO : ScriptableObject, IPlayerComponents
     protected virtual void OnEnable()
     {
         _keyAction = new KeyAction();
-        _keyAction.Enable();
     }
 
     public void Initialize(Player player)

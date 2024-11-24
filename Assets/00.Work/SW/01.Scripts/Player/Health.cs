@@ -51,7 +51,11 @@ public class Health : MonoBehaviour, IPlayerComponents
         
         _player.GetCompo<PlayerAni>().PlayAni(PlayerAniName.Hit);
         _stat.Health -= damage;
-        if (_stat.Health <= 0 && !isResurrection) OnDeadEvent?.Invoke();
+        if (_stat.Health <= 0 && !isResurrection)
+        {
+            OnDeadEvent?.Invoke();
+            GameManager.Instance.OnGameWin?.Invoke(_player.InputReaderCompo.IsRight);
+        }
         else
         {
             OnHitEvent?.Invoke();

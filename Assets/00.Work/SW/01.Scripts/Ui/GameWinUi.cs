@@ -19,19 +19,21 @@ public class GameWinUi : MonoBehaviour
         _visual[2] = _root.Q<VisualElement>("Character");
         _visual[3] = _root.Q<VisualElement>("Crown");
         _playerName = _root.Q<Label>("PlayerName");
+        
+        GameManager.Instance.OnGameWin.AddListener(WinPanelStart);
     }
 
     public void WinPanelStart(bool player)
     {
         if (player)
         {
-            _visual[2].style.backgroundImage = new StyleBackground(crownSprites[0]);
-            _playerName.text = "LeftPlayerWin";
+            _visual[3].style.backgroundImage = new StyleBackground(crownSprites[0]);
+            _playerName.text = "Blue Win!";
         }
         else
         {
-            _visual[2].style.backgroundImage = new StyleBackground(crownSprites[1]);
-            _playerName.text = "RightPlayerWin";
+            _visual[3].style.backgroundImage = new StyleBackground(crownSprites[1]);
+            _playerName.text = "Red Win!";
         }
         StartCoroutine(WinPanelStart());
     }

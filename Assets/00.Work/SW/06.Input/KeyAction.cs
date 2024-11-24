@@ -60,7 +60,7 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
                     ""id"": ""45c66c38-001c-4a0c-83cc-061d1a2f88c4"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": ""Tap"",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {

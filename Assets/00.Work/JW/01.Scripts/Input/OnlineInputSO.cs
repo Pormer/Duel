@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,14 @@ public class OnlineInputSO : InputReaderSO, KeyAction.IRightInputActions, KeyAct
         base.OnEnable();
         _keyAction.RightInput.SetCallbacks(this);
         _keyAction.LeftInput.SetCallbacks(this);
+        _keyAction.LeftInput.Enable();
+        _keyAction.RightInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _keyAction.LeftInput.Disable();
+        _keyAction.RightInput.Disable();
     }
 
     void KeyAction.IRightInputActions.OnShoot(InputAction.CallbackContext context)
