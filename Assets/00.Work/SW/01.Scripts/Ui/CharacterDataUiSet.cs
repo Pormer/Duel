@@ -9,15 +9,16 @@ public class CharacterDataUiSet : MonoBehaviour
     private VisualElement[] _visualImages = new VisualElement[2];
     private Label[] leftPlayerLabel = new Label[4];
     private Label[] rightPlayerLabel = new Label[4];
-    private void Start()
+
+    private void Awake()
     {
         _root = DataUiPanel.rootVisualElement;
         _playerData[0] = _root.Q<VisualElement>("LeftPlayerData");
         _playerData[1] = _root.Q<VisualElement>("RightPlayerData");
         _visualImages[0] = _playerData[0].Q<VisualElement>("VisualImage");
         _visualImages[1] = _playerData[1].Q<VisualElement>("VisualImage");
-        LabelSet(ref leftPlayerLabel,0);
-        LabelSet(ref rightPlayerLabel,1);
+        LabelSet(ref leftPlayerLabel, 0);
+        LabelSet(ref rightPlayerLabel, 1);
     }
 
     private void LabelSet(ref Label[] labels, int number)
@@ -36,7 +37,7 @@ public class CharacterDataUiSet : MonoBehaviour
             leftPlayerLabel[0].text = $"Name : {characterData.itemName}";
             leftPlayerLabel[1].text = $"Hp : {characterData.hp.ToString()}";
             leftPlayerLabel[2].text = $"Barrier : {characterData.barrierCount.ToString()}";
-            leftPlayerLabel[3].text = characterData.explanation;
+            leftPlayerLabel[3].text = $"<{characterData.skillName}> \n" + characterData.explanation;
         }
         else
         {

@@ -24,6 +24,10 @@ public class Health : MonoBehaviour, IPlayerComponents
     {
         _player = player;
         _stat = _player.StatDataCompo;
+        OnDeadEvent.AddListener(() =>
+        {
+            _player.GetCompo<PlayerAni>().PlayAni(PlayerAniName.Die);
+        });
     }
 
     public void TakeDamage(int damage)

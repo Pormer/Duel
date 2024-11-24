@@ -1,0 +1,36 @@
+.fadeDown {
+    flex-grow: 1;
+    position: absolute;
+    width: 2886px;
+    height: 1346px;
+    right: -576px;
+    bottom: -876px;
+    background-color: rgb(0, 0, 0);
+    rotate: -30deg;
+    translate: -3465px 1961px;
+}
+
+.fadeUp {
+    flex-grow: 1;
+    background-color: rgb(0, 0, 0);
+    rotate: -30deg;
+    top: -699px;
+    height: 1350px;
+    position: absolute;
+    width: 2225px;
+    right: auto;
+    left: -494px;
+    translate: 2927px -1567px;
+}
+
+.fadeUp.IsMove {
+    translate: 0 0;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.fadeDown.IsMove {
+    translate: 0 -5px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
