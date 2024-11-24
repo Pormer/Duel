@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    private GunDataUiSet dataUiSet;
-    [SerializeField] private GunDataSO sO;
-    [SerializeField] private GunDataSO gun;
+    private CharacterDataUiSet dataUiSet;
+    [SerializeField] private CharacterDataSO sO;
+    [SerializeField] private CharacterDataSO gun;
     private void Start()
     {
-        dataUiSet = GetComponent<GunDataUiSet>();
+        dataUiSet = GetComponent<CharacterDataUiSet>();
         dataUiSet.UiSet(sO,true);
         dataUiSet.UiSet(gun, false);
     }

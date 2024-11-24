@@ -44,7 +44,7 @@ public class CharacterDataUiSet : MonoBehaviour
             rightPlayerLabel[0].text = $"Name : {characterData.itemName}";
             rightPlayerLabel[1].text = $"Hp : {characterData.hp.ToString()}";
             rightPlayerLabel[2].text = $"Barrier : {characterData.barrierCount.ToString()}";
-            rightPlayerLabel[3].text = characterData.explanation;
+            rightPlayerLabel[3].text = $"<{characterData.skillName}> \n" + characterData.explanation;
         }
     }
 }
