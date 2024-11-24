@@ -1,0 +1,14 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/00.Work/SW/08.UiToolKit/Ui/ModeChoiceUiData.uss?fileID=7433441132597879392&amp;guid=a76a1bbf6161ddd49b4fc9089d3d275d&amp;type=3#ModeChoiceUiData" />
+    <engine:VisualElement style="flex-grow: 1; -unity-text-align: upper-left; background-color: rgb(0, 0, 0);">
+        <engine:Label text="ModeChoice" name="ModeChoiceTitle" style="-unity-text-outline-color: rgba(255, 255, 255, 0); color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); font-size: 100px; -unity-font-style: bold; -unity-text-align: upper-center; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px;" />
+        <engine:VisualElement name="MultiPanel" class="Panel">
+            <engine:Button name="MultiButton" class="ModeButton" />
+            <engine:Label text="Multi" style="position: absolute; top: 80px; left: 280px; width: 500px; height: 50px; color: rgb(255, 255, 255); font-size: 87px; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); -unity-text-align: lower-center;" />
+        </engine:VisualElement>
+        <engine:VisualElement name="LocalPanel" class="Panel" style="flex-grow: 1; right: 0;">
+            <engine:Button name="LocalButton" class="ModeButton" style="background-image: url(&quot;project://database/Assets/00.Work/SW/04.Sprites/Monitor.png?fileID=6527285518945232940&amp;guid=db54931d6af546d4aa8c8b8b875c6f43&amp;type=3#Monitor_0&quot;);" />
+            <engine:Label text="Local" style="position: absolute; width: 500px; height: 50px; right: 200px; top: 80px; font-size: 87px; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(255, 255, 255); -unity-text-align: lower-center;" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>
