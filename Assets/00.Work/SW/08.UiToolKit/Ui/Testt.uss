@@ -85,12 +85,6 @@
     translate: -1000px 800px;
 }
 
-.playerName.IsMove {
-    translate: 550px 800px;
-    transition-timing-function: ease-in;
-    transition-duration: 0.5s;
-}
-
 .character.IsMove {
     translate: 750px 350px;
     transition-duration: 1s;
@@ -98,7 +92,7 @@
 }
 
 .playerName.IsMove {
-    translate: 550px 800px;
+    translate: 725px 800px;
     transition-timing-function: ease-in-out-back;
     transition-duration: 0.5s;
 }
