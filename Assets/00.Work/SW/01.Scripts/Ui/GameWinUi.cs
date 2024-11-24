@@ -40,6 +40,7 @@ public class GameWinUi : MonoBehaviour
 
     private IEnumerator WinPanelStart()
     {
+        yield return new WaitForSeconds(1f);
         _visual[0].ToggleInClassList("UpMove");
         yield return new WaitForSeconds(0.3f);
         _visual[1].ToggleInClassList("DownMove");
