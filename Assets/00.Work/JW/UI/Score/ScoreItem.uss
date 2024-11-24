@@ -4,12 +4,11 @@
     background-size: 100% 85%;
     scale: 1 1;
     flex-basis: 50px;
-    transition-duration: 1s;
-    transition-timing-function: ease-out-back;
+    transition-duration: 0.5s;
 }
 
 .item.active {
     transition-timing-function: ease-in-back;
-    transition-duration: 1s;
+    transition-duration: 0.2s;
     scale: 0 0;
 }
