@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,20 +69,20 @@ public class Player : MonoBehaviour
             if (StatDataCompo.BarrierCount <= 0)
             {
                 IsOnBarrier = false;
-                barrier.SetActive(false);
+                barrier.transform.DOScale(new Vector3(0,0),0.1f);
             }
         };
         
         InputReaderCompo.OnBarrierPressed += () => 
         {
             if (StatDataCompo.BarrierCount <= 0) return;
-            IsOnBarrier = true; 
-            barrier.SetActive(true);
+            IsOnBarrier = true;
+            barrier.transform.DOScale(new Vector3(1.2f, 1.2f), 0.1f);
         };
         InputReaderCompo.OnBarrierReleased += () => 
         {
             IsOnBarrier = false;
-            barrier.SetActive(false);
+            barrier.transform.DOScale(new Vector3(0, 0), 0.1f);
         };
         
         if(cdata == null || gData ==null) return;
