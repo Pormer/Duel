@@ -1,0 +1,7 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/00.Work/SW/08.UiToolKit/Ui/FadeData.uss?fileID=7433441132597879392&amp;guid=5d197bd9978aca641b77563cbd4b8499&amp;type=3#FadeData" />
+    <engine:VisualElement style="flex-grow: 1;">
+        <engine:VisualElement name="FadeUp" class="fadeUp IsMove" style="transition-duration: 0.5s; transition-timing-function: ease-in-out;" />
+        <engine:VisualElement name="FadeDown" class="fadeDown IsMove" style="transition-duration: 0.5s; transition-timing-function: ease-in-out;" />
+    </engine:VisualElement>
+</engine:UXML>

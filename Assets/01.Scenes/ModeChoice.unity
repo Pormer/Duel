@@ -152,6 +152,9 @@ MonoBehaviour:
   OnGameWin:
     m_PersistentCalls:
       m_Calls: []
+  OnFadeIn:
+    m_PersistentCalls:
+      m_Calls: []
   OnGameStart:
     m_PersistentCalls:
       m_Calls: []

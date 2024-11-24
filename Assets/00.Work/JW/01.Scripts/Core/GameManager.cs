@@ -8,5 +8,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public UnityEvent<bool> OnGameWin;
 
+    public UnityEvent<int> OnFadeIn;
+
     public UnityEvent OnGameStart;
 }
