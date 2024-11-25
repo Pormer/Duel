@@ -6,7 +6,8 @@ public class MochiSkill : CharacterSkill
     public UnityEvent OnHit; 
     protected override void AwakePlayer()
     {
-        OnHit.AddListener(eventFeedbacks.PlayFeedbacks);
+        if(eventFeedbacks != null)
+            OnHit.AddListener(eventFeedbacks.PlayFeedbacks);
         _health.IsInvincibility = true;
     }
     protected override void UpdateCharacterSkill()
