@@ -35,7 +35,6 @@ public class SoundManager : MonoSingleton<SoundManager>
     {
         if (TryGetValue(_sources, out AudioSource source))
         {
-            print("In");
             source.clip = soundData.clip;
             source.volume = soundData.voluem;
             source.pitch = soundData.pitch;

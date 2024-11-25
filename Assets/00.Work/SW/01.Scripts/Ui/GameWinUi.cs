@@ -10,6 +10,7 @@ public class GameWinUi : MonoBehaviour
     private VisualElement[] _visual = new VisualElement[4];
     private Label _playerName;
     [SerializeField] private List<Sprite> crownSprites;
+    private bool win;
 
     private void Awake()
     {
@@ -25,13 +26,16 @@ public class GameWinUi : MonoBehaviour
 
     public void WinPanelStart(bool player)
     {
+        if (win) return;
         if (player)
         {
+            win=true;
             _visual[3].style.backgroundImage = new StyleBackground(crownSprites[0]);
             _playerName.text = "Blue Win!";
         }
         else
         {
+            win = true;
             _visual[3].style.backgroundImage = new StyleBackground(crownSprites[1]);
             _playerName.text = "Red Win!";
         }

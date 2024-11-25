@@ -16,4 +16,4 @@ MonoBehaviour:
   poolingName: PigEffect
   description: 
   poolCount: 2
-  prefab: {fileID: 2897949257659140316, guid: 667854b4227cffd4ea964d1195789ee9, type: 3}
+  prefab: {fileID: 315969913113314065, guid: 667854b4227cffd4ea964d1195789ee9, type: 3}

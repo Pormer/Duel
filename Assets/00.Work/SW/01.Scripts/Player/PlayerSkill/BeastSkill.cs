@@ -8,12 +8,14 @@ public class BeastSkill : CharacterSkill
     protected override void AwakePlayer()
     {
         _player.InputReaderCompo.OnSkillEvent += ActiveSkill;
-        OnRoaring.AddListener(eventFeedbacks.PlayFeedbacks);
+        if (eventFeedbacks != null)
+            OnRoaring.AddListener(eventFeedbacks.PlayFeedbacks);
     }
 
     public override void ActiveSkill()
     {
         if (isSkillStart) return;
+        print("포효");
         isSkillStart = true;
         OnRoaring?.Invoke();
         _stat.Damage += 2;
@@ -26,6 +28,7 @@ public class BeastSkill : CharacterSkill
 
         if (_curBulletCount == _stat.CurBulletCount)
         {
+            print("능력끝");
             _stat.Damage -= 2;
         }
     }
