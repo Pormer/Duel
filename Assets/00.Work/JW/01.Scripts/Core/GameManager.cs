@@ -1,4 +1,5 @@
 using System;
+using DataType;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -38,6 +39,7 @@ public class GameManager : MonoSingleton<GameManager>
     }
 
     [SerializeField] private ScoreDataSO scoreData;
+    [SerializeField] SelectDataManagerSO selectDataM;
 
     private void Awake()
     {
@@ -48,6 +50,12 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (isRight)RightScore++;
         else LeftScore++;
+
+        selectDataM.LeftCharType = CharacterType.Default;
+        selectDataM.RightCharType = CharacterType.Default;
+        selectDataM.LeftGunType =  GunType.Default;
+        selectDataM.RightGunType = GunType.Default;
+        
         OnFadeIn?.Invoke(2);
     }
 }

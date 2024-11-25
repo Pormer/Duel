@@ -12,10 +12,10 @@ public class SelectDataManagerSO : ScriptableObject
 {
     public event Action OnSelect;
 
-    [field: SerializeField] public CharacterType LeftCharType { get; private set; }
-    [field: SerializeField] public GunType LeftGunType { get; private set; }
-    [field: SerializeField] public CharacterType RightCharType { get; private set; }
-    [field: SerializeField] public GunType RightGunType { get; private set; }
+    [field: SerializeField] public CharacterType LeftCharType { get; set; }
+    [field: SerializeField] public GunType LeftGunType { get; set; }
+    [field: SerializeField] public CharacterType RightCharType { get; set; }
+    [field: SerializeField] public GunType RightGunType { get; set; }
 
     private List<SelectItem> curItemList;
     private Transform _parent;

@@ -62,7 +62,7 @@ public class Health : MonoBehaviour, IPlayerComponents
         {
             IsDead = true;
             OnDeadEvent?.Invoke();
-            GameManager.Instance.OnGameWin?.Invoke(_player.InputReaderCompo.IsRight);
+            GameManager.Instance.OnGameWin?.Invoke(!_player.InputReaderCompo.IsRight);
         }
         else
         {
