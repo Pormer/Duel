@@ -35,7 +35,6 @@ public class Gun : MonoBehaviour
 
         var type = Type.GetType(skillStr);
 
-        print($"Gun: {skillStr}");
         SkillCompo = gameObject.AddComponent(type) as GunSkill;
         SkillCompo?.Initialize(this, agent);
 

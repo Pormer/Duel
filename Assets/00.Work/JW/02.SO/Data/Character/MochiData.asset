@@ -16,7 +16,7 @@ MonoBehaviour:
   explanation: "\uBCF4\uD638\uB9C9\uC774 \uC5C6\uB294 \uB300\uC2E0 \uC2DC\uC791\uC774\uD6C4
     \uB9DE\uB294 3\uAC1C\uC758 \uCD1D\uC54C\uC758 \uB370\uBBF8\uC9C0\uB97C \uBC1B\uC9C0\uC54A\uB294\uB2E4."
   itemSprite: {fileID: 252253774563517420, guid: a0d6addaa1b815b4ca4952c5f5560b25, type: 3}
-  eventFeedback: {fileID: 0}
+  eventFeedback: {fileID: 410573418066264280, guid: 4c8fd619084c90a43b03a1e9317d42ac, type: 3}
   charType: 6
   hp: 8
   barrierCount: 0

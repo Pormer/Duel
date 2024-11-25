@@ -16,7 +16,7 @@ MonoBehaviour:
   explanation: "\uBCF8\uC778\uC774 HP\uAC00 1\uC77C\uB54C \uB370\uBBF8\uC9C0\uAC00
     1\uC99D\uAC00\uD55C\uB2E4."
   itemSprite: {fileID: 2162651683685385302, guid: af50fa72020246e449e4546ac624efc8, type: 3}
-  eventFeedback: {fileID: 0}
+  eventFeedback: {fileID: 4458166001825818218, guid: ed64ef1f82fb3024da02e0e5aabafbab, type: 3}
   charType: 11
   hp: 6
   barrierCount: 3

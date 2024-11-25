@@ -1,15 +1,16 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class BeastSkill : CharacterSkill
 {
     private int? _curBulletCount = null;
-    public UnityEvent OnRoaring;
+    public Action OnRoaring;
     protected override void AwakePlayer()
     {
         _player.InputReaderCompo.OnSkillEvent += ActiveSkill;
         if (eventFeedbacks != null)
-            OnRoaring.AddListener(eventFeedbacks.PlayFeedbacks);
+            OnRoaring += eventFeedbacks.PlayFeedbacks;
     }
 
     public override void ActiveSkill()
@@ -36,6 +37,6 @@ public class BeastSkill : CharacterSkill
     private void OnDisable()
     {
         _player.InputReaderCompo.OnSkillEvent -= ActiveSkill;
-        OnRoaring.RemoveListener(eventFeedbacks.PlayFeedbacks);
+        OnRoaring -= eventFeedbacks.PlayFeedbacks;
     }
 }

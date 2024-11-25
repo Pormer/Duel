@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0394fa2a180a5204a9640cb07465a223, type: 3}
-  m_Name: Test
+  m_Name: WinSO
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 1be81cb654d41d545a3c18c75f25288d, type: 3}
-  voluem: 0.3
+  clip: {fileID: 8300000, guid: 2fd71c71b3e9cde4696880940f1ea8d7, type: 3}
+  voluem: 0.5
   pitch: 0

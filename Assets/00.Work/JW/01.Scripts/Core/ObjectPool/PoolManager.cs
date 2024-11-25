@@ -22,7 +22,6 @@ public class PoolManager : MonoSingleton<PoolManager>
     {
         Pool<PoolableMono> pool = new Pool<PoolableMono>(item.prefab, item.prefab.type, transform, item.poolCount);
         _poolDictionary.Add(item.prefab.type, pool);
-        Debug.Log(item.prefab.type);
     }
 
     public PoolableMono Pop(PoolingType type)

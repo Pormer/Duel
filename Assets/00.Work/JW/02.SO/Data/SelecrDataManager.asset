@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1465b52a8c59e64e85c0b0c11aad9ce, type: 3}
   m_Name: SelecrDataManager
   m_EditorClassIdentifier: 
-  <LeftCharType>k__BackingField: 7
-  <LeftGunType>k__BackingField: 15
-  <RightCharType>k__BackingField: 7
-  <RightGunType>k__BackingField: 15
+  <LeftCharType>k__BackingField: 2
+  <LeftGunType>k__BackingField: 7
+  <RightCharType>k__BackingField: 2
+  <RightGunType>k__BackingField: 7
   selectItemObj: {fileID: 344598461090529265, guid: 5492e63c1d7ec3146b04559b461f55f4, type: 3}
   spawnCount: 5
   startSpawnPos: {x: 0, y: -2}
-  testCharType: 7
-  testGunType: 15
-  isDebug: 0
+  testCharType: 6
+  testGunType: 7
+  isDebug: 1

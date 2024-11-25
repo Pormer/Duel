@@ -6,8 +6,8 @@ using UnityEngine;
 public class EffectFeedback : Feedback
 {
     [SerializeField] private PoolingType effectType;
-    [SerializeField] private float effectScale;
-    [SerializeField] private float lifeTime;
+    [SerializeField] private float effectScale = 1;
+    [SerializeField] private float lifeTime = 2;
     [SerializeField] private Transform effectPos;
     private EffectPlayer effect;
 

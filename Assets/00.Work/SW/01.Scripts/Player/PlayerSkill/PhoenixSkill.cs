@@ -1,15 +1,16 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class PhoenixSkill : CharacterSkill
 {
-    public UnityEvent OnResurrection;
+    public Action OnResurrection;
     protected override void AwakePlayer()
     {
         _health.isResurrection = true;
         if (eventFeedbacks != null)
-            OnResurrection.AddListener(eventFeedbacks.PlayFeedbacks);
+            OnResurrection += eventFeedbacks.PlayFeedbacks;
     }
     protected override void UpdateCharacterSkill()
     {
@@ -29,6 +30,6 @@ public class PhoenixSkill : CharacterSkill
 
     private void OnDisable()
     {
-        OnResurrection.RemoveListener(eventFeedbacks.PlayFeedbacks);
+        OnResurrection -= eventFeedbacks.PlayFeedbacks;
     }
 }
