@@ -11,7 +11,7 @@ public class GunDataUiSet : MonoBehaviour
     private Label[] leftGunLabel = new Label[6];
     private Label[] rightGunLabel = new Label[6];
 
-    private void Awake()
+    private void OnEnable()
     {
         _root = DataUiPanel.rootVisualElement;
         _gunData[0] = _root.Q<VisualElement>("LeftGunData");
