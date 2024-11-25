@@ -33,6 +33,7 @@ public class MiraSkill : CharacterSkill
         yield return new WaitForSeconds(5f);
         print("??");
         _health.OnDeadEvent?.Invoke();
+        GameManager.Instance.OnGameWin?.Invoke(_player.InputReaderCompo.IsRight);
     }
 
     private void OnDisable()
