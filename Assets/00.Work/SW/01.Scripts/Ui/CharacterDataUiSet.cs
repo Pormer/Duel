@@ -31,7 +31,7 @@ public class CharacterDataUiSet : MonoBehaviour
 
     public void UiSet(CharacterDataSO characterData, bool isLeft)
     {
-        if (isLeft)
+        if (!isLeft)
         {
             _visualImages[0].style.backgroundImage = new StyleBackground(characterData.itemSprite);
             leftPlayerLabel[0].text = $"Name : {characterData.itemName}";

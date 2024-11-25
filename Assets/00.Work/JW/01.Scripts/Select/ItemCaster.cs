@@ -13,10 +13,15 @@ public class ItemCaster : MonoBehaviour
 
     public UnityEvent<CharacterDataSO> OnTargetCharExp;
     public UnityEvent<GunDataSO> OnTargetGunExp;
+    
+    private CharacterDataUiSet _charDataUiSet;
+    private GunDataUiSet _gunDataUiSetUiSet;
 
     private void Awake()
     {
         cols = new Collider2D[1];
+        _charDataUiSet = FindFirstObjectByType<CharacterDataUiSet>();
+        _gunDataUiSetUiSet = FindFirstObjectByType<GunDataUiSet>();
     }
 
     public void CastItem()
@@ -28,11 +33,12 @@ public class ItemCaster : MonoBehaviour
             if (cols[0].TryGetComponent(out SelectItem item))
             {
                 item.Select(_player.InputReaderCompo.IsRight);
+                
             }
         }
     }
 
-    public void CastItmeData(Vector2Int dir)
+    public void CastItmeData()
     {
         var col = Physics2D.OverlapBox(transform.position, castSize, 0, targetFilter, cols);
 
@@ -41,9 +47,15 @@ public class ItemCaster : MonoBehaviour
             if (cols[0].TryGetComponent(out SelectItem item))
             {
                 if (item.IsChar)
-                    OnTargetCharExp?.Invoke(dataM.characterDatas[(int)item.CharType]);
+                {
+                    _charDataUiSet.UiSet(dataM.characterDatas[(int)item.CharType-1], _player.InputReaderCompo.IsRight);
+                    //OnTargetCharExp?.Invoke(dataM.characterDatas[(int)item.CharType]);
+                }
                 else
-                    OnTargetGunExp?.Invoke(dataM.gunDatas[(int)item.GunType]);
+                {
+                    _gunDataUiSetUiSet.UiSet(dataM.gunDatas[(int)item.GunType-1], _player.InputReaderCompo.IsRight);
+                    //OnTargetGunExp?.Invoke(dataM.gunDatas[(int)item.GunType]);
+                }
             }
         }
     }
@@ -53,13 +65,13 @@ public class ItemCaster : MonoBehaviour
         _player = player;
 
         _player.InputReaderCompo.OnShootEvent += CastItem;
-        _player.InputReaderCompo.OnMovementEvent += CastItmeData;
+        _player.MovementCompo.OnEndMove += CastItmeData;
     }
 
     private void OnDestroy()
     {
         _player.InputReaderCompo.OnShootEvent -= CastItem;
-        _player.InputReaderCompo.OnMovementEvent -= CastItmeData;
+        _player.MovementCompo.OnEndMove -= CastItmeData;
     }
 
     private void OnDrawGizmos()

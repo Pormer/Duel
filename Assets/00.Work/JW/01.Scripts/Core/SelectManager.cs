@@ -35,6 +35,7 @@ public class SelectManager : MonoBehaviour
         else
         {
             PlayerGroup = FindObjectsByType<Player>(FindObjectsSortMode.None);
+            print(PlayerGroup[0].InputReaderCompo == null);
             if(PlayerGroup[0].InputReaderCompo.IsRight) PlayerGroup = PlayerGroup.Reverse().ToArray();
             
             PlayerInitialize();
@@ -74,6 +75,6 @@ public class SelectManager : MonoBehaviour
             PlayerGroup[i].Initialize(selectCharData[i], selectGunData[i]);
         }
         
-        _gameUI.SetDataUI(selectCharData.ToList(), selectGunData.ToList(), PlayerGroup);
+        _gameUI?.SetDataUI(selectCharData.ToList(), selectGunData.ToList(), PlayerGroup);
     }
 }

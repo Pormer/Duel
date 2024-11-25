@@ -412,7 +412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 0}
+  m_AnchoredPosition: {x: -200, y: 0}
   m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &167331457
@@ -2098,8 +2098,8 @@ MonoBehaviour:
   scoreAsset: {fileID: 9197481963319205126, guid: 3fa46d7a3caaaf944ade47d7868ecf92, type: 3}
   lastScoreAsset: {fileID: 9197481963319205126, guid: c39dcb71f2ac80349bc12016f300ff35, type: 3}
   colors:
-  - {r: 1, g: 0.3, b: 0.3, a: 1}
   - {r: 0.3, g: 0.3, b: 1, a: 1}
+  - {r: 1, g: 0.3, b: 0.3, a: 1}
 --- !u!1 &467944854
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,7 +2516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 0}
+  m_AnchoredPosition: {x: 150, y: 0}
   m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &653297212
@@ -4930,7 +4930,7 @@ MonoBehaviour:
   OnGameStart:
     m_PersistentCalls:
       m_Calls: []
-  leftScore: 0
+  leftScore: 2
   rightScore: 5
 --- !u!4 &1625669006
 Transform:

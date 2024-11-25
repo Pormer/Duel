@@ -8,6 +8,7 @@ using UnityEngine.Tilemaps;
 public class PlayerMovement : MonoBehaviour, IPlayerComponents
 {
     public event Action OnMove;
+    public event Action OnEndMove;
     
     private Player _player;
     private MapInfo _mapInfo;
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponents
             {
                 if(_player.StatDataCompo != null)
                     _player.StatDataCompo.CurLoadCount++;
+                OnEndMove?.Invoke();
                 IsMove = false;
             });
     }
