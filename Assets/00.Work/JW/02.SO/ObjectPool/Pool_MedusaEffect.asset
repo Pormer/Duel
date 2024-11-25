@@ -16,4 +16,4 @@ MonoBehaviour:
   poolingName: MedusaEffect
   description: 
   poolCount: 2
-  prefab: {fileID: 6010924565068100804, guid: 358dc57ec59322641bd2d8ba1d59242e, type: 3}
+  prefab: {fileID: 1507705034270976289, guid: 358dc57ec59322641bd2d8ba1d59242e, type: 3}

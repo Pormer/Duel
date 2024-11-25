@@ -16,4 +16,4 @@ MonoBehaviour:
   poolingName: MummyEffect
   description: 
   poolCount: 2
-  prefab: {fileID: 4550971317439782106, guid: bc7a3aadd5cc54c409e7db5df95a0ce4, type: 3}
+  prefab: {fileID: 7665301278909424488, guid: bc7a3aadd5cc54c409e7db5df95a0ce4, type: 3}
