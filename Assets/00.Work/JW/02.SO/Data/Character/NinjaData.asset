@@ -17,7 +17,7 @@ MonoBehaviour:
     \uB9C9\uC744 \uC2DC \uCD1D\uC54C\uC774 \uC0C1\uB300\uC5D0\uAC8C \uBC18\uC0AC
     \uB41C\uB2E4."
   itemSprite: {fileID: 2388433666841335064, guid: b8957042017a8d140bef1653fec504cb, type: 3}
-  eventFeedback: {fileID: 0}
+  eventFeedback: {fileID: 5947614267554247722, guid: f8aa7f32e601787498567f82c5eefb85, type: 3}
   charType: 7
   hp: 4
   barrierCount: 3

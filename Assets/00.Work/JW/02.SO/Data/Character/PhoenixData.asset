@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Phoenix
   explanation: "1\uBC88 \uC8FD\uC73C\uBA74 1\uC758 \uCCB4\uB825\uC73C\uB85C \uBD80\uD65C\uD55C\uB2E4."
   itemSprite: {fileID: -4367425960450656953, guid: dfccdeac6c4ab6c42b8a85b8348b9747, type: 3}
-  eventFeedback: {fileID: 0}
+  eventFeedback: {fileID: 1089671739294028107, guid: 4f0146980f67aa842a9341fcb4bc1fd1, type: 3}
   charType: 4
   hp: 3
   barrierCount: 2
