@@ -1,24 +1,26 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <engine:Template name="ScoreItem" src="project://database/Assets/00.Work/JW/UI/Score/ScoreItem.uxml?fileID=9197481963319205126&amp;guid=3fa46d7a3caaaf944ade47d7868ecf92&amp;type=3#ScoreItem" />
     <engine:Template name="LastScore" src="project://database/Assets/00.Work/JW/UI/Score/LastScore.uxml?fileID=9197481963319205126&amp;guid=c39dcb71f2ac80349bc12016f300ff35&amp;type=3#LastScore" />
-    <engine:VisualElement name="ScoreAndPlayElem" style="flex-grow: 0; flex-basis: 65%; flex-shrink: 0;">
-        <engine:VisualElement name="ScoreGroup" style="flex-grow: 0; flex-basis: 150px; flex-direction: row;">
-            <engine:VisualElement name="LeftScoreElem" style="flex-grow: 1; flex-direction: row-reverse; margin-top: 10px;">
-                <engine:Instance template="ScoreItem" />
-                <engine:Instance template="ScoreItem" />
-                <engine:Instance template="ScoreItem" />
-                <engine:Instance template="ScoreItem" />
-            </engine:VisualElement>
-            <engine:VisualElement name="LastScoreElem" style="flex-grow: 0; flex-basis: 200px; margin-top: 10px; align-self: auto;">
-                <engine:Instance template="LastScore" style="align-self: center;" />
-            </engine:VisualElement>
-            <engine:VisualElement name="RIghtScoreElem" style="flex-grow: 1; flex-direction: row; margin-top: 10px;">
-                <engine:Instance template="ScoreItem" />
-                <engine:Instance template="ScoreItem" />
-                <engine:Instance template="ScoreItem" />
-                <engine:Instance template="ScoreItem" />
+    <engine:VisualElement name="Contain" style="flex-grow: 1;">
+        <engine:VisualElement name="ScoreAndPlayElem" style="flex-grow: 0; flex-basis: 65%; flex-shrink: 0;">
+            <engine:VisualElement name="ScoreGroup" style="flex-grow: 0; flex-basis: 150px; flex-direction: row;">
+                <engine:VisualElement name="LeftScoreElem" style="flex-grow: 1; flex-direction: row-reverse; margin-top: 10px;">
+                    <engine:Instance template="ScoreItem" />
+                    <engine:Instance template="ScoreItem" />
+                    <engine:Instance template="ScoreItem" />
+                    <engine:Instance template="ScoreItem" />
+                </engine:VisualElement>
+                <engine:VisualElement name="LastScoreElem" style="flex-grow: 0; flex-basis: 200px; margin-top: 10px; align-self: auto;">
+                    <engine:Instance template="LastScore" style="align-self: center;" />
+                </engine:VisualElement>
+                <engine:VisualElement name="RightScoreElem" style="flex-grow: 1; flex-direction: row; margin-top: 10px;">
+                    <engine:Instance template="ScoreItem" />
+                    <engine:Instance template="ScoreItem" />
+                    <engine:Instance template="ScoreItem" />
+                    <engine:Instance template="ScoreItem" />
+                </engine:VisualElement>
             </engine:VisualElement>
         </engine:VisualElement>
+        <engine:VisualElement name="KeyBaindElem" style="flex-grow: 1; flex-basis: auto; justify-content: space-between;" />
     </engine:VisualElement>
-    <engine:VisualElement name="KeyBaindElem" style="flex-grow: 1; flex-basis: auto; justify-content: space-between;" />
 </engine:UXML>

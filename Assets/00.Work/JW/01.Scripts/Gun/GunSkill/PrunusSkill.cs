@@ -43,11 +43,6 @@ public class PrunusSkill : GunSkill
             for (int i = 0; i < hitCombos.Length; i++) hitCombos[i] = false;
             
             CurrentComboNum = 0;
-
-            foreach (var i in hitCombos)
-            {
-                print(i);
-            }
         }
         else
         {
