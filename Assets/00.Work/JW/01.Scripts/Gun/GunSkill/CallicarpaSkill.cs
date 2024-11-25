@@ -13,23 +13,26 @@ public class CallicarpaSkill : GunSkill
         base.AwakeSkill();
         curShootBulletCount = 0;
         
+        if(eventFeedbacks == null) return;
         OnFormChange.AddListener(eventFeedbacks.PlayFeedbacks);
     }
+    
+    
 
     public override void EnterSkill()
     {
         base.EnterSkill();
-
         curShootBulletCount++;
+        Shoot();
         
         if (!_isFormChange && curShootBulletCount >= wantMaxBulletCount)
         {
-            _stat.maxBulletCount = wantMaxBulletCount;
-            _stat.CurBulletCount = wantMaxBulletCount;
+            print("전"+_stat.CurBulletCount);
+            _stat.CurBulletCount = _stat.maxBulletCount;
+            print("후"+_stat.CurBulletCount);
+            _stat.Damage = 2;
             _isFormChange = true;
             OnFormChange?.Invoke();
         }
-        
-        Shoot();
     }
 }

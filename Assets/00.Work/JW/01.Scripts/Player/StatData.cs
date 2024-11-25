@@ -12,13 +12,14 @@ public class StatData : IPlayerComponents
     //체력
     public int maxHealth;
     private int _health;
+
     public int Health
     {
         get => _health;
         set
         {
-            if(maxHealth < value) return;
-            
+            if (maxHealth < value) return;
+
             _health = value < 0 ? 0 : value;
             OnHealthChanged?.Invoke(_health);
         }
@@ -27,26 +28,28 @@ public class StatData : IPlayerComponents
     //배리어 수
     public int maxBarrierCount;
     private int _barrierCount;
+
     public int BarrierCount
     {
         get => _barrierCount;
         set
         {
             if (value < 0 || maxBarrierCount < value) return;
-            
+
             OnBarrierChanged?.Invoke(value);
             _barrierCount = value;
         }
     }
 
     //데미지
-    private int _damage; 
+    private int _damage;
+
     public int Damage
     {
         get => _damage;
         set
         {
-            if(value < 0) return;
+            if (value < 0) return;
             _damage = value;
         }
     }
@@ -54,6 +57,7 @@ public class StatData : IPlayerComponents
     //총알 수
     public int maxBulletCount;
     private int _curBulletCount;
+
     public int CurBulletCount
     {
         get => _curBulletCount;
@@ -71,6 +75,7 @@ public class StatData : IPlayerComponents
     //장전에 필요한 움직임 수 
     public int wantLoadCount;
     private int _curLoadCount;
+
     public int CurLoadCount
     {
         get => _curLoadCount;
@@ -89,7 +94,8 @@ public class StatData : IPlayerComponents
     }
 
     //발사 가능 여부
-    public bool IsCanShoot => _curBulletCount > 0;
+    public bool IsNotBullet { get; set; }//총알이 없어도 발사 가능여부
+    public bool IsCanShoot => _curBulletCount > 0 || IsNotBullet;
 
     public void Initialize(Player player)
     {
@@ -100,17 +106,17 @@ public class StatData : IPlayerComponents
     {
         maxHealth = cData.hp;
         Health = cData.hp;
-        
+
         maxBarrierCount = cData.barrierCount;
         BarrierCount = cData.barrierCount;
-        
+
         _damage = gData.damage;
-        
+
         maxBulletCount = gData.bulletCount;
         _curBulletCount = gData.bulletCount;
 
         CoolTime = gData.coolTime;
-        
+
         wantLoadCount = gData.wantLoadCount;
         _curLoadCount = 0;
     }

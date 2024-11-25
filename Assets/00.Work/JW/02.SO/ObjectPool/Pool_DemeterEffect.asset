@@ -16,4 +16,4 @@ MonoBehaviour:
   poolingName: DemeterEffect
   description: 
   poolCount: 2
-  prefab: {fileID: 0}
+  prefab: {fileID: 1958273912234472211, guid: 4acf2db89f51a2a4c96fb5bab1408b3c, type: 3}

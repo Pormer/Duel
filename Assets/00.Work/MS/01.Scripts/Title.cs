@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class Title : MonoBehaviour
 {
@@ -25,4 +26,5 @@ public class Title : MonoBehaviour
     {
         SceneManager.LoadScene("Lobby");
     }
+
 }
