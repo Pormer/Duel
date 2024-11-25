@@ -77,7 +77,8 @@ public class Player : MonoBehaviour
         
         MaskSpriteRenderer.sprite = cdata.itemSprite;
         BarrierColer = cdata.baseColor;
-        Barrier.GetComponent<SpriteRenderer>().color = BarrierColer;
+        if (Barrier != null)
+            Barrier.GetComponent<SpriteRenderer>().color = BarrierColer;
 
         EventFeedbacksCompo = Instantiate(cdata.eventFeedback, transform);
 

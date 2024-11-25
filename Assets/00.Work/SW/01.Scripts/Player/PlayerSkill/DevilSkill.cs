@@ -6,18 +6,21 @@ public class DevilSkill : CharacterSkill
 {
     private int? _curBulletCount = null;
     public Action OnTransaction;
+    private int practiceCount;
     protected override void AwakePlayer()
     {
-        _player.InputReaderCompo.OnSkillEvent += ActiveSkill;
         OnTransaction += eventFeedbacks.PlayFeedbacks;
+        
     }
     public override void ActiveSkill()
     {
         if (_stat.BarrierCount == 0) return;
         OnTransaction?.Invoke();
-        _stat.BarrierCount--;
-        _stat.Damage++;
+        base.ActiveSkill();
+        _stat.BarrierCount -= 1;
+        _stat.Damage += 1;
         _curBulletCount = _stat.CurBulletCount - 1;
+        practiceCount++;
     }
 
     protected override void UpdateCharacterSkill()
@@ -27,7 +30,7 @@ public class DevilSkill : CharacterSkill
         if  (_curBulletCount == _stat.CurBulletCount)
         {
             _curBulletCount = null;
-            _stat.Damage--;
+            _stat.Damage -= practiceCount;
         }
     }
 

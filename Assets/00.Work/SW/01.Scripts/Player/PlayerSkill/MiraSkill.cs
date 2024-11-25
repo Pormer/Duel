@@ -24,7 +24,8 @@ public class MiraSkill : CharacterSkill
     private void MireSkillStart()
     {
         print("????? ???????");
-        _stat.Damage++;
+        if(_stat.Damage > 0)
+            _stat.Damage++;
         _stat.CoolTime--;
         StartCoroutine(DieTime());
     }

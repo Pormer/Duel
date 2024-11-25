@@ -9,17 +9,18 @@ public class DemeterSkill : CharacterSkill
     public Action OnHpRecovery;
     protected override void AwakePlayer()
     {
-        _player.InputReaderCompo.OnSkillEvent += ActiveSkill;
         _damageCaster = _player.GetComponentInChildren<DamageCaster>();
         OnHpRecovery += eventFeedbacks.PlayFeedbacks;
     }
 
     public override void ActiveSkill()
     {
+        if (isSkillStart) return;
         _stat.Damage = 0;
         _curBulletCount = _stat.CurBulletCount - 1;
         OnHpRecovery?.Invoke();
         _damageCaster.OnShoot += HpRecovery;
+        base.ActiveSkill();
     }
 
     protected override void UpdateCharacterSkill()
@@ -31,7 +32,8 @@ public class DemeterSkill : CharacterSkill
     private void HpRecovery(bool isTrigger)
     {
         _stat.Health++;
-        _damageCaster.OnShoot -= HpRecovery;
+        if(isTrigger)
+            _damageCaster.OnShoot -= HpRecovery;
     }
 
     private void OnDisable()

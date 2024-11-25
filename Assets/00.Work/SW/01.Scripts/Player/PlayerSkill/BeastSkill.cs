@@ -8,7 +8,6 @@ public class BeastSkill : CharacterSkill
     public Action OnRoaring;
     protected override void AwakePlayer()
     {
-        _player.InputReaderCompo.OnSkillEvent += ActiveSkill;
         if (eventFeedbacks != null)
             OnRoaring += eventFeedbacks.PlayFeedbacks;
     }
@@ -21,6 +20,7 @@ public class BeastSkill : CharacterSkill
         OnRoaring?.Invoke();
         _stat.Damage += 2;
         _curBulletCount = _stat.CurBulletCount - 2;
+        base.ActiveSkill();
     }
 
     protected override void UpdateCharacterSkill()

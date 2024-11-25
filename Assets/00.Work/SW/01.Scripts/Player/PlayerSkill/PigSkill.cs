@@ -9,12 +9,12 @@ public class PigSkill : CharacterSkill
     {
         OnEat += eventFeedbacks.PlayFeedbacks;
         _stat.Damage = 1;
-        _player.InputReaderCompo.OnSkillEvent += ActiveSkill;
         
     }
 
     public override void ActiveSkill()
     {
+        if (isSkillStart) return;
         OnEat?.Invoke();
         _health.IsInvincibility = true;
         _health.SkillNumder = 1;

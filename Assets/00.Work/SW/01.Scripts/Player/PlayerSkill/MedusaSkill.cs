@@ -9,15 +9,16 @@ public class MedusaSkill : CharacterSkill
     public Action OnPetrification;
     protected override void AwakePlayer()
     {
-        _player.InputReaderCompo.OnSkillEvent += ActiveSkill;
         if (eventFeedbacks != null)
             OnPetrification += eventFeedbacks.PlayFeedbacks;
     }
     public override void ActiveSkill()
     {
+        if (isSkillStart) return;
         OnPetrification?.Invoke();
         _player.Barrier.GetComponent<SpriteRenderer>().color = new Color(Color.gray.r,Color.gray.g,Color.gray.b,0.85f);
         _health.SkillNumder = 2;
+        base.ActiveSkill();
         StartCoroutine(SkillTime());
     }
 
