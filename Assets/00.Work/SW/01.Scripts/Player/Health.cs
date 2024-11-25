@@ -17,6 +17,7 @@ public class Health : MonoBehaviour, IPlayerComponents
     private float invincibilityTime = 1f;
 
     public bool isResurrection { get; set; }
+    public bool IsDead { get; private set; }
     public int SkillNumder { get; set; }
 
     public void Initialize(Player player)
@@ -31,6 +32,8 @@ public class Health : MonoBehaviour, IPlayerComponents
 
     public void TakeDamage(int damage)
     {
+        if(IsDead) return;
+        
         if (IsInvincibility)
         {
             IsInvincibilityHit++;
@@ -57,6 +60,7 @@ public class Health : MonoBehaviour, IPlayerComponents
         _stat.Health -= damage;
         if (_stat.Health <= 0 && !isResurrection)
         {
+            IsDead = true;
             OnDeadEvent?.Invoke();
             GameManager.Instance.OnGameWin?.Invoke(_player.InputReaderCompo.IsRight);
         }

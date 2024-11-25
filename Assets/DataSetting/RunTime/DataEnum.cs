@@ -25,7 +25,7 @@ namespace DataType
         Delphinium,
         Hyacinthus,
         Gerbera,
-        Physalis
+        Consolida
     }
 
     public enum CharacterType
