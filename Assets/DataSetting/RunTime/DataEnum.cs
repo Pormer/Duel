@@ -44,4 +44,12 @@ namespace DataType
         Anubis,
         Kraken
     }
+
+    public enum SceneType
+    {
+        Title,
+        Lobby,
+        Select,
+        InGame
+    }
 }

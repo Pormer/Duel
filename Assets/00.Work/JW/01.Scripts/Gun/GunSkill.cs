@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ public abstract class GunSkill : MonoBehaviour
         if (_player.GunData.eventFeedback != null)
             eventFeedbacks = Instantiate(_player.GunData.eventFeedback, transform);
         
-        player.InputReaderCompo.OnShootEvent += EnterShoot;
+        _player.InputReaderCompo.OnShootEvent += EnterShoot;
 
 
         _player.InputReaderCompo.OnBarrierPressed += () => player.InputReaderCompo.OnShootEvent -= EnterShoot;
@@ -71,5 +72,10 @@ public abstract class GunSkill : MonoBehaviour
     {
         yield return new WaitForSeconds(_stat.CoolTime);
         isCoolTime = false;
+    }
+
+    private void OnDestroy()
+    {
+        _player.InputReaderCompo.OnShootEvent -= EnterShoot;
     }
 }

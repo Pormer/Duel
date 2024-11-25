@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f512d3fcedb35d4fb0f1844b920784c, type: 3}
   m_Name: Score
   m_EditorClassIdentifier: 
-  leftScore: 1
-  rightScore: 3
+  leftScore: 0
+  rightScore: 0

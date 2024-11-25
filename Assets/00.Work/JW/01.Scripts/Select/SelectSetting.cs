@@ -7,7 +7,7 @@ public class SelectSetting : MonoBehaviour
     public GunDataUiSet GunUiSet { get; private set; }
     public CharacterDataUiSet CharUiSet { get; private set; }
 
-    private void Awake()
+    private void OnEnable()
     {
         CharUiSet = FindFirstObjectByType<CharacterDataUiSet>();
         GunUiSet = FindFirstObjectByType<GunDataUiSet>();

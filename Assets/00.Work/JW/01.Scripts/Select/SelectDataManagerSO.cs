@@ -137,7 +137,7 @@ public class SelectDataManagerSO : ScriptableObject
 
     public void NextStep()
     {
-        GameManager.Instance.OnFadeIn?.Invoke(3);
+        GameManager.Instance.OnFadeIn?.Invoke((int)SceneType.InGame);
     }
 
     private bool IsNotCharDefault()
