@@ -17,7 +17,8 @@ public class Player : MonoBehaviour
 
     public SpriteRenderer PlayerSpriteRenderer { get; private set; }
     public SpriteRenderer MaskSpriteRenderer { get; private set; }
-    private GameObject barrier;
+    public GameObject Barrier {  get; private set; }
+    public Color BarrierColer {  get; private set; }
 
     #endregion
 
@@ -43,7 +44,7 @@ public class Player : MonoBehaviour
     {
         PlayerSpriteRenderer = transform.Find("Visual")?.GetComponent<SpriteRenderer>();
         MaskSpriteRenderer = transform.Find("Visual").transform.Find("Mask").GetComponent<SpriteRenderer>();
-        barrier = transform.Find("Visual").transform.Find("Barrier").gameObject;
+        Barrier = transform.Find("Visual").transform.Find("Barrier").gameObject;
 
 
         _components = new Dictionary<Type, IPlayerComponents>();
@@ -62,14 +63,15 @@ public class Player : MonoBehaviour
         
         //????
         InputReaderCompo.OnMovementEvent += _movementCompo.SetMovement;
-        barrier.GetComponent<SpriteRenderer>().color = cdata.baseColor;
+        BarrierColer = cdata.baseColor;
+        Barrier.GetComponent<SpriteRenderer>().color = BarrierColer;
 
         OnHitBarrier += () =>
         {
             if (StatDataCompo.BarrierCount <= 0)
             {
                 IsOnBarrier = false;
-                barrier.transform.DOScale(new Vector3(0,0),0.1f);
+                Barrier.transform.DOScale(new Vector3(0,0),0.1f);
             }
         };
         
@@ -77,12 +79,12 @@ public class Player : MonoBehaviour
         {
             if (StatDataCompo.BarrierCount <= 0) return;
             IsOnBarrier = true;
-            barrier.transform.DOScale(new Vector3(1.2f, 1.2f), 0.1f);
+            Barrier.transform.DOScale(new Vector3(1.2f, 1.2f), 0.1f);
         };
         InputReaderCompo.OnBarrierReleased += () => 
         {
             IsOnBarrier = false;
-            barrier.transform.DOScale(new Vector3(0, 0), 0.1f);
+            Barrier.transform.DOScale(new Vector3(0, 0), 0.1f);
         };
         
         if(cdata == null || gData ==null) return;

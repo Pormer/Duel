@@ -26,11 +26,12 @@ public class StatItem
         _root = root;
         _activeElem = _root.Q<VisualElement>("ActiveItem");
 
-        // 4. VisualElement의 Background 설정
-        _activeElem.style.backgroundImage = new StyleBackground(sprite);
-        _root.style.backgroundImage = new StyleBackground(sprite);
+        if (sprite != null)
+        {
+            _activeElem.style.backgroundImage = new StyleBackground(sprite);
+            _root.style.backgroundImage = new StyleBackground(sprite);
+        }
         
-        //_activeElem.style.backgroundColor = spriteColor;
         _activeElem.style.unityBackgroundImageTintColor = spriteColor;
     }
 }

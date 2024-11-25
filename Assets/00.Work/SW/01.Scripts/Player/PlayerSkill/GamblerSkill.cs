@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GamblerSkill : CharacterSkill
 {
+    public UnityEvent OnGamb;
     protected override void AwakePlayer()
     {
+        OnGamb.AddListener(eventFeedbacks.PlayFeedbacks);
+        OnGamb?.Invoke();
         int hp = Random.Range(1, 1000);
         int barrier = Random.Range(1, 1000);
         Probability(hp, true);
@@ -37,6 +41,11 @@ public class GamblerSkill : CharacterSkill
             if (ishp) _stat.Health = 8;
             else _stat.BarrierCount = 5;
         }
+
+    }
+    private void OnDisable()
+    {
+        OnGamb.RemoveListener(eventFeedbacks.PlayFeedbacks);
     }
 
 }

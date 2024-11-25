@@ -8,7 +8,8 @@ public class PigSkill : CharacterSkill
     {
         _stat.Damage = 1;
         _player.InputReaderCompo.OnSkillEvent += ActiveSkill;
-        OnEat.AddListener(eventFeedbacks.PlayFeedbacks);
+        if (eventFeedbacks != null)
+            OnEat.AddListener(eventFeedbacks.PlayFeedbacks);
     }
 
     public override void ActiveSkill()
