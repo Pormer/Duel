@@ -100,13 +100,11 @@ public class Player : MonoBehaviour
         
         MaskSpriteRenderer.sprite = cdata.itemSprite;
 
-        if (cdata.eventFeedback != null) EventFeedbacksCompo = Instantiate(cdata.eventFeedback, transform);
+        EventFeedbacksCompo = Instantiate(cdata.eventFeedback, transform);
 
         //???¡À???
         string skillStr = $"{cdata.charType.ToString()}Skill";
         var type = Type.GetType(skillStr);
-        
-        print($"Character: {skillStr}");
         
         var skillCompo = gameObject.AddComponent(type) as CharacterSkill;
         skillCompo?.Initialize(this);

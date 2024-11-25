@@ -1,15 +1,16 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class NinjaSkill : CharacterSkill
 {
     private int deductedBarrierCount;
-    public UnityEvent OnReflex;
+    public Action OnReflex;
     private SelectManager _selectManager;
 
     protected override void AwakePlayer()
     {
-        if (eventFeedbacks != null) OnReflex.AddListener(eventFeedbacks.PlayFeedbacks);
+        if (eventFeedbacks != null) OnReflex += eventFeedbacks.PlayFeedbacks;
         deductedBarrierCount = _stat.BarrierCount - 1;
         _selectManager = FindFirstObjectByType<SelectManager>();
     }
@@ -32,6 +33,6 @@ public class NinjaSkill : CharacterSkill
 
     private void OnDisable()
     {
-        if (eventFeedbacks != null) OnReflex.RemoveListener(eventFeedbacks.PlayFeedbacks);
+        if (eventFeedbacks != null) OnReflex -= eventFeedbacks.PlayFeedbacks;
     }
 }
