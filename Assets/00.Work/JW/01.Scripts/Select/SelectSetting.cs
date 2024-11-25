@@ -11,13 +11,13 @@ public class SelectSetting : MonoBehaviour
     {
         CharUiSet = FindFirstObjectByType<CharacterDataUiSet>();
         GunUiSet = FindFirstObjectByType<GunDataUiSet>();
-        //GunUiSet.gameObject.SetActive(false);
 
         selectDataM.OnSelect += NextDataSelect;
     }
 
     private void Start()
     {
+        GunUiSet.gameObject.SetActive(false);
         selectDataM.SpawnSelectCharItem(transform);
     }
 

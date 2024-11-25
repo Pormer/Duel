@@ -71,27 +71,6 @@ public class Player : MonoBehaviour
         StatDataCompo = new StatData(cdata, gData);
         _components.Add(StatDataCompo.GetType(), StatDataCompo);
         
-        OnHitBarrier += () =>
-        {
-            if (StatDataCompo.BarrierCount <= 0)
-            {
-                IsOnBarrier = false;
-                Barrier.transform.DOScale(new Vector3(0,0),0.1f);
-            }
-        };
-        
-        InputReaderCompo.OnBarrierPressed += () => 
-        {
-            if (StatDataCompo.BarrierCount <= 0) return;
-            IsOnBarrier = true;
-            Barrier.transform.DOScale(new Vector3(1.2f, 1.2f), 0.1f);
-        };
-        InputReaderCompo.OnBarrierReleased += () => 
-        {
-            IsOnBarrier = false;
-            Barrier.transform.DOScale(new Vector3(0, 0), 0.1f);
-        };
-        
         _components.Values.ToList().ForEach(compo => compo.Initialize(this));
         
         GetComponentInChildren<Gun>()?.Initialize(this);
@@ -109,6 +88,28 @@ public class Player : MonoBehaviour
         var skillCompo = gameObject.AddComponent(type) as CharacterSkill;
         skillCompo?.Initialize(this);
         if (skillCompo != null) InputReaderCompo.OnSkillEvent += skillCompo.ActiveSkill;
+        
+        OnHitBarrier += () =>
+        {
+            if (StatDataCompo.BarrierCount <= 0)
+            {
+                IsOnBarrier = false;
+                Barrier.transform.DOScale(new Vector3(0,0),0.1f);
+            }
+        };
+        
+        InputReaderCompo.OnBarrierPressed += () => 
+        {
+            if (StatDataCompo.BarrierCount <= 0) return;
+            
+            IsOnBarrier = true;
+            Barrier.transform.DOScale(new Vector3(1.2f, 1.2f), 0.1f);
+        };
+        InputReaderCompo.OnBarrierReleased += () => 
+        {
+            IsOnBarrier = false;
+            Barrier.transform.DOScale(new Vector3(0, 0), 0.1f);
+        };
     }
 
     private void OnDestroy()

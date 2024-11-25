@@ -17,7 +17,8 @@ public class FadeInOutUi : MonoBehaviour
         _root = _fadeInOutPenel.rootVisualElement;
         _fades[0] = _root.Q<VisualElement>("FadeUp");
         _fades[1] = _root.Q<VisualElement>("FadeDown");
-        GameManager.Instance.OnFadeIn.AddListener(FadeIn);
+        GameManager.Instance.OnFadeIn += FadeIn;
+        
         StartCoroutine(FadeOntStart());
     }
     public void FadeIn(int value) => StartCoroutine(FadeInStart(value));
@@ -32,7 +33,7 @@ public class FadeInOutUi : MonoBehaviour
 
     public IEnumerator FadeOntStart()
     {
-        yield return new WaitForSeconds(0.3f); ;
+        yield return new WaitForSeconds(0.3f);
         _fades[0].RemoveFromClassList("IsMove");
         yield return new WaitForSeconds(0.3f);
         _fades[1].RemoveFromClassList("IsMove");

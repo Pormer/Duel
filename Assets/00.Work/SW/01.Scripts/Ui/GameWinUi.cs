@@ -21,7 +21,7 @@ public class GameWinUi : MonoBehaviour
         _visual[3] = _root.Q<VisualElement>("Crown");
         _playerName = _root.Q<Label>("PlayerName");
         
-        GameManager.Instance.OnGameWin.AddListener(WinPanelStart);
+        GameManager.Instance.OnFinelWin += WinPanelStart;
     }
 
     public void WinPanelStart(bool player)

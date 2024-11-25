@@ -21,6 +21,18 @@ public abstract class GunSkill : MonoBehaviour
         if (_player.GunData.eventFeedback != null)
             eventFeedbacks = Instantiate(_player.GunData.eventFeedback, transform);
         
+        player.InputReaderCompo.OnShootEvent += EnterShoot;
+
+
+        _player.InputReaderCompo.OnBarrierPressed += () => player.InputReaderCompo.OnShootEvent -= EnterShoot;
+        _player.InputReaderCompo.OnBarrierReleased += () => player.InputReaderCompo.OnShootEvent += EnterShoot;
+        _player.OnHitBarrier += () =>
+        {
+            if (_player.StatDataCompo.BarrierCount <= 0)
+            {
+                player.InputReaderCompo.OnShootEvent += EnterShoot;
+            }
+        };
         AwakeSkill();
     }
 

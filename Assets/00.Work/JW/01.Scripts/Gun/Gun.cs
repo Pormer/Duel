@@ -37,7 +37,5 @@ public class Gun : MonoBehaviour
 
         SkillCompo = gameObject.AddComponent(type) as GunSkill;
         SkillCompo?.Initialize(this, agent);
-
-        if (SkillCompo != null) player.InputReaderCompo.OnShootEvent += SkillCompo.EnterShoot;
     }
 }
