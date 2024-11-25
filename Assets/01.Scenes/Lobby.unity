@@ -4017,6 +4017,7 @@ GameObject:
   - component: {fileID: 1303264886}
   - component: {fileID: 1303264885}
   - component: {fileID: 1303264884}
+  - component: {fileID: 1303264888}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4109,6 +4110,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1303264888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303264883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b237844fa25f24189a5aa84ce4fb9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lPlayerMoveUpTxt: {fileID: 432246720}
+  lPlayerMoveDownTxt: {fileID: 310755993}
+  lPlayerMoveLeftTxt: {fileID: 565453290}
+  lPlayerMoveRightTxt: {fileID: 1184937268}
+  lPlayerShootTxt: {fileID: 1669925206}
+  lPlayerBarrierTxt: {fileID: 1442146467}
+  lPlayerSkillTxt: {fileID: 1020127164}
+  rPlayerMoveUpTxt: {fileID: 695654647}
+  rPlayerMoveDownTxt: {fileID: 2004319822}
+  rPlayerMoveLeftTxt: {fileID: 1635342272}
+  rPlayerMoveRightTxt: {fileID: 51683076}
+  rPlayerShootTxt: {fileID: 1000764050}
+  rPlayerBarrierTxt: {fileID: 960618876}
+  rPlayerSkillTxt: {fileID: 366969309}
 --- !u!1 &1315482571
 GameObject:
   m_ObjectHideFlags: 3

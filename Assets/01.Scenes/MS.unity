@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 159924141}
   - component: {fileID: 159924140}
   - component: {fileID: 159924144}
+  - component: {fileID: 159924145}
   m_Layer: 5
   m_Name: SettingCanvas
   m_TagString: Untagged
@@ -368,6 +369,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 5fdd3903120eb5e4ebde2e1923a742db, type: 2}
   volumeText: {fileID: 2034425876}
+--- !u!114 &159924145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159924139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b237844fa25f24189a5aa84ce4fb9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lPlayerMoveUpTxt: {fileID: 0}
+  lPlayerMoveDownTxt: {fileID: 0}
+  lPlayerMoveLeftTxt: {fileID: 0}
+  lPlayerMoveRightTxt: {fileID: 0}
+  lPlayerShootTxt: {fileID: 0}
+  lPlayerBarrierTxt: {fileID: 0}
+  lPlayerSkillTxt: {fileID: 0}
+  rPlayerMoveUpTxt: {fileID: 0}
+  rPlayerMoveDownTxt: {fileID: 0}
+  rPlayerMoveLeftTxt: {fileID: 0}
+  rPlayerMoveRightTxt: {fileID: 0}
+  rPlayerShootTxt: {fileID: 0}
+  rPlayerBarrierTxt: {fileID: 0}
+  rPlayerSkillTxt: {fileID: 0}
 --- !u!1 &216081295
 GameObject:
   m_ObjectHideFlags: 0
