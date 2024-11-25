@@ -10,7 +10,7 @@ using Random = UnityEngine.Random;
 [CreateAssetMenu(menuName = "SO/Manager/Select")]
 public class SelectDataManagerSO : ScriptableObject
 {
-    public Action OnSelect;
+    public event Action OnSelect;
 
     [field: SerializeField] public CharacterType LeftCharType { get; private set; }
     [field: SerializeField] public GunType LeftGunType { get; private set; }
@@ -56,6 +56,8 @@ public class SelectDataManagerSO : ScriptableObject
         if (IsNotCharDefault())
         {
             SpawnSelectGunItem(_parent);
+            OnSelect?.Invoke();
+            
         }
     }
 

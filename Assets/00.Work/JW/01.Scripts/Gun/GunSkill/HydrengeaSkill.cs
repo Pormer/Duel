@@ -4,12 +4,12 @@ using UnityEngine.Events;
 
 public class HydrengeaSkill : GunSkill
 {
-    public UnityEvent OnBarrierChanged;
+    public Action OnBarrierChanged;
     protected override void AwakeSkill()
     {
         base.AwakeSkill();
         
-        OnBarrierChanged.AddListener(eventFeedbacks.PlayFeedbacks);
+        if(eventFeedbacks != null) OnBarrierChanged += eventFeedbacks.PlayFeedbacks;
         _gun.DamageCastCompo.OnShoot += HandleOnShoot;
     }
     

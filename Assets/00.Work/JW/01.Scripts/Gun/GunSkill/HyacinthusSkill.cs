@@ -1,10 +1,11 @@
+using System;
 using ObjectPooling;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class HyacinthusSkill : GunSkill
 {
-    public UnityEvent OnHealth;
+    public Action OnHealth;
     [SerializeField] private int wantShootCount = 5;
     private int _shootCount = 0;
     private bool _isOneCool;
@@ -13,7 +14,7 @@ public class HyacinthusSkill : GunSkill
     {
         base.AwakeSkill();
         
-        OnHealth.AddListener(eventFeedbacks.PlayFeedbacks);
+        if(eventFeedbacks != null) OnHealth += eventFeedbacks.PlayFeedbacks;
         _gun.DamageCastCompo.OnShoot += HandleCheckShoot;
     }
 

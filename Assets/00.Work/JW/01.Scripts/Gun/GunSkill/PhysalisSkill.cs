@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class PhysalisSkill : GunSkill
 {
-    public UnityEvent OnFormChange;
+    public Action OnFormChange;
     [SerializeField] private int wantShootCount = 3;
     [SerializeField] private int wantMaxBulletCount = 6;
     private int _shootCount = 0;
@@ -14,7 +15,7 @@ public class PhysalisSkill : GunSkill
     {
         base.AwakeSkill();
         
-        OnFormChange.AddListener(eventFeedbacks.PlayFeedbacks);
+        if(eventFeedbacks != null) OnFormChange += eventFeedbacks.PlayFeedbacks;
 
         _gun.DamageCastCompo.OnShoot += HandleCheckShoot;
     }

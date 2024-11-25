@@ -1,7 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class GunSkill : MonoBehaviour
@@ -23,8 +20,7 @@ public abstract class GunSkill : MonoBehaviour
 
         if (_player.GunData.eventFeedback != null)
             eventFeedbacks = Instantiate(_player.GunData.eventFeedback, transform);
-
-
+        
         AwakeSkill();
     }
 

@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class BloodrootSkill : GunSkill
 {
-    public UnityEvent OnMinusHealth;
+    public Action OnMinusHealth;
 
     protected override void AwakeSkill()
     {
@@ -13,8 +14,7 @@ public class BloodrootSkill : GunSkill
         if(eventFeedbacks == null) return;
         _stat.IsNotBullet = true;
         
-        OnMinusHealth.AddListener(eventFeedbacks.PlayFeedbacks);
-
+        if(eventFeedbacks != null) OnMinusHealth += eventFeedbacks.PlayFeedbacks;
     }
 
     public override void EnterSkill()

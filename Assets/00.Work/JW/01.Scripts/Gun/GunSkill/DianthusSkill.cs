@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class DianthusSkill : GunSkill
 {
-    public UnityEvent OnDamageUp;
+    public Action OnDamageUp;
     
     private int _stackCount = 0;
     [SerializeField] private int maxStackCount = 3;
@@ -15,7 +15,7 @@ public class DianthusSkill : GunSkill
         base.AwakeSkill();
         _stackCount = 0;
 
-        OnDamageUp.AddListener(eventFeedbacks.PlayFeedbacks);
+        if(eventFeedbacks != null) OnDamageUp += eventFeedbacks.PlayFeedbacks;
 
         _gun.DamageCastCompo.OnShoot += HandleShootTrigger;
         _player.GetCompo<Health>().OnHitEvent.AddListener(() => _isHit = true);

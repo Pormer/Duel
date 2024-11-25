@@ -1,10 +1,11 @@
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class AquilegiaSkill : GunSkill
 {
-    public UnityEvent OnOneCombo;
+    public Action OnOneCombo;
     
     [SerializeField] private int wantHitCount = 2;
 
@@ -27,7 +28,7 @@ public class AquilegiaSkill : GunSkill
     {
         base.AwakeSkill();
         hitCombos = new bool[wantHitCount];
-        OnOneCombo.AddListener(eventFeedbacks.PlayFeedbacks);
+        if(eventFeedbacks != null) OnOneCombo += eventFeedbacks.PlayFeedbacks;
         _gun.DamageCastCompo.OnShoot += HandleHitEvent;
     }
 

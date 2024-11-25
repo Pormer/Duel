@@ -14,14 +14,12 @@ public class ItemCaster : MonoBehaviour
     public UnityEvent<CharacterDataSO> OnTargetCharExp;
     public UnityEvent<GunDataSO> OnTargetGunExp;
     
-    private CharacterDataUiSet _charDataUiSet;
-    private GunDataUiSet _gunDataUiSetUiSet;
+    private SelectSetting _selectSet;
 
     private void Awake()
     {
         cols = new Collider2D[1];
-        _charDataUiSet = FindFirstObjectByType<CharacterDataUiSet>();
-        _gunDataUiSetUiSet = FindFirstObjectByType<GunDataUiSet>();
+        _selectSet = FindFirstObjectByType<SelectSetting>();
     }
 
     public void CastItem()
@@ -33,7 +31,6 @@ public class ItemCaster : MonoBehaviour
             if (cols[0].TryGetComponent(out SelectItem item))
             {
                 item.Select(_player.InputReaderCompo.IsRight);
-                
             }
         }
     }
@@ -48,13 +45,14 @@ public class ItemCaster : MonoBehaviour
             {
                 if (item.IsChar)
                 {
-                    _charDataUiSet.UiSet(dataM.characterDatas[(int)item.CharType-1], _player.InputReaderCompo.IsRight);
+                    _selectSet.CharUiSet.UiSet(dataM.characterDatas[(int)item.CharType-1], _player.InputReaderCompo.IsRight);
                     //OnTargetCharExp?.Invoke(dataM.characterDatas[(int)item.CharType]);
                 }
                 else
                 {
-                    _gunDataUiSetUiSet.UiSet(dataM.gunDatas[(int)item.GunType-1], _player.InputReaderCompo.IsRight);
+                    _selectSet.GunUiSet.UiSet(dataM.gunDatas[(int)item.GunType-1], _player.InputReaderCompo.IsRight);
                     //OnTargetGunExp?.Invoke(dataM.gunDatas[(int)item.GunType]);
+                    
                 }
             }
         }

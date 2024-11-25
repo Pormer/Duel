@@ -1,15 +1,16 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class ChrysanthemumSkill : GunSkill
 {
-    public UnityEvent OnHit;
+    public Action OnHit;
     
     protected override void AwakeSkill()
     {
         base.AwakeSkill();
         
-        OnHit.AddListener(eventFeedbacks.PlayFeedbacks);
+        if(eventFeedbacks != null) OnHit += eventFeedbacks.PlayFeedbacks;
 
         _player.GetCompo<Health>().OnHitEvent.AddListener(() =>
         {

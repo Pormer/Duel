@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class LaurusSkill : GunSkill
 {
-    public UnityEvent OnFormChanged;
+    public Action OnFormChanged;
     
     [SerializeField] private int curStep;
     [SerializeField] private int wantStep = 7;
@@ -12,7 +13,7 @@ public class LaurusSkill : GunSkill
     {
         base.AwakeSkill();
         
-        OnFormChanged.AddListener(eventFeedbacks.PlayFeedbacks);
+        if(eventFeedbacks != null) OnFormChanged += eventFeedbacks.PlayFeedbacks;
         _player.GetCompo<PlayerMovement>().OnMove += () => curStep++;
     }
 

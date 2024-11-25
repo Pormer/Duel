@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine.Events;
 
 public class PrunusSkill : GunSkill
 {
-    public UnityEvent OnOneCombo;
+    public Action OnOneCombo;
     [SerializeField] private int wantHitCount = 3;
 
     private bool[] hitCombos;
@@ -30,7 +31,7 @@ public class PrunusSkill : GunSkill
         base.AwakeSkill();
         hitCombos = new bool[wantHitCount];
         
-        if (eventFeedbacks != null) OnOneCombo.AddListener(eventFeedbacks.PlayFeedbacks);
+        if(eventFeedbacks != null) OnOneCombo += eventFeedbacks.PlayFeedbacks;
         _gun.DamageCastCompo.OnShoot += HandleHitEvent;
     }
 

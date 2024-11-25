@@ -59,8 +59,6 @@ public class ScoreUI : MonoBehaviour
     private void Start()
     {
         StartCoroutine(ScoreUpdater(GameManager.Instance.LeftScore, scoreItems[0]));
-        
-        print(GameManager.Instance.RightScore);
         StartCoroutine(ScoreUpdater(GameManager.Instance.RightScore, scoreItems[1]));
     }
 

@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class GerberaSkill : GunSkill
 {
-    public UnityEvent OnHealth;
+    public Action OnHealth;
 
     [SerializeField] private int wantShootCount = 2;
     private int _shootCount = 0;
@@ -12,7 +13,7 @@ public class GerberaSkill : GunSkill
     {
         base.AwakeSkill();
         
-        OnHealth.AddListener(eventFeedbacks.PlayFeedbacks);
+        if(eventFeedbacks != null) OnHealth += eventFeedbacks.PlayFeedbacks;
         _gun.DamageCastCompo.OnShoot += HandleCheckShoot;
     }
 

@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class PenelopesSkill : GunSkill
 {
-    public UnityEvent OnBulletDamageChanged;
+    public Action OnBulletDamageChanged;
     [SerializeField] private int wantBulletCount = 5;
     private int _curBulletShootCount;
 
@@ -12,7 +13,7 @@ public class PenelopesSkill : GunSkill
     {
         base.AwakeSkill();
         
-        if(eventFeedbacks != null) OnBulletDamageChanged.AddListener(eventFeedbacks.PlayFeedbacks);
+        if(eventFeedbacks != null) OnBulletDamageChanged += eventFeedbacks.PlayFeedbacks;
         _curBulletShootCount = 0;
     }
 

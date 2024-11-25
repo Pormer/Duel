@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class CallicarpaSkill : GunSkill
 {
-    public UnityEvent OnFormChange;
+    public Action OnFormChange;
     [SerializeField] private int wantMaxBulletCount = 4;
     private int curShootBulletCount;
     
@@ -14,7 +14,7 @@ public class CallicarpaSkill : GunSkill
         curShootBulletCount = 0;
         
         if(eventFeedbacks == null) return;
-        OnFormChange.AddListener(eventFeedbacks.PlayFeedbacks);
+        if(eventFeedbacks != null) OnFormChange += eventFeedbacks.PlayFeedbacks;
     }
     
     

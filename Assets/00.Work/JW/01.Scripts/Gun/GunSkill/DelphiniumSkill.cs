@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class DelphiniumSkill : GunSkill
 {
-    public UnityEvent OnFormChanged;
+    public Action OnFormChanged;
     [SerializeField] private float wantTimer = 15;
     private float currentTimer = 0;
     private int _changeDamage = 5;
@@ -14,7 +15,8 @@ public class DelphiniumSkill : GunSkill
     {
         base.AwakeSkill();
         _tempDamage = _stat.Damage;
-        OnFormChanged.AddListener(eventFeedbacks.PlayFeedbacks);
+        
+        if(eventFeedbacks != null) OnFormChanged += eventFeedbacks.PlayFeedbacks;
         _player.GetCompo<Health>().OnHitEvent.AddListener(() => currentTimer = 0);
     }
 
