@@ -1,16 +1,17 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class MedusaSkill : CharacterSkill
 {
-    public UnityEvent OnPetrification;
+    public Action OnPetrification;
     protected override void AwakePlayer()
     {
         _player.InputReaderCompo.OnSkillEvent += ActiveSkill;
         if (eventFeedbacks != null)
-            OnPetrification.AddListener(eventFeedbacks.PlayFeedbacks);
+            OnPetrification += eventFeedbacks.PlayFeedbacks;
     }
     public override void ActiveSkill()
     {
@@ -30,6 +31,6 @@ public class MedusaSkill : CharacterSkill
     private void OnDisable()
     {
         _player.InputReaderCompo.OnSkillEvent -= ActiveSkill;
-        OnPetrification.RemoveListener(eventFeedbacks.PlayFeedbacks);
+        OnPetrification -= eventFeedbacks.PlayFeedbacks;
     }
 }

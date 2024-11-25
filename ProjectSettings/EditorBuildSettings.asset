@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/01.Scenes/InGame.unity
     guid: a85c9922f6b0ef5409bf098ed7b20f04
   - enabled: 1
-    path: Assets/01.Scenes/CGSelect.unity
+    path: Assets/01.Scenes/Select.unity
     guid: 0553761bfe4464845ab069b134454859
   - enabled: 1
     path: Assets/01.Scenes/MS.unity

@@ -1,15 +1,16 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class PigSkill : CharacterSkill
 {
-    public UnityEvent OnEat;
+    public Action OnEat;
     protected override void AwakePlayer()
     {
+        OnEat += eventFeedbacks.PlayFeedbacks;
         _stat.Damage = 1;
         _player.InputReaderCompo.OnSkillEvent += ActiveSkill;
-        if (eventFeedbacks != null)
-            OnEat.AddListener(eventFeedbacks.PlayFeedbacks);
+        
     }
 
     public override void ActiveSkill()
@@ -22,6 +23,6 @@ public class PigSkill : CharacterSkill
     private void OnDisable()
     {
         _player.InputReaderCompo.OnSkillEvent -= ActiveSkill;
-        OnEat.RemoveListener(eventFeedbacks.PlayFeedbacks);
+        OnEat -= eventFeedbacks.PlayFeedbacks;
     }
 }

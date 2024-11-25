@@ -1,12 +1,13 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class AnubisSkill : CharacterSkill
 {
-    public UnityEvent OnDamageUp;
+    public Action OnDamageUp;
     protected override void AwakePlayer()
     {
-        OnDamageUp.AddListener(eventFeedbacks.PlayFeedbacks);
+        OnDamageUp += eventFeedbacks.PlayFeedbacks;
     }
     protected override void UpdateCharacterSkill()
     {
@@ -20,6 +21,6 @@ public class AnubisSkill : CharacterSkill
 
     private void OnDisable()
     {
-        OnDamageUp.RemoveListener(eventFeedbacks.PlayFeedbacks);
+        OnDamageUp -= eventFeedbacks.PlayFeedbacks;
     }
 }

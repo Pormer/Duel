@@ -9,7 +9,7 @@
 
 .item.active {
     transition-timing-function: ease-in-out-back;
-    transition-duration: 0.2s;
+    transition-duration: 1s;
     scale: 1 1;
     background-size: 120% 120%;
 }

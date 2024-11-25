@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     [field: SerializeField] public InputReaderSO InputReaderCompo { get; private set; }
     public StatData StatDataCompo {get; private set;}
     public FeedbackPlayer EventFeedbacksCompo { get; private set; }
-    private PlayerMovement _movementCompo;
+    public PlayerMovement MovementCompo {get; private set;}
 
     public SpriteRenderer PlayerSpriteRenderer { get; private set; }
     public SpriteRenderer MaskSpriteRenderer { get; private set; }
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     {
         PlayerSpriteRenderer = transform.Find("Visual")?.GetComponent<SpriteRenderer>();
         MaskSpriteRenderer = transform.Find("Visual").transform.Find("Mask").GetComponent<SpriteRenderer>();
-        Barrier = transform.Find("Visual").transform.Find("Barrier").gameObject;
+        Barrier = transform.Find("Visual").transform.Find("Barrier")?.gameObject;
 
 
         _components = new Dictionary<Type, IPlayerComponents>();
@@ -55,17 +55,22 @@ public class Player : MonoBehaviour
 
     public void Initialize(CharacterDataSO cdata, GunDataSO gData)
     {
-        _movementCompo = GetComponent<PlayerMovement>();
-        _movementCompo.Initialize(this);
+        MovementCompo = GetComponent<PlayerMovement>();
+        MovementCompo.Initialize(this);
 
         var itemCaster = GetComponentInChildren<ItemCaster>();
         if(itemCaster != null) itemCaster.Initialize(this);
         
         //????
-        InputReaderCompo.OnMovementEvent += _movementCompo.SetMovement;
-        BarrierColer = cdata.baseColor;
-        Barrier.GetComponent<SpriteRenderer>().color = BarrierColer;
-
+        InputReaderCompo.OnMovementEvent += MovementCompo.SetMovement;
+        
+        if(cdata == null || gData ==null) return;
+        
+        //????
+        GunData = gData;
+        StatDataCompo = new StatData(cdata, gData);
+        _components.Add(StatDataCompo.GetType(), StatDataCompo);
+        
         OnHitBarrier += () =>
         {
             if (StatDataCompo.BarrierCount <= 0)
@@ -87,26 +92,19 @@ public class Player : MonoBehaviour
             Barrier.transform.DOScale(new Vector3(0, 0), 0.1f);
         };
         
-        if(cdata == null || gData ==null) return;
-        
-        //????
-        GunData = gData;
-        StatDataCompo = new StatData(cdata, gData);
-        _components.Add(StatDataCompo.GetType(), StatDataCompo);
-        
         _components.Values.ToList().ForEach(compo => compo.Initialize(this));
         
         GetComponentInChildren<Gun>()?.Initialize(this);
         
         MaskSpriteRenderer.sprite = cdata.itemSprite;
+        BarrierColer = cdata.baseColor;
+        Barrier.GetComponent<SpriteRenderer>().color = BarrierColer;
 
-        if (cdata.eventFeedback != null) EventFeedbacksCompo = Instantiate(cdata.eventFeedback, transform);
+        EventFeedbacksCompo = Instantiate(cdata.eventFeedback, transform);
 
         //???¡À???
         string skillStr = $"{cdata.charType.ToString()}Skill";
         var type = Type.GetType(skillStr);
-        
-        print($"Character: {skillStr}");
         
         var skillCompo = gameObject.AddComponent(type) as CharacterSkill;
         skillCompo?.Initialize(this);
@@ -115,6 +113,6 @@ public class Player : MonoBehaviour
 
     private void OnDestroy()
     {
-        InputReaderCompo.OnMovementEvent -= _movementCompo.SetMovement;
+        InputReaderCompo.OnMovementEvent -= MovementCompo.SetMovement;
     }
 }

@@ -34,7 +34,7 @@ public class GunDataUiSet : MonoBehaviour
 
     public void UiSet(GunDataSO gunDataSO, bool isLeft)
     {
-        if (isLeft)
+        if (!isLeft)
         {
             _visualImages[0].style.backgroundImage = new StyleBackground(gunDataSO.itemSprite);
             leftGunLabel[0].text = $"Name : {gunDataSO.itemName}";

@@ -1,14 +1,15 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class DevilSkill : CharacterSkill
 {
     private int? _curBulletCount = null;
-    public UnityEvent OnTransaction;
+    public Action OnTransaction;
     protected override void AwakePlayer()
     {
         _player.InputReaderCompo.OnSkillEvent += ActiveSkill;
-        OnTransaction.AddListener(eventFeedbacks.PlayFeedbacks);
+        OnTransaction += eventFeedbacks.PlayFeedbacks;
     }
     public override void ActiveSkill()
     {
@@ -33,6 +34,6 @@ public class DevilSkill : CharacterSkill
     private void OnDisable()
     {
         _player.InputReaderCompo.OnSkillEvent -= ActiveSkill;
-        OnTransaction.RemoveListener(eventFeedbacks.PlayFeedbacks);
+        OnTransaction -= eventFeedbacks.PlayFeedbacks;
     }
 }

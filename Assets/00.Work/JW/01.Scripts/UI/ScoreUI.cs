@@ -43,7 +43,7 @@ public class ScoreUI : MonoBehaviour
             leftScoreGroup.Add(tempL);
 
             var tempR = scoreAsset.CloneTree();
-            var itemR = tempL.Q<VisualElement>("BackgroundIcon");
+            var itemR = tempR.Q<VisualElement>("BackgroundIcon");
 
             scoreItems[1][i] = new StatItem(itemR, null, colors[1]);
             rightScoreGroup.Add(tempR);
@@ -70,7 +70,7 @@ public class ScoreUI : MonoBehaviour
         
         while (score > curSettingScoreNum)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.5f);
             
             if(curSettingScoreNum >= 4)
             {

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -5,12 +6,12 @@ public class DemeterSkill : CharacterSkill
 {
     private int? _curBulletCount = null;
     private DamageCaster _damageCaster;
-    public UnityEvent OnHpRecovery;
+    public Action OnHpRecovery;
     protected override void AwakePlayer()
     {
         _player.InputReaderCompo.OnSkillEvent += ActiveSkill;
         _damageCaster = _player.GetComponentInChildren<DamageCaster>();
-        OnHpRecovery.AddListener(eventFeedbacks.PlayFeedbacks);
+        OnHpRecovery += eventFeedbacks.PlayFeedbacks;
     }
 
     public override void ActiveSkill()
@@ -36,6 +37,6 @@ public class DemeterSkill : CharacterSkill
     private void OnDisable()
     {
         _player.InputReaderCompo.OnSkillEvent -= ActiveSkill;
-        OnHpRecovery.RemoveListener(eventFeedbacks.PlayFeedbacks);
+        OnHpRecovery -= eventFeedbacks.PlayFeedbacks;
     }
 }

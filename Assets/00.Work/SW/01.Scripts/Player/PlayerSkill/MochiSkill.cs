@@ -1,12 +1,13 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class MochiSkill : CharacterSkill
 {
-    public UnityEvent OnHit; 
+    public Action OnHit; 
     protected override void AwakePlayer()
     {
-        OnHit.AddListener(eventFeedbacks.PlayFeedbacks);
+        OnHit += eventFeedbacks.PlayFeedbacks;
         _health.IsInvincibility = true;
     }
     protected override void UpdateCharacterSkill()
@@ -17,14 +18,10 @@ public class MochiSkill : CharacterSkill
             _health.IsInvincibility = false;
             OnHit?.Invoke();
         }
-        else
-        {
-            OnHit?.Invoke();
-        }
     }
 
     private void OnDisable()
     {
-        OnHit.RemoveListener(eventFeedbacks.PlayFeedbacks);
+        OnHit -= eventFeedbacks.PlayFeedbacks;
     }
 }
