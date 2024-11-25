@@ -7,8 +7,8 @@ public class CharacterDataUiSet : MonoBehaviour
     private VisualElement _root;
     private VisualElement[] _playerData = new VisualElement[2];
     private VisualElement[] _visualImages = new VisualElement[2];
-    private Label[] leftPlayerLabel = new Label[4];
-    private Label[] rightPlayerLabel = new Label[4];
+    private Label[] leftPlayerLabel = new Label[5];
+    private Label[] rightPlayerLabel = new Label[5];
 
     private void Awake()
     {
@@ -27,6 +27,7 @@ public class CharacterDataUiSet : MonoBehaviour
         labels[1] = _playerData[number].Q<Label>("Hp");
         labels[2] = _playerData[number].Q<Label>("Barrier");
         labels[3] = _playerData[number].Q<Label>("Description");
+        labels[4] = _playerData[number].Q<Label>("SkillName");
     }
 
     public void UiSet(CharacterDataSO characterData, bool isLeft)
@@ -34,18 +35,22 @@ public class CharacterDataUiSet : MonoBehaviour
         if (!isLeft)
         {
             _visualImages[0].style.backgroundImage = new StyleBackground(characterData.itemSprite);
-            leftPlayerLabel[0].text = $"Name : {characterData.itemName}";
+            leftPlayerLabel[0].text = "< "+characterData.itemName+" >";
             leftPlayerLabel[1].text = $"Hp : {characterData.hp.ToString()}";
             leftPlayerLabel[2].text = $"Barrier : {characterData.barrierCount.ToString()}";
-            leftPlayerLabel[3].text = $"<{characterData.skillName}> \n" + characterData.explanation;
+            leftPlayerLabel[3].text = characterData.explanation;
+            leftPlayerLabel[4].style.color = characterData.baseColor;
+            leftPlayerLabel[4].text = "< " + characterData.skillName + " >";
         }
         else
         {
             _visualImages[1].style.backgroundImage = new StyleBackground(characterData.itemSprite);
-            rightPlayerLabel[0].text = $"Name : {characterData.itemName}";
+            rightPlayerLabel[0].text = "< " + characterData.itemName + " >";
             rightPlayerLabel[1].text = $"Hp : {characterData.hp.ToString()}";
             rightPlayerLabel[2].text = $"Barrier : {characterData.barrierCount.ToString()}";
-            rightPlayerLabel[3].text = $"<{characterData.skillName}> \n" + characterData.explanation;
+            rightPlayerLabel[3].text = characterData.explanation;
+            rightPlayerLabel[4].style.color = characterData.baseColor;
+            rightPlayerLabel[4].text = "< " +characterData.skillName + " >";
         }
     }
 }

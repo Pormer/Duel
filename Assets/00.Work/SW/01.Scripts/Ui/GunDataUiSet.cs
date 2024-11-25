@@ -37,7 +37,7 @@ public class GunDataUiSet : MonoBehaviour
         if (!isLeft)
         {
             _visualImages[0].style.backgroundImage = new StyleBackground(gunDataSO.itemSprite);
-            leftGunLabel[0].text = $"Name : {gunDataSO.itemName}";
+            leftGunLabel[0].text = $"< {gunDataSO.itemName} >";
             leftGunLabel[1].text = $"Damage {gunDataSO.damage.ToString()}";
             leftGunLabel[2].text = $"MaxBullet : {gunDataSO.bulletCount.ToString()}";
             leftGunLabel[3].text = $"WantLoad : {gunDataSO.wantLoadCount.ToString()}";
@@ -47,7 +47,7 @@ public class GunDataUiSet : MonoBehaviour
         else
         {
             _visualImages[1].style.backgroundImage = new StyleBackground(gunDataSO.itemSprite);
-            rightGunLabel[0].text = $"Name : {gunDataSO.itemName}";
+            rightGunLabel[0].text = $"< {gunDataSO.itemName} >";
             rightGunLabel[1].text = $"Damage {gunDataSO.damage.ToString()}";
             rightGunLabel[2].text = $"MaxBullet : {gunDataSO.bulletCount.ToString()}";
             rightGunLabel[3].text = $"WantLoad : {gunDataSO.wantLoadCount.ToString()}";

@@ -20,5 +20,5 @@ MonoBehaviour:
   charType: 6
   hp: 8
   barrierCount: 0
-  baseColor: {r: 0, g: 0, b: 0, a: 0}
+  baseColor: {r: 0.64270437, g: 1, b: 0.435849, a: 1}
   skillName: "\uCD1D\uC54C \uD761\uC218"

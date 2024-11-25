@@ -19,6 +19,7 @@
     left: 0;
     width: 440px;
     font-size: 66px;
+    -unity-text-align: upper-center;
 }
 
 .Barrier {
@@ -26,15 +27,17 @@
     top: 655px;
     left: -1px;
     font-size: 65px;
+    -unity-text-align: upper-center;
 }
 
 .Description {
     height: 323px;
     position: absolute;
-    top: 746px;
+    top: 766px;
     left: 1px;
     width: 440px;
     font-size: 40px;
+    -unity-text-align: middle-center;
 }
 
 .Name {
@@ -45,4 +48,5 @@
     -unity-font-definition: url("project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&guid=afd429833c5b2104c9ef3ea3738a6bf9&type=3#Galmuri7");
     width: 436px;
     font-size: 67px;
+    -unity-text-align: middle-center;
 }
