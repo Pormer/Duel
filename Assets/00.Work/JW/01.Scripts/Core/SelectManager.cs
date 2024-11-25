@@ -16,14 +16,14 @@ public class SelectManager : MonoBehaviour
     private void Awake()
     {
         _gameUI = FindFirstObjectByType<InGameUI>();
+        
+        PlayerGroup = new Player[2];
+        selectCharData = new CharacterDataSO[2];
+        selectGunData = new GunDataSO[2];
     }
 
     private void Start()
     {
-        PlayerGroup = new Player[2];
-        selectCharData = new CharacterDataSO[2];
-        selectGunData = new GunDataSO[2];
-
         if (GameManager.Instance.IsOnlinePlay)
         {
             GameManager.Instance.OnGameStart.AddListener
