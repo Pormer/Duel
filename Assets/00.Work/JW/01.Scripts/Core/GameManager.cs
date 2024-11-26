@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DataType;
 using UnityEngine;
 using UnityEngine.Events;
@@ -60,7 +61,12 @@ public class GameManager : MonoSingleton<GameManager>
         selectDataM.RightCharType = CharacterType.Default;
         selectDataM.LeftGunType =  GunType.Default;
         selectDataM.RightGunType = GunType.Default;
-        
+        StartCoroutine(WaitFade());
+    }
+
+    IEnumerator WaitFade()
+    {
+        yield return new WaitForSecondsRealtime(1f);
         OnFadeIn?.Invoke(2);
     }
 }

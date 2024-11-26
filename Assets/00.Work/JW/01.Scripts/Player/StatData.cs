@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
-using Action = Unity.Android.Gradle.Manifest.Action;
 
 public class StatData : IPlayerComponents
 {

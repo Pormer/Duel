@@ -318,9 +318,49 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""ec2a478a-86bd-41a9-9791-f3364cbcf69b"",
+            ""actions"": [
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""Button"",
+                    ""id"": ""7b24a560-7ea7-4580-9b7e-73ea3315058e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""51d6e8b1-2ddc-4e45-9577-04786cb9d1ea"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse"",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Mouse"",
+            ""bindingGroup"": ""Mouse"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // LeftInput
         m_LeftInput = asset.FindActionMap("LeftInput", throwIfNotFound: true);
@@ -340,12 +380,16 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
         m_RightInput_MovementDown = m_RightInput.FindAction("MovementDown", throwIfNotFound: true);
         m_RightInput_MovementLeft = m_RightInput.FindAction("MovementLeft", throwIfNotFound: true);
         m_RightInput_MovementRight = m_RightInput.FindAction("MovementRight", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_Click = m_UI.FindAction("Click", throwIfNotFound: true);
     }
 
     ~@KeyAction()
     {
         UnityEngine.Debug.Assert(!m_LeftInput.enabled, "This will cause a leak and performance issues, KeyAction.LeftInput.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_RightInput.enabled, "This will cause a leak and performance issues, KeyAction.RightInput.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, KeyAction.UI.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -591,6 +635,61 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
         }
     }
     public RightInputActions @RightInput => new RightInputActions(this);
+
+    // UI
+    private readonly InputActionMap m_UI;
+    private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
+    private readonly InputAction m_UI_Click;
+    public struct UIActions
+    {
+        private @KeyAction m_Wrapper;
+        public UIActions(@KeyAction wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Click => m_Wrapper.m_UI_Click;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void AddCallbacks(IUIActions instance)
+        {
+            if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
+            @Click.started += instance.OnClick;
+            @Click.performed += instance.OnClick;
+            @Click.canceled += instance.OnClick;
+        }
+
+        private void UnregisterCallbacks(IUIActions instance)
+        {
+            @Click.started -= instance.OnClick;
+            @Click.performed -= instance.OnClick;
+            @Click.canceled -= instance.OnClick;
+        }
+
+        public void RemoveCallbacks(IUIActions instance)
+        {
+            if (m_Wrapper.m_UIActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IUIActions instance)
+        {
+            foreach (var item in m_Wrapper.m_UIActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_UIActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public UIActions @UI => new UIActions(this);
+    private int m_MouseSchemeIndex = -1;
+    public InputControlScheme MouseScheme
+    {
+        get
+        {
+            if (m_MouseSchemeIndex == -1) m_MouseSchemeIndex = asset.FindControlSchemeIndex("Mouse");
+            return asset.controlSchemes[m_MouseSchemeIndex];
+        }
+    }
     public interface ILeftInputActions
     {
         void OnShoot(InputAction.CallbackContext context);
@@ -610,5 +709,9 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
         void OnMovementDown(InputAction.CallbackContext context);
         void OnMovementLeft(InputAction.CallbackContext context);
         void OnMovementRight(InputAction.CallbackContext context);
+    }
+    public interface IUIActions
+    {
+        void OnClick(InputAction.CallbackContext context);
     }
 }
