@@ -1577,7 +1577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607ddc6c57f048a4dad3b0d17e5774a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
+  sound: {fileID: 11400000, guid: 38412381e594e794a8ef970f24756dd8, type: 2}
 --- !u!114 &1522404394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2103,6 +2103,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <InputReaderCompo>k__BackingField: {fileID: 11400000, guid: 06711f12c4208c444a2fef5c24139bc0, type: 2}
+  OnHitBarrier:
+    m_PersistentCalls:
+      m_Calls: []
+  barrierSound: {fileID: 0}
 --- !u!1 &3902757288501311519
 GameObject:
   m_ObjectHideFlags: 0
@@ -2338,6 +2342,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <InputReaderCompo>k__BackingField: {fileID: 11400000, guid: a3269faaac8d3d64a94d86a9d4841a44, type: 2}
+  OnHitBarrier:
+    m_PersistentCalls:
+      m_Calls: []
+  barrierSound: {fileID: 0}
 --- !u!61 &4508183696226513911
 BoxCollider2D:
   m_ObjectHideFlags: 0
