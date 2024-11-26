@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -62,13 +63,30 @@ public class SettingUi : MonoBehaviour
     {
         if (isOpen)
         {
-            penel.ToggleInClassList("IsMove");
-            _uiDocument.sortingOrder = 1;
+            StartCoroutine(DownSettingOnTime(1));
         }
         else
         {
             penel.RemoveFromClassList("IsMove");
-            _uiDocument.sortingOrder = -50;
+            StartCoroutine(UpSettingOnTime(-1));
         }
+        print(isOpen);
+    }
+
+    private IEnumerator UpSettingOnTime(int valur)
+    {
+        yield return new WaitForSeconds(0.5f);
+        _uiDocument.sortingOrder = valur;
+    }
+
+    private IEnumerator DownSettingOnTime(int valur)
+    {
+        _uiDocument.sortingOrder = valur;
+        yield return null;
+        penel.ToggleInClassList("IsMove");
+    }
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnSettingUi -= SettingOn;
     }
 }

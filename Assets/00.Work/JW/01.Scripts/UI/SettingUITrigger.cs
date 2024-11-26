@@ -19,7 +19,6 @@ public class SettingUITrigger : MonoBehaviour, KeyAction.IUIActions
         if (context.performed)
         {
             _isSettingUI = !_isSettingUI;
-            print(GameManager.Instance.OnSettingUi == null);
             GameManager.Instance.OnSettingUi?.Invoke(_isSettingUI);
         }
     }

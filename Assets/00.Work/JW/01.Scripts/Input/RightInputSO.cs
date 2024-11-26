@@ -30,6 +30,7 @@ public class RightInputSO : InputReaderSO, KeyAction.IRightInputActions
     
     private void OnDisable()
     {
+        GameManager.Instance.OnSettingUi -= HandleSetting;
         _keyAction.RightInput.Disable();
     }
 }
