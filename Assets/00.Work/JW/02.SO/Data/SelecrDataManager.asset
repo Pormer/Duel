@@ -21,4 +21,4 @@ MonoBehaviour:
   startSpawnPos: {x: 0, y: -2}
   testCharType: 1
   testGunType: 7
-  isDebug: 1
+  isDebug: 0

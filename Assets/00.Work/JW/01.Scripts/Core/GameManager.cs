@@ -3,6 +3,7 @@ using System.Collections;
 using DataType;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -14,28 +15,31 @@ public class GameManager : MonoSingleton<GameManager>
     public Action<int> OnFadeIn;
 
     public Action OnGameStart;
+    public Action<bool> OnSettingUi;
 
     [SerializeField] private int leftScore;
+
     public int LeftScore
     {
         get => scoreData.leftScore;
         set
         {
-            if(value > 5) return;
+            if (value > 5) return;
             leftScore = value;
-            if(scoreData != null) scoreData.leftScore = value;
+            if (scoreData != null) scoreData.leftScore = value;
         }
     }
 
     [SerializeField] private int rightScore;
+
     public int RightScore
     {
         get => scoreData.rightScore;
         set
         {
-            if(value > 5) return;
+            if (value > 5) return;
             rightScore = value;
-            if(scoreData != null) scoreData.rightScore = value;
+            if (scoreData != null) scoreData.rightScore = value;
         }
     }
 
@@ -54,12 +58,12 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void HandleScoreChange(bool isRight)
     {
-        if (isRight)RightScore++;
+        if (isRight) RightScore++;
         else LeftScore++;
 
         selectDataM.LeftCharType = CharacterType.Default;
         selectDataM.RightCharType = CharacterType.Default;
-        selectDataM.LeftGunType =  GunType.Default;
+        selectDataM.LeftGunType = GunType.Default;
         selectDataM.RightGunType = GunType.Default;
         StartCoroutine(WaitFade());
     }

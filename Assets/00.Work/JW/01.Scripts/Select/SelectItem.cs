@@ -19,7 +19,14 @@ public class SelectItem : MonoBehaviour
 
         CharType = cType;
         IsChar = true;
-        _spriter.sprite = dataM.characterDatas[(int)CharType - 1].itemSprite;
+        try
+        {
+            _spriter.sprite = dataM.characterDatas[(int)CharType - 1].itemSprite;
+        }
+        catch (Exception e)
+        {
+            print((int)CharType-1);
+        }
     }
 
     public void Initialize(GunType gType)

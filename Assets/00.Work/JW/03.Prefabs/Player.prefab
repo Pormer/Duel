@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7600170799048416700}
   - component: {fileID: 4226176858089582159}
   - component: {fileID: 1342340670201919403}
+  - component: {fileID: 4775039370217482084}
   - component: {fileID: 8292264907404685440}
   - component: {fileID: 5661089992862232157}
   - component: {fileID: 4939262315560887860}
@@ -63,6 +64,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetRenderer: {fileID: 6775167786972860927}
   flashTime: 0.1
+--- !u!114 &4775039370217482084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34654509338849002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8a7dbf0a6583d4bbb2de76dcaeb12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectType: 2
+  effectScale: 1
+  lifeTime: 2
+  effectPos: {fileID: 0}
 --- !u!114 &8292264907404685440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6069,7 +6086,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootFeedback
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2894666207839714427, guid: 50e15fb205cf922439a994772fb5326a, type: 3}
     m_RemovedGameObjects:
     - {fileID: 2493847599807165095, guid: 50e15fb205cf922439a994772fb5326a, type: 3}
     m_AddedGameObjects: []

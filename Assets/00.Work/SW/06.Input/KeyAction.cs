@@ -324,9 +324,9 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
             ""id"": ""ec2a478a-86bd-41a9-9791-f3364cbcf69b"",
             ""actions"": [
                 {
-                    ""name"": ""Click"",
+                    ""name"": ""Setting"",
                     ""type"": ""Button"",
-                    ""id"": ""7b24a560-7ea7-4580-9b7e-73ea3315058e"",
+                    ""id"": ""6064279c-a3fe-4d39-8850-fbac3a311373"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -336,12 +336,12 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""51d6e8b1-2ddc-4e45-9577-04786cb9d1ea"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""id"": ""440bc4f3-c6e0-4ba7-b6a4-8d68350b269a"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Mouse"",
-                    ""action"": ""Click"",
+                    ""groups"": """",
+                    ""action"": ""Setting"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -382,7 +382,7 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
         m_RightInput_MovementRight = m_RightInput.FindAction("MovementRight", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
-        m_UI_Click = m_UI.FindAction("Click", throwIfNotFound: true);
+        m_UI_Setting = m_UI.FindAction("Setting", throwIfNotFound: true);
     }
 
     ~@KeyAction()
@@ -639,12 +639,12 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
     // UI
     private readonly InputActionMap m_UI;
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
-    private readonly InputAction m_UI_Click;
+    private readonly InputAction m_UI_Setting;
     public struct UIActions
     {
         private @KeyAction m_Wrapper;
         public UIActions(@KeyAction wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Click => m_Wrapper.m_UI_Click;
+        public InputAction @Setting => m_Wrapper.m_UI_Setting;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -654,16 +654,16 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
-            @Click.started += instance.OnClick;
-            @Click.performed += instance.OnClick;
-            @Click.canceled += instance.OnClick;
+            @Setting.started += instance.OnSetting;
+            @Setting.performed += instance.OnSetting;
+            @Setting.canceled += instance.OnSetting;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
         {
-            @Click.started -= instance.OnClick;
-            @Click.performed -= instance.OnClick;
-            @Click.canceled -= instance.OnClick;
+            @Setting.started -= instance.OnSetting;
+            @Setting.performed -= instance.OnSetting;
+            @Setting.canceled -= instance.OnSetting;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -712,6 +712,6 @@ public partial class @KeyAction: IInputActionCollection2, IDisposable
     }
     public interface IUIActions
     {
-        void OnClick(InputAction.CallbackContext context);
+        void OnSetting(InputAction.CallbackContext context);
     }
 }

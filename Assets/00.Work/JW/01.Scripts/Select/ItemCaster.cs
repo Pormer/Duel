@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class ItemCaster : MonoBehaviour
 {
     [SerializeField] DataManagerSO dataM;
+    [SerializeField] SelectDataManagerSO selectDataM;
     [SerializeField] ContactFilter2D targetFilter;
     [SerializeField] private Vector2 castSize;
     private Collider2D[] cols;
@@ -13,13 +14,15 @@ public class ItemCaster : MonoBehaviour
 
     public UnityEvent<CharacterDataSO> OnTargetCharExp;
     public UnityEvent<GunDataSO> OnTargetGunExp;
-    
+
     private SelectSetting _selectSet;
+    private bool _isCharSelectTime = true;
 
     private void Awake()
     {
         cols = new Collider2D[1];
         _selectSet = FindFirstObjectByType<SelectSetting>();
+        selectDataM.OnSelect += HandleSelectChar;
     }
 
     public void CastItem()
@@ -30,12 +33,41 @@ public class ItemCaster : MonoBehaviour
         {
             if (cols[0].TryGetComponent(out SelectItem item))
             {
-                item.Select(_player.InputReaderCompo.IsRight);
+                bool isLiftChar = selectDataM.LeftCharType == CharacterType.Default && _player.InputReaderCompo.IsRight == false;
+                bool isRightChar = selectDataM.RightCharType == CharacterType.Default && _player.InputReaderCompo.IsRight;
+
+                if (isRightChar)
+                {
+                    item.Select(true);
+                    return;
+                }
+                if (isLiftChar)
+                {
+                    item.Select(false);
+                    return;
+                }
+
+                if(_isCharSelectTime) return;
+                bool isLiftGun = selectDataM.LeftGunType == GunType.Default && _player.InputReaderCompo.IsRight == false;
+                bool isRightGun = selectDataM.RightGunType == GunType.Default && _player.InputReaderCompo.IsRight;
+                
+                if (isRightGun)
+                {
+                    item.Select(true);
+                    return;
+                }
+                if (isLiftGun)
+                {
+                    item.Select(false);
+                    return;
+                }
+                
+                //item.Select(_player.InputReaderCompo.IsRight);
             }
         }
     }
 
-    public void CastItmeData()
+    public void CastItemData()
     {
         var col = Physics2D.OverlapBox(transform.position, castSize, 0, targetFilter, cols);
 
@@ -45,14 +77,31 @@ public class ItemCaster : MonoBehaviour
             {
                 if (item.IsChar)
                 {
-                    _selectSet.CharUiSet.UiSet(dataM.characterDatas[(int)item.CharType-1], _player.InputReaderCompo.IsRight);
+                    bool isLiftChar = selectDataM.LeftCharType == CharacterType.Default &&
+                                      _player.InputReaderCompo.IsRight == false;
+                    bool isRightChar = selectDataM.RightCharType == CharacterType.Default &&
+                                       _player.InputReaderCompo.IsRight;
+
+                    if (isLiftChar || isRightChar)
+                    {
+                        _selectSet.CharUiSet.UiSet(dataM.characterDatas[(int)item.CharType - 1],
+                            _player.InputReaderCompo.IsRight);
+                    }
+
                     //OnTargetCharExp?.Invoke(dataM.characterDatas[(int)item.CharType]);
                 }
                 else
                 {
-                    _selectSet.GunUiSet.UiSet(dataM.gunDatas[(int)item.GunType-1], _player.InputReaderCompo.IsRight);
+                    bool isLeftGun = selectDataM.LeftGunType == GunType.Default &&
+                                     _player.InputReaderCompo.IsRight == false;
+                    bool isRightGun = selectDataM.RightGunType == GunType.Default && _player.InputReaderCompo.IsRight;
+
+                    if (isRightGun || isLeftGun)
+                    {
+                        _selectSet.GunUiSet.UiSet(dataM.gunDatas[(int)item.GunType - 1],
+                            _player.InputReaderCompo.IsRight);
+                    }
                     //OnTargetGunExp?.Invoke(dataM.gunDatas[(int)item.GunType]);
-                    
                 }
             }
         }
@@ -63,15 +112,24 @@ public class ItemCaster : MonoBehaviour
         _player = player;
 
         _player.InputReaderCompo.OnShootEvent += CastItem;
-        _player.MovementCompo.OnEndMove += CastItmeData;
-        
+        _player.MovementCompo.OnEndMove += CastItemData;
+
         GameManager.Instance.OnFinalWin += v => _player.InputReaderCompo.OnShootEvent -= CastItem;
+
+        CastItemData();
+    }
+
+    private void HandleSelectChar()
+    {
+        _isCharSelectTime = false;
+        CastItemData();
     }
 
     private void OnDestroy()
     {
         _player.InputReaderCompo.OnShootEvent -= CastItem;
-        _player.MovementCompo.OnEndMove -= CastItmeData;
+        _player.MovementCompo.OnEndMove -= CastItemData;
+        selectDataM.OnSelect -= HandleSelectChar;
     }
 
     private void OnDrawGizmos()

@@ -27,7 +27,7 @@ public class SelectDataManagerSO : ScriptableObject
     private void OnEnable()
     {
         curItemList = new List<SelectItem>();
-        
+
         LeftCharType = CharacterType.Default;
         LeftGunType = GunType.Default;
 
@@ -57,17 +57,16 @@ public class SelectDataManagerSO : ScriptableObject
         {
             SpawnSelectGunItem(_parent);
             OnSelect?.Invoke();
-            
         }
     }
 
     public void SelectGun(bool isRight, GunType type)
     {
         if (isRight)
-            LeftGunType = type;
+            RightGunType = type;
         else
         {
-            RightGunType = type;
+            LeftGunType = type;
         }
 
         if (IsNotGunDefault() && IsNotCharDefault())
@@ -84,9 +83,9 @@ public class SelectDataManagerSO : ScriptableObject
         {
             SelectItem item;
             item = Instantiate(selectItemObj, startSpawnPos + Vector2.up * i, Quaternion.identity, parent);
-            curItemList.Add(item);
 
-            item.Initialize((CharacterType)CheckDataValue<CharacterType>(Random.Range(1, 13)));
+            item.Initialize(CheckCharDataValue((CharacterType)Random.Range(1, 13)));
+            curItemList.Add(item);
         }
     }
 
@@ -97,41 +96,35 @@ public class SelectDataManagerSO : ScriptableObject
         for (int i = 0; i < spawnCount; i++)
         {
             SelectItem item;
-            
-            if (curItemList[i] == null)
-            {
-                item = Instantiate(selectItemObj, startSpawnPos + Vector2.up * i, Quaternion.identity, parent);
-                curItemList.Add(item);
-            }
-            else
-            {
-                item = curItemList[i];
-            }
-            
-            item.Initialize((GunType)CheckDataValue<GunType>(Random.Range(1, 16)));
+            item = curItemList[i];
+            item.Initialize(CheckGunDataValue((GunType)Random.Range(1, 16)));
         }
     }
-
-    private int CheckDataValue<T>(int typeNum) where T : Enum
+    
+    //중복확인
+    private CharacterType CheckCharDataValue(CharacterType typeNum)
     {
         foreach (var item in curItemList)
         {
-            if(item.IsChar)
+            if (item.CharType == typeNum)
             {
-                if ((int)item.CharType == typeNum)
-                {
-                    return CheckDataValue<T>(Random.Range(1, 13));
-                }
-            }
-            else
-            {
-                if ((int)item.GunType == typeNum)
-                {
-                    return CheckDataValue<T>(Random.Range(1, 16));
-                }
+                return CheckCharDataValue((CharacterType)Random.Range(1, 13));
             }
         }
-        
+
+        return typeNum;
+    }
+
+    private GunType CheckGunDataValue(GunType typeNum)
+    {
+        foreach (var item in curItemList)
+        {
+            if (item.GunType == typeNum)
+            {
+                return CheckGunDataValue((GunType)Random.Range(1, 16));
+            }
+        }
+
         return typeNum;
     }
 
@@ -155,8 +148,8 @@ public class SelectDataManagerSO : ScriptableObject
 
         return isRightGun && isLeftGun;
     }
-    
-    
+
+
 #if UNITY_EDITOR
     [SerializeField] private CharacterType testCharType;
     [SerializeField] private GunType testGunType;
