@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0394fa2a180a5204a9640cb07465a223, type: 3}
   m_Name: OnHitSO
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 9a55fb63bc913b3408dc5d632d0ea2e2, type: 3}
+  clip: {fileID: 8300000, guid: cb92ba235af788949945b032b18d90f9, type: 3}
   voluem: 0.5
   pitch: 0

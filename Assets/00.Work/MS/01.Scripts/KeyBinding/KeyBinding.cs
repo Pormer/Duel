@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 
-public class KeyBinding : MonoBehaviour
+public class MyRebindActionUI : MonoBehaviour
 {
     [SerializeField]
     private InputActionReference currentAction = null;
@@ -14,12 +14,17 @@ public class KeyBinding : MonoBehaviour
     private InputBinding.DisplayStringOptions displayStringOptions;
 
     private InputActionRebindingExtensions.RebindingOperation rebindingOperation;
+    private string path = null;
 
     public void StartRebinding()
     {
         currentAction.action.Disable();
-
         selectedMarkObject.SetActive(true);
+
+        if (currentAction.action.bindings[0].hasOverrides)
+            path = currentAction.action.bindings[0].overridePath;
+        else
+            path = currentAction.action.bindings[0].path;
 
         rebindingOperation = currentAction.action.PerformInteractiveRebinding()
             .WithControlsExcluding("<Mouse>/rightButton")
@@ -27,7 +32,6 @@ public class KeyBinding : MonoBehaviour
             .OnCancel(operation => RebindCancel())
             .OnComplete(operation => RebindComplete())
             .Start();
-        Debug.Log("asdasd");
     }
 
     private void RebindCancel()
@@ -42,6 +46,14 @@ public class KeyBinding : MonoBehaviour
         selectedMarkObject.SetActive(false);
         rebindingOperation.Dispose();
         currentAction.action.Enable();
+
+        if (CheckDuplicateBindings(currentAction.action))
+        {
+            if (path != null)
+                currentAction.action.ApplyBindingOverride(path);
+            return;
+        }
+
         ShowBindText();
     }
 
@@ -54,5 +66,21 @@ public class KeyBinding : MonoBehaviour
         displayString = currentAction.action.GetBindingDisplayString(0, out deviceLayoutName, out controlPath, displayStringOptions);
 
         bindingDisplayNameText.text = displayString;
+    }
+
+    private bool CheckDuplicateBindings(InputAction action)
+    {
+        InputBinding newBinding = action.bindings[0];
+        foreach (InputBinding binding in action.actionMap.bindings)
+        {
+            if (binding.action == newBinding.action)
+                continue;
+            if (binding.effectivePath == newBinding.effectivePath)
+            {
+                Debug.Log("Duplicate binding found : " + newBinding.effectivePath);
+                return true;
+            }
+        }
+        return false;
     }
 }
