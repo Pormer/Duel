@@ -10,6 +10,7 @@ public class FadeInOutUi : MonoBehaviour
     private UIDocument _fadeInOutPenel;
     private VisualElement _root;
     private VisualElement[] _fades = new VisualElement[2];
+    [SerializeField] SoundSO sound;
     private void Awake()
     {
         _fadeInOutPenel = GetComponent<UIDocument>();
@@ -31,6 +32,7 @@ public class FadeInOutUi : MonoBehaviour
         _fades[0].ToggleInClassList("IsMove");
         yield return new WaitForSeconds(0.3f);
         _fades[1].ToggleInClassList("IsMove");
+        SoundManager.Instance.PlaySFX(sound);
         yield return new WaitForSeconds(0.6f);
         SceneManager.LoadScene(sceneValue);
     }
@@ -41,6 +43,7 @@ public class FadeInOutUi : MonoBehaviour
         _fades[0].RemoveFromClassList("IsMove");
         yield return new WaitForSeconds(0.3f);
         _fades[1].RemoveFromClassList("IsMove");
+        SoundManager.Instance.PlaySFX(sound);
         yield return new WaitForSeconds(0.4f);
         _fadeInOutPenel.sortingOrder = -1;
         GameManager.Instance.OnGameStart?.Invoke();
