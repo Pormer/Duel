@@ -201,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 24386418}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1303264889}
+        m_TargetAssemblyTypeName: KeyBinding, Assembly-CSharp
+        m_MethodName: TextValueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &24386418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +264,7 @@ GameObject:
   - component: {fileID: 51683077}
   - component: {fileID: 51683076}
   m_Layer: 5
-  m_Name: RRight
+  m_Name: RMoveRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -531,7 +543,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 180232431}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1303264889}
+        m_TargetAssemblyTypeName: KeyBinding, Assembly-CSharp
+        m_MethodName: TextValueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &180232431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,7 +1158,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 305158278}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1303264889}
+        m_TargetAssemblyTypeName: KeyBinding, Assembly-CSharp
+        m_MethodName: TextValueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &305158278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1185,7 +1221,7 @@ GameObject:
   - component: {fileID: 310755994}
   - component: {fileID: 310755993}
   m_Layer: 5
-  m_Name: LDown
+  m_Name: LMoveDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1392,7 +1428,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 363811195}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1303264889}
+        m_TargetAssemblyTypeName: KeyBinding, Assembly-CSharp
+        m_MethodName: TextValueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &363811195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1443,7 +1491,7 @@ GameObject:
   - component: {fileID: 366969310}
   - component: {fileID: 366969309}
   m_Layer: 5
-  m_Name: SkillKeyText
+  m_Name: RSkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1649,7 +1697,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 384961289}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1303264889}
+        m_TargetAssemblyTypeName: KeyBinding, Assembly-CSharp
+        m_MethodName: TextValueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &384961289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1700,7 +1760,7 @@ GameObject:
   - component: {fileID: 432246721}
   - component: {fileID: 432246720}
   m_Layer: 5
-  m_Name: LUp
+  m_Name: LMoveUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2182,7 +2242,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 467944857}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1303264889}
+        m_TargetAssemblyTypeName: KeyBinding, Assembly-CSharp
+        m_MethodName: TextValueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &467944857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2304,7 +2376,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 467957177}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1303264889}
+        m_TargetAssemblyTypeName: KeyBinding, Assembly-CSharp
+        m_MethodName: TextValueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &467957177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2355,7 +2439,7 @@ GameObject:
   - component: {fileID: 565453291}
   - component: {fileID: 565453290}
   m_Layer: 5
-  m_Name: Left
+  m_Name: LMoveLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2667,7 +2751,7 @@ GameObject:
   - component: {fileID: 695654648}
   - component: {fileID: 695654647}
   m_Layer: 5
-  m_Name: RUp
+  m_Name: RMoveUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3023,7 +3107,7 @@ GameObject:
   - component: {fileID: 960618877}
   - component: {fileID: 960618876}
   m_Layer: 5
-  m_Name: BarrierKeyText
+  m_Name: RBarrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3198,7 +3282,7 @@ GameObject:
   - component: {fileID: 1000764051}
   - component: {fileID: 1000764050}
   m_Layer: 5
-  m_Name: ShootKeyText
+  m_Name: RShoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3334,7 +3418,7 @@ GameObject:
   - component: {fileID: 1020127165}
   - component: {fileID: 1020127164}
   m_Layer: 5
-  m_Name: SkillKeyText
+  m_Name: LSkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3541,7 +3625,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1067608642}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1303264889}
+        m_TargetAssemblyTypeName: KeyBinding, Assembly-CSharp
+        m_MethodName: TextValueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1067608642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3830,7 +3926,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1163117273}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1303264889}
+        m_TargetAssemblyTypeName: KeyBinding, Assembly-CSharp
+        m_MethodName: TextValueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1163117273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3881,7 +3989,7 @@ GameObject:
   - component: {fileID: 1184937269}
   - component: {fileID: 1184937268}
   m_Layer: 5
-  m_Name: LRight
+  m_Name: LMoveRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4005,85 +4113,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184937266}
   m_CullTransparentMesh: 1
---- !u!1 &1210482968
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1210482971}
-  - component: {fileID: 1210482970}
-  - component: {fileID: 1210482969}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1210482969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210482968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_MoveRepeatDelay: 0.5
-  m_MoveRepeatRate: 0.1
-  m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_DeselectOnBackgroundClick: 1
-  m_PointerBehavior: 0
-  m_CursorLockBehavior: 0
-  m_ScrollDeltaPerTick: 6
---- !u!114 &1210482970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210482968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &1210482971
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210482968}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1303264883
 GameObject:
   m_ObjectHideFlags: 0
@@ -4096,7 +4125,7 @@ GameObject:
   - component: {fileID: 1303264886}
   - component: {fileID: 1303264885}
   - component: {fileID: 1303264884}
-  - component: {fileID: 1303264888}
+  - component: {fileID: 1303264889}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4189,7 +4218,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1303264888
+--- !u!114 &1303264889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4198,23 +4227,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1303264883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64b237844fa25f24189a5aa84ce4fb9a, type: 3}
+  m_Script: {fileID: 11500000, guid: bd96f971955d3f640a7974505ac141a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lPlayerMoveUpTxt: {fileID: 432246720}
-  lPlayerMoveDownTxt: {fileID: 310755993}
-  lPlayerMoveLeftTxt: {fileID: 565453290}
-  lPlayerMoveRightTxt: {fileID: 1184937268}
-  lPlayerShootTxt: {fileID: 1669925206}
-  lPlayerBarrierTxt: {fileID: 1442146467}
-  lPlayerSkillTxt: {fileID: 1020127164}
-  rPlayerMoveUpTxt: {fileID: 695654647}
-  rPlayerMoveDownTxt: {fileID: 2004319822}
-  rPlayerMoveLeftTxt: {fileID: 1635342272}
-  rPlayerMoveRightTxt: {fileID: 51683076}
-  rPlayerShootTxt: {fileID: 1000764050}
-  rPlayerBarrierTxt: {fileID: 960618876}
-  rPlayerSkillTxt: {fileID: 366969309}
+  bindingButtons:
+  - button: {fileID: 0}
+    actionReference: {fileID: 0}
+    bindingIndex: 0
+  - button: {fileID: 0}
+    actionReference: {fileID: 0}
+    bindingIndex: 0
+  - button: {fileID: 0}
+    actionReference: {fileID: 0}
+    bindingIndex: 0
+  - button: {fileID: 0}
+    actionReference: {fileID: 0}
+    bindingIndex: 0
+  - button: {fileID: 0}
+    actionReference: {fileID: 0}
+    bindingIndex: 0
 --- !u!1 &1315482571
 GameObject:
   m_ObjectHideFlags: 3
@@ -4392,7 +4423,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1434946416}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1303264889}
+        m_TargetAssemblyTypeName: KeyBinding, Assembly-CSharp
+        m_MethodName: TextValueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1434946416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4443,7 +4486,7 @@ GameObject:
   - component: {fileID: 1442146468}
   - component: {fileID: 1442146467}
   m_Layer: 5
-  m_Name: BarrierKeyBtn
+  m_Name: LBarrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5030,6 +5073,9 @@ MonoBehaviour:
   OnGameWin:
     m_PersistentCalls:
       m_Calls: []
+  OnGameStart:
+    m_PersistentCalls:
+      m_Calls: []
   leftScore: 2
   rightScore: 5
   scoreData: {fileID: 0}
@@ -5061,7 +5107,7 @@ GameObject:
   - component: {fileID: 1635342273}
   - component: {fileID: 1635342272}
   m_Layer: 5
-  m_Name: RLeft
+  m_Name: RMoveLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5267,7 +5313,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1640457029}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1303264889}
+        m_TargetAssemblyTypeName: KeyBinding, Assembly-CSharp
+        m_MethodName: TextValueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1640457029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5388,7 +5446,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1661765294}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1303264889}
+        m_TargetAssemblyTypeName: KeyBinding, Assembly-CSharp
+        m_MethodName: TextValueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1661765294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5439,7 +5509,7 @@ GameObject:
   - component: {fileID: 1669925207}
   - component: {fileID: 1669925206}
   m_Layer: 5
-  m_Name: ShootKeyText
+  m_Name: LShoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5880,7 +5950,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1927476890}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1303264889}
+        m_TargetAssemblyTypeName: KeyBinding, Assembly-CSharp
+        m_MethodName: TextValueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1927476890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5931,7 +6013,7 @@ GameObject:
   - component: {fileID: 2004319823}
   - component: {fileID: 2004319822}
   m_Layer: 5
-  m_Name: RDown
+  m_Name: RMoveDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6138,7 +6220,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2011818054}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1303264889}
+        m_TargetAssemblyTypeName: KeyBinding, Assembly-CSharp
+        m_MethodName: TextValueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2011818054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7261,4 +7355,3 @@ SceneRoots:
   - {fileID: 2082335426}
   - {fileID: 463796416}
   - {fileID: 1303264887}
-  - {fileID: 1210482971}
