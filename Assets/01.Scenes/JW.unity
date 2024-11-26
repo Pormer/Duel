@@ -1055,6 +1055,7 @@ MonoBehaviour:
   leftScore: 0
   rightScore: 0
   scoreData: {fileID: 11400000, guid: 9b2d2475ff865a54bb0aae0545805b65, type: 2}
+  selectDataM: {fileID: 11400000, guid: 7f609e85bb4868e4c8849739c1248450, type: 2}
 --- !u!4 &1570364894
 Transform:
   m_ObjectHideFlags: 0

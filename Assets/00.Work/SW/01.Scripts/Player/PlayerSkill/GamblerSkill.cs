@@ -26,7 +26,7 @@ public class GamblerSkill : CharacterSkill
     private bool RandomDamage()
     {
         int rand = UnityEngine.Random.Range(0, 10);
-        return rand >= 2 ? true : false;
+        return rand <= 2 ? true : false;
     }
 
     private void OnDisable()
