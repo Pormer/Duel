@@ -21,13 +21,13 @@ public class GameWinUi : MonoBehaviour
         _visual[3] = _root.Q<VisualElement>("Crown");
         _playerName = _root.Q<Label>("PlayerName");
         
-        GameManager.Instance.OnFinelWin += WinPanelStart;
+        GameManager.Instance.OnFinalWin += WinPanelStart;
     }
 
     public void WinPanelStart(bool player)
     {
         if (win) return;
-        if (player)
+        if (!player)
         {
             win=true;
             _visual[3].style.backgroundImage = new StyleBackground(crownSprites[0]);

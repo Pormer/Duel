@@ -58,11 +58,11 @@ public class ScoreUI : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ScoreUpdater(GameManager.Instance.LeftScore, scoreItems[0]));
-        StartCoroutine(ScoreUpdater(GameManager.Instance.RightScore, scoreItems[1]));
+        StartCoroutine(ScoreUpdater(GameManager.Instance.LeftScore, scoreItems[0], false));
+        StartCoroutine(ScoreUpdater(GameManager.Instance.RightScore, scoreItems[1], true));
     }
 
-    IEnumerator ScoreUpdater(int score, StatItem[] stats)
+    IEnumerator ScoreUpdater(int score, StatItem[] stats, bool isRight)
     {
         int curSettingScoreNum = 0;
         
@@ -73,6 +73,8 @@ public class ScoreUI : MonoBehaviour
             if(curSettingScoreNum >= 4)
             {
                 lastScoreItem.IsActive = true;
+                yield return new WaitForSeconds(0.5f);
+                GameManager.Instance.OnFinalWin?.Invoke(isRight);
                 yield break;
             }
             

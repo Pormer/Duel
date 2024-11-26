@@ -1,3 +1,4 @@
+using System;
 using DataType;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -15,19 +16,20 @@ public class SelectItem : MonoBehaviour
     public void Initialize(CharacterType cType)
     {
         _spriter = transform.Find("Visual").GetComponent<SpriteRenderer>();
-        
+
         CharType = cType;
         IsChar = true;
-        _spriter.sprite = dataM.characterDatas[(int)CharType-1].itemSprite;
+        _spriter.sprite = dataM.characterDatas[(int)CharType - 1].itemSprite;
     }
+
     public void Initialize(GunType gType)
     {
         _spriter = transform.Find("Visual").GetComponent<SpriteRenderer>();
-        
+
         GunType = gType;
         IsChar = false;
-        
-        _spriter.sprite = dataM.gunDatas[(int)GunType-1].itemSprite;
+
+        _spriter.sprite = dataM.gunDatas[(int)GunType - 1].itemSprite;
     }
 
     public void Select(bool isRight)

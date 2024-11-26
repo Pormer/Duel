@@ -26,18 +26,21 @@ public class SelectManager : MonoBehaviour
     {
         if (GameManager.Instance.IsOnlinePlay)
         {
-            GameManager.Instance.OnGameStart.AddListener
+            GameManager.Instance.OnGameStart += 
             (
                 () => PlayerGroup = FindObjectsByType<Player>(FindObjectsSortMode.None)
             );
-            GameManager.Instance.OnGameStart.AddListener(StartOnlineGameClientRpc);
+            GameManager.Instance.OnGameStart += StartOnlineGameClientRpc;
         }
         else
         {
-            PlayerGroup = FindObjectsByType<Player>(FindObjectsSortMode.None);
-            if(PlayerGroup[0].InputReaderCompo.IsRight) PlayerGroup = PlayerGroup.Reverse().ToArray();
-            
-            PlayerInitialize();
+            GameManager.Instance.OnGameStart += () =>
+            {
+                PlayerGroup = FindObjectsByType<Player>(FindObjectsSortMode.None);
+                if (PlayerGroup[0].InputReaderCompo.IsRight) PlayerGroup = PlayerGroup.Reverse().ToArray();
+
+                PlayerInitialize();
+            };
         }
     }
 

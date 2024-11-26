@@ -45,28 +45,28 @@ public class Player : MonoBehaviour
         PlayerSpriteRenderer = transform.Find("Visual")?.GetComponent<SpriteRenderer>();
         MaskSpriteRenderer = transform.Find("Visual").transform.Find("Mask").GetComponent<SpriteRenderer>();
         Barrier = transform.Find("Visual").transform.Find("Barrier")?.gameObject;
-
+        GameManager.Instance.OnFinalWin += HandleLastWin;
 
         _components = new Dictionary<Type, IPlayerComponents>();
 
         GetComponentsInChildren<IPlayerComponents>().ToList()
             .ForEach(x => _components.Add(x.GetType(), x));
     }
-
+    
     public void Initialize(CharacterDataSO cdata, GunDataSO gData)
     {
+        //Default Setting
         MovementCompo = GetComponent<PlayerMovement>();
         MovementCompo.Initialize(this);
 
         var itemCaster = GetComponentInChildren<ItemCaster>();
         if(itemCaster != null) itemCaster.Initialize(this);
         
-        //????
         InputReaderCompo.OnMovementEvent += MovementCompo.SetMovement;
         
         if(cdata == null || gData ==null) return;
         
-        //????
+        //init
         GunData = gData;
         StatDataCompo = new StatData(cdata, gData);
         _components.Add(StatDataCompo.GetType(), StatDataCompo);
@@ -75,6 +75,7 @@ public class Player : MonoBehaviour
         
         GetComponentInChildren<Gun>()?.Initialize(this);
         
+        //Sprite Init
         MaskSpriteRenderer.sprite = cdata.itemSprite;
         BarrierColer = cdata.baseColor;
         if (Barrier != null)
@@ -82,14 +83,23 @@ public class Player : MonoBehaviour
 
         EventFeedbacksCompo = Instantiate(cdata.eventFeedback, transform);
 
-        //???¡À???
+        CreateWeapon(cdata);
+
+        BarrierSubscribe();
+    }
+
+    private void CreateWeapon(CharacterDataSO cdata)
+    {
         string skillStr = $"{cdata.charType.ToString()}Skill";
         var type = Type.GetType(skillStr);
         
         var skillCompo = gameObject.AddComponent(type) as CharacterSkill;
         skillCompo?.Initialize(this);
         if (skillCompo != null) InputReaderCompo.OnSkillEvent += skillCompo.ActiveSkill;
-        
+    }
+    
+    private void BarrierSubscribe()
+    {
         OnHitBarrier += () =>
         {
             if (StatDataCompo.BarrierCount <= 0)
@@ -113,8 +123,13 @@ public class Player : MonoBehaviour
         };
     }
 
+    private void HandleLastWin(bool obj)
+    {
+        
+    }
+
     private void OnDestroy()
     {
-        InputReaderCompo.OnMovementEvent -= MovementCompo.SetMovement;
+        if(MovementCompo != null) InputReaderCompo.OnMovementEvent -= MovementCompo.SetMovement;
     }
 }

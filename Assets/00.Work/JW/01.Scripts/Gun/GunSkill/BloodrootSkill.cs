@@ -10,7 +10,7 @@ public class BloodrootSkill : GunSkill
     {
         base.AwakeSkill();
         _stat.wantLoadCount = 0;
-
+        
         _stat.IsNotBullet = true;
         
         if(eventFeedbacks != null) OnMinusHealth += eventFeedbacks.PlayFeedbacks;
