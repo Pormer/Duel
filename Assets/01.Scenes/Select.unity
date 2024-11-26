@@ -294,12 +294,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526777302}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 728600764}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &563846697
 GameObject:
@@ -857,7 +857,7 @@ Transform:
   - {fileID: 1662741760}
   - {fileID: 1522404395}
   - {fileID: 978624865}
-  - {fileID: 526777304}
+  - {fileID: 865777881}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &865777878
@@ -895,6 +895,8 @@ MonoBehaviour:
   colors:
   - {r: 0.3, g: 0.3, b: 1, a: 1}
   - {r: 1, g: 0.3, b: 0.3, a: 1}
+  getSound: {fileID: 11400000, guid: 24f73d17e25113741bb12278b7723e0d, type: 2}
+  winSound: {fileID: 11400000, guid: e403d96a127591041aa576fccb14e312, type: 2}
 --- !u!114 &865777880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,12 +924,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865777878}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 728600764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &972732220
 GameObject:
@@ -1575,7 +1577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607ddc6c57f048a4dad3b0d17e5774a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 11400000, guid: 38412381e594e794a8ef970f24756dd8, type: 2}
+  sound: {fileID: 0}
 --- !u!114 &1522404394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2792,7 +2794,7 @@ SceneRoots:
   - {fileID: 1228775612}
   - {fileID: 278427842}
   - {fileID: 2107657691}
-  - {fileID: 865777881}
   - {fileID: 728600764}
   - {fileID: 622105623}
+  - {fileID: 526777304}
   - {fileID: 1462830124}
