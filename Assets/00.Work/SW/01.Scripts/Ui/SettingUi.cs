@@ -5,6 +5,7 @@ public class SettingUi : MonoBehaviour
 {
     private UIDocument _uiDocument;
     private VisualElement _root;
+    private VisualElement penel;
     private Slider[] sliders = new Slider[2];
     private VisualElement _keys;
     private VisualElement[] _KeyPenel = new VisualElement[2];
@@ -18,9 +19,10 @@ public class SettingUi : MonoBehaviour
     {
         _uiDocument = GetComponent<UIDocument>();
         _root = _uiDocument.rootVisualElement;
-        sliders[0] = _root.Q<Slider>("SFXSettingSlider");
-        sliders[1] = _root.Q<Slider>("BGMSettingSlider");
-        _keys = _root.Q<VisualElement>("Keys");
+        penel = _root.Q<VisualElement>("Penel");
+        sliders[0] = penel.Q<Slider>("SFXSettingSlider");
+        sliders[1] = penel.Q<Slider>("BGMSettingSlider");
+        _keys = penel.Q<VisualElement>("Keys");
         _KeyPenel[0] = _keys.Q<VisualElement>("LeftPlayer");
         _KeyPenel[1] = _keys.Q<VisualElement>("RightPlayer");
         _leftKeys[0] = _KeyPenel[0].Q<VisualElement>("W");
@@ -42,8 +44,8 @@ public class SettingUi : MonoBehaviour
         for (int i = 0; i < _leftKeys.Length; i++) _leftLabel[i] = _leftKeys[i].Q<Label>();
         for(int i = 0; i < _rightKeys.Length; i++) _rightLabel[i] = _rightKeys[i].Q<Label>();
 
-        buttons[0] = _root.Q<Button>("Exit");
-        buttons[1] = _root.Q<Button>("Title");
+        buttons[0] = penel.Q<Button>("Exit");
+        buttons[1] = penel.Q<Button>("Title");
 
         buttons[0].RegisterCallback<ClickEvent>((v) => Application.Quit());
         buttons[1].RegisterCallback<ClickEvent>((v) =>
@@ -58,7 +60,15 @@ public class SettingUi : MonoBehaviour
 
     public void SettingOn(bool isOpen)
     {
-        if (isOpen) _uiDocument.sortingOrder = 100;
-        else _uiDocument.sortingOrder = -50;
+        if (isOpen)
+        {
+            penel.ToggleInClassList("IsMove");
+            _uiDocument.sortingOrder = 1;
+        }
+        else
+        {
+            penel.RemoveFromClassList("IsMove");
+            _uiDocument.sortingOrder = -50;
+        }
     }
 }

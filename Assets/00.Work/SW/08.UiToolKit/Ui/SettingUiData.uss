@@ -121,3 +121,19 @@
     color: rgb(11, 11, 11);
     left: 0;
 }
+
+.panel {
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.76);
+    color: rgb(27, 27, 27);
+    translate: 0 -1233px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.panel.IsMove {
+    translate: 0 0;
+}
+
+.panel {
+}
