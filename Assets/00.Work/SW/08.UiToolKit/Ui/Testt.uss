@@ -92,7 +92,44 @@
 }
 
 .playerName.IsMove {
-    translate: 725px 800px;
+    translate: 725px 750px;
     transition-timing-function: ease-in-out-back;
     transition-duration: 0.5s;
+}
+
+.UpPanel.UpMove {
+    translate: -434px -499px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+}
+
+.lobby {
+    position: absolute;
+    top: 913px;
+    left: 727px;
+    height: 137px;
+    width: 423px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    -unity-font-definition: url("project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&guid=afd429833c5b2104c9ef3ea3738a6bf9&type=3#Galmuri7");
+    font-size: 100px;
+    border-top-width: 10px;
+    border-right-width: 10px;
+    border-bottom-width: 10px;
+    border-left-width: 10px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    translate: 3402px 0;
+}
+
+.lobby.IsMove {
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out-back;
+    translate: 0 0;
 }

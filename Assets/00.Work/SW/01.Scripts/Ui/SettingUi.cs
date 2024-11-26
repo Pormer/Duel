@@ -12,7 +12,7 @@ public class SettingUi : MonoBehaviour
     private VisualElement[] _rightKeys = new VisualElement[7];
     private Label[] _leftLabel = new Label[7];
     private Label[] _rightLabel = new Label[7];
-    private Button[] buttons = new Button[3];
+    private Button[] buttons = new Button[2];
 
     private void Awake()
     {
@@ -44,7 +44,6 @@ public class SettingUi : MonoBehaviour
 
         buttons[0] = _root.Q<Button>("Exit");
         buttons[1] = _root.Q<Button>("Title");
-        buttons[2] = _root.Q<Button>("Reset");
 
         buttons[0].RegisterCallback<ClickEvent>((v) => Application.Quit());
         buttons[1].RegisterCallback<ClickEvent>((v) =>
@@ -52,7 +51,7 @@ public class SettingUi : MonoBehaviour
             GameManager.Instance.OnFadeIn?.Invoke(0);
             SettingOn(false);
         });
-        //buttons[2].RegisterCallback<ClickEvent>((v) => {
+        GameManager.Instance.OnSettingUi += SettingOn;
     }
 
 

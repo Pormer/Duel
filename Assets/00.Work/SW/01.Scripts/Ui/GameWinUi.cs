@@ -9,6 +9,7 @@ public class GameWinUi : MonoBehaviour
     private VisualElement _root;
     private VisualElement[] _visual = new VisualElement[4];
     private Label _playerName;
+    private Button _lobbyButton;
     [SerializeField] private List<Sprite> crownSprites;
     private bool win;
 
@@ -20,7 +21,9 @@ public class GameWinUi : MonoBehaviour
         _visual[2] = _root.Q<VisualElement>("Character");
         _visual[3] = _root.Q<VisualElement>("Crown");
         _playerName = _root.Q<Label>("PlayerName");
-        
+        _lobbyButton = _root.Q<Button>("Lobby");
+
+        _lobbyButton.RegisterCallback<ClickEvent>((v) => GameManager.Instance.OnFadeIn(1));
         GameManager.Instance.OnFinalWin += WinPanelStart;
     }
     public void WinPanelStart(bool player)
@@ -40,7 +43,6 @@ public class GameWinUi : MonoBehaviour
         }
         StartCoroutine(WinPanelStart());
     }
-
     private IEnumerator WinPanelStart()
     {
         yield return new WaitForSeconds(1f);
@@ -53,5 +55,7 @@ public class GameWinUi : MonoBehaviour
         _visual[3].ToggleInClassList("IsMove");
         yield return new WaitForSeconds(0.8f);
         _playerName.ToggleInClassList("IsMove");
+        yield return new WaitForSeconds(0.5f);
+        _lobbyButton.ToggleInClassList("IsMove");
     }
 }
