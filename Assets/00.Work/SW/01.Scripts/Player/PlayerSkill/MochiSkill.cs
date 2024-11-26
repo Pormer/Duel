@@ -12,9 +12,11 @@ public class MochiSkill : CharacterSkill
     }
     protected override void UpdateCharacterSkill()
     {
-        if (_health.IsInvincibilityHit >= 3 && _health.IsInvincibility)
+
+        if (_health.IsInvincibilityHit >= 3 && !isSkillStart)
         {
             _health.IsInvincibility = false;
+            isSkillStart = true;
             OnHit?.Invoke();
         }
     }
