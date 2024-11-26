@@ -1,11 +1,16 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using System.Threading.Tasks;
+using System.Linq;
+using UnityEngine.UIElements;
 
 public class MyRebindActionUI : MonoBehaviour
 {
     [SerializeField]
     private InputActionReference currentAction = null;
+    [SerializeField]
+    private InputActionReference otherAction = null;
     [SerializeField]
     private TMP_Text bindingDisplayNameText = null;
     [SerializeField]
@@ -71,11 +76,19 @@ public class MyRebindActionUI : MonoBehaviour
     private bool CheckDuplicateBindings(InputAction action)
     {
         InputBinding newBinding = action.bindings[0];
+
+        var otherBinding = otherAction.action.actionMap.bindings.First(x => x.action == newBinding.action);
+        if ( otherBinding.effectivePath == newBinding.effectivePath)
+        {
+            Debug.Log("Duplicate binding found : " + newBinding.effectivePath);
+            return true;
+        }
         foreach (InputBinding binding in action.actionMap.bindings)
         {
             if (binding.action == newBinding.action)
                 continue;
-            if (binding.effectivePath == newBinding.effectivePath)
+             otherBinding = otherAction.action.actionMap.bindings.First(x => x.action == binding.action);
+            if (binding.effectivePath == newBinding.effectivePath || otherBinding.effectivePath == newBinding.effectivePath)
             {
                 Debug.Log("Duplicate binding found : " + newBinding.effectivePath);
                 return true;
