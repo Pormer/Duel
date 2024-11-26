@@ -29,6 +29,7 @@ public class LeftInputSO : InputReaderSO, KeyAction.ILeftInputActions
     }
     private void OnDisable()
     {
+        GameManager.Instance.OnSettingUi -= HandleSetting;
         _keyAction.LeftInput.Disable();
     }
 }
