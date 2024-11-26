@@ -43,13 +43,13 @@ public class SettingUi : MonoBehaviour
         for(int i = 0; i < _rightKeys.Length; i++) _rightLabel[i] = _rightKeys[i].Q<Label>();
 
         buttons[0] = _root.Q<Button>("Exit");
-        buttons[1] = _root.Q<Button>("Lobby");
+        buttons[1] = _root.Q<Button>("Title");
         buttons[2] = _root.Q<Button>("Reset");
 
         buttons[0].RegisterCallback<ClickEvent>((v) => Application.Quit());
         buttons[1].RegisterCallback<ClickEvent>((v) =>
         {
-            GameManager.Instance.OnFadeIn(1);
+            GameManager.Instance.OnFadeIn?.Invoke(0);
             SettingOn(false);
         });
         //buttons[2].RegisterCallback<ClickEvent>((v) => {
