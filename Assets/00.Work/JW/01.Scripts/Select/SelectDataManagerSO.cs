@@ -93,10 +93,20 @@ public class SelectDataManagerSO : ScriptableObject
     {
         _parent = parent;
 
+        
+        foreach (var item in curItemList)
+        {
+            Debug.Log(item == null);
+            Debug.Log(curItemList.Count);
+            item.gameObject.SetActive(false);
+        }
+        
+        curItemList.Clear();
+
         for (int i = 0; i < spawnCount; i++)
         {
             SelectItem item;
-            item = curItemList[i];
+            item = Instantiate(selectItemObj, startSpawnPos + Vector2.up * i, Quaternion.identity, parent);
             item.Initialize(CheckGunDataValue((GunType)Random.Range(1, 16)));
         }
     }
@@ -148,7 +158,6 @@ public class SelectDataManagerSO : ScriptableObject
 
         return isRightGun && isLeftGun;
     }
-
 
 #if UNITY_EDITOR
     [SerializeField] private CharacterType testCharType;
