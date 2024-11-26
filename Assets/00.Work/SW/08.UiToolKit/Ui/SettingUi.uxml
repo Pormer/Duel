@@ -1,7 +1,61 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <engine:VisualElement style="flex-grow: 1;">
-        <engine:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.72);">
-            <engine:Label text="Setting" style="position: absolute; color: rgb(255, 255, 255); width: auto; height: 0; font-size: 161px; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;);" />
+    <Style src="project://database/Assets/00.Work/SW/08.UiToolKit/Ui/SettingUiData.uss?fileID=7433441132597879392&amp;guid=e8bd7beba2f6ec8428d366236fa308a9&amp;type=3#SettingUiData" />
+    <engine:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.76);">
+        <engine:Label text="Setting" style="position: absolute; color: rgb(255, 255, 255); width: 1920px; height: 192px; font-size: 120px; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); -unity-text-align: middle-center; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; top: 0; left: 0;" />
+        <engine:Slider label="SFXSound " value="-0.03" high-value="100" name="SFXSettingSlider" class="Slider" style="-unity-slice-left: -179; -unity-slice-top: 102; -unity-slice-right: 102; -unity-slice-bottom: 102; position: absolute; width: 1321px; height: 68px; top: 250px; left: 251px; font-size: 45px; -unity-text-align: lower-center; -unity-text-outline-color: rgb(0, 0, 0); text-shadow: 2.8px 0 0 rgb(0, 0, 0); -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(255, 255, 255);" />
+        <engine:Slider label="BGMSound " value="-0.03" high-value="100" name="BGMSettingSlider" class="Slider" style="-unity-slice-left: -179; -unity-slice-top: 102; -unity-slice-right: 102; -unity-slice-bottom: 102; position: absolute; width: 1325px; height: 68px; top: 350px; left: 251px; font-size: 45px; -unity-text-align: lower-center; -unity-text-outline-color: rgb(0, 0, 0); text-shadow: 2.8px 0 0 rgb(0, 0, 0); -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(255, 255, 255);" />
+        <engine:VisualElement name="Keys" picking-mode="Ignore" style="flex-grow: 1;">
+            <engine:VisualElement name="LeftPlayer" picking-mode="Ignore" style="flex-grow: 1; position: absolute; width: 1920px; height: 1080px;">
+                <engine:VisualElement name="W" class="Key" style="top: 480px; left: 470px;">
+                    <engine:Label text="W" class="KeyLebel" style="position: absolute; -unity-text-align: middle-center; color: rgb(255, 255, 255);" />
+                </engine:VisualElement>
+                <engine:VisualElement name="S" class="Key" style="flex-grow: 1; top: 585px; left: 470px;">
+                    <engine:Label text="S" class="KeyLebel" style="-unity-text-align: middle-center;" />
+                </engine:VisualElement>
+                <engine:VisualElement name="A" class="Key" style="flex-grow: 1; top: 585px; left: 365px;">
+                    <engine:Label text="A&#10;" class="KeyLebel" />
+                </engine:VisualElement>
+                <engine:VisualElement name="D" class="Key" style="flex-grow: 1; top: 585px; left: 575px;">
+                    <engine:Label text="D&#10;" class="KeyLebel" style="-unity-text-align: middle-center;" />
+                </engine:VisualElement>
+                <engine:VisualElement name="V" class="Key" style="flex-grow: 1; top: 720px; left: 470px;">
+                    <engine:Label text="V" display-tooltip-when-elided="false" class="KeyLebel" />
+                </engine:VisualElement>
+                <engine:VisualElement name="C" class="Key" style="flex-grow: 1; top: 720px; left: 365px;">
+                    <engine:Label text="C" class="KeyLebel" />
+                </engine:VisualElement>
+                <engine:VisualElement name="B" class="Key" style="flex-grow: 1; top: 720px; left: 575px;">
+                    <engine:Label text="B" class="KeyLebel" />
+                </engine:VisualElement>
+                <engine:Label text="LeftPlayer" style="position: absolute; top: 850px; left: 365px; height: 66px; width: 296px; color: rgb(255, 255, 255); font-size: 50px; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); -unity-text-align: middle-center;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="RightPlayer" picking-mode="Ignore" style="flex-grow: 1; border-top-width: 9px; border-right-width: 9px; border-bottom-width: 9px; border-left-width: 9px; left: auto;">
+                <engine:VisualElement name="Up" class="Key" style="flex-grow: 1; top: 480px; left: auto; right: 470px; background-image: none;">
+                    <engine:Label text="∧" class="KeyLebel" />
+                </engine:VisualElement>
+                <engine:VisualElement name="Down" class="Key" style="flex-grow: 1; top: 585px; left: auto; right: 470px; background-image: none;">
+                    <engine:Label text="∨" class="KeyLebel" />
+                </engine:VisualElement>
+                <engine:VisualElement name="Left" class="Key" style="flex-grow: 1; top: 585px; left: auto; right: 575px; background-image: none;">
+                    <engine:Label text="＜" class="KeyLebel" />
+                </engine:VisualElement>
+                <engine:VisualElement name="Right" class="Key" style="flex-grow: 1; top: 585px; left: auto; right: 365px; background-image: none;">
+                    <engine:Label text="＞" class="KeyLebel" />
+                </engine:VisualElement>
+                <engine:VisualElement name="L" class="Key" style="flex-grow: 1; top: 720px; left: auto; right: 470px;">
+                    <engine:Label text="L" display-tooltip-when-elided="false" class="KeyLebel" />
+                </engine:VisualElement>
+                <engine:VisualElement name="1" class="Key" style="flex-grow: 1; top: 720px; left: auto; right: 365px;">
+                    <engine:Label text=";" class="KeyLebel" />
+                </engine:VisualElement>
+                <engine:VisualElement name="K" class="Key" style="flex-grow: 1; top: 720px; left: auto; right: 575px;">
+                    <engine:Label text="K" class="KeyLebel" />
+                </engine:VisualElement>
+                <engine:Label text="RightPlayer" style="position: absolute; top: 843px; right: 365px; height: 66px; width: 296px; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(255, 255, 255); font-size: 50px; -unity-text-align: middle-center;" />
+            </engine:VisualElement>
         </engine:VisualElement>
+        <engine:Button text="Exit" name="Exit" style="position: absolute; left: 870px; top: 500px; background-color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); font-size: 75px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 9px; border-right-width: 9px; border-bottom-width: 9px; border-left-width: 9px; border-top-left-radius: 21px; border-top-right-radius: 21px; border-bottom-right-radius: 21px; border-bottom-left-radius: 21px;" />
+        <engine:Button text="Lobby" name="Lobby" style="position: absolute; top: 650px; left: 840px; width: 251px; font-size: 75px; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 9px; border-right-width: 9px; border-bottom-width: 9px; border-left-width: 9px; border-top-left-radius: 21px; border-top-right-radius: 21px; border-bottom-right-radius: 21px; border-bottom-left-radius: 21px;" />
+        <engine:Button text="Reset" name="Reset" style="position: absolute; left: 826px; top: 800px; background-color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); font-size: 75px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 9px; border-right-width: 9px; border-bottom-width: 9px; border-left-width: 9px; border-top-left-radius: 21px; border-top-right-radius: 21px; border-bottom-right-radius: 21px; border-bottom-left-radius: 21px; width: 281px;" />
     </engine:VisualElement>
 </engine:UXML>

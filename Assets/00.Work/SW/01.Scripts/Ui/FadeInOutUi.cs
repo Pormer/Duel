@@ -10,20 +10,31 @@ public class FadeInOutUi : MonoBehaviour
     private UIDocument _fadeInOutPenel;
     private VisualElement _root;
     private VisualElement[] _fades = new VisualElement[2];
-
-    private void Start()
+    [SerializeField] private bool istitle;
+    private void Awake()
     {
         _fadeInOutPenel = GetComponent<UIDocument>();
         _root = _fadeInOutPenel.rootVisualElement;
         _fades[0] = _root.Q<VisualElement>("FadeUp");
         _fades[1] = _root.Q<VisualElement>("FadeDown");
+        if(istitle)
+        {
+            _fades[0].ToggleInClassList("IsMove");
+            _fades[1].ToggleInClassList("IsMove");
+        }
+    }
+
+    private void Start()
+    {
         GameManager.Instance.OnFadeIn += FadeIn;
-        
-        StartCoroutine(FadeOntStart());
+        if(!istitle)
+            StartCoroutine(FadeOntStart());
     }
     public void FadeIn(int value) => StartCoroutine(FadeInStart(value));
     private IEnumerator FadeInStart(int sceneValue)
     {
+        if(istitle) _fadeInOutPenel.sortingOrder = 1;
+        yield return null;
         _fades[0].ToggleInClassList("IsMove");
         yield return new WaitForSeconds(0.3f);
         _fades[1].ToggleInClassList("IsMove");
