@@ -8,11 +8,11 @@ public class GameManager : MonoSingleton<GameManager>
     [field: SerializeField] public bool IsOnlinePlay { get; private set; }
 
     public UnityEvent<bool> OnGameWin;
-    public event Action<bool> OnFinelWin;
+    public Action<bool> OnFinalWin;
 
     public Action<int> OnFadeIn;
 
-    public UnityEvent OnGameStart;
+    public Action OnGameStart;
 
     [SerializeField] private int leftScore;
     public int LeftScore
@@ -44,6 +44,11 @@ public class GameManager : MonoSingleton<GameManager>
     private void Awake()
     {
         OnGameWin.AddListener(HandleScoreChange);
+        var item = FindFirstObjectByType<FadeInOutUi>();
+        if (item == null)
+        {
+            OnGameStart?.Invoke();
+        }
     }
 
     private void HandleScoreChange(bool isRight)

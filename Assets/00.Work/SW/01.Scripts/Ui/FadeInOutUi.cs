@@ -38,6 +38,7 @@ public class FadeInOutUi : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         _fades[1].RemoveFromClassList("IsMove");
         yield return new WaitForSeconds(0.6f);
+        GameManager.Instance.OnGameStart?.Invoke();
     }
 
 }

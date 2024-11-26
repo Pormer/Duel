@@ -86,7 +86,7 @@ public class SelectDataManagerSO : ScriptableObject
             item = Instantiate(selectItemObj, startSpawnPos + Vector2.up * i, Quaternion.identity, parent);
             curItemList.Add(item);
 
-            item.Initialize((CharacterType)CheckDataValue<GunType>(Random.Range(1, 13)));
+            item.Initialize((CharacterType)CheckDataValue<CharacterType>(Random.Range(1, 13)));
         }
     }
 

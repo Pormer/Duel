@@ -12,6 +12,8 @@ public class SelectSetting : MonoBehaviour
         CharUiSet = FindFirstObjectByType<CharacterDataUiSet>();
         GunUiSet = FindFirstObjectByType<GunDataUiSet>();
 
+        print(CharUiSet == null);
+
         selectDataM.OnSelect += NextDataSelect;
     }
 
@@ -25,5 +27,10 @@ public class SelectSetting : MonoBehaviour
     {
         CharUiSet.gameObject.SetActive(false);
         GunUiSet.gameObject.SetActive(true);
+    }
+
+    private void OnDestroy()
+    {
+        selectDataM.OnSelect -= NextDataSelect;
     }
 }
