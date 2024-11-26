@@ -8,7 +8,7 @@ public class GamblerSkill : CharacterSkill
     protected override void AwakePlayer()
     {
         _health.OnHitEvent.AddListener(HitAvoidance);
-        _player.OnHitBarrier += HitAvoidance;
+        _player.OnHitBarrier.AddListener(HitAvoidance);
     }
 
     private void HitAvoidance()
@@ -16,11 +16,11 @@ public class GamblerSkill : CharacterSkill
         OnGamb?.Invoke();
         if(RandomDamage())
         {
-            print("µµ¹Ú¼º°ø");
+            print("ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½");
             _stat.BarrierCount++;
             return;
         }
-        print("µµ¹Ú½ÇÆÐ");
+        print("ï¿½ï¿½ï¿½Ú½ï¿½ï¿½ï¿½");
     }
 
     private bool RandomDamage()

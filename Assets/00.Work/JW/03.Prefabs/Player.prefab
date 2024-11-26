@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4226176858089582159}
   - component: {fileID: 1342340670201919403}
   - component: {fileID: 4775039370217482084}
+  - component: {fileID: 6454361916200695917}
   - component: {fileID: 8292264907404685440}
   - component: {fileID: 5661089992862232157}
   - component: {fileID: 4939262315560887860}
@@ -80,6 +81,19 @@ MonoBehaviour:
   effectScale: 1
   lifeTime: 2
   effectPos: {fileID: 0}
+--- !u!114 &6454361916200695917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34654509338849002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4aee0e65d2d15942acf572c01d981e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundData: {fileID: 11400000, guid: 1f67ed95ef5a3d745b7a83c5b17d516b, type: 2}
 --- !u!114 &8292264907404685440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5386,6 +5400,132 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &4168194872848057693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6190261407615090089}
+  - component: {fileID: 4599142812720105624}
+  - component: {fileID: 9039899319343759203}
+  - component: {fileID: 510919025460028196}
+  - component: {fileID: 2234570557287049721}
+  m_Layer: 7
+  m_Name: HitBarrierFeedback
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6190261407615090089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4168194872848057693}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3002276915874297170}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4599142812720105624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4168194872848057693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba996282afae7454892026bcffe4e45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9039899319343759203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4168194872848057693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4aee0e65d2d15942acf572c01d981e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundData: {fileID: 11400000, guid: 94edf161db247b148a1f9b053a536322, type: 2}
+--- !u!114 &510919025460028196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4168194872848057693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!114 &2234570557287049721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4168194872848057693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daef2f94848552c4284bc4ce6aba9e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impulseForce: 0.1
 --- !u!1 &5436978312808945636
 GameObject:
   m_ObjectHideFlags: 0
@@ -5509,6 +5649,7 @@ Transform:
   - {fileID: 2687344850719748085}
   - {fileID: 1656127825197297842}
   - {fileID: 7600170799048416700}
+  - {fileID: 6190261407615090089}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5842864773476056364
@@ -5524,6 +5665,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <InputReaderCompo>k__BackingField: {fileID: 11400000, guid: 06711f12c4208c444a2fef5c24139bc0, type: 2}
+  OnHitBarrier:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4599142812720105624}
+        m_TargetAssemblyTypeName: FeedbackPlayer, Assembly-CSharp
+        m_MethodName: PlayFeedbacks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  barrierSound: {fileID: 11400000, guid: 0c5575f32b54e324ba930943f84a97d6, type: 2}
 --- !u!114 &408479294564393027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6124,7 +6281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aee0e65d2d15942acf572c01d981e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundData: {fileID: 0}
+  soundData: {fileID: 11400000, guid: 38a3be43b1f4ca04b8e80c625bbf1ff6, type: 2}
 --- !u!4 &8142592982965001310 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2825793238400456866, guid: 50e15fb205cf922439a994772fb5326a, type: 3}

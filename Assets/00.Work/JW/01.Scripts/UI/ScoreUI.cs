@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 public class ScoreUI : MonoBehaviour
@@ -14,7 +15,8 @@ public class ScoreUI : MonoBehaviour
     private StatItem lastScoreItem;
 
     [SerializeField] private Color[] colors;
-
+    [SerializeField] private SoundSO getSound;
+    [SerializeField] private SoundSO winSound;
     private void Awake()
     {
         _uiDocument = GetComponent<UIDocument>();
@@ -75,12 +77,14 @@ public class ScoreUI : MonoBehaviour
                 lastScoreItem.IsActive = true;
                 yield return new WaitForSeconds(0.5f);
                 GameManager.Instance.OnFinalWin?.Invoke(isRight);
+                SoundManager.Instance.PlaySFX(winSound);
                 yield break;
             }
             
             stats[3 - curSettingScoreNum].IsActive = true;
             
             curSettingScoreNum++;
+            SoundManager.Instance.PlaySFX(getSound);
         }
     }
 }

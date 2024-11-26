@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -25,7 +26,9 @@ public class Player : MonoBehaviour
     private Dictionary<Type, IPlayerComponents> _components;
 
     public bool IsOnBarrier { get; private set; }
-    public Action OnHitBarrier;
+    public UnityEvent OnHitBarrier;
+
+    [SerializeField] private SoundSO barrierSound;
     
     public T GetCompo<T>() where T : class
     {
@@ -98,19 +101,20 @@ public class Player : MonoBehaviour
     
     private void BarrierSubscribe()
     {
-        OnHitBarrier += () =>
+        OnHitBarrier.AddListener(() =>
         {
             if (StatDataCompo.BarrierCount <= 0)
             {
                 IsOnBarrier = false;
                 Barrier.transform.DOScale(new Vector3(0,0),0.1f);
             }
-        };
+        });
         
         InputReaderCompo.OnBarrierPressed += () => 
         {
             if (StatDataCompo.BarrierCount <= 0) return;
-            
+
+            SoundManager.Instance.PlaySFX(barrierSound);
             IsOnBarrier = true;
             Barrier.transform.DOScale(new Vector3(1.2f, 1.2f), 0.1f);
         };
