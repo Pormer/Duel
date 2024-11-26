@@ -1,0 +1,10 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/00.Work/SW/08.UiToolKit/Ui/TitleUiData.uss?fileID=7433441132597879392&amp;guid=12cbb70c1fa358a4ab6c3f0057afe46a&amp;type=3#TitleUiData" />
+    <engine:VisualElement style="flex-grow: 1; background-image: none; background-color: rgb(255, 255, 255); -unity-background-image-tint-color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(255, 255, 255); font-size: 215px;">
+        <engine:Label text="Duel" name="DuelTitle" style="-unity-text-outline-width: 4px; -unity-text-outline-color: rgb(0, 0, 0); text-shadow: 107px 0 5.7px rgb(0, 0, 0); width: 500px; height: auto; top: 100px; left: 100px; font-size: 230px;" />
+        <engine:VisualElement name="Bottom" style="flex-grow: 1; position: absolute; width: 2070px; height: 694px; bottom: -135px; background-color: rgb(0, 0, 0); rotate: -5deg; left: -64px;">
+            <engine:Button text="Play" name="PlayButton" class="playButton" style="transition-duration: 0.5s;" />
+            <engine:Button text="Exit" name="ExitButton" class="exitButton" style="transition-duration: 0.5s; transition-timing-function: ease;" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>
