@@ -152,9 +152,6 @@ MonoBehaviour:
   OnGameWin:
     m_PersistentCalls:
       m_Calls: []
-  OnGameStart:
-    m_PersistentCalls:
-      m_Calls: []
   leftScore: 0
   rightScore: 0
   scoreData: {fileID: 0}
@@ -183,8 +180,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 606646783}
-  - component: {fileID: 606646784}
   - component: {fileID: 606646785}
+  - component: {fileID: 606646786}
   m_Layer: 0
   m_Name: ModeChoiceUi
   m_TagString: Untagged
@@ -207,7 +204,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &606646784
+--- !u!114 &606646785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606646782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824f15d9701e32347a4040655d91e1a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &606646786
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,18 +235,6 @@ MonoBehaviour:
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
   m_WorldSpaceHeight: 1080
---- !u!114 &606646785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606646782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 824f15d9701e32347a4040655d91e1a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1256219777
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,5 +377,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1256219780}
-  - {fileID: 606646783}
   - {fileID: 429984455}
+  - {fileID: 606646783}

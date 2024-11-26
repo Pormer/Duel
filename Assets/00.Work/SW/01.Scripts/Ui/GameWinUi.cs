@@ -23,7 +23,6 @@ public class GameWinUi : MonoBehaviour
         
         GameManager.Instance.OnFinalWin += WinPanelStart;
     }
-
     public void WinPanelStart(bool player)
     {
         if (win) return;
