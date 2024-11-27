@@ -79,14 +79,21 @@ public class SettingUi : MonoBehaviour
         if(SceneManager.GetActiveScene().name != "Lobby")
         {
             KeyRebinder keyRebinder = GetComponent<KeyRebinder>();
-            TextSet(ref _leftLabel, 0, keyRebinder);
-            TextSet(ref _rightLabel, 1, keyRebinder);
+            if (keyRebinder != null)
+            {
+                TextSet(ref _leftLabel, 0, keyRebinder);
+                TextSet(ref _rightLabel, 1, keyRebinder);
+            }
+            
         }
         else
         {
             KeyRebinder keyRebinder = FindAnyObjectByType<KeyRebinder>();
-            TextSet(ref _leftLabel, 0, keyRebinder);
-            TextSet(ref _rightLabel, 1, keyRebinder);
+            if (keyRebinder != null)
+            {
+                TextSet(ref _leftLabel, 0, keyRebinder);
+                TextSet(ref _rightLabel, 1, keyRebinder);
+            }
 
         }
     }
@@ -156,10 +163,10 @@ public class SettingUi : MonoBehaviour
 
     private string TextControl(string text)
     {
-        if (text == "Up Arrow") return "¡ü";
-        else if (text == "Down Arrow") return "¡ý";
-        else if (text == "Left Arrow") return "£¼";
-        else if (text == "Right Arrow") return "£¾";
+        if (text == "Up Arrow") return "ï¿½ï¿½";
+        else if (text == "Down Arrow") return "ï¿½ï¿½";
+        else if (text == "Left Arrow") return "ï¿½ï¿½";
+        else if (text == "Right Arrow") return "ï¿½ï¿½";
 
         return text;
     }

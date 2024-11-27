@@ -17,6 +17,7 @@ public class ScoreUI : MonoBehaviour
     [SerializeField] private Color[] colors;
     [SerializeField] private SoundSO getSound;
     [SerializeField] private SoundSO winSound;
+
     private void Awake()
     {
         _uiDocument = GetComponent<UIDocument>();
@@ -67,13 +68,13 @@ public class ScoreUI : MonoBehaviour
     IEnumerator ScoreUpdater(int score, StatItem[] stats, bool isRight)
     {
         int curSettingScoreNum = 0;
-        
+
         while (score > curSettingScoreNum)
         {
             yield return new WaitForSeconds(0.5f);
             SoundManager.Instance.PlaySFX(getSound);
-            
-            if(curSettingScoreNum >= 4)
+
+            if (curSettingScoreNum >= 4)
             {
                 lastScoreItem.IsActive = true;
                 yield return new WaitForSeconds(0.5f);
@@ -81,15 +82,23 @@ public class ScoreUI : MonoBehaviour
                 SoundManager.Instance.PlaySFX(winSound);
                 yield break;
             }
-            
+
             stats[3 - curSettingScoreNum].IsActive = true;
-            
+
             curSettingScoreNum++;
         }
 
-        if (isRight && GameManager.Instance.LeftScore > score) yield break;
-        if (!isRight && GameManager.Instance.RightScore > score) yield break;
-        
-        GameManager.Instance.OnGameStart?.Invoke();
+        if (isRight && GameManager.Instance.LeftScore == 0 && GameManager.Instance.RightScore == 0)
+        {
+            GameManager.Instance.OnGameStart?.Invoke();
+            print(0);
+            yield break;
+        }
+
+        if (isRight && GameManager.Instance.LeftScore < score || !isRight && GameManager.Instance.RightScore < score)
+        {
+            GameManager.Instance.OnGameStart?.Invoke();
+            print("1");
+        }
     }
 }

@@ -15,7 +15,6 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
                 if (_instance == null)
                 {
                     Debug.Log("No manager");
-                    //_instance = new GameObject(name: $"@{typeof(T)}").AddComponent<T>();
                 }
             }
             return _instance;
