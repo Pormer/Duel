@@ -25,7 +25,11 @@ public class GameWinUi : MonoBehaviour
         _playerName = _root.Q<Label>("PlayerName");
         _lobbyButton = _root.Q<Button>("Lobby");
 
-        _lobbyButton.RegisterCallback<ClickEvent>((v) => GameManager.Instance.OnFadeIn(1));
+        _lobbyButton.RegisterCallback<ClickEvent>((v) =>
+        {
+            GameManager.Instance.ResetGame();
+            GameManager.Instance.OnFadeIn(1);
+        });
         GameManager.Instance.OnFinalWin += WinPanelStart;
     }
     public void WinPanelStart(bool player)

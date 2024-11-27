@@ -15,7 +15,11 @@ public class LobbyUi : MonoBehaviour
         _buttons[0] = _root.Q<Button>("Play");
         _buttons[1] = _root.Q<Button>("Title");
         _buttons[0].RegisterCallback<ClickEvent>((v) => SceneMove(2));
-        _buttons[1].RegisterCallback<ClickEvent>((v) => SceneMove(0));
+        _buttons[1].RegisterCallback<ClickEvent>((v) =>
+        {
+            GameManager.Instance.ResetGame();
+            SceneMove(0);
+        });
         GameManager.Instance.OnSettingUi += SettingOn;
     }
 
