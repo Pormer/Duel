@@ -48,7 +48,7 @@ public class KeyRebinder : MonoBehaviour
             .OnMatchWaitForAnother(0.1f)
             .OnPotentialMatch(ctx =>
             {
-                string controlPath = ctx.selectedControl.path;
+                string controlPath = ctx.selectedControl.displayName;
 
                 if (IsBindingDuplicate(inputActions, controlPath))
                 {
@@ -134,26 +134,21 @@ public class KeyRebinder : MonoBehaviour
     
     bool IsBindingDuplicate(InputActionAsset asset, string path)
     {
-        if (asset == null)
-        {
-            Debug.LogError("InputActionAsset is null.");
-            return false;
-        }
-
         foreach (var actionMap in asset.actionMaps)
         {
             foreach (var action in actionMap.actions)
             {
                 foreach (var binding in action.bindings)
                 {
-                    if (binding.path == path)
+                    if (binding.ToDisplayString() == path)
                     {
-                        return true; // Path is already used
+                        print(binding.ToDisplayString());
+                        return true;
                     }
                 }
             }
         }
-        return false; // No duplicates found
+        return false;
     }
 }
 
