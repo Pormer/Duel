@@ -25,7 +25,7 @@ public class keyBindUI : MonoBehaviour
         ButtonsSetting(ref _rightButtons, 1);
 
         TextSet(ref _leftButtons, 0);
-        TextSet(ref _leftButtons, 1);
+        TextSet(ref _rightButtons, 1);
         //초기화()
         KeyRebinder(ref _leftButtons, 0);
         KeyRebinder(ref _rightButtons, 1);

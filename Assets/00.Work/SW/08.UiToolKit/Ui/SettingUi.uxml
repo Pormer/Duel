@@ -46,10 +46,10 @@
                     <engine:VisualElement name="L" class="Key" style="flex-grow: 1; top: 720px; left: auto; right: 470px;">
                         <engine:Label text="L" display-tooltip-when-elided="false" class="KeyLebel" />
                     </engine:VisualElement>
-                    <engine:VisualElement name="1" class="Key" style="flex-grow: 1; top: 720px; left: auto; right: 365px;">
+                    <engine:VisualElement name="1" class="Key" style="flex-grow: 1; top: 720px; left: auto; right: 575px;">
                         <engine:Label text=";" class="KeyLebel" />
                     </engine:VisualElement>
-                    <engine:VisualElement name="K" class="Key" style="flex-grow: 1; top: 720px; left: auto; right: 575px;">
+                    <engine:VisualElement name="K" class="Key" style="flex-grow: 1; top: 720px; left: auto; right: 365px;">
                         <engine:Label text="K" class="KeyLebel" />
                     </engine:VisualElement>
                     <engine:Label text="RightPlayer" style="position: absolute; top: 843px; right: 365px; height: 66px; width: 296px; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(255, 255, 255); font-size: 50px; -unity-text-align: middle-center;" />
