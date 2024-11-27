@@ -760,6 +760,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5017883996630461822, guid: b8bbf409220d93840849898336e3929f, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5432855172983810074, guid: b8bbf409220d93840849898336e3929f, type: 3}
       propertyPath: m_Name
       value: OnWeaponSkill 10
@@ -1048,6 +1052,14 @@ PrefabInstance:
     - target: {fileID: 4828715684156086411, guid: 6b5a83f077a467740ac6f0c7be3d0d78, type: 3}
       propertyPath: m_Name
       value: OnWeaponSkill 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828715684156086411, guid: 6b5a83f077a467740ac6f0c7be3d0d78, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128988153008297589, guid: 6b5a83f077a467740ac6f0c7be3d0d78, type: 3}
+      propertyPath: looping
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
