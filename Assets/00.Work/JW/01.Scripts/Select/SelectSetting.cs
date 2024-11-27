@@ -23,7 +23,7 @@ public class SelectSetting : MonoBehaviour
     private void Start()
     {
         GunUiSet.gameObject.SetActive(false);
-        CharUiSet.gameObject.SetActive(false);
+        CharUiSet.gameObject.SetActive(true);
         
         selectDataM.SpawnSelectCharItem(transform);
     }
