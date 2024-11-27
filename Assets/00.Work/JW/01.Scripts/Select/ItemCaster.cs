@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DataType;
 using UnityEngine;
 using UnityEngine.Events;
@@ -118,6 +119,12 @@ public class ItemCaster : MonoBehaviour
         GameManager.Instance.OnFinalWin += v => _player.InputReaderCompo.OnShootEvent -= CastItem;
         GameManager.Instance.OnSettingUi += SetOnSettingUI;
 
+        StartCoroutine(CoolTime());
+    }
+
+    private IEnumerator CoolTime()
+    {
+        yield return new WaitForSeconds(0.5f);
         CastItemData();
     }
 
