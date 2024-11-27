@@ -18,6 +18,7 @@ public abstract class InputReaderSO : ScriptableObject, IPlayerComponents
     protected virtual void OnEnable()
     {
         _keyAction = new KeyAction();
+        GameManager.Instance.OnSettingUi += HandleSetting;
     }
 
     public void Initialize(Player player)
@@ -67,5 +68,18 @@ public abstract class InputReaderSO : ScriptableObject, IPlayerComponents
         if (!context.performed) return;
         MoveVec = Vector2Int.right;
         OnMovementEvent?.Invoke(MoveVec);
+    }
+    
+    private void HandleSetting(bool obj)
+    {
+        Debug.Log("inSet");
+        if (obj)
+        {
+            _keyAction.RightInput.Disable();
+        }
+        else
+        {
+            _keyAction.RightInput.Enable();
+        }
     }
 }
