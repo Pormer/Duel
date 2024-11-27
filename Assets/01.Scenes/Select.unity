@@ -1133,6 +1133,7 @@ MonoBehaviour:
   crownSprites:
   - {fileID: 2350524640894035138, guid: f92459087972dd84ab18c199bdf65fae, type: 3}
   - {fileID: 169474419829603625, guid: d41c1eac901da9f40ac4d8c75a4f0597, type: 3}
+  source: {fileID: 1462830123}
 --- !u!4 &978624865
 Transform:
   m_ObjectHideFlags: 0
@@ -1401,8 +1402,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c0094865b48c88f48ae8eeec213a3d88, type: 3}
-  m_Resource: {fileID: 8300000, guid: c0094865b48c88f48ae8eeec213a3d88, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 559c232a43caebe41870ce54786f604e, type: 3}
+  m_Resource: {fileID: 8300000, guid: 559c232a43caebe41870ce54786f604e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1

@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
         if(itemCaster != null) itemCaster.Initialize(this);
         
         InputReaderCompo.OnMovementEvent += MovementCompo.SetMovement;
+        GameManager.Instance.OnSettingUi += SetOnSettingUI;
         
         if(cdata == null || gData ==null) return;
         
@@ -136,6 +137,17 @@ public class Player : MonoBehaviour
         IsOnBarrier = true;
         Barrier.transform.DOScale(new Vector3(1.2f, 1.2f), 0.1f);
     }
+    private void SetOnSettingUI(bool b)
+    {
+        if (b)
+        {
+            InputReaderCompo.OnMovementEvent -= MovementCompo.SetMovement;
+        }
+        else
+        {
+            InputReaderCompo.OnMovementEvent += MovementCompo.SetMovement;
+        }
+    }
     private void HandleLastWin(bool obj)
     {
         
@@ -144,6 +156,7 @@ public class Player : MonoBehaviour
     private void OnDestroy()
     {
         if(MovementCompo != null) InputReaderCompo.OnMovementEvent -= MovementCompo.SetMovement;
+        GameManager.Instance.OnSettingUi -= SetOnSettingUI;
         BarrierUnSubscribe();
     }
 }

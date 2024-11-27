@@ -33,6 +33,9 @@ public abstract class GunSkill : MonoBehaviour
                 player.InputReaderCompo.OnShootEvent += EnterShoot;
             }
         });
+
+        GameManager.Instance.OnSettingUi += SetOnSettingUI;
+        
         AwakeSkill();
     }
 
@@ -72,9 +75,22 @@ public abstract class GunSkill : MonoBehaviour
         yield return new WaitForSeconds(_stat.CoolTime);
         isCoolTime = false;
     }
+    
+    private void SetOnSettingUI(bool b)
+    {
+        if (b)
+        {
+            _player.InputReaderCompo.OnShootEvent -= EnterShoot;
+        }
+        else
+        {
+            _player.InputReaderCompo.OnShootEvent += EnterShoot;
+        }
+    }
 
     private void OnDestroy()
     {
         _player.InputReaderCompo.OnShootEvent -= EnterShoot;
+        GameManager.Instance.OnSettingUi -= SetOnSettingUI;
     }
 }
