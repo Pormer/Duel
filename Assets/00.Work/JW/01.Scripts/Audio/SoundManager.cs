@@ -8,7 +8,8 @@ using UnityEngine.Serialization;
 public class SoundManager : MonoSingleton<SoundManager>
 {
     private List<AudioSource> _sources;
-    [SerializeField] private int audioSourceCount = 5;
+    [SerializeField] private int spawnAudioSourceCount = 5;
+    [SerializeField] private int maxSourceCount = 5;
 
     [SerializeField] AudioMixerGroup mixerGroup;
     private GameObject sfxPlayer;
@@ -20,7 +21,7 @@ public class SoundManager : MonoSingleton<SoundManager>
         sfxPlayer = new GameObject() { name = "SFX Player" };
         sfxPlayer.transform.SetParent(transform);
 
-        for (int i = 0; i < audioSourceCount; i++)
+        for (int i = 0; i < spawnAudioSourceCount; i++)
         {
             var item = sfxPlayer.AddComponent<AudioSource>();
             item.playOnAwake = false;
@@ -33,25 +34,35 @@ public class SoundManager : MonoSingleton<SoundManager>
 
     public SoundSO PlaySFX(SoundSO soundData)
     {
+        if (soundData.clip == null)
+        {
+            Debug.LogError("SoundData does not have a valid AudioClip.");
+            return null;
+        }
+
         if (TryGetValue(_sources, out AudioSource source))
         {
             source.clip = soundData.clip;
-            source.volume = soundData.voluem;
-            source.pitch = soundData.pitch;
+            source.volume = soundData.volume; // 이름 수정
+            source.pitch = soundData.pitch;   // 피치 설정
             source.Play();
+        }
+        else if (_sources.Count < maxSourceCount) // 최대 개수 제한
+        {
+            var newSource = sfxPlayer.AddComponent<AudioSource>();
+            newSource.playOnAwake = false;
+            newSource.loop = false;
+            newSource.outputAudioMixerGroup = mixerGroup;
+            _sources.Add(newSource);
+
+            newSource.clip = soundData.clip;
+            newSource.volume = soundData.volume; // 이름 수정
+            newSource.pitch = soundData.pitch;   // 피치 설정
+            newSource.Play();
         }
         else
         {
-            var item = sfxPlayer.AddComponent<AudioSource>();
-            item.playOnAwake = false;
-            item.loop = false;
-            item.volume = soundData.voluem;
-            item.pitch = soundData.pitch;
-            item.outputAudioMixerGroup = mixerGroup;
-            _sources.Add(item);
-
-            item.clip = soundData.clip;
-            item.Play();
+            Debug.LogWarning("No available AudioSource and maximum limit reached.");
         }
 
         return soundData;

@@ -133,6 +133,8 @@
 
 .panel.IsMove {
     translate: 0 0;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
 }
 
 .panel {

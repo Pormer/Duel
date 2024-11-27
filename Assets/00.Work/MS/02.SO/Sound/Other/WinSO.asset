@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: WinSO
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 2fd71c71b3e9cde4696880940f1ea8d7, type: 3}
-  voluem: 0.5
-  pitch: 0
+  volume: 0.5
+  pitch: 1

@@ -12,8 +12,6 @@ public class SelectSetting : MonoBehaviour
         CharUiSet = FindFirstObjectByType<CharacterDataUiSet>();
         GunUiSet = FindFirstObjectByType<GunDataUiSet>();
 
-        print(CharUiSet == null);
-
         selectDataM.OnSelect += NextDataSelect;
     }
 

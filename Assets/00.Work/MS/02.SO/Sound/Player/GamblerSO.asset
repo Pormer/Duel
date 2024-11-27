@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GamblerSO
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: d73db0316fbe6de43b4694202821355c, type: 3}
-  voluem: 0.5
-  pitch: 0
+  volume: 0.4
+  pitch: 1

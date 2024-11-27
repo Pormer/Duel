@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UIElements;
 
 public class GameWinUi : MonoBehaviour
@@ -12,6 +13,7 @@ public class GameWinUi : MonoBehaviour
     private Button _lobbyButton;
     [SerializeField] private List<Sprite> crownSprites;
     private bool win;
+    [SerializeField] private AudioSource source;
 
     private void Awake()
     {
@@ -23,7 +25,11 @@ public class GameWinUi : MonoBehaviour
         _playerName = _root.Q<Label>("PlayerName");
         _lobbyButton = _root.Q<Button>("Lobby");
 
-        _lobbyButton.RegisterCallback<ClickEvent>((v) => GameManager.Instance.OnFadeIn(1));
+        _lobbyButton.RegisterCallback<ClickEvent>((v) =>
+        {
+            GameManager.Instance.ResetGame();
+            GameManager.Instance.OnFadeIn(1);
+        });
         GameManager.Instance.OnFinalWin += WinPanelStart;
     }
     public void WinPanelStart(bool player)
@@ -41,6 +47,8 @@ public class GameWinUi : MonoBehaviour
             _visual[3].style.backgroundImage = new StyleBackground(crownSprites[1]);
             _playerName.text = "Red Win!";
         }
+        
+        source.mute = true;
         StartCoroutine(WinPanelStart());
     }
     private IEnumerator WinPanelStart()

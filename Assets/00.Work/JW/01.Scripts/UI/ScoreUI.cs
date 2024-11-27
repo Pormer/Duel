@@ -71,6 +71,7 @@ public class ScoreUI : MonoBehaviour
         while (score > curSettingScoreNum)
         {
             yield return new WaitForSeconds(0.5f);
+            SoundManager.Instance.PlaySFX(getSound);
             
             if(curSettingScoreNum >= 4)
             {
@@ -84,7 +85,6 @@ public class ScoreUI : MonoBehaviour
             stats[3 - curSettingScoreNum].IsActive = true;
             
             curSettingScoreNum++;
-            SoundManager.Instance.PlaySFX(getSound);
         }
     }
 }

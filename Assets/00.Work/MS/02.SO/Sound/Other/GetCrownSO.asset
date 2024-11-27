@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GetCrownSO
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9a55fb63bc913b3408dc5d632d0ea2e2, type: 3}
-  voluem: 0.5
-  pitch: 0
+  volume: 0.5
+  pitch: 1

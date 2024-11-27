@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PhoenixSO
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: e4af649dd4357484984280818197cea5, type: 3}
-  voluem: 0.5
-  pitch: 0
+  volume: 0.4
+  pitch: 1

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: UIClickSO
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 8e0313832c4b22f43adcfdf4cfb7a859, type: 3}
-  voluem: 0.5
-  pitch: 0
+  volume: 0.5
+  pitch: 1

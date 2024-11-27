@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: KrakenSO
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 012bd5865dcd0834da5028076015ee61, type: 3}
-  voluem: 0.5
-  pitch: 0
+  volume: 0.4
+  pitch: 1

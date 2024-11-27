@@ -115,6 +115,7 @@ public class ItemCaster : MonoBehaviour
         _player.MovementCompo.OnEndMove += CastItemData;
 
         GameManager.Instance.OnFinalWin += v => _player.InputReaderCompo.OnShootEvent -= CastItem;
+        GameManager.Instance.OnSettingUi += SetOnSettingUI;
 
         CastItemData();
     }
@@ -124,11 +125,24 @@ public class ItemCaster : MonoBehaviour
         _isCharSelectTime = false;
         CastItemData();
     }
+    
+    private void SetOnSettingUI(bool b)
+    {
+        if (b)
+        {
+            _player.InputReaderCompo.OnShootEvent -= CastItem;
+        }
+        else
+        {
+            _player.InputReaderCompo.OnShootEvent += CastItem;
+        }
+    }
 
     private void OnDestroy()
     {
         _player.InputReaderCompo.OnShootEvent -= CastItem;
         _player.MovementCompo.OnEndMove -= CastItemData;
+        GameManager.Instance.OnSettingUi -= SetOnSettingUI;
         selectDataM.OnSelect -= HandleSelectChar;
     }
 

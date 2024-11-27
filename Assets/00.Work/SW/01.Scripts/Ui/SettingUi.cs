@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class SettingUi : MonoBehaviour
@@ -16,8 +18,16 @@ public class SettingUi : MonoBehaviour
     private Label[] _rightLabel = new Label[7];
     private Button[] buttons = new Button[2];
 
+    private SettingUITrigger _settingUITrigger;
+    private bool _start;
+
+    [SerializeField] private AudioMixer mixer;
+    private string BGMVolumeParam = "BGM";
+    private string SFXVolumeParam = "SFX";
+
     private void Awake()
     {
+        GameManager.Instance.OnSettingUi = null;
         _uiDocument = GetComponent<UIDocument>();
         _root = _uiDocument.rootVisualElement;
         penel = _root.Q<VisualElement>("Penel");
@@ -51,21 +61,45 @@ public class SettingUi : MonoBehaviour
         buttons[0].RegisterCallback<ClickEvent>((v) => Application.Quit());
         buttons[1].RegisterCallback<ClickEvent>((v) =>
         {
+            GameManager.Instance.ResetGame();
             GameManager.Instance.OnFadeIn?.Invoke(0);
             SettingOn(false);
         });
         GameManager.Instance.OnSettingUi += SettingOn;
+        _settingUITrigger = GetComponent<SettingUITrigger>();
+
+        if (mixer.GetFloat(BGMVolumeParam, out float bgmValue))
+            sliders[1].value = bgmValue;
+        if (mixer.GetFloat(SFXVolumeParam, out float sfxValue))
+            sliders[0].value = sfxValue;
+
+        sliders[1].RegisterValueChangedCallback(evt => SetBGMVolume(evt.newValue));
+        sliders[0].RegisterValueChangedCallback(evt => SetSFXVolume(evt.newValue));
     }
 
+    private void SetBGMVolume(float sliderValue)
+    {
+        print(sliderValue);
 
+        mixer.SetFloat(BGMVolumeParam, sliderValue);
+    }
+
+    private void SetSFXVolume(float sliderValue)
+    {
+        mixer.SetFloat(SFXVolumeParam, sliderValue);
+    }
 
     public void SettingOn(bool isOpen)
     {
-        if (isOpen)
+        if(_start == false)
         {
-            StartCoroutine(DownSettingOnTime(1));
+            _start = true;
         }
-        else
+        if (isOpen && _settingUITrigger.IsPenel)
+        {
+            StartCoroutine(DownSettingOnTime(100));
+        }
+        else if(!isOpen && _settingUITrigger.IsPenel)
         {
             penel.RemoveFromClassList("IsMove");
             StartCoroutine(UpSettingOnTime(-1));
@@ -77,6 +111,7 @@ public class SettingUi : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         _uiDocument.sortingOrder = valur;
+        _settingUITrigger.IsPenel = false;
     }
 
     private IEnumerator DownSettingOnTime(int valur)
@@ -84,9 +119,11 @@ public class SettingUi : MonoBehaviour
         _uiDocument.sortingOrder = valur;
         yield return null;
         penel.ToggleInClassList("IsMove");
+        yield return new WaitForSeconds(0.5f);
+        _settingUITrigger.IsPenel = false;
     }
     private void OnDestroy()
     {
-        GameManager.Instance.OnSettingUi -= SettingOn;
     }
+
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LoseSO
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: f981fa0b2d5db474197d3d5b80b3e088, type: 3}
-  voluem: 0.5
-  pitch: 0
+  volume: 0.5
+  pitch: 1

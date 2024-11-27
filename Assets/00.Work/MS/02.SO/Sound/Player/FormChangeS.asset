@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FormChangeS
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 6fa6f2da20194b143b9120a6079f6c9b, type: 3}
-  voluem: 0.5
-  pitch: 0
+  volume: 0.4
+  pitch: 1

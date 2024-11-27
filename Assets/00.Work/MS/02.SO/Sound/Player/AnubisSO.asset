@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: AnubisSO
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: f96dd2f6730c3944e8b547b1aa0a86b4, type: 3}
-  voluem: 0.5
-  pitch: 0
+  volume: 0.4
+  pitch: 1

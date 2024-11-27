@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MummySO
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: b2bc443ab4f4ada4fa4f037d37b1090b, type: 3}
-  voluem: 0.5
-  pitch: 0
+  volume: 0.4
+  pitch: 1
