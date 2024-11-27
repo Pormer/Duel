@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Score
   m_EditorClassIdentifier: 
   leftScore: 0
-  rightScore: 1
+  rightScore: 0

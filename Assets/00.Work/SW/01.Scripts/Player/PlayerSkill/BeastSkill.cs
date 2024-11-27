@@ -36,7 +36,14 @@ public class BeastSkill : CharacterSkill
 
     private void OnDisable()
     {
-        _player.InputReaderCompo.OnSkillEvent -= ActiveSkill;
-        OnRoaring -= eventFeedbacks.PlayFeedbacks;
+        try
+        {
+            _player.InputReaderCompo.OnSkillEvent -= ActiveSkill;
+            OnRoaring -= eventFeedbacks.PlayFeedbacks;
+        }
+        catch(Exception e)
+        {
+            return;
+        }
     }
 }

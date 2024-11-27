@@ -32,6 +32,8 @@ public class GamblerSkill : CharacterSkill
     private void OnDisable()
     {
         OnGamb -= eventFeedbacks.PlayFeedbacks;
+        _health.OnHitEvent.RemoveListener(HitAvoidance);
+        _player.OnHitBarrier.RemoveListener(HitAvoidance);
     }
 
 }

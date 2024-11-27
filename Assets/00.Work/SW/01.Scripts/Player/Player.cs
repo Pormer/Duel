@@ -156,7 +156,6 @@ public class Player : MonoBehaviour
     private void OnDestroy()
     {
         if(MovementCompo != null) InputReaderCompo.OnMovementEvent -= MovementCompo.SetMovement;
-        GameManager.Instance.OnSettingUi -= SetOnSettingUI;
         BarrierUnSubscribe();
     }
 }

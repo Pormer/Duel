@@ -1,30 +1,93 @@
+using System;
 using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
-public class KeyRebinder
+public class KeyRebinder : MonoBehaviour
 {
-    public InputActionAsset inputActions; // Input Actions Asset 참조
-    public string saveFileName = "rebinds.json"; // JSON 저장 파일 이름
+    [SerializeField] private InputActionAsset inputActions;
+    private readonly string _saveFileName = "rebinds.json"; //파일 이름
 
-    private string SavePath => Path.Combine(Application.persistentDataPath, saveFileName);
+    private string SavePath => Path.Combine(Application.persistentDataPath, _saveFileName);
 
     private void Awake()
     {
-        // 게임 시작 시 리바인딩 데이터를 로드
         LoadRebindings();
     }
 
-    public string StartRebinding(KeyMapType actionMapType, KeyActionType actionType)
+    public void StartRebinding(KeyMapType actionMapType, KeyActionType actionType, Button btn)
     {
         //Map 가져오기
         InputActionMap actionMap = inputActions.FindActionMap(actionMapType.ToString());
         if (actionMap == null)
         {
             Debug.LogError($"Action Map '{actionMapType.ToString()}' not found!");
-            return"";
+            return;
         }
+
+        actionMap.Disable();
+
+        //Map에서 Action 가져오기
+        InputAction action = actionMap.FindAction(actionType.ToString());
+        if (action == null)
+        {
+            Debug.LogError($"Action '{actionType.ToString()}' not found in Action Map '{actionMapType.ToString()}'!");
+            return;
+        }
+
+        var usedBindings = inputActions.actionMaps
+            .SelectMany(a => a.bindings)
+            .Where(b => !string.IsNullOrEmpty(b.effectivePath))
+            .Select(b => b.effectivePath)
+            .ToHashSet();
+
+        action.Disable();
+        action.PerformInteractiveRebinding()
+            .OnMatchWaitForAnother(0.1f)
+            .OnPotentialMatch(ctx =>
+            {
+                string controlPath = ctx.selectedControl.displayName;
+
+                if (IsBindingDuplicate(inputActions, controlPath))
+                {
+                    Debug.Log($"Duplicate key detected: {controlPath}");
+                    ctx.Cancel(); // 리바인딩 취소
+                }
+                else
+                {
+                    Debug.Log($"Valid input: {controlPath}");
+                }
+            })
+            .WithCancelingThrough("<Keyboard>/escape")
+            .WithControlsExcluding("<Mouse>/leftButton")
+            .WithControlsExcluding("<Mouse>/rightButton")
+            .WithControlsExcluding("<Mouse>/press")
+            .OnCancel(operation => { operation.Dispose(); })
+            .OnComplete(operation =>
+            {
+                operation.Dispose(); // 리소스 정리
+
+                print("Complete");
+                btn.text = action.bindings[0].ToDisplayString();
+                //저장
+                SaveRebindings();
+                action.Enable();
+            })
+            .Start();
+    }
+
+    public string LoadKeyName(KeyMapType actionMapType, KeyActionType actionType)
+    {
+        InputActionMap actionMap = inputActions.FindActionMap(actionMapType.ToString());
+        if (actionMap == null)
+        {
+            Debug.LogError($"Action Map '{actionMapType.ToString()}' not found!");
+            return "";
+        }
+
+        actionMap.Disable();
 
         //Map에서 Action 가져오기
         InputAction action = actionMap.FindAction(actionType.ToString());
@@ -33,40 +96,9 @@ public class KeyRebinder
             Debug.LogError($"Action '{actionType.ToString()}' not found in Action Map '{actionMapType.ToString()}'!");
             return "";
         }
-        
-        // 현재 사용 중인 모든 바인딩 가져오기
-        var usedBindings = inputActions.actionMaps
-            .SelectMany(a => a.bindings)
-            .Where(b => !string.IsNullOrEmpty(b.effectivePath))
-            .Select(b => b.effectivePath)
-            .ToHashSet();
 
-        // 특정 액션의 바인딩 리바인딩
-        action.PerformInteractiveRebinding()
-            .WithCancelingThrough("<Keyboard>/escape")
-            .WithControlsExcluding("<Mouse>/leftButton")
-            .WithControlsExcluding("<Mouse>/rightButton")
-            .OnPotentialMatch(operation =>
-                {
-                    var selectedControl = operation.selectedControl.path;
-                    if (usedBindings.Contains(selectedControl))
-                    {
-                        operation.Cancel(); // 중복일 경우 리바인딩 취소
-                    }
-                })
-            .OnCancel(operation =>
-            {
-                operation.Dispose();
-            })
-            .OnComplete(operation =>
-            {
-                operation.Dispose(); // 리소스 정리
-
-                //저장
-                SaveRebindings();
-            })
-            .Start();
-        return action.bindings[0].name;
+        actionMap.Enable();
+        return action.bindings[0].ToDisplayString();
     }
 
     public void SaveRebindings()
@@ -98,6 +130,25 @@ public class KeyRebinder
         inputActions.RemoveAllBindingOverrides();
         SaveRebindings(); //저장
         Debug.Log("Rebindings reset to default.");
+    }
+    
+    bool IsBindingDuplicate(InputActionAsset asset, string path)
+    {
+        foreach (var actionMap in asset.actionMaps)
+        {
+            foreach (var action in actionMap.actions)
+            {
+                foreach (var binding in action.bindings)
+                {
+                    if (binding.ToDisplayString() == path)
+                    {
+                        print(binding.ToDisplayString());
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }
 

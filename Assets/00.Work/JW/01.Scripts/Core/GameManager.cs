@@ -49,11 +49,19 @@ public class GameManager : MonoSingleton<GameManager>
     private void Awake()
     {
         OnGameWin.AddListener(HandleScoreChange);
-        var item = FindFirstObjectByType<FadeInOutUi>();
-        if (item == null)
-        {
-            OnGameStart?.Invoke();
-        }
+    }
+
+    private void Start()
+    {
+        var item = FindAnyObjectByType<ScoreUI>();
+        if(item == null)
+            StartCoroutine(StartInitGame());
+    }
+
+    IEnumerator StartInitGame()
+    {
+        yield return new WaitForSeconds(0.3f);
+        OnGameStart?.Invoke();
     }
 
     private void HandleScoreChange(bool isRight)

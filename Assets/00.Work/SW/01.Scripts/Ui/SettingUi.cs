@@ -48,8 +48,8 @@ public class SettingUi : MonoBehaviour
         _rightKeys[1] = _KeyPenel[1].Q<VisualElement>("Down");
         _rightKeys[2] = _KeyPenel[1].Q<VisualElement>("Left");
         _rightKeys[3] = _KeyPenel[1].Q<VisualElement>("Right");
-        _rightKeys[4] = _KeyPenel[1].Q<VisualElement>("L");
-        _rightKeys[5] = _KeyPenel[1].Q<VisualElement>("1");
+        _rightKeys[4] = _KeyPenel[1].Q<VisualElement>("1");
+        _rightKeys[5] = _KeyPenel[1].Q<VisualElement>("L");
         _rightKeys[6] = _KeyPenel[1].Q<VisualElement>("K");
 
         for (int i = 0; i < _leftKeys.Length; i++) _leftLabel[i] = _leftKeys[i].Q<Label>();
@@ -75,6 +75,20 @@ public class SettingUi : MonoBehaviour
 
         sliders[1].RegisterValueChangedCallback(evt => SetBGMVolume(evt.newValue));
         sliders[0].RegisterValueChangedCallback(evt => SetSFXVolume(evt.newValue));
+
+        if(SceneManager.GetActiveScene().name != "Lobby")
+        {
+            KeyRebinder keyRebinder = GetComponent<KeyRebinder>();
+            TextSet(ref _leftLabel, 0, keyRebinder);
+            TextSet(ref _rightLabel, 1, keyRebinder);
+        }
+        else
+        {
+            KeyRebinder keyRebinder = FindAnyObjectByType<KeyRebinder>();
+            TextSet(ref _leftLabel, 0, keyRebinder);
+            TextSet(ref _rightLabel, 1, keyRebinder);
+
+        }
     }
 
     private void SetBGMVolume(float sliderValue)
@@ -124,6 +138,30 @@ public class SettingUi : MonoBehaviour
     }
     private void OnDestroy()
     {
+        
+    }
+
+    private void TextSet(ref Label[] labels, int valur, KeyRebinder _keyRebinder)
+    {
+        {
+            labels[0].text = TextControl(_keyRebinder.LoadKeyName((KeyMapType)valur, KeyActionType.MovementUp));
+            labels[1].text = TextControl(_keyRebinder.LoadKeyName((KeyMapType)valur, KeyActionType.MovementDown));
+            labels[2].text = TextControl(_keyRebinder.LoadKeyName((KeyMapType)valur, KeyActionType.MovementLeft));
+            labels[3].text = TextControl(_keyRebinder.LoadKeyName((KeyMapType)valur, KeyActionType.MovementRight));
+            labels[4].text = TextControl(_keyRebinder.LoadKeyName((KeyMapType)valur, KeyActionType.Shoot));
+            labels[5].text = TextControl(_keyRebinder.LoadKeyName((KeyMapType)valur, KeyActionType.Barrier));
+            labels[6].text = TextControl(_keyRebinder.LoadKeyName((KeyMapType)valur, KeyActionType.Skill));
+        }
+    }
+
+    private string TextControl(string text)
+    {
+        if (text == "Up Arrow") return "¡ü";
+        else if (text == "Down Arrow") return "¡ý";
+        else if (text == "Left Arrow") return "£¼";
+        else if (text == "Right Arrow") return "£¾";
+
+        return text;
     }
 
 }
