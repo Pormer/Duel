@@ -73,4 +73,15 @@ public class GameManager : MonoSingleton<GameManager>
         yield return new WaitForSecondsRealtime(1f);
         OnFadeIn?.Invoke(2);
     }
+
+    public void ResetGame()
+    {
+        RightScore = 0;
+        LeftScore = 0;
+        
+        selectDataM.LeftCharType = CharacterType.Default;
+        selectDataM.RightCharType = CharacterType.Default;
+        selectDataM.LeftGunType = GunType.Default;
+        selectDataM.RightGunType = GunType.Default;
+    }
 }

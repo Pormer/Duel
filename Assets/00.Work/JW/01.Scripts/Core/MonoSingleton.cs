@@ -1,3 +1,4 @@
+using System;
 using System.IO;using UnityEngine;
 
 public class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
@@ -10,7 +11,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
         {
             if (_instance == null)
             {
-                _instance = FindAnyObjectByType<T>();
+                _instance = FindFirstObjectByType<T>();
                 if (_instance == null)
                 {
                     Debug.Log("No manager");
@@ -20,5 +21,11 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
             return _instance;
         }
         
+    }
+
+    private void Awake()
+    {
+        if(_instance == null) 
+            _instance = this as T;
     }
 }

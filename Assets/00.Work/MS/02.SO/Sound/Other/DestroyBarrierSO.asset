@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DestroyBarrierSO
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 3f95781f4546d8c4382836a29387bdd4, type: 3}
-  voluem: 0.5
-  pitch: 0
+  volume: 0.5
+  pitch: 1

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: OnHitSO
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: cb92ba235af788949945b032b18d90f9, type: 3}
-  voluem: 0.5
-  pitch: 0
+  volume: 0.5
+  pitch: 1

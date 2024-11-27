@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DemeterSO
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 019bf7402c11fa14493db77cac30825e, type: 3}
-  voluem: 0.5
-  pitch: 0
+  volume: 0.4
+  pitch: 1

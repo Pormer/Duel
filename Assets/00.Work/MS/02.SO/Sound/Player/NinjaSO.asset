@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: NinjaSO
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: df8b241f30959f34b8bcb1f3633cae70, type: 3}
-  voluem: 0.5
-  pitch: 0
+  volume: 0.4
+  pitch: 1
