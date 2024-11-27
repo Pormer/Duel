@@ -15,9 +15,16 @@ public class SelectSetting : MonoBehaviour
         selectDataM.OnSelect += NextDataSelect;
     }
 
+    private void Awake()
+    {
+        GameManager.Instance.OnGameStart += () => CharUiSet.gameObject.SetActive(true);
+    }
+
     private void Start()
     {
         GunUiSet.gameObject.SetActive(false);
+        CharUiSet.gameObject.SetActive(false);
+        
         selectDataM.SpawnSelectCharItem(transform);
     }
 

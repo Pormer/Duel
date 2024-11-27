@@ -4,7 +4,6 @@ using UnityEngine.UIElements;
 
 public class keyBindUI : MonoBehaviour
 {
-    [SerializeField] private KeyAction[] keyActions;
     private UIDocument _uiDocument;
     private Button[] _buttons;
     private Label[] _labels;
@@ -13,9 +12,9 @@ public class keyBindUI : MonoBehaviour
     private void Awake()
     {
         _uiDocument = GetComponent<UIDocument>();
-        _keyRebinder = GetComponent<KeyRebinder>();
-        _buttons = new Button[keyActions.Length];
-        _labels = new Label[keyActions.Length];
+        _keyRebinder = new KeyRebinder();
+        _buttons = new Button[0];
+        _labels = new Label[0];
 
         //초기화()
         _buttons[0].RegisterCallback<ClickEvent>(evt =>

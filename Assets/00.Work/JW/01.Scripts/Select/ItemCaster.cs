@@ -23,6 +23,7 @@ public class ItemCaster : MonoBehaviour
         cols = new Collider2D[1];
         _selectSet = FindFirstObjectByType<SelectSetting>();
         selectDataM.OnSelect += HandleSelectChar;
+        GameManager.Instance.OnGameStart += CastItemData;
     }
 
     public void CastItem()
@@ -142,7 +143,6 @@ public class ItemCaster : MonoBehaviour
     {
         _player.InputReaderCompo.OnShootEvent -= CastItem;
         _player.MovementCompo.OnEndMove -= CastItemData;
-        GameManager.Instance.OnSettingUi -= SetOnSettingUI;
         selectDataM.OnSelect -= HandleSelectChar;
     }
 

@@ -47,7 +47,6 @@ public class FadeInOutUi : MonoBehaviour
         SoundManager.Instance.PlaySFX(sound);
         yield return new WaitForSeconds(0.4f);
         _fadeInOutPenel.sortingOrder = -1;
-        GameManager.Instance.OnGameStart?.Invoke();
     }
 
 }

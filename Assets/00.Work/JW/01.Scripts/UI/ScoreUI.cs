@@ -86,5 +86,10 @@ public class ScoreUI : MonoBehaviour
             
             curSettingScoreNum++;
         }
+
+        if (isRight && GameManager.Instance.LeftScore > score) yield break;
+        if (!isRight && GameManager.Instance.RightScore > score) yield break;
+        
+        GameManager.Instance.OnGameStart?.Invoke();
     }
 }

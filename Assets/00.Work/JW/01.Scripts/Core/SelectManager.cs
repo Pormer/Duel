@@ -20,16 +20,10 @@ public class SelectManager : MonoBehaviour
         PlayerGroup = new Player[2];
         selectCharData = new CharacterDataSO[2];
         selectGunData = new GunDataSO[2];
-    }
-
-    private void Start()
-    {
+        
         if (GameManager.Instance.IsOnlinePlay)
         {
-            GameManager.Instance.OnGameStart += 
-            (
-                () => PlayerGroup = FindObjectsByType<Player>(FindObjectsSortMode.None)
-            );
+            GameManager.Instance.OnGameStart += () => PlayerGroup = FindObjectsByType<Player>(FindObjectsSortMode.None);
             GameManager.Instance.OnGameStart += StartOnlineGameClientRpc;
         }
         else

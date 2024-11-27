@@ -10,7 +10,7 @@ public class CharacterDataUiSet : MonoBehaviour
     private Label[] leftPlayerLabel = new Label[5];
     private Label[] rightPlayerLabel = new Label[5];
 
-    private void Awake()
+    private void OnEnable()
     {
         _root = DataUiPanel.rootVisualElement;
         _playerData[0] = _root.Q<VisualElement>("LeftPlayerData");

@@ -92,12 +92,9 @@ public class SelectDataManagerSO : ScriptableObject
     public void SpawnSelectGunItem(Transform parent)
     {
         _parent = parent;
-
         
         foreach (var item in curItemList)
         {
-            Debug.Log(item == null);
-            Debug.Log(curItemList.Count);
             item.gameObject.SetActive(false);
         }
         

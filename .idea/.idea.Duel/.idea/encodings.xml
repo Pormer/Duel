@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
     <file url="file://$PROJECT_DIR$/Assets/00.Work/SW/01.Scripts/Player/Player.cs" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/Assets/00.Work/SW/01.Scripts/Player/PlayerSkill/GamblerSkill.cs" charset="x-windows-949" />
     <file url="file://$PROJECT_DIR$/Assets/00.Work/SW/01.Scripts/Player/PlayerSkill/MiraSkill.cs" charset="x-windows-949" />
     <file url="file://$PROJECT_DIR$/Assets/00.Work/SW/01.Scripts/Player/StatSO.cs" charset="x-windows-949" />
   </component>
