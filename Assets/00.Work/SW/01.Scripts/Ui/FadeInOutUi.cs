@@ -34,6 +34,7 @@ public class FadeInOutUi : MonoBehaviour
         _fades[1].ToggleInClassList("IsMove");
         SoundManager.Instance.PlaySFX(sound);
         yield return new WaitForSeconds(0.6f);
+        GameManager.Instance.OnSettingUi = null;
         SceneManager.LoadScene(sceneValue);
     }
 

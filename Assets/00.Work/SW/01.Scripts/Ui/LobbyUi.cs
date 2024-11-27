@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -15,11 +16,26 @@ public class LobbyUi : MonoBehaviour
         _buttons[1] = _root.Q<Button>("Title");
         _buttons[0].RegisterCallback<ClickEvent>((v) => SceneMove(2));
         _buttons[1].RegisterCallback<ClickEvent>((v) => SceneMove(0));
+        GameManager.Instance.OnSettingUi += SettingOn;
     }
 
     private void SceneMove(int value)
     {
         print(value);
         GameManager.Instance.OnFadeIn(value);
+    }
+
+    public void SettingOn(bool isOpen)
+    {
+        isOpen = !isOpen;
+        if (isOpen)
+        {
+            _uIDocument.sortingOrder = 1;
+        }
+        else
+        {
+            _uIDocument.sortingOrder = -1;
+        }
+        print(isOpen);
     }
 }
