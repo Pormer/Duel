@@ -101,30 +101,41 @@ public class Player : MonoBehaviour
     
     private void BarrierSubscribe()
     {
-        OnHitBarrier.AddListener(() =>
-        {
-            if (StatDataCompo.BarrierCount <= 0)
-            {
-                IsOnBarrier = false;
-                Barrier.transform.DOScale(new Vector3(0,0),0.1f);
-            }
-        });
+        OnHitBarrier.AddListener(HandleHitBarrierEvent);
         
-        InputReaderCompo.OnBarrierPressed += () => 
-        {
-            if (StatDataCompo.BarrierCount <= 0) return;
-
-            SoundManager.Instance.PlaySFX(barrierSound);
-            IsOnBarrier = true;
-            Barrier.transform.DOScale(new Vector3(1.2f, 1.2f), 0.1f);
-        };
-        InputReaderCompo.OnBarrierReleased += () => 
-        {
-            IsOnBarrier = false;
-            Barrier.transform.DOScale(new Vector3(0, 0), 0.1f);
-        };
+        InputReaderCompo.OnBarrierPressed += HandleBarrierPressed;
+        InputReaderCompo.OnBarrierReleased += HandleBarrierReleased;
+    }
+    
+    private void BarrierUnSubscribe()
+    {
+        OnHitBarrier.RemoveListener(HandleHitBarrierEvent);
+        
+        InputReaderCompo.OnBarrierPressed -= HandleBarrierPressed;
+        InputReaderCompo.OnBarrierReleased -= HandleBarrierReleased;
     }
 
+    private void HandleHitBarrierEvent()
+    {
+        if (StatDataCompo.BarrierCount <= 0)
+        {
+            IsOnBarrier = false;
+            Barrier.transform.DOScale(new Vector3(0,0),0.1f);
+        }
+    }
+    private void HandleBarrierReleased()
+    {
+        IsOnBarrier = false;
+        Barrier.transform.DOScale(new Vector3(0, 0), 0.1f);
+    }
+    private void HandleBarrierPressed()
+    {
+        if (StatDataCompo.BarrierCount <= 0) return;
+
+        SoundManager.Instance.PlaySFX(barrierSound);
+        IsOnBarrier = true;
+        Barrier.transform.DOScale(new Vector3(1.2f, 1.2f), 0.1f);
+    }
     private void HandleLastWin(bool obj)
     {
         
@@ -133,5 +144,6 @@ public class Player : MonoBehaviour
     private void OnDestroy()
     {
         if(MovementCompo != null) InputReaderCompo.OnMovementEvent -= MovementCompo.SetMovement;
+        BarrierUnSubscribe();
     }
 }
