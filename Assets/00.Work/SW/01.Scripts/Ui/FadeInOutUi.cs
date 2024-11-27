@@ -11,6 +11,9 @@ public class FadeInOutUi : MonoBehaviour
     private VisualElement _root;
     private VisualElement[] _fades = new VisualElement[2];
     [SerializeField] SoundSO sound;
+    [SerializeField] private InputReaderSO inputR;
+    [SerializeField] private InputReaderSO inputL;
+
     private void Awake()
     {
         _fadeInOutPenel = GetComponent<UIDocument>();
@@ -24,7 +27,9 @@ public class FadeInOutUi : MonoBehaviour
         GameManager.Instance.OnFadeIn += FadeIn;
         StartCoroutine(FadeOntStart());
     }
+
     public void FadeIn(int value) => StartCoroutine(FadeInStart(value));
+
     private IEnumerator FadeInStart(int sceneValue)
     {
         _fadeInOutPenel.sortingOrder = 100;
@@ -36,6 +41,10 @@ public class FadeInOutUi : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         GameManager.Instance.OnSettingUi = null;
         SceneManager.LoadScene(sceneValue);
+        inputR._keyAction.Disable();
+        inputL._keyAction.Disable();
+        inputR._keyAction.Enable();
+        inputL._keyAction.Enable();
     }
 
     public IEnumerator FadeOntStart()
@@ -48,5 +57,4 @@ public class FadeInOutUi : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         _fadeInOutPenel.sortingOrder = -1;
     }
-
 }

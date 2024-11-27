@@ -4,7 +4,11 @@ using UnityEngine.InputSystem;
 
 public abstract class InputReaderSO : ScriptableObject, IPlayerComponents
 {
-    protected KeyAction _keyAction;
+    public KeyAction _keyAction
+    {
+        get;
+        set;
+    }
 
     public bool IsRight { get; protected set; } = false;
     public Vector2Int MoveVec { get; protected set; }
