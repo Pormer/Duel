@@ -5,13 +5,13 @@
         <engine:Button text="Title" name="Title" style="position: absolute; width: 349px; height: 150px; background-color: rgb(0, 0, 0); border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 16px; border-right-width: 16px; border-bottom-width: 16px; border-left-width: 16px; border-top-left-radius: 64px; border-top-right-radius: 64px; border-bottom-right-radius: 64px; border-bottom-left-radius: 64px; top: 696px; left: 792px; color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); font-size: 52px;" />
         <engine:VisualElement name="Keys" picking-mode="Ignore" style="flex-grow: 1;">
             <engine:VisualElement name="LeftPlayer" picking-mode="Ignore" style="flex-grow: 1; position: absolute; width: 1920px; height: 1080px;">
-                <engine:Button text="W" name="W" class="Key" style="top: 780px; left: 245px;" />
-                <engine:Button text="S" name="S" class="Key" style="top: 885px; left: 245px;" />
-                <engine:Button text="A" name="A" class="Key" style="top: 885px; left: 140px;" />
-                <engine:Button text="D" name="D" class="Key" style="top: 885px; left: 350px;" />
-                <engine:Button text="C" name="C" class="Key" style="top: 885px; left: 500px;" />
-                <engine:Button text="V" name="V" class="Key" style="top: 885px; left: 605px;" />
-                <engine:Button text="B" name="B" class="Key" style="top: 885px; left: 710px;" />
+                <engine:Button text="W" name="Up" class="Key" style="top: 780px; left: 245px;" />
+                <engine:Button text="S" name="Down" class="Key" style="top: 885px; left: 245px;" />
+                <engine:Button text="A" name="Left" class="Key" style="top: 885px; left: 140px;" />
+                <engine:Button text="D" name="Right" class="Key" style="top: 885px; left: 350px;" />
+                <engine:Button text="C" name="Shoot" class="Key" style="top: 885px; left: 500px;" />
+                <engine:Button text="V" name="Barrier" class="Key" style="top: 885px; left: 605px;" />
+                <engine:Button text="B" name="Skill" class="Key" style="top: 885px; left: 710px;" />
                 <engine:Label text="SHOOT" style="-unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(255, 255, 255); font-size: 25px; width: 94px; bottom: -987px; top: auto; left: 514px;" />
                 <engine:Label text="Move" style="position: absolute; top: 990px; left: 155px; height: 66px; width: 296px; color: rgb(255, 255, 255); font-size: 50px; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); -unity-text-align: middle-center;" />
                 <engine:Label text="BARRIER" style="-unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(255, 255, 255); font-size: 25px; width: 94px; bottom: -945px; top: auto; left: 614px;" />
@@ -22,14 +22,15 @@
                 <engine:Button text="∨" name="Down" class="Key" style="top: 885px; left: auto; right: 245px;" />
                 <engine:Button text="＞" name="Left" class="Key" style="top: 885px; left: auto; right: 140px;" />
                 <engine:Button text="＜" name="Right" class="Key" style="top: 885px; left: auto; right: 350px;" />
-                <engine:Button text="K" name="K" class="Key" style="top: 885px; left: auto; right: 500px;" />
-                <engine:Button text="L" name="L" class="Key" style="top: 885px; left: auto; right: 605px;" />
-                <engine:Button text=";" name="1" class="Key" style="top: 885px; left: auto; right: 710px;" />
+                <engine:Button text="K" name="Skill" class="Key" style="top: 885px; left: auto; right: 500px;" />
+                <engine:Button text="L" name="Barrier" class="Key" style="top: 885px; left: auto; right: 605px;" />
+                <engine:Button text=";" name="Shoot" class="Key" style="top: 885px; left: auto; right: 710px;" />
                 <engine:Label text="SHOOT" style="-unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(255, 255, 255); font-size: 25px; width: 94px; bottom: -987px; top: auto; left: 1113px;" />
                 <engine:Label text="Move" style="position: absolute; top: 990px; left: auto; height: 66px; width: 296px; color: rgb(255, 255, 255); font-size: 50px; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); -unity-text-align: middle-center; right: 155px;" />
                 <engine:Label text="BARRIER" style="-unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(255, 255, 255); font-size: 25px; width: 94px; bottom: -945px; top: auto; left: 1215px;" />
                 <engine:Label text="SKILL" style="-unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(255, 255, 255); font-size: 25px; width: 94px; bottom: -901px; top: auto; left: 1336px;" />
             </engine:VisualElement>
         </engine:VisualElement>
+        <engine:Label text="키 바인딩 중.." style="position: absolute; bottom: 56px; left: 833px; height: 100px; width: 242px; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(251, 255, 117); font-size: 42px;" />
     </engine:VisualElement>
 </engine:UXML>
