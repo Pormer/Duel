@@ -70,6 +70,11 @@ public class MyRebindActionUI : MonoBehaviour
 
         displayString = currentAction.action.GetBindingDisplayString(0, out deviceLayoutName, out controlPath, displayStringOptions);
 
+        if(controlPath == "<Keyboard>/escape")
+        {
+
+        }
+
         bindingDisplayNameText.text = displayString;
     }
 
