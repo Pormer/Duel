@@ -24,9 +24,12 @@ public class keyBindUI : MonoBehaviour
         ButtonsSetting(ref _leftButtons, 0);
         ButtonsSetting(ref _rightButtons, 1);
 
+        TextSet(ref _leftButtons, 0);
+        TextSet(ref _leftButtons, 1);
         //초기화()
         KeyRebinder(ref _leftButtons, 0);
         KeyRebinder(ref _rightButtons, 1);
+
     }
 
     private void ButtonsSetting(ref Button[] buttons, int valur)
@@ -38,6 +41,29 @@ public class keyBindUI : MonoBehaviour
         buttons[4] = _playrs[valur].Q<Button>("Shoot");
         buttons[5] = _playrs[valur].Q<Button>("Barrier");
         buttons[6] = _playrs[valur].Q<Button>("Skill");
+    }
+
+    private void TextSet(ref Button[] buttons, int valur)
+    {
+        {
+            buttons[0].text = TextControl(_keyRebinder.LoadKeyName((KeyMapType)valur, KeyActionType.MovementUp));
+            buttons[1].text = TextControl(_keyRebinder.LoadKeyName((KeyMapType)valur, KeyActionType.MovementDown));
+            buttons[2].text = TextControl(_keyRebinder.LoadKeyName((KeyMapType)valur, KeyActionType.MovementLeft));
+            buttons[3].text = TextControl(_keyRebinder.LoadKeyName((KeyMapType)valur, KeyActionType.MovementRight));
+            buttons[4].text = TextControl(_keyRebinder.LoadKeyName((KeyMapType)valur, KeyActionType.Shoot));
+            buttons[5].text = TextControl(_keyRebinder.LoadKeyName((KeyMapType)valur, KeyActionType.Barrier));
+            buttons[6].text = TextControl(_keyRebinder.LoadKeyName((KeyMapType)valur, KeyActionType.Skill));
+        }
+    }
+
+    private string TextControl(string text)
+    {
+        if (text == "Up Arrow") return "∧";
+        else if (text == "Down Arrow") return "∨";
+        else if (text == "Left Arrow") return "＜";
+        else if (text == "Right Arrow") return "＞";
+
+        return text;
     }
 
     private void KeyRebinder(ref Button[] buttons, int valur)
