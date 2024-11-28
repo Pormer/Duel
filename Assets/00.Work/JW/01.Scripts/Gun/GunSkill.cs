@@ -39,6 +39,11 @@ public abstract class GunSkill : MonoBehaviour
         AwakeSkill();
     }
 
+    private void Update()
+    {
+        UpdateGunState();
+    }
+
     protected virtual void AwakeSkill()
     {
     }

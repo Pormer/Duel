@@ -14,6 +14,7 @@ public class ChrysanthemumSkill : GunSkill
 
         _player.GetCompo<Health>().OnHitEvent.AddListener(() =>
         {
+            if(_stat.Damage <= 0) return;
             _stat.Damage--;
             OnHit?.Invoke();
         });

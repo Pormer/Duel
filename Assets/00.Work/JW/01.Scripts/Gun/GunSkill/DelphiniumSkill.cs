@@ -17,7 +17,11 @@ public class DelphiniumSkill : GunSkill
         _tempDamage = _stat.Damage;
         
         if(eventFeedbacks != null) OnFormChanged += eventFeedbacks.PlayFeedbacks;
-        _player.GetCompo<Health>().OnHitEvent.AddListener(() => currentTimer = 0);
+        _player.GetCompo<Health>().OnHitEvent.AddListener(() =>
+        {
+            currentTimer = 0;
+            _isTimeOut = false;
+        });
     }
 
     public override void EnterSkill()
@@ -41,6 +45,7 @@ public class DelphiniumSkill : GunSkill
         
         if (currentTimer >= wantTimer)
         {
+            print(currentTimer);
             OnFormChanged?.Invoke();
             _isTimeOut = true;
             currentTimer = 0;

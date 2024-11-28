@@ -20,7 +20,7 @@ public class LaurusSkill : GunSkill
     public override void EnterSkill()
     {
         base.EnterSkill();
-        if (curStep > wantStep)
+        if (curStep >= wantStep)
         {
             OnFormChanged?.Invoke();
             _player.StatDataCompo.Damage = wantDamage;

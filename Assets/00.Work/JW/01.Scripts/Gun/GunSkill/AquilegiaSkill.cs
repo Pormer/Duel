@@ -52,13 +52,14 @@ public class AquilegiaSkill : GunSkill
     {
         base.EnterSkill();
 
-        if (hitCombos.All(item => true) && !_isFormChanged) _isFormChanged = true;
+        if (hitCombos.All(item => item) && !_isFormChanged) _isFormChanged = true;
         
         if (_isFormChanged)
         {
             _stat.Damage = 4;
             if (_stat.BarrierCount <= 0) _stat.Damage = 1;
             _stat.BarrierCount--;
+            _isFormChanged = false;
         }
         else
         {

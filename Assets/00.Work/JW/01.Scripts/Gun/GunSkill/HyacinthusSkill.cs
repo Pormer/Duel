@@ -21,7 +21,7 @@ public class HyacinthusSkill : GunSkill
     private void HandleCheckShoot(bool isTrigger)
     {
         _shootCount++;
-        if (_shootCount >= wantShootCount)
+        if (_shootCount >= wantShootCount && !_isOneCool)
         {
             HyacinthusSkillChild item = PoolManager.Instance.Pop(PoolingType.HyacinthusChildItem) as HyacinthusSkillChild;
             
@@ -35,6 +35,7 @@ public class HyacinthusSkill : GunSkill
             }
             
             item.Initialize(this);
+            _isOneCool = true;
             _shootCount = 0;
         }
     }

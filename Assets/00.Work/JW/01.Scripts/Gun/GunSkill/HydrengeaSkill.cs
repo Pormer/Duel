@@ -21,8 +21,11 @@ public class HydrengeaSkill : GunSkill
 
     private void HandleOnShoot(bool isTrigger)
     {
-        _stat.BarrierCount++;
-        OnBarrierChanged?.Invoke();
+        if (isTrigger)
+        {
+            _stat.BarrierCount++;
+            OnBarrierChanged?.Invoke();
+        }
     }
 
     private void OnDisable()

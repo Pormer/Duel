@@ -32,7 +32,7 @@ public class DianthusSkill : GunSkill
         }
         else
         {
-            _stat.Damage = 1 + Mathf.Clamp(_stat.Damage + 1, 0, maxStackCount + 1);
+            _stat.Damage = Mathf.Clamp(_stat.Damage + 1, 0, maxStackCount + 1);
             OnDamageUp?.Invoke();
         }
     }
