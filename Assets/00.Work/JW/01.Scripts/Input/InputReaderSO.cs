@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public abstract class InputReaderSO : ScriptableObject, IPlayerComponents
 {
@@ -23,6 +24,14 @@ public abstract class InputReaderSO : ScriptableObject, IPlayerComponents
     {
         _keyAction = new KeyAction();
         GameManager.Instance.OnSettingUi += HandleSetting;
+        SceneManager.sceneUnloaded += scene =>
+        {
+            OnShootEvent = null;
+            OnSkillEvent = null;
+            OnBarrierPressed = null;
+            OnBarrierReleased = null;
+            OnMovementEvent = null;
+        };
     }
 
     public void Initialize(Player player)
