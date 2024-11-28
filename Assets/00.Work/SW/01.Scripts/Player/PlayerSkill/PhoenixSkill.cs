@@ -14,10 +14,11 @@ public class PhoenixSkill : CharacterSkill
     }
     protected override void UpdateCharacterSkill()
     {
-        if (_stat.Health <= 0)
+        if (_stat.Health <= 0 && !isSkillStart)
         {
             OnResurrection?.Invoke();
             _health.isResurrection = false;
+            isSkillStart = true;
             StartCoroutine(SkillStart());
         }
     }

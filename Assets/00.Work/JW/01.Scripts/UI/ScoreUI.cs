@@ -88,7 +88,7 @@ public class ScoreUI : MonoBehaviour
             curSettingScoreNum++;
         }
 
-        if (isRight && GameManager.Instance.LeftScore == 0 && GameManager.Instance.RightScore == 0)
+        if (isRight && GameManager.Instance.LeftScore == score && GameManager.Instance.RightScore == score)
         {
             GameManager.Instance.OnGameStart?.Invoke();
             print(0);
