@@ -34,6 +34,8 @@ public class SelectDataManagerSO : ScriptableObject
         RightCharType = CharacterType.Default;
         RightGunType = GunType.Default;
 
+        SceneManager.sceneUnloaded += scene => curItemList.Clear();
+
 #if UNITY_EDITOR
         if (!isDebug) return;
         LeftCharType = testCharType;
@@ -93,18 +95,21 @@ public class SelectDataManagerSO : ScriptableObject
     {
         _parent = parent;
         
+        Debug.Log(curItemList.Count);
+        
         foreach (var item in curItemList)
         {
+            Debug.Log(item == null);
             item.gameObject.SetActive(false);
         }
         
-        curItemList.Clear();
 
         for (int i = 0; i < spawnCount; i++)
         {
             SelectItem item;
             item = Instantiate(selectItemObj, startSpawnPos + Vector2.up * i, Quaternion.identity, parent);
             item.Initialize(CheckGunDataValue((GunType)Random.Range(1, 16)));
+            curItemList.Add(item);
         }
     }
     

@@ -41,10 +41,6 @@ public class FadeInOutUi : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         GameManager.Instance.OnSettingUi = null;
         SceneManager.LoadScene(sceneValue);
-        inputR._keyAction.Disable();
-        inputL._keyAction.Disable();
-        inputR._keyAction.Enable();
-        inputL._keyAction.Enable();
     }
 
     public IEnumerator FadeOntStart()

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(menuName = "SO/Input/Left")]
 public class LeftInputSO : InputReaderSO, KeyAction.ILeftInputActions
@@ -7,8 +8,11 @@ public class LeftInputSO : InputReaderSO, KeyAction.ILeftInputActions
     {
         base.OnEnable();
         _keyAction.LeftInput.SetCallbacks(this);
-        _keyAction.LeftInput.Enable();
-
+        //_keyAction.LeftInput.Enable();
+        
+        SceneManager.sceneLoaded += (scene, mode) => _keyAction.LeftInput.Enable();
+        SceneManager.sceneUnloaded += scene => _keyAction.LeftInput.Disable();
+        
         IsRight = false;
     }
     
