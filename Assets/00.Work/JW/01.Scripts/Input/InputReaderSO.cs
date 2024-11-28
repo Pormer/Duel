@@ -26,7 +26,6 @@ public abstract class InputReaderSO : ScriptableObject, IPlayerComponents
     {
         _keyAction = new KeyAction();
         
-        GameManager.Instance.OnSettingUi += HandleSetting;
         SceneManager.sceneUnloaded += scene =>
         {
             OnShootEvent = null;
@@ -35,6 +34,8 @@ public abstract class InputReaderSO : ScriptableObject, IPlayerComponents
             OnBarrierReleased = null;
             OnMovementEvent = null;
         };
+        
+        //GameManager.Instance.OnSettingUi += HandleSetting;
     }
 
     public void Initialize(Player player)
