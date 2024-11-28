@@ -76,26 +76,14 @@ public class SettingUi : MonoBehaviour
         sliders[1].RegisterValueChangedCallback(evt => SetBGMVolume(evt.newValue));
         sliders[0].RegisterValueChangedCallback(evt => SetSFXVolume(evt.newValue));
 
-        if(SceneManager.GetActiveScene().name != "Lobby")
+        
+        KeyRebinder keyRebinder = FindAnyObjectByType<KeyRebinder>();
+        if (keyRebinder != null)
         {
-            KeyRebinder keyRebinder = GetComponent<KeyRebinder>();
-            if (keyRebinder != null)
-            {
-                TextSet(ref _leftLabel, 0, keyRebinder);
-                TextSet(ref _rightLabel, 1, keyRebinder);
-            }
-            
+            TextSet(ref _leftLabel, 0, keyRebinder);
+            TextSet(ref _rightLabel, 1, keyRebinder);
         }
-        else
-        {
-            KeyRebinder keyRebinder = FindAnyObjectByType<KeyRebinder>();
-            if (keyRebinder != null)
-            {
-                TextSet(ref _leftLabel, 0, keyRebinder);
-                TextSet(ref _rightLabel, 1, keyRebinder);
-            }
 
-        }
     }
 
     private void SetBGMVolume(float sliderValue)
