@@ -11,6 +11,7 @@ public class keyBindUI : MonoBehaviour
     private Button[] _leftButtons = new Button[7];
     private Button[] _rightButtons = new Button[7];
     private KeyRebinder _keyRebinder;
+    private Label _keyBinLabel;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class keyBindUI : MonoBehaviour
         _keys = _root.Q<VisualElement>("Keys");
         _playrs[0] = _keys.Q<VisualElement>("LeftPlayer");
         _playrs[1] = _keys.Q<VisualElement>("RightPlayer");
+        _keyBinLabel = _root.Q<Label>("KeyBinLabel");
 
         ButtonsSetting(ref _leftButtons, 0);
         ButtonsSetting(ref _rightButtons, 1);
@@ -29,7 +31,11 @@ public class keyBindUI : MonoBehaviour
         //초기화()
         KeyRebinder(ref _leftButtons, 0);
         KeyRebinder(ref _rightButtons, 1);
-
+        IsBing(false);
+    }
+    public void IsBing(bool bing)
+    {
+        _keyBinLabel.style.display = bing ? DisplayStyle.Flex : DisplayStyle.None;
     }
 
     private void ButtonsSetting(ref Button[] buttons, int valur)
@@ -58,10 +64,10 @@ public class keyBindUI : MonoBehaviour
 
     private string TextControl(string text)
     {
-        if (text == "Up Arrow") return "∧";
-        else if (text == "Down Arrow") return "∨";
-        else if (text == "Left Arrow") return "＜";
-        else if (text == "Right Arrow") return "＞";
+        if (text == "Up Arrow") return "↑";
+        else if (text == "Down Arrow") return "↓";
+        else if (text == "Right Arrow") return "→";
+        else if (text == "Left Arrow") return "←";
 
         return text;
     }
@@ -70,18 +76,39 @@ public class keyBindUI : MonoBehaviour
     {
         var buttons1 = buttons;
         buttons[0].RegisterCallback<ClickEvent>(evt =>
-            _keyRebinder.StartRebinding((KeyMapType)valur, KeyActionType.MovementUp, buttons1[0]));
+        {
+            _keyRebinder.StartRebinding((KeyMapType)valur, KeyActionType.MovementUp, buttons1[0]);
+
+        });
         buttons[1].RegisterCallback<ClickEvent>(evt =>
-            _keyRebinder.StartRebinding((KeyMapType)valur, KeyActionType.MovementDown, buttons1[1]));
+        {
+            _keyRebinder.StartRebinding((KeyMapType)valur, KeyActionType.MovementDown, buttons1[1]);
+
+        });
         buttons[2].RegisterCallback<ClickEvent>(evt =>
-            _keyRebinder.StartRebinding((KeyMapType)valur, KeyActionType.MovementLeft, buttons1[2]));
+        {
+            _keyRebinder.StartRebinding((KeyMapType)valur, KeyActionType.MovementLeft, buttons1[2]);
+
+        });
         buttons[3].RegisterCallback<ClickEvent>(evt =>
-            _keyRebinder.StartRebinding((KeyMapType)valur, KeyActionType.MovementRight, buttons1[3]));
+        {
+            _keyRebinder.StartRebinding((KeyMapType)valur, KeyActionType.MovementRight, buttons1[3]);
+
+        });
         buttons[4].RegisterCallback<ClickEvent>(evt =>
-            _keyRebinder.StartRebinding((KeyMapType)valur, KeyActionType.Shoot, buttons1[4]));
+        {
+            _keyRebinder.StartRebinding((KeyMapType)valur, KeyActionType.Shoot, buttons1[4]);
+
+        });
         buttons[5].RegisterCallback<ClickEvent>(evt =>
-            _keyRebinder.StartRebinding((KeyMapType)valur, KeyActionType.Barrier, buttons1[5]));
+        {
+            _keyRebinder.StartRebinding((KeyMapType)valur, KeyActionType.Barrier, buttons1[5]);
+
+        });
         buttons[6].RegisterCallback<ClickEvent>(evt =>
-            _keyRebinder.StartRebinding((KeyMapType)valur, KeyActionType.Skill, buttons1[6]));
+        {
+            _keyRebinder.StartRebinding((KeyMapType)valur, KeyActionType.Skill, buttons1[6]);
+
+        });
     }
 }

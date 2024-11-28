@@ -19,10 +19,11 @@ public class BloodrootSkill : GunSkill
     public override void EnterSkill()
     {
         base.EnterSkill();
-        
+
+        if (_stat.Health <= 1) return;
         OnMinusHealth?.Invoke();
         _stat.Health--;
-        
+
         Shoot();
     }
 }

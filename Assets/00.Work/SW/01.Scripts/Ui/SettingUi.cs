@@ -88,7 +88,6 @@ public class SettingUi : MonoBehaviour
 
     private void SetBGMVolume(float sliderValue)
     {
-        print(sliderValue);
 
         mixer.SetFloat(BGMVolumeParam, sliderValue);
     }
@@ -151,10 +150,10 @@ public class SettingUi : MonoBehaviour
 
     private string TextControl(string text)
     {
-        if (text == "Up Arrow") return "��";
-        else if (text == "Down Arrow") return "��";
-        else if (text == "Left Arrow") return "��";
-        else if (text == "Right Arrow") return "��";
+        if (text == "Up Arrow") return "↑";
+        else if (text == "Down Arrow") return "↓";
+        else if (text == "Right Arrow") return "→";
+        else if (text == "Left Arrow") return "←";
 
         return text;
     }

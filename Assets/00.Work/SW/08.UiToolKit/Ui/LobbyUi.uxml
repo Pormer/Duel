@@ -20,8 +20,8 @@
             <engine:VisualElement name="RightPlayer" picking-mode="Ignore" style="flex-grow: 1; position: absolute; width: 1920px; height: 1080px;">
                 <engine:Button text="∧" name="Up" class="Key" style="top: 780px; left: auto; right: 245px;" />
                 <engine:Button text="∨" name="Down" class="Key" style="top: 885px; left: auto; right: 245px;" />
-                <engine:Button text="＞" name="Left" class="Key" style="top: 885px; left: auto; right: 140px;" />
-                <engine:Button text="＜" name="Right" class="Key" style="top: 885px; left: auto; right: 350px;" />
+                <engine:Button text="＜" name="Left" class="Key" style="top: 885px; left: auto; right: 350px;" />
+                <engine:Button text="＞" name="Right" class="Key" style="top: 885px; left: auto; right: 140px;" />
                 <engine:Button text="K" name="Skill" class="Key" style="top: 885px; left: auto; right: 500px;" />
                 <engine:Button text="L" name="Barrier" class="Key" style="top: 885px; left: auto; right: 605px;" />
                 <engine:Button text=";" name="Shoot" class="Key" style="top: 885px; left: auto; right: 710px;" />
@@ -31,6 +31,6 @@
                 <engine:Label text="SKILL" style="-unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(255, 255, 255); font-size: 25px; width: 94px; bottom: -901px; top: auto; left: 1336px;" />
             </engine:VisualElement>
         </engine:VisualElement>
-        <engine:Label text="키 바인딩 중.." style="position: absolute; bottom: 56px; left: 833px; height: 100px; width: 242px; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(251, 255, 117); font-size: 42px;" />
+        <engine:Label text="키 바인딩 중.." name="KeyBinLabel" enabled="true" style="position: absolute; bottom: 56px; left: 833px; height: 100px; width: 242px; -unity-font-definition: url(&quot;project://database/Assets/00.Work/MS/06.Guitar/Galmuri7.ttf?fileID=12800000&amp;guid=afd429833c5b2104c9ef3ea3738a6bf9&amp;type=3#Galmuri7&quot;); color: rgb(251, 255, 117); font-size: 42px; opacity: 1; display: flex;" />
     </engine:VisualElement>
 </engine:UXML>
