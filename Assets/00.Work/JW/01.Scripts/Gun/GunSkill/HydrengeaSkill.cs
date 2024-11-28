@@ -25,7 +25,7 @@ public class HydrengeaSkill : GunSkill
         OnBarrierChanged?.Invoke();
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         _gun.DamageCastCompo.OnShoot -= HandleOnShoot;
     }

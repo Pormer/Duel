@@ -146,7 +146,7 @@ public class ItemCaster : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         _player.InputReaderCompo.OnShootEvent -= CastItem;
         _player.MovementCompo.OnEndMove -= CastItemData;

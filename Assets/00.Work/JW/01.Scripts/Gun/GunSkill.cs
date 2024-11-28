@@ -88,7 +88,7 @@ public abstract class GunSkill : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         _player.InputReaderCompo.OnShootEvent -= EnterShoot;
     }

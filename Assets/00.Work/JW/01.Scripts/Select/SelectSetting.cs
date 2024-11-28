@@ -34,7 +34,7 @@ public class SelectSetting : MonoBehaviour
         GunUiSet.gameObject.SetActive(true);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         selectDataM.OnSelect -= NextDataSelect;
     }

@@ -153,7 +153,7 @@ public class Player : MonoBehaviour
         
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         if(MovementCompo != null) InputReaderCompo.OnMovementEvent -= MovementCompo.SetMovement;
         BarrierUnSubscribe();
