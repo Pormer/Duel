@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8661045ac1361042b05d126069a6488, type: 3}
   m_Name: Online Input
   m_EditorClassIdentifier: 
+  inputAsset: {fileID: -944628639613478452, guid: 986a4393943b6ab40a51f57e11accb09, type: 3}

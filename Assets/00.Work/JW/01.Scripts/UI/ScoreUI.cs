@@ -91,14 +91,12 @@ public class ScoreUI : MonoBehaviour
         if (isRight && GameManager.Instance.LeftScore == score && GameManager.Instance.RightScore == score)
         {
             GameManager.Instance.OnGameStart?.Invoke();
-            print(0);
             yield break;
         }
 
         if (isRight && GameManager.Instance.LeftScore < score || !isRight && GameManager.Instance.RightScore < score)
         {
             GameManager.Instance.OnGameStart?.Invoke();
-            print("1");
         }
     }
 }

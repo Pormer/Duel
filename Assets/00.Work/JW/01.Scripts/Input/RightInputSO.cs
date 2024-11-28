@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(menuName = "SO/Input/Right")]
@@ -12,8 +13,8 @@ public class RightInputSO : InputReaderSO, KeyAction.IRightInputActions
 
         SceneManager.sceneLoaded += (scene, mode) => _keyAction.RightInput.Enable();
         SceneManager.sceneUnloaded += scene => _keyAction.RightInput.Disable();
-
-        IsRight = true;
+        
+        IsRight = true; 
     }
 
     private void OnDisable()

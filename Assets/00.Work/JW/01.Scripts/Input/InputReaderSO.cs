@@ -19,10 +19,13 @@ public abstract class InputReaderSO : ScriptableObject, IPlayerComponents
     public Action OnBarrierPressed;
     public Action OnBarrierReleased;
     public Action<Vector2Int> OnMovementEvent;
+    
+    [SerializeField] InputActionAsset inputAsset;
 
     protected virtual void OnEnable()
     {
         _keyAction = new KeyAction();
+        
         GameManager.Instance.OnSettingUi += HandleSetting;
         SceneManager.sceneUnloaded += scene =>
         {
@@ -82,7 +85,11 @@ public abstract class InputReaderSO : ScriptableObject, IPlayerComponents
         MoveVec = Vector2Int.right;
         OnMovementEvent?.Invoke(MoveVec);
     }
-    
+
+    public void KeyReBinding(string path)
+    {
+        _keyAction.LoadBindingOverridesFromJson(path);
+    }
     private void HandleSetting(bool obj)
     {
         Debug.Log("inSet");

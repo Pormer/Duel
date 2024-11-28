@@ -10,6 +10,9 @@ public class KeyRebinder : MonoBehaviour
     [SerializeField] private InputActionAsset inputActions;
     private readonly string _saveFileName = "rebinds.json"; //파일 이름
 
+    [SerializeField] private InputReaderSO _inputL;
+    [SerializeField] private InputReaderSO _inputR;
+
     private string SavePath => Path.Combine(Application.persistentDataPath, _saveFileName);
 
     private void Awake()
@@ -104,6 +107,7 @@ public class KeyRebinder : MonoBehaviour
     public void SaveRebindings()
     {
         //JSON으로 저장
+        
         string rebinds = inputActions.SaveBindingOverridesAsJson();
         File.WriteAllText(SavePath, rebinds);
         Debug.Log($"Rebindings saved to {SavePath}");
@@ -115,7 +119,15 @@ public class KeyRebinder : MonoBehaviour
         if (File.Exists(SavePath))
         {
             string rebinds = File.ReadAllText(SavePath);
+            inputActions.Disable();
             inputActions.LoadBindingOverridesFromJson(rebinds);
+            
+            _inputL.KeyReBinding(rebinds);
+            _inputR.KeyReBinding(rebinds);
+            
+            // 입력 시스템 재활성화
+            inputActions.Enable();
+            InputSystem.Update();
             Debug.Log("Rebindings load");
         }
         else

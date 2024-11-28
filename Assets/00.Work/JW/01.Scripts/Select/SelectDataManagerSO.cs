@@ -95,11 +95,8 @@ public class SelectDataManagerSO : ScriptableObject
     {
         _parent = parent;
         
-        Debug.Log(curItemList.Count);
-        
         foreach (var item in curItemList)
         {
-            Debug.Log(item == null);
             item.gameObject.SetActive(false);
         }
         
