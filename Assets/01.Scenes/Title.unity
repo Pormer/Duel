@@ -286,6 +286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputActions: {fileID: -944628639613478452, guid: 986a4393943b6ab40a51f57e11accb09, type: 3}
+  _inputL: {fileID: 11400000, guid: 06711f12c4208c444a2fef5c24139bc0, type: 2}
+  _inputR: {fileID: 11400000, guid: a3269faaac8d3d64a94d86a9d4841a44, type: 2}
 --- !u!4 &362714159
 Transform:
   m_ObjectHideFlags: 0
@@ -426,6 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddfb0f53f7a3b10499d240760ff87456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputAsset: {fileID: -944628639613478452, guid: 986a4393943b6ab40a51f57e11accb09, type: 3}
 --- !u!1 &1167922633
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 public class KeyRebinder : MonoBehaviour
 {
+    private keyBindUI _keyBind;
     [SerializeField] private InputActionAsset inputActions;
     private readonly string _saveFileName = "rebinds.json"; //파일 이름
 
@@ -18,15 +19,18 @@ public class KeyRebinder : MonoBehaviour
     private void Awake()
     {
         LoadRebindings();
+        if (FindAnyObjectByType<keyBindUI>() != null) _keyBind = FindAnyObjectByType<keyBindUI>();
     }
 
     public void StartRebinding(KeyMapType actionMapType, KeyActionType actionType, Button btn)
     {
         //Map 가져오기
+        _keyBind.IsBing(true);
         InputActionMap actionMap = inputActions.FindActionMap(actionMapType.ToString());
         if (actionMap == null)
         {
             Debug.LogError($"Action Map '{actionMapType.ToString()}' not found!");
+            _keyBind.IsBing(false);
             return;
         }
 
@@ -37,6 +41,7 @@ public class KeyRebinder : MonoBehaviour
         if (action == null)
         {
             Debug.LogError($"Action '{actionType.ToString()}' not found in Action Map '{actionMapType.ToString()}'!");
+            _keyBind.IsBing(false); 
             return;
         }
 
@@ -57,10 +62,12 @@ public class KeyRebinder : MonoBehaviour
                 {
                     Debug.Log($"Duplicate key detected: {controlPath}");
                     ctx.Cancel(); // 리바인딩 취소
+                    _keyBind.IsBing(false);
                 }
                 else
                 {
                     Debug.Log($"Valid input: {controlPath}");
+                    _keyBind.IsBing(false);
                 }
             })
             .WithCancelingThrough("<Keyboard>/escape")
@@ -73,12 +80,24 @@ public class KeyRebinder : MonoBehaviour
                 operation.Dispose(); // 리소스 정리
 
                 print("Complete");
-                btn.text = action.bindings[0].ToDisplayString();
+                btn.text = TextControl(action.bindings[0].ToDisplayString());
                 //저장
                 SaveRebindings();
                 action.Enable();
+                _keyBind.IsBing(false);
             })
             .Start();
+        
+    }
+
+    private string TextControl(string text)
+    {
+        if (text == "Up Arrow") return "↑";
+        else if (text == "Down Arrow") return "↓";
+        else if (text == "Right Arrow") return "→";
+        else if (text == "Left Arrow") return "←";
+
+        return text;
     }
 
     public string LoadKeyName(KeyMapType actionMapType, KeyActionType actionType)
