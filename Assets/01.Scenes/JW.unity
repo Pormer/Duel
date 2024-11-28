@@ -1039,8 +1039,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 11400000, guid: 38412381e594e794a8ef970f24756dd8, type: 2}
-  inputR: {fileID: 11400000, guid: a3269faaac8d3d64a94d86a9d4841a44, type: 2}
-  inputL: {fileID: 11400000, guid: 06711f12c4208c444a2fef5c24139bc0, type: 2}
 --- !u!114 &1181798155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1947,6 +1945,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputActions: {fileID: -944628639613478452, guid: 986a4393943b6ab40a51f57e11accb09, type: 3}
+  _inputL: {fileID: 11400000, guid: 06711f12c4208c444a2fef5c24139bc0, type: 2}
+  _inputR: {fileID: 11400000, guid: a3269faaac8d3d64a94d86a9d4841a44, type: 2}
 --- !u!4 &1893479761
 Transform:
   m_ObjectHideFlags: 0

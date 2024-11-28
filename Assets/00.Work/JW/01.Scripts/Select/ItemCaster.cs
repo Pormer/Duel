@@ -35,35 +35,40 @@ public class ItemCaster : MonoBehaviour
         {
             if (cols[0].TryGetComponent(out SelectItem item))
             {
-                bool isLiftChar = selectDataM.LeftCharType == CharacterType.Default && _player.InputReaderCompo.IsRight == false;
-                bool isRightChar = selectDataM.RightCharType == CharacterType.Default && _player.InputReaderCompo.IsRight;
+                bool isLiftChar = selectDataM.LeftCharType == CharacterType.Default &&
+                                  _player.InputReaderCompo.IsRight == false;
+                bool isRightChar = selectDataM.RightCharType == CharacterType.Default &&
+                                   _player.InputReaderCompo.IsRight;
 
                 if (isRightChar)
                 {
                     item.Select(true);
                     return;
                 }
+
                 if (isLiftChar)
                 {
                     item.Select(false);
                     return;
                 }
 
-                if(_isCharSelectTime) return;
-                bool isLiftGun = selectDataM.LeftGunType == GunType.Default && _player.InputReaderCompo.IsRight == false;
+                if (_isCharSelectTime) return;
+                bool isLiftGun = selectDataM.LeftGunType == GunType.Default &&
+                                 _player.InputReaderCompo.IsRight == false;
                 bool isRightGun = selectDataM.RightGunType == GunType.Default && _player.InputReaderCompo.IsRight;
-                
+
                 if (isRightGun)
                 {
                     item.Select(true);
                     return;
                 }
+
                 if (isLiftGun)
                 {
                     item.Select(false);
                     return;
                 }
-                
+
                 //item.Select(_player.InputReaderCompo.IsRight);
             }
         }
@@ -133,7 +138,7 @@ public class ItemCaster : MonoBehaviour
         _isCharSelectTime = false;
         CastItemData();
     }
-    
+
     private void SetOnSettingUI(bool b)
     {
         if (b)
@@ -148,8 +153,12 @@ public class ItemCaster : MonoBehaviour
 
     private void OnDisable()
     {
-        _player.InputReaderCompo.OnShootEvent -= CastItem;
-        _player.MovementCompo.OnEndMove -= CastItemData;
+        if (_player != null)
+        {
+            _player.InputReaderCompo.OnShootEvent -= CastItem;
+            _player.MovementCompo.OnEndMove -= CastItemData;
+        }
+
         selectDataM.OnSelect -= HandleSelectChar;
     }
 

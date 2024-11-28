@@ -13,18 +13,22 @@ public class SelectSetting : MonoBehaviour
         GunUiSet = FindFirstObjectByType<GunDataUiSet>();
 
         selectDataM.OnSelect += NextDataSelect;
+        
+        GunUiSet.gameObject.SetActive(false);
+        CharUiSet.gameObject.SetActive(false);
     }
 
     private void Awake()
     {
-        GameManager.Instance.OnGameStart += () => CharUiSet.gameObject.SetActive(true);
+        GameManager.Instance.OnGameStart += () =>
+        {
+            CharUiSet.gameObject.SetActive(true);
+            print(1);
+        };
     }
 
     private void Start()
     {
-        GunUiSet.gameObject.SetActive(false);
-        CharUiSet.gameObject.SetActive(true);
-        
         selectDataM.SpawnSelectCharItem(transform);
     }
 

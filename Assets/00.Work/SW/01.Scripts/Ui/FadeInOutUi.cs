@@ -11,8 +11,6 @@ public class FadeInOutUi : MonoBehaviour
     private VisualElement _root;
     private VisualElement[] _fades = new VisualElement[2];
     [SerializeField] SoundSO sound;
-    [SerializeField] private InputReaderSO inputR;
-    [SerializeField] private InputReaderSO inputL;
 
     private void Awake()
     {

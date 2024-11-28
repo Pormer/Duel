@@ -7,7 +7,6 @@ public class SettingUITrigger : MonoBehaviour, KeyAction.IUIActions
     private bool _isSettingUI;
     private KeyAction _keyAction;
     public bool IsPenel {  get; set; }
-    [SerializeField] private InputActionAsset inputAsset;
 
     private void Awake()
     {
