@@ -20,5 +20,5 @@ MonoBehaviour:
   spawnCount: 5
   startSpawnPos: {x: 0, y: -2}
   testCharType: 2
-  testGunType: 14
+  testGunType: 6
   isDebug: 0

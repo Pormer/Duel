@@ -26,6 +26,7 @@ public class PigSkill : CharacterSkill
     {
         if (isSkillStart) return;
         OnEat?.Invoke();
+        isSkillStart = true;
         _health.IsInvincibility = true;
         _health.SkillNumder = 1;
     }
